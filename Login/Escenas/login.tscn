@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5pr36bog7dq4"]
+
+[ext_resource type="Script" path="res://login.gd" id="1_ih0ww"]
+[ext_resource type="Texture2D" uid="uid://3vbq2ilfmu8h" path="res://fondologin.jpg" id="2_slsln"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ih0ww")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 1147.0
+offset_bottom = 1023.0
+texture = ExtResource("2_slsln")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.131
+anchor_bottom = 0.202
+offset_left = 395.0
+offset_top = 250.0
+offset_right = 602.088
+offset_bottom = 524.104
+
+[node name="lbinfo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 504.0
+offset_right = 694.0
+offset_bottom = 547.0
+
+[node name="txtuser" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 353.0
+offset_right = 682.0
+offset_bottom = 408.0
+placeholder_text = "Usuario"
+
+[node name="txtcontra" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 425.0
+offset_right = 683.0
+offset_bottom = 479.0
+placeholder_text = "Contraseña"
+
+[node name="login" type="Button" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 570.0
+offset_right = 545.0
+offset_bottom = 622.0
+text = "Login"
+
+[node name="registro" type="Button" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 566.0
+offset_right = 735.0
+offset_bottom = 615.0
+text = "Registro"
+
+[connection signal="pressed" from="login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="registro" to="." method="_on_registro_pressed"]

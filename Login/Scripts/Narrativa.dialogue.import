@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://vivtwt883fr5"
+path="res://.godot/imported/Narrativa.dialogue-cc0977782951405ba7222a83fcacbf06.tres"
+
+[deps]
+
+source_file="res://Scripts/Narrativa.dialogue"
+dest_files=["res://.godot/imported/Narrativa.dialogue-cc0977782951405ba7222a83fcacbf06.tres"]
+
+[params]
+
+defaults=true

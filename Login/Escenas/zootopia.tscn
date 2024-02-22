@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://7ddvl2vt3qgg"]
+
+[ext_resource type="Script" path="res://zootopia.gd" id="1_s0h04"]
+[ext_resource type="Texture2D" uid="uid://cc6enl75iwa2e" path="res://Art/Escenarios_Mundos/salapoli.png" id="2_tcwh4"]
+[ext_resource type="Texture2D" uid="uid://c8fq7wjp4tfqo" path="res://Art/Sprites/sospechosos-removebg-preview.png" id="3_0wk7x"]
+[ext_resource type="Texture2D" uid="uid://ce2qsc71thjpc" path="res://Art/Sprites/gazelle-removebg-preview.png" id="4_ukplj"]
+[ext_resource type="Texture2D" uid="uid://d2hcbv4rcknbd" path="res://Art/Sprites/yaxfondo-removebg-preview.png" id="5_tlp0t"]
+[ext_resource type="Texture2D" uid="uid://bxs7l0etn0x8e" path="res://Art/Sprites/oficial.png" id="6_l05wi"]
+[ext_resource type="Texture2D" uid="uid://b5fscalw7u5qi" path="res://Art/Sprites/mrbig.jpg" id="7_tygdg"]
+
+[node name="zootopia" type="Node2D"]
+script = ExtResource("1_s0h04")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 1179.0
+offset_bottom = 694.0
+texture = ExtResource("2_tcwh4")
+
+[node name="Sospechosos-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(599, 272)
+scale = Vector2(1.48043, 1.26956)
+texture = ExtResource("3_0wk7x")
+
+[node name="btA" type="Button" parent="."]
+visible = false
+offset_left = 318.0
+offset_top = 319.0
+offset_right = 382.0
+offset_bottom = 417.0
+theme_override_font_sizes/font_size = 65
+text = "A"
+
+[node name="btB" type="Button" parent="."]
+visible = false
+offset_left = 524.0
+offset_top = 317.0
+offset_right = 588.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 65
+text = "B"
+
+[node name="btC" type="Button" parent="."]
+visible = false
+offset_left = 707.0
+offset_top = 310.0
+offset_right = 771.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 65
+text = "C"
+
+[node name="btD" type="Button" parent="."]
+visible = false
+offset_left = 838.0
+offset_top = 261.0
+offset_right = 902.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 65
+text = "D"
+
+[node name="Gazelle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(634, 300)
+scale = Vector2(0.700658, 0.627129)
+texture = ExtResource("4_ukplj")
+
+[node name="Yax" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(599, 301)
+texture = ExtResource("5_tlp0t")
+
+[node name="Oficial" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(570, 320)
+texture = ExtResource("6_l05wi")
+
+[node name="Mrbig" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(590.625, 345.625)
+scale = Vector2(0.537024, 0.525281)
+texture = ExtResource("7_tygdg")
+
+[connection signal="pressed" from="btA" to="." method="_on_bt_a_pressed"]
+[connection signal="pressed" from="btB" to="." method="_on_bt_b_pressed"]
+[connection signal="pressed" from="btC" to="." method="_on_bt_c_pressed"]
+[connection signal="pressed" from="btD" to="." method="_on_bt_d_pressed"]

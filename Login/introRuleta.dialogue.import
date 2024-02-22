@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bev4fk5552yfi"
+path="res://.godot/imported/introRuleta.dialogue-0ed9f17cb88d0c86516e43ea5b0fbba2.tres"
+
+[deps]
+
+source_file="res://introRuleta.dialogue"
+dest_files=["res://.godot/imported/introRuleta.dialogue-0ed9f17cb88d0c86516e43ea5b0fbba2.tres"]
+
+[params]
+
+defaults=true

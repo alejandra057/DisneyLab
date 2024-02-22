@@ -1,0 +1,218 @@
+[gd_scene load_steps=24 format=3 uid="uid://dy68ly1paaqnh"]
+
+[ext_resource type="Script" path="res://PERRY.gd" id="1_mwycj"]
+[ext_resource type="Texture2D" uid="uid://7av4wq4vkrc0" path="res://Art/Sprites/sprites marvel.png" id="2_4c2bx"]
+[ext_resource type="Texture2D" uid="uid://dvywu2fs803in" path="res://Art/Sprites/0vida-removebg-preview.png" id="3_swikq"]
+[ext_resource type="Texture2D" uid="uid://vr70j17o482n" path="res://Art/Sprites/1vida-removebg-preview.png" id="4_cl11o"]
+[ext_resource type="Texture2D" uid="uid://d1y36pmdxeudt" path="res://Art/Sprites/2vida-removebg-preview.png" id="5_eog3x"]
+[ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="6_cae5s"]
+[ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="7_p2blw"]
+[ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="8_8crua"]
+[ext_resource type="PackedScene" uid="uid://bs1v1qgqjtsd3" path="res://Preguntas.tscn" id="9_ry4ap"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0fvm"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72tms"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvafe"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3ka2"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4n2k"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3tf0"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h4uc"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmfp3"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4sbf"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(240, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpkpg"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jda0"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o4oa"]
+atlas = ExtResource("2_4c2bx")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plvno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0fvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72tms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvafe")
+}],
+"loop": true,
+"name": &"Frente",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3ka2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4n2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3tf0")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h4uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmfp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4sbf")
+}],
+"loop": true,
+"name": &"espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpkpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jda0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o4oa")
+}],
+"loop": true,
+"name": &"izquierda",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5m645"]
+radius = 25.0
+height = 82.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_mwycj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(44, 294)
+scale = Vector2(1.85937, 1.72917)
+zoom = Vector2(1.5, 1.5)
+
+[node name="spriteironman" type="AnimatedSprite2D" parent="."]
+position = Vector2(44, 294)
+scale = Vector2(1.85937, 1.72917)
+sprite_frames = SubResource("SpriteFrames_plvno")
+animation = &"izquierda"
+frame_progress = 0.0341365
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(43, 298)
+shape = SubResource("CapsuleShape2D_5m645")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(11, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -338.0
+offset_top = -3.0
+offset_right = -156.0
+offset_bottom = 72.0
+texture = ExtResource("3_swikq")
+expand_mode = 1
+
+[node name="1vida" type="TextureRect" parent="."]
+offset_left = -336.0
+offset_top = -1.0
+offset_right = -157.0
+offset_bottom = 67.0
+texture = ExtResource("4_cl11o")
+expand_mode = 1
+
+[node name="2vida" type="TextureRect" parent="."]
+offset_left = -333.0
+offset_right = -162.0
+offset_bottom = 67.0
+texture = ExtResource("5_eog3x")
+expand_mode = 1
+
+[node name="3vida" type="TextureRect" parent="."]
+offset_left = -335.0
+offset_top = -2.0
+offset_right = -157.0
+offset_bottom = 65.0
+texture = ExtResource("6_cae5s")
+expand_mode = 1
+
+[node name="4vida" type="TextureRect" parent="."]
+offset_left = -336.0
+offset_top = -2.0
+offset_right = -159.0
+offset_bottom = 67.0
+texture = ExtResource("7_p2blw")
+expand_mode = 1
+
+[node name="5vida" type="TextureRect" parent="."]
+offset_left = -336.0
+offset_top = -1.0
+offset_right = -156.0
+offset_bottom = 65.0
+texture = ExtResource("8_8crua")
+expand_mode = 1
+
+[node name="Node2D" parent="." instance=ExtResource("9_ry4ap")]
+visible = false
+position = Vector2(-426, 308)
+
+[node name="lbinfo" type="Label" parent="."]
+visible = false
+offset_left = -51.0
+offset_top = 380.0
+offset_right = 187.0
+offset_bottom = 439.0
+theme_override_font_sizes/font_size = 20
+text = "RESPUESTA CORRECTA!"
+
+[node name="Button" type="Button" parent="lbinfo"]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 37.0
+offset_right = 137.0
+offset_bottom = 68.0
+text = "Regresar"
+
+[connection signal="pressed" from="lbinfo/Button" to="." method="_on_button_pressed"]

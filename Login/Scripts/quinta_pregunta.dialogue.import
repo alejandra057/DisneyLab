@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d10myatknv0aq"
+path="res://.godot/imported/quinta_pregunta.dialogue-e27889eb4229ebcbd15d97e0c36ba4ae.tres"
+
+[deps]
+
+source_file="res://Scripts/quinta_pregunta.dialogue"
+dest_files=["res://.godot/imported/quinta_pregunta.dialogue-e27889eb4229ebcbd15d97e0c36ba4ae.tres"]
+
+[params]
+
+defaults=true

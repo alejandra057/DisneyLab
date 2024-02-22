@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cadao7d1rt42a"
+path="res://.godot/imported/intropoli.dialogue-e66af76302bee409724dae718d0620bf.tres"
+
+[deps]
+
+source_file="res://intropoli.dialogue"
+dest_files=["res://.godot/imported/intropoli.dialogue-e66af76302bee409724dae718d0620bf.tres"]
+
+[params]
+
+defaults=true

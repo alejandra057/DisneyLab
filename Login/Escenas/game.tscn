@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://de5o1w3p4tawi"]
+
+[sub_resource type="GDScript" id="GDScript_jx7mx"]
+script/source = "extends Node2D
+@onready var GAME =$\".\"
+@onready var animacion =$character_body_2d
+
+
+var ubicacion = Vector2(86,-925)
+
+var siguiente_nivel
+var nuevo_nivel
+
+var mundoprincipal= preload(\"res://Escenas/mundo_principal.tscn\")
+var mundo1castillo = preload(\"res://Escenas/inicioworld.tscn\")
+var mundospidey= preload(\"res://Escenas/spidey.tscn\")
+var mundoperry = preload(\"res://Escenas/dr__and_perry_world.tscn\")
+
+func _ready():
+	var nivel = mundoprincipal.instantiate()
+	add_child(nivel)
+
+func _verficar_nivel():
+	match siguiente_nivel:
+		\"castle\":
+			nuevo_nivel = mundo1castillo
+	animacion.play(\"salida\")
+
+func _siguiente_nivel():
+	var level = nuevo_nivel.instantiate()
+	get_tree().get_nodes_in_group(\"GAME\")[0].call_deferred(\"add_child\",level)
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == \"salida\":
+		$character_body_2d.play(\"cambio\")
+	if anim_name == \"cambio\": 
+		_siguiente_nivel()
+
+"
+
+[sub_resource type="Animation" id="Animation_y6b0i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ve470"]
+resource_name = "cambio"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5w8oe"]
+resource_name = "salida"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8oek"]
+_data = {
+"RESET": SubResource("Animation_y6b0i"),
+"cambio": SubResource("Animation_ve470"),
+"salida": SubResource("Animation_5w8oe")
+}
+
+[node name="GAME" type="Node2D" groups=["GAME"]]
+script = SubResource("GDScript_jx7mx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 900.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j8oek")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

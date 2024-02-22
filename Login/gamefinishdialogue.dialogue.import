@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://b8e80ik52qx63"
+path="res://.godot/imported/gamefinishdialogue.dialogue-edaa2de9bb2b0a9e158dfbef3c6b60b6.tres"
+
+[deps]
+
+source_file="res://gamefinishdialogue.dialogue"
+dest_files=["res://.godot/imported/gamefinishdialogue.dialogue-edaa2de9bb2b0a9e158dfbef3c6b60b6.tres"]
+
+[params]
+
+defaults=true

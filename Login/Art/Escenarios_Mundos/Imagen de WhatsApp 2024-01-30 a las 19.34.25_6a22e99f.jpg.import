@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c3k7svaw8757o"
+path="res://.godot/imported/Imagen de WhatsApp 2024-01-30 a las 19.34.25_6a22e99f.jpg-0735d6b8c82019c6a4c88790416871bb.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Art/Escenarios_Mundos/Imagen de WhatsApp 2024-01-30 a las 19.34.25_6a22e99f.jpg"
+dest_files=["res://.godot/imported/Imagen de WhatsApp 2024-01-30 a las 19.34.25_6a22e99f.jpg-0735d6b8c82019c6a4c88790416871bb.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

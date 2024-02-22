@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bpd730425xvlg"
+path="res://.godot/imported/yaxdialogo.dialogue-5e6a6e40d433af34d06e9ae5c975f836.tres"
+
+[deps]
+
+source_file="res://yaxdialogo.dialogue"
+dest_files=["res://.godot/imported/yaxdialogo.dialogue-5e6a6e40d433af34d06e9ae5c975f836.tres"]
+
+[params]
+
+defaults=true

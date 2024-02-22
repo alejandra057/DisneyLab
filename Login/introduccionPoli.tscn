@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dck5jat50xttn"]
+
+[ext_resource type="Script" path="res://introduccionPoli.gd" id="1_c8s1g"]
+[ext_resource type="Texture2D" uid="uid://c1huhbrt0k136" path="res://Art/Escenarios_Mundos/fondozoo.png" id="1_sarob"]
+[ext_resource type="Texture2D" uid="uid://bbnjsx47tsp04" path="res://Art/Sprites/agente-removebg-preview.png" id="3_qdkvb"]
+[ext_resource type="Texture2D" uid="uid://gbpcosvj1mmg" path="res://Art/Sprites/gazellee.jpg" id="4_nm4hm"]
+[ext_resource type="Texture2D" uid="uid://bxs7l0etn0x8e" path="res://Art/Sprites/oficial.png" id="5_sk4e0"]
+[ext_resource type="Texture2D" uid="uid://kto4fth23epr" path="res://Art/Sprites/yax.jpg" id="6_joy4j"]
+[ext_resource type="Texture2D" uid="uid://b5fscalw7u5qi" path="res://Art/Sprites/mrbig.jpg" id="7_jqk2j"]
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_c8s1g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 645.0
+texture = ExtResource("1_sarob")
+
+[node name="Agente-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(83.125, 391)
+scale = Vector2(0.533063, 0.442906)
+texture = ExtResource("3_qdkvb")
+
+[node name="Gazellee" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(587, 323)
+scale = Vector2(1.80189, 1.73109)
+texture = ExtResource("4_nm4hm")
+
+[node name="Oficial" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(600, 302)
+texture = ExtResource("5_sk4e0")
+
+[node name="Yax" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(600, 306)
+texture = ExtResource("6_joy4j")
+
+[node name="Mrbig" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(591, 277)
+scale = Vector2(0.450635, 0.44382)
+texture = ExtResource("7_jqk2j")

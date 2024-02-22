@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://btru7vfi5sdem"]
+
+[ext_resource type="Script" path="res://registro.gd" id="1_jaajy"]
+[ext_resource type="Texture2D" uid="uid://dvi0yau8bbam3" path="res://fondoregistro.jpg" id="2_to8kd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jaajy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 1149.0
+offset_bottom = 649.0
+texture = ExtResource("2_to8kd")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 148.0
+offset_right = 823.0
+offset_bottom = 705.0
+
+[node name="User" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 267.0
+offset_right = 712.0
+offset_bottom = 339.0
+placeholder_text = "Usuario"
+
+[node name="passw" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 374.0
+offset_right = 715.0
+offset_bottom = 439.0
+placeholder_text = "Contra"
+
+[node name="Registrar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 555.0
+offset_right = 675.0
+offset_bottom = 620.0
+text = "Registrar"
+
+[node name="Regresar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 25.0
+offset_right = 1131.0
+offset_bottom = 84.0
+text = "Regresar"
+
+[node name="lbtext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 469.0
+offset_right = 739.0
+offset_bottom = 532.0
+
+[connection signal="pressed" from="Registrar" to="." method="_on_registrar_pressed"]
+[connection signal="pressed" from="Regresar" to="." method="_on_regresar_pressed"]

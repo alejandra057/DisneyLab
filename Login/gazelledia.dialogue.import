@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dobl2u3eiiccv"
+path="res://.godot/imported/gazelledia.dialogue-396acbabc2ab79b9490ee8df254d904f.tres"
+
+[deps]
+
+source_file="res://gazelledia.dialogue"
+dest_files=["res://.godot/imported/gazelledia.dialogue-396acbabc2ab79b9490ee8df254d904f.tres"]
+
+[params]
+
+defaults=true

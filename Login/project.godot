@@ -1,0 +1,70 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Login"
+run/main_scene="res://login.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Saveus="*res://Saveus.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[importer_defaults]
+
+animation_library={
+"gltf/naming_version": 0
+}
+
+[input]
+
+"space bar"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+e={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
+]
+}
+h={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":72,"key_label":0,"unicode":104,"echo":false,"script":null)
+]
+}
+c={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"echo":false,"script":null)
+]
+}
+p={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
+]
+}
+a={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Escenas/si.dialogue", "res://Scripts/Narrativa.dialogue", "res://Scripts/nuevo.dialogue", "res://Scripts/Dialogo_prehistoria.dialogue", "res://Scripts/primera_pregunta.dialogue", "res://Scripts/primerapregunta.dialogue", "res://Scripts/RepuestaCorrecta_signal.dialogue", "res://Scripts/Segunda_pregunta.dialogue", "res://Scripts/tercera_pregunta.dialogue", "res://Scripts/cuarta_pregunta.dialogue", "res://Scripts/quinta_pregunta.dialogue", "res://Scripts/respuesta_final.dialogue", "res://PreguntasCiencia.dialogue", "res://introRuleta.dialogue", "res://gamefinishdialogue.dialogue", "res://intropoli.dialogue", "res://interrogatorio.dialogue", "res://1preguntapoli.dialogue", "res://gazelledia.dialogue", "res://ofidialogo.dialogue", "res://yaxdialogo.dialogue", "res://mrbigdialogo.dialogue", "res://prueba.dialogue")
+<<<<<<<HEADlocale/translations_pot_files=PackedStringArray("res://Escenas/si.dialogue", "res://Scripts/Narrativa.dialogue", "res://Scripts/nuevo.dialogue", "res://Scripts/Dialogo_prehistoria.dialogue", "res://Scripts/primera_pregunta.dialogue", "res://Scripts/primerapregunta.dialogue", "res://Scripts/RepuestaCorrecta_signal.dialogue", "res://Scripts/Segunda_pregunta.dialogue", "res://Scripts/tercera_pregunta.dialogue", "res://Scripts/cuarta_pregunta.dialogue", "res://Scripts/quinta_pregunta.dialogue", "res://Scripts/respuesta_final.dialogue")
+<<<<<<<Updatedupstreamlocale/translations_pot_files=PackedStringArray("res://Escenas/si.dialogue", "res://Scripts/Narrativa.dialogue", "res://Scripts/nuevo.dialogue", "res://Scripts/Dialogo_prehistoria.dialogue", "res://Scripts/primera_pregunta.dialogue", "res://Scripts/primerapregunta.dialogue", "res://Scripts/RepuestaCorrecta_signal.dialogue", "res://Scripts/Segunda_pregunta.dialogue", "res://Scripts/tercera_pregunta.dialogue", "res://Scripts/cuarta_pregunta.dialogue", "res://Scripts/quinta_pregunta.dialogue", "res://Scripts/respuesta_final.dialogue", "res://PreguntasCiencia.dialogue", "res://introRuleta.dialogue", "res://gamefinishdialogue.dialogue", "res://prueba.dialogue")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://duxd5u2bqbgfw"]
+
+[ext_resource type="Texture2D" uid="uid://4wou3fvq7e1l" path="res://Art/Sprites/1348ed5e58f84b8290bd1f2ddafe14d6-removebg-preview.png" id="1_scf01"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v05ov"]
+atlas = ExtResource("1_scf01")
+region = Rect2(30, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idovr"]
+atlas = ExtResource("1_scf01")
+region = Rect2(93, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpljc"]
+atlas = ExtResource("1_scf01")
+region = Rect2(156, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afo4e"]
+atlas = ExtResource("1_scf01")
+region = Rect2(219, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x4c1"]
+atlas = ExtResource("1_scf01")
+region = Rect2(282, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tv31"]
+atlas = ExtResource("1_scf01")
+region = Rect2(345, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pa0s"]
+atlas = ExtResource("1_scf01")
+region = Rect2(408, 211, 63, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojnl6"]
+atlas = ExtResource("1_scf01")
+region = Rect2(471, 211, 63, 211)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aowh1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v05ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idovr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpljc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afo4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x4c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tv31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pa0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojnl6")
+}],
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[node name="fuegito" type="AnimatedSprite2D"]
+position = Vector2(186, 338)
+sprite_frames = SubResource("SpriteFrames_aowh1")
+animation = &"explosion"

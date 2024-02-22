@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d3e781cf7rlm"
+path="res://.godot/imported/RepuestaCorrecta_signal.dialogue-42b8f8f68ccc2655b2b98b15fd26cead.tres"
+
+[deps]
+
+source_file="res://Scripts/RepuestaCorrecta_signal.dialogue"
+dest_files=["res://.godot/imported/RepuestaCorrecta_signal.dialogue-42b8f8f68ccc2655b2b98b15fd26cead.tres"]
+
+[params]
+
+defaults=true

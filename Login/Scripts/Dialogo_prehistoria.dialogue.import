@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cr13tjyctfleb"
+path="res://.godot/imported/Dialogo_prehistoria.dialogue-c9ede8834f4be882ffe4ab0472494e1d.tres"
+
+[deps]
+
+source_file="res://Scripts/Dialogo_prehistoria.dialogue"
+dest_files=["res://.godot/imported/Dialogo_prehistoria.dialogue-c9ede8834f4be882ffe4ab0472494e1d.tres"]
+
+[params]
+
+defaults=true

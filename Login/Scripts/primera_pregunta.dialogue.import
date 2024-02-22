@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bdie6yoewsx3o"
+path="res://.godot/imported/primera_pregunta.dialogue-0753f895a8b796c2e8607d94fdd2f3ee.tres"
+
+[deps]
+
+source_file="res://Scripts/primera_pregunta.dialogue"
+dest_files=["res://.godot/imported/primera_pregunta.dialogue-0753f895a8b796c2e8607d94fdd2f3ee.tres"]
+
+[params]
+
+defaults=true

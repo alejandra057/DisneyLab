@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b000p4bthcvp3"]
+
+[ext_resource type="Script" path="res://Scripts/EscenaPrincipal.gd" id="1_7mlmh"]
+[ext_resource type="PackedScene" uid="uid://blrjfamkul315" path="res://Escenas/Ruleta.tscn" id="1_ktxne"]
+
+[sub_resource type="Theme" id="Theme_2mg04"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-32, 6)
+script = ExtResource("1_7mlmh")
+
+[node name="Ruleta" parent="." instance=ExtResource("1_ktxne")]
+position = Vector2(647, 324)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="lbanuncio" type="Label" parent="."]
+show_behind_parent = true
+offset_left = 522.0
+offset_top = 480.0
+offset_right = 790.0
+offset_bottom = 591.0
+theme = SubResource("Theme_2mg04")
+theme_override_font_sizes/font_size = 40
+
+[connection signal="timeout" from="Timer" to="Ruleta" method="_on_timer_timeout"]

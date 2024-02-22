@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bc20qij1fljm6"
+path="res://.godot/imported/ofidialogo.dialogue-606f6868e9065b76905d3e6d8a2d7938.tres"
+
+[deps]
+
+source_file="res://ofidialogo.dialogue"
+dest_files=["res://.godot/imported/ofidialogo.dialogue-606f6868e9065b76905d3e6d8a2d7938.tres"]
+
+[params]
+
+defaults=true

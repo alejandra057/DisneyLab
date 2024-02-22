@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d4lsh52oemaan"
+path="res://.godot/imported/mrbigdialogo.dialogue-699d779fdb780c5c53eb64642e096624.tres"
+
+[deps]
+
+source_file="res://mrbigdialogo.dialogue"
+dest_files=["res://.godot/imported/mrbigdialogo.dialogue-699d779fdb780c5c53eb64642e096624.tres"]
+
+[params]
+
+defaults=true

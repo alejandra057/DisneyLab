@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgc6md7fvhydr"]
+
+[ext_resource type="Script" path="res://Escenas/Heartsgui.gd" id="1_6dsy3"]
+[ext_resource type="Texture2D" uid="uid://c27jgkvruwd1c" path="res://Art/Sprites/Captura_de_pantalla_2024-02-08_140311-removebg-preview.png" id="1_b6x2x"]
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 35.0
+offset_bottom = 41.0
+script = ExtResource("1_6dsy3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.184358, 0.155235)
+texture = ExtResource("1_b6x2x")
+centered = false
+hframes = 5
+frame = 4

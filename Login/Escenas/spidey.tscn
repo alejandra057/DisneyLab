@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dycysbd45ylhc"]
+
+[ext_resource type="Texture2D" uid="uid://bu2jfr8hgqihm" path="res://Art/Escenarios_Mundos/0c967c4af27aa805391e3be495936acd.png" id="1_mvt5n"]
+
+[node name="spidey" type="Node2D"]
+
+[node name="0c967c4Af27Aa805391e3Be495936Acd" type="Sprite2D" parent="."]
+position = Vector2(582, 450.5)
+scale = Vector2(0.632159, 0.875977)
+texture = ExtResource("1_mvt5n")

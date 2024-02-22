@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://m0sh1wa6cr54"
+path="res://.godot/imported/interrogatorio.dialogue-38b7ffecccebe05bb3fbbe99fe7e936c.tres"
+
+[deps]
+
+source_file="res://interrogatorio.dialogue"
+dest_files=["res://.godot/imported/interrogatorio.dialogue-38b7ffecccebe05bb3fbbe99fe7e936c.tres"]
+
+[params]
+
+defaults=true

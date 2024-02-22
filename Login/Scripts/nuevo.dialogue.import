@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cb5umd0iajy55"
+path="res://.godot/imported/nuevo.dialogue-b2d03d333168ba83386eda7ee86b1bfc.tres"
+
+[deps]
+
+source_file="res://Scripts/nuevo.dialogue"
+dest_files=["res://.godot/imported/nuevo.dialogue-b2d03d333168ba83386eda7ee86b1bfc.tres"]
+
+[params]
+
+defaults=true

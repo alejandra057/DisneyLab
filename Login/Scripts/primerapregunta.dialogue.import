@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://n5nxuguggscb"
+path="res://.godot/imported/primerapregunta.dialogue-932f5153f038770fcd44f5c5b4ca9787.tres"
+
+[deps]
+
+source_file="res://Scripts/primerapregunta.dialogue"
+dest_files=["res://.godot/imported/primerapregunta.dialogue-932f5153f038770fcd44f5c5b4ca9787.tres"]
+
+[params]
+
+defaults=true

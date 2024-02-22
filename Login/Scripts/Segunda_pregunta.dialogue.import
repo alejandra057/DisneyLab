@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://gekru5lqfgmt"
+path="res://.godot/imported/Segunda_pregunta.dialogue-186e3222c9dac173baa06a17552ffc51.tres"
+
+[deps]
+
+source_file="res://Scripts/Segunda_pregunta.dialogue"
+dest_files=["res://.godot/imported/Segunda_pregunta.dialogue-186e3222c9dac173baa06a17552ffc51.tres"]
+
+[params]
+
+defaults=true
