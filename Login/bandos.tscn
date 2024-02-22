@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3prt1tgynby6"]
+
+[ext_resource type="PackedScene" uid="uid://c5y3gl3fd7y82" path="res://Escenas/merida.tscn" id="1_8kiev"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_8kiev")]
+position = Vector2(588, 380)
