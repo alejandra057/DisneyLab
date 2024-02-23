@@ -14,10 +14,15 @@ var contarnara=0
 var contarazul=0
 var contarrosa=0
 var contarpalabra=0
+var contarpregunta=0
 var posicioninicial=0
 var initial_position = Vector2(320,10)
 var caida=false
-
+var pregunta1=false
+var pregunta2=false
+var pregunta3=false
+var pregunta4=false
+var pregunta5=false
 var opciones = [{"nombre": "Politica", "probabilidad": 0.2}, {"nombre": "Ciencia", "probabilidad": 0.8}, {"nombre": "Arte", "probabilidad": 0.3}, {"nombre": "Historia", "probabilidad": 0.7}]
 var seleccion_actual=null
 var right_answer1=false
@@ -26,6 +31,9 @@ var right_answer3=false
 var right_answer4=false
 var right_answer5=false
 var habilitar=false
+var capitan=false
+var iron_man=false
+var win_spidey=false
 func _ready():
 	cargar()
 	pass # Replace with function body.

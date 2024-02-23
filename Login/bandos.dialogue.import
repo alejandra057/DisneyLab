@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cmv5bxprxi08u"
+path="res://.godot/imported/bandos.dialogue-b3e9ac6afde9bc13f056974bd2aaf6d8.tres"
+
+[deps]
+
+source_file="res://bandos.dialogue"
+dest_files=["res://.godot/imported/bandos.dialogue-b3e9ac6afde9bc13f056974bd2aaf6d8.tres"]
+
+[params]
+
+defaults=true

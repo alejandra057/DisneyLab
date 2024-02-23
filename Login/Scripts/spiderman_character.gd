@@ -40,6 +40,10 @@ func _physics_process(delta):
 	player_movement(delta)
 	
 func player_movement (delta):
+	if Saveus.win_spidey==true:
+		$AnimatedSprite2D.play("kick_idle")
+		await get_tree().create_timer(1).timeout
+		Saveus.win_spidey=false
 	if Saveus.caida == true:
 		$AnimatedSprite2D.play("fall_idle")
 		await get_tree().create_timer(1).timeout

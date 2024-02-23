@@ -2,10 +2,24 @@ extends CharacterBody2D
 
 const speed= 400
 var current_dir = "none"
-@export var maxHealth =4
-@onready var current_health:int = 0
+var capi
+var ironman
+
+
+
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
+	capi=$cap
+	ironman=$ironman
+func _process(delta):
+	if Saveus.capitan==true:
+		capi.show()
+		$E.show()
+		Saveus.right_answer1=false
+	elif Saveus.iron_man==true:
+		ironman.show()
+		$R.show()
+		Saveus.right_answer2=false
 
 func _physics_process(delta):
 	player_movement(delta)

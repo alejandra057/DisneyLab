@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c6gen6npp4mfh"
+path="res://.godot/imported/empiristas.dialogue-8a115aaeab80c0efe3192f36db90c25f.tres"
+
+[deps]
+
+source_file="res://empiristas.dialogue"
+dest_files=["res://.godot/imported/empiristas.dialogue-8a115aaeab80c0efe3192f36db90c25f.tres"]
+
+[params]
+
+defaults=true

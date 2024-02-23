@@ -4,8 +4,8 @@ var positions=0
 func _ready():
 	time=$Timer
 func _process(delta):
-	pass
-
+	if Input.is_action_just_pressed("x"): 
+			$CharacterBody2D2.show()
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
 
@@ -213,8 +213,6 @@ func _on_respuesta_d_5_body_entered(body):
 func _on_final_body_entered(body):
 	if Saveus.right_answer5==true:
 		DialogueManager.show_dialogue_balloon(load("res://gamefinishdialogue.dialogue"), "final_dialogue")
+		Saveus.win_spidey=true
 		$Button.show()
-
-
-	
-	
+			

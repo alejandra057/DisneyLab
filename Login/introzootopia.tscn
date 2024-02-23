@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cn0q3cfb0dctw"]
+[gd_scene load_steps=12 format=3 uid="uid://cn0q3cfb0dctw"]
 
 [ext_resource type="Script" path="res://introzootopia.gd" id="1_ccafx"]
+[ext_resource type="Texture2D" uid="uid://4n7v0uv15t2e" path="res://Art/Escenarios_objetos/Diseño sin título (1).png" id="2_gs43x"]
 [ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="2_uavn7"]
 [ext_resource type="Texture2D" uid="uid://bpr02i5skrrko" path="res://Art/flecha.png" id="3_0h8w4"]
 
@@ -97,11 +98,19 @@ _data = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ccafx")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 16.0
+offset_top = 49.0
+offset_right = 1120.0
+offset_bottom = 241.0
+texture = ExtResource("2_gs43x")
+expand_mode = 1
+
 [node name="panel" type="PanelContainer" parent="."]
-offset_left = 185.0
+offset_left = 27.0
 offset_top = 62.0
-offset_right = 941.0
-offset_bottom = 211.0
+offset_right = 1111.0
+offset_bottom = 230.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="panel"]
 custom_minimum_size = Vector2(50, 50)
@@ -119,6 +128,7 @@ visible_ratio = 0.0
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="panel/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
