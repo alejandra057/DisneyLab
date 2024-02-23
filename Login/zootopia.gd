@@ -1,7 +1,7 @@
 extends Node2D
 
 var contar=0
-var habilitar3pregunta=false
+var habilitar=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#DialogueManager.show_dialogue_balloon(load("res://interrogatorio.dialogue"),"interrogar")
@@ -12,26 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	contarclick()
-	if  $Node2D.current_text==9:
-		$Node2D.hide()
-		$Label.show()
-		$Label2.show()
-		$Label3.show()
-		$Label4.show()
-		$btA.hide()
-		$btB.hide()
-		$btC.hide()
-		$btD.hide()
-		DialogueManager.show_dialogue_balloon(load("res://final_interrogatorio.dialogue"),"final_inte")
-		if Input.is_action_just_pressed("a"): 
-			DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
-		elif Input.is_action_just_pressed("b"): 
-			DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
-		elif Input.is_action_just_pressed("c"): 
-			DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
-		elif Input.is_action_just_pressed("d"): 
-			$Button.show()
-			DialogueManager.show_dialogue_balloon(load("res://right_Aswer_zoo.dialogue"),"rightansw")
+	
 			
 
 func _on_bt_a_pressed():
@@ -56,6 +37,7 @@ func _on_bt_a_pressed():
 	if Saveus.pregunta5:
 		DialogueManager.show_dialogue_balloon(load("res://yaxdialogo.dialogue"),"yax")
 		Saveus.pregunta5=false
+		habilitar=true
 	Saveus.contarpregunta=0
 	$Node2D.next_text()
 	pass # Replace with function body.
@@ -81,6 +63,7 @@ func _on_bt_b_pressed():
 	if Saveus.pregunta5:
 		DialogueManager.show_dialogue_balloon(load("res://oficial_right2.dialogue"),"right_ofi2")
 		Saveus.pregunta5=false
+		habilitar=true
 	$Node2D.next_text()
 	pass # Replace with function body.
 
@@ -105,6 +88,7 @@ func _on_bt_c_pressed():
 	if Saveus.pregunta5:
 		DialogueManager.show_dialogue_balloon(load("res://gazelee_wrong.dialogue"),"gazellewrong")
 		Saveus.pregunta5=false
+		habilitar=true
 	$Node2D.next_text()
 	
 	pass # Replace with function body.
@@ -129,6 +113,7 @@ func _on_bt_d_pressed():
 	if Saveus.pregunta5:
 		DialogueManager.show_dialogue_balloon(load("res://mrbigdialogo.dialogue"),"mrbig")
 		Saveus.pregunta5=false
+		habilitar=true
 	$Node2D.next_text()
 	pass # Replace with function body.
 
@@ -169,6 +154,27 @@ func contarclick():
 			$Gazelle.hide()
 			$Mrbig.hide()
 			$"Sospechosos-removebg-preview".show()
+			if habilitar:
+				$Node2D.hide()
+				$Label.show()
+				$Label2.show()
+				$Label3.show()
+				$Label4.show()
+				$btA.hide()
+				$btB.hide()
+				$btC.hide()
+				$btD.hide()
+				DialogueManager.show_dialogue_balloon(load("res://final_interrogatorio.dialogue"),"final_inte")
+				if Input.is_action_just_pressed("a"): 
+					DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+				elif Input.is_action_just_pressed("b"): 
+					DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+				elif Input.is_action_just_pressed("c"): 
+					DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+				elif Input.is_action_just_pressed("d"): 
+					$Button.show()
+					DialogueManager.show_dialogue_balloon(load("res://right_Aswer_zoo.dialogue"),"rightansw")
+				
 			
 	
 	
