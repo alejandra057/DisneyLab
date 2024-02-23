@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var temporizador
-const speed= 250
+const speed= 300
 var current_dir = "none"
 var animacion
 var ronda1=true
@@ -32,11 +32,11 @@ func _ready():
 	$AnimatedSprite2D.play("frente")
 	Saveus.posicioninicial=$".".position
 	print("posicion ",posicioninicial)
-	vida1=$TextureRect4
-	vida2=$TextureRect3
-	vida3=$TextureRect2
-	vida4=$TextureRect5
-	vida5=$TextureRect6
+	vida1=$"../TextureRect2"
+	vida2=$"../TextureRect3"
+	vida3=$"../TextureRect4"
+	vida4=$"../TextureRect5"
+	vida5=$"../TextureRect6"
 	pieza1=$"../Pieza1"
 	pieza2=$"../Pieza2"
 	pieza3=$"../Pieza3"
@@ -157,6 +157,7 @@ func _on_area_a_body_entered(body):
 		vida1.show()
 		pieza1.show()
 		$mensaje.show()
+		$mensaje.text="Respuesta Correcta"
 		temporizador.wait_time = 1.5
 		temporizador.start()
 		#print("valorrr ",$Node2D.valor)
@@ -190,7 +191,7 @@ func _on_area_a_body_entered(body):
 			vida4.hide()
 			pieza5.show()
 			pieza6.show()
-			$mensaje.text="¡FELICIDADES!"
+			$mensaje.text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
 			$mensaje/Button.show()
 			temporizador.stop()
 		

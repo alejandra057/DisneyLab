@@ -27,7 +27,7 @@ var electD=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visual_text.visible_ratio=0
+	#visual_text.visible_ratio=0
 	visual_text.text=texts[current_text]
 	mark.visible=0
 	#state = 1

@@ -126,24 +126,21 @@ height = 112.0
 script = ExtResource("1_l5di2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(528, 824)
+position = Vector2(549, 559)
 scale = Vector2(4, 3.75)
 sprite_frames = SubResource("SpriteFrames_ungk8")
 animation = &"derecha"
 autoplay = "frente"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(520, 832)
+position = Vector2(550, 571)
 shape = SubResource("CapsuleShape2D_geteg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(520, 832)
-
 [node name="mensaje" type="Label" parent="."]
-offset_left = 342.0
-offset_top = 560.0
-offset_right = 721.0
-offset_bottom = 633.0
+offset_left = 321.0
+offset_top = 693.0
+offset_right = 700.0
+offset_bottom = 766.0
 theme_override_fonts/font = ExtResource("3_8qtff")
 theme_override_font_sizes/font_size = 21
 horizontal_alignment = 1
@@ -158,49 +155,54 @@ offset_bottom = 564.0
 text = "REGRESAR"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 33.0
-offset_top = 528.0
-offset_right = 288.0
-offset_bottom = 625.0
+visible = false
+offset_left = 54.0
+offset_top = 32.0
+offset_right = 309.0
+offset_bottom = 129.0
 texture = ExtResource("3_2bmiq")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
-offset_left = 36.0
-offset_top = 529.0
-offset_right = 288.0
-offset_bottom = 621.0
+visible = false
+offset_left = 57.0
+offset_top = 33.0
+offset_right = 309.0
+offset_bottom = 125.0
 texture = ExtResource("4_hx88f")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 39.0
-offset_top = 528.0
-offset_right = 281.0
-offset_bottom = 625.0
+visible = false
+offset_left = 60.0
+offset_top = 32.0
+offset_right = 302.0
+offset_bottom = 129.0
 texture = ExtResource("5_rpp0v")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 37.0
-offset_top = 528.0
-offset_right = 288.0
-offset_bottom = 626.0
+visible = false
+offset_left = 58.0
+offset_top = 32.0
+offset_right = 309.0
+offset_bottom = 130.0
 texture = ExtResource("6_frkib")
 
 [node name="TextureRect5" type="TextureRect" parent="."]
-offset_left = 35.0
-offset_top = 527.0
-offset_right = 286.0
-offset_bottom = 627.0
+visible = false
+offset_left = 56.0
+offset_top = 31.0
+offset_right = 307.0
+offset_bottom = 131.0
 texture = ExtResource("7_h4no7")
 
 [node name="TextureRect6" type="TextureRect" parent="."]
-offset_left = 38.0
-offset_top = 533.0
-offset_right = 289.0
-offset_bottom = 625.0
+visible = false
+offset_left = 59.0
+offset_top = 37.0
+offset_right = 310.0
+offset_bottom = 129.0
 texture = ExtResource("8_vlefo")
 
 [node name="Node2D" parent="." instance=ExtResource("10_n75c7")]
-visible = false
-position = Vector2(58, 454)
+position = Vector2(11, 66)
 
 [connection signal="pressed" from="mensaje/Button" to="." method="_on_button_pressed"]
