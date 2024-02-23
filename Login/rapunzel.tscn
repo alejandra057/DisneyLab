@@ -140,7 +140,6 @@ shape = SubResource("CapsuleShape2D_geteg")
 position = Vector2(520, 832)
 
 [node name="mensaje" type="Label" parent="."]
-visible = false
 offset_left = 342.0
 offset_top = 560.0
 offset_right = 721.0

@@ -131,18 +131,29 @@ func _on_area_b_body_entered(body):
 	contar+=1;
 	print("b",contar)
 	if $Node2D.valor==3:
-			print("b",contar)
-			vida3.show()
-			vida2.hide()
-			vida1.hide()
-			temporizador.wait_time = 1.5
-			temporizador.start()
-			$mensaje.text="Respuesta Correcta"
-			temporizador.wait_time = 1.5
-			temporizador.start()
+		cotext+=1
+		print("b",contar)
+		vida3.show()
+		vida2.hide()
+		vida1.hide()
+		temporizador.wait_time = 1
+		temporizador.start()
+		$mensaje.text="Respuesta Correcta"
+		temporizador.wait_time = 1
+		temporizador.start()
+	else:if $Node2D.valor==4:
+		cotext+=2
+		vida4.show()
+		vida3.hide()
+		pieza4.show()
+		temporizador.wait_time = 1
+		temporizador.start()
+		$mensaje.text="Respuesta Correcta"
+		temporizador.wait_time = 1
+		temporizador.start()
 	else:
 		print("Respuesta incorrecta")
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 1
 		temporizador.start()
 	
 	Saveus.contarpalabra=0
@@ -164,9 +175,9 @@ func _on_area_d_body_entered(body):
 func _on_area_a_body_entered(body):
 	contar+=1;
 	print("valor ",$Node2D.valor)
-	print("a 1 ",contar)
+	#print("a 1 ",contar)
 	print("entro a area b")
-	if $Node2D.valor!=1:
+	if $Node2D.valor!=2 and $Node2D.valor!=3:
 		print("entro a b para respuesta 1")
 		print("valor ",$Node2D.valor)
 		print("a",contar)
@@ -178,7 +189,7 @@ func _on_area_a_body_entered(body):
 		pieza1.show()
 		$mensaje.show()
 		$mensaje.text="Respuesta Correcta"
-		temporizador.wait_time = 1
+		temporizador.wait_time = 1.5
 		temporizador.start()
 		print("valor 2 ",$Node2D.valor)
 		
@@ -195,16 +206,8 @@ func _on_area_a_body_entered(body):
 			$mensaje.text="Respuesta Correcta"
 			temporizador.wait_time = 1.5
 			temporizador.start()
-		if $Node2D.valor==4:
-			vida4.show()
-			vida3.hide()
-			pieza4.show()
-			temporizador.wait_time = 1.5
-			temporizador.start()
-			$mensaje.text="Respuesta Correcta"
-			temporizador.wait_time = 1.5
-			temporizador.start()
-		if $Node2D.valor==5:
+		
+		if $Node2D.valor==5 and cotext==2:
 			vida5.show()
 			vida4.hide()
 			pieza5.show()

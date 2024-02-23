@@ -30,15 +30,16 @@ func _ready():
 	visual_text.visible_ratio=0
 	visual_text.text=texts[current_text]
 	mark.visible=0
-	state = 1
+	#state = 1
 	show_text()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if state == 0 and Saveus.contarpalabra>0:
-		state=1
+	if Saveus.contarpalabra>0:
+		#var state: int = 0
+		#state=1
 		next_text()
 		print("currentxx2 ",current_text)
 		set_process(false)
@@ -63,7 +64,7 @@ func show_text():
 
 func finish_showtext():
 	mark.visible = 1
-	state=0
+	#state=0
 	set_process(true)
 
 
