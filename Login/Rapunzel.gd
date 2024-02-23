@@ -167,7 +167,8 @@ func _on_area_a_body_entered(body):
 		$mensaje.show()
 		temporizador.wait_time = 1.5
 		temporizador.start()
-		print("valorrr ",$Node2D.valor)
+		print("valor ",$Node2D.valor)
+		
 		if $Node2D.valor==1:
 			Saveus.contarpalabra+=1
 			$Node2D._process(body)
