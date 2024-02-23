@@ -1,10 +1,10 @@
 extends Node2D
 
-var opciones_seleccionadas = []
+
 var velocidad = 0
 var encendido = false
 var contar = 0
-#var opciones = [{"nombre": "Politica", "probabilidad": 0.5}, {"nombre": "Ciencia", "probabilidad": 0.5}, {"nombre": "Arte", "probabilidad": 0.5}, {"nombre": "Historia", "probabilidad": 0.5}]
+#var opciones = [3{"nombre": "Politica", "probabilidad": 0.5}, {"nombre": "Ciencia", "probabilidad": 0.5}, {"nombre": "Arte", "probabilidad": 0.5}, {"nombre": "Historia", "probabilidad": 0.5}]
 var lbpolitica : Label
 var lbciencia : Label
 var lbarte: Label
@@ -70,7 +70,7 @@ func seleccionar_opcion():
 		suma_probabilidad += opcion["probabilidad"]
 		if random_value < suma_probabilidad:
 			Saveus.seleccion_actual = opcion
-			opciones_seleccionadas.append(opcion)
+			Saveus.opciones_seleccionadas.append(opcion)
 			opcion["probabilidad"] = 0
 			return opcion
 	return opciones_validas[-1]

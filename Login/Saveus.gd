@@ -1,7 +1,7 @@
 extends Node
 
 const ARCHIVO="user://Usuarios.xd"
-
+var opciones_seleccionadas = []
 var nombre :String
 var password: String
 var texto
