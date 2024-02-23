@@ -156,7 +156,6 @@ func _on_area_d_body_entered(body):
 
 
 func _on_area_a_body_entered(body):
-	
 	contar+=1;
 	if $Node2D.valor!=1:
 		Saveus.contarpalabra+=1
@@ -168,7 +167,6 @@ func _on_area_a_body_entered(body):
 		temporizador.wait_time = 1.5
 		temporizador.start()
 		print("valor ",$Node2D.valor)
-		
 		if $Node2D.valor==1:
 			Saveus.contarpalabra+=1
 			$Node2D._process(body)

@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cmxruxifi0l28" path="res://Art/Escenarios_objetos/12.png" id="10_2h08a"]
 [ext_resource type="Texture2D" uid="uid://c1lp01t4s8adw" path="res://Art/Escenarios_objetos/pngwing.com.png" id="12_4udmg"]
 [ext_resource type="FontFile" uid="uid://ccyvw17fux16l" path="res://Art/Font/pf_ronda_seven.ttf" id="13_fh721"]
-[ext_resource type="PackedScene" path="res://preguntasrpzl.tscn" id="14_mrhgk"]
+[ext_resource type="PackedScene" uid="uid://b6lg14t53541d" path="res://preguntasrpzl.tscn" id="14_mrhgk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cs850"]
 texture = ExtResource("1_png57")
