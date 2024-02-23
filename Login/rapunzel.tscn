@@ -142,13 +142,11 @@ position = Vector2(520, 832)
 [node name="mensaje" type="Label" parent="."]
 visible = false
 offset_left = 342.0
-offset_top = 449.0
+offset_top = 560.0
 offset_right = 721.0
-offset_bottom = 522.0
+offset_bottom = 633.0
 theme_override_fonts/font = ExtResource("3_8qtff")
 theme_override_font_sizes/font_size = 21
-text = "¡FELICIDADES! ¡ADIVININASTE LA 
-RESPUESTA CORRECTA!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="mensaje"]

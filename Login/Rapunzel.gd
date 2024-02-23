@@ -53,6 +53,7 @@ func _ready():
 	pieza4.hide()
 	pieza5.hide()
 	pieza6.hide()
+	print(contar)
 	
 func _physics_process(delta):
 	player_movement(delta)
@@ -127,7 +128,9 @@ func _on_button_pressed():
 
 func _on_area_b_body_entered(body):
 	contar+=1;
+	print("b",contar)
 	if $Node2D.valor==3:
+			print("b",contar)
 			vida3.show()
 			vida2.hide()
 			vida1.hide()
@@ -147,27 +150,40 @@ func _on_area_b_body_entered(body):
 
 func _on_area_d_body_entered(body):
 	contar+=1;
+	print("d",contar)
 	$Node2D._process(body)
 	Saveus.contarpalabra=0
-	#$"../Sprite2D".show()
-	#temporizador.wait_time = 1.5
-	#temporizador.start()
+	$mensaje.show()
+	$mensaje.text="Respuesta Incorrecta"
+	temporizador.wait_time = 1.5
+	temporizador.start()
 	pass # Replace with function body.
 
 
 func _on_area_a_body_entered(body):
 	contar+=1;
+	print("valor ",$Node2D.valor)
+	print("a 1 ",contar)
+	print("entro a area b")
 	if $Node2D.valor!=1:
+		print("entro a b para respuesta 1")
+		print("valor ",$Node2D.valor)
+		print("a",contar)
 		Saveus.contarpalabra+=1
+		print("valor 2 ",$Node2D.valor)
 		$Node2D._process(body)
 		#if $Node2D.valor==0:
 		vida1.show()
 		pieza1.show()
 		$mensaje.show()
+		$mensaje.text="Respuesta Correcta"
 		temporizador.wait_time = 1.5
 		temporizador.start()
-		print("valor ",$Node2D.valor)
+		print("valor 2 ",$Node2D.valor)
 		if $Node2D.valor==1:
+			print("entro a b para respuesta 2")
+			print("valor ",$Node2D.valor)
+			print("a",contar)
 			Saveus.contarpalabra+=1
 			$Node2D._process(body)
 			vida1.hide()
