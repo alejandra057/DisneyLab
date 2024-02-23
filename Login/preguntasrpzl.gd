@@ -16,6 +16,7 @@ A) Las tortugas ninjas. B) Los caballeros del Zodiaco. C) Los cuatro fantástico
 var current_text: int=0
 var contar=0
 var valor : int=0
+var state: int = 0
 @onready var visual_text :RichTextLabel =$PanelContainer/RichTextLabel
 @onready var mark : Control=$PanelContainer/Control
 var mostrar=false
@@ -29,13 +30,15 @@ func _ready():
 	visual_text.visible_ratio=0
 	visual_text.text=texts[current_text]
 	mark.visible=0
+	state = 1
 	show_text()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Saveus.contarpalabra>0:
+	if state == 0 and Saveus.contarpalabra>0:
+		state=1
 		next_text()
 		print("currentxx2 ",current_text)
 		set_process(false)
@@ -60,6 +63,7 @@ func show_text():
 
 func finish_showtext():
 	mark.visible = 1
+	state=0
 	set_process(true)
 
 
@@ -67,10 +71,12 @@ func finish_showtext():
 func _on_area_b_body_entered(body):
 	print("current ",valor)
 	if valor!=1:
-		valor+=1
+		valor==3
+		print("Respuesta correcta")
+	else:if valor==5:
 		print("Respuesta correcta")
 	else:
-		print("Respuesta incorrecta")
+		print("respuesta incorrecta")
 	
 	pass # Replace with function body.
 
@@ -85,16 +91,21 @@ func _on_area_d_body_entered(body):
 
 
 func _on_area_a_body_entered(body):
-	print("Respuesta incorrecta")
-	current_text-=1
+	if valor!=1:
+		print("Respuesta correcta")
+	else:if valor==1:
+		print("Respuesta correcta")
+	else:if valor==5:
+		valor+=1
+		print("Respuesta correcta")
+	else:
+		print("Respuesta Incorrecta")
 	pass # Replace with function body.
 
 
 
 func _on_area_c_body_entered(body):
-	if valor!=1:
-		print("Respuesta incorrecta")
-	else:
-		valor+=1
-		print("Respuesta correcta")
+	print("Respuesta incorrecta")
+	current_text-=1
+	
 	pass # Replace with function body.

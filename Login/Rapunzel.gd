@@ -22,6 +22,7 @@ var pieza3
 var pieza4
 var pieza5
 var pieza6
+var  cotext : int=0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var contar=0
@@ -177,9 +178,10 @@ func _on_area_a_body_entered(body):
 		pieza1.show()
 		$mensaje.show()
 		$mensaje.text="Respuesta Correcta"
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 1
 		temporizador.start()
 		print("valor 2 ",$Node2D.valor)
+		
 		if $Node2D.valor==1:
 			print("entro a b para respuesta 2")
 			print("valor ",$Node2D.valor)
