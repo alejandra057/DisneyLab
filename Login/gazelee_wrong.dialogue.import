@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d18i4q3c2bs6c"
+path="res://.godot/imported/gazelee_wrong.dialogue-2947aa77460fb6f3ac160ca231353637.tres"
+
+[deps]
+
+source_file="res://gazelee_wrong.dialogue"
+dest_files=["res://.godot/imported/gazelee_wrong.dialogue-2947aa77460fb6f3ac160ca231353637.tres"]
+
+[params]
+
+defaults=true

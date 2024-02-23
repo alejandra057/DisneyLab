@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d2oigtqc0sq2p"
+path="res://.godot/imported/right_Aswer_zoo.dialogue-b61130f00b676d99e5b5b6d2b7f524dd.tres"
+
+[deps]
+
+source_file="res://right_Aswer_zoo.dialogue"
+dest_files=["res://.godot/imported/right_Aswer_zoo.dialogue-b61130f00b676d99e5b5b6d2b7f524dd.tres"]
+
+[params]
+
+defaults=true

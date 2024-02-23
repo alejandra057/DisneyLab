@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://172a6vpw1xit"]
+
+[ext_resource type="Script" path="res://mysterio.gd" id="1_4a5ee"]
+[ext_resource type="Texture2D" uid="uid://bvpy12733whdt" path="res://Art/Sprites/mysterio-removebg-preview.png" id="1_r2w8n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpj0f"]
+atlas = ExtResource("1_r2w8n")
+region = Rect2(53, 0, 44, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gbic"]
+atlas = ExtResource("1_r2w8n")
+region = Rect2(97, 0, 44, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2m1v"]
+atlas = ExtResource("1_r2w8n")
+region = Rect2(141, 0, 44, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27kb1"]
+atlas = ExtResource("1_r2w8n")
+region = Rect2(185, 0, 44, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weaik"]
+atlas = ExtResource("1_r2w8n")
+region = Rect2(235, 0, 121, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kf5m7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpj0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gbic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2m1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27kb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weaik")
+}],
+"loop": true,
+"name": &"falls_idle",
+"speed": 2.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8mnc"]
+radius = 8.0
+height = 22.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_4a5ee")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(391.011, 369.5)
+scale = Vector2(0.273243, 0.218391)
+sprite_frames = SubResource("SpriteFrames_kf5m7")
+animation = &"falls_idle"
+frame_progress = 0.999637
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(393, 370)
+shape = SubResource("CapsuleShape2D_r8mnc")

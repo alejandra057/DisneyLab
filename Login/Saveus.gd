@@ -31,6 +31,9 @@ var right_answer3=false
 var right_answer4=false
 var right_answer5=false
 var habilitar=false
+var capitan=false
+var iron_man=false
+var win_spidey=false
 func _ready():
 	cargar()
 	pass # Replace with function body.

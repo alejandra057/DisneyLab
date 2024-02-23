@@ -107,7 +107,6 @@ texture = ExtResource("2_gs43x")
 expand_mode = 1
 
 [node name="panel" type="PanelContainer" parent="."]
-anchors_preset = -1
 offset_left = 27.0
 offset_top = 62.0
 offset_right = 1111.0

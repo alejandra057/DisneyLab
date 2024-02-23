@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://b6mf7cwk088yd"
+path="res://.godot/imported/oficial_right2.dialogue-87dc3ee965aa87edf358724189ab6954.tres"
+
+[deps]
+
+source_file="res://oficial_right2.dialogue"
+dest_files=["res://.godot/imported/oficial_right2.dialogue-87dc3ee965aa87edf358724189ab6954.tres"]
+
+[params]
+
+defaults=true

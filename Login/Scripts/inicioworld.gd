@@ -1,13 +1,10 @@
 extends Node2D
-@onready var heartsContainer=$player/CanvasLayer/heartContainer
 var ruta1= ""
 var ruta2= ""
 var ruta3= ""
 var ruta4 =""
 var tiempo
 func _ready():
-	heartsContainer.setMaxHearts(4)
-	heartsContainer.updateHearts(1)
 	tiempo=$Puertas/Timerpuerta1
 	if(Saveus.habilitar==true):
 		$Roulette.show()
@@ -23,7 +20,7 @@ func _on_area_2d_2_body_entered(body):
 	if(Saveus.selecmorado==true):
 		if body.is_in_group("player"):
 			$Puertas4.frame=11
-			ruta1 ="res://historia.tscn"
+			ruta1 ="res://prehistoria.tscn"
 			$Label.show()
 			tiempo.wait_time=1.3
 			tiempo.start()
