@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7ddvl2vt3qgg"]
+[gd_scene load_steps=9 format=3 uid="uid://7ddvl2vt3qgg"]
 
 [ext_resource type="Script" path="res://zootopia.gd" id="1_s0h04"]
 [ext_resource type="Texture2D" uid="uid://cc6enl75iwa2e" path="res://Art/Escenarios_Mundos/salapoli.png" id="2_tcwh4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2hcbv4rcknbd" path="res://Art/Sprites/yaxfondo-removebg-preview.png" id="5_tlp0t"]
 [ext_resource type="Texture2D" uid="uid://bxs7l0etn0x8e" path="res://Art/Sprites/oficial.png" id="6_l05wi"]
 [ext_resource type="Texture2D" uid="uid://b5fscalw7u5qi" path="res://Art/Sprites/mrbig.jpg" id="7_tygdg"]
+[ext_resource type="PackedScene" uid="uid://cn0q3cfb0dctw" path="res://introzootopia.tscn" id="8_x8b3o"]
 
 [node name="zootopia" type="Node2D"]
 script = ExtResource("1_s0h04")
@@ -80,6 +81,9 @@ visible = false
 position = Vector2(590.625, 345.625)
 scale = Vector2(0.537024, 0.525281)
 texture = ExtResource("7_tygdg")
+
+[node name="Node2D" parent="." instance=ExtResource("8_x8b3o")]
+position = Vector2(12, 400)
 
 [connection signal="pressed" from="btA" to="." method="_on_bt_a_pressed"]
 [connection signal="pressed" from="btB" to="." method="_on_bt_b_pressed"]
