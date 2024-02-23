@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dpccc8h1ijgk7"]
+[gd_scene load_steps=28 format=3 uid="uid://dpccc8h1ijgk7"]
 
 [ext_resource type="Script" path="res://historias.gd" id="1_wj62t"]
 [ext_resource type="Texture2D" uid="uid://b8aks5k02nr62" path="res://Art/Escenarios_Mundos/primerapregunta.png" id="2_1a1f5"]
@@ -30826,8 +30826,11 @@ font = ExtResource("10_mtblj")
 font_size = 36
 font_color = Color(1, 0.121569, 0.121569, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxkyw"]
+size = Vector2(60, 61)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l43ii"]
-size = Vector2(70.0628, 47.5)
+size = Vector2(70.0628, 76.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_la1co"]
 size = Vector2(147.094, 4.82165)
@@ -31069,11 +31072,18 @@ label_settings = SubResource("LabelSettings_vw15r")
 [node name="CharacterBody2D" parent="." groups=["player2"] instance=ExtResource("3_7vnob")]
 position = Vector2(0, 13)
 
-[node name="final" type="Area2D" parent="."]
+[node name="RespuestaA_5" type="Area2D" parent="."]
 position = Vector2(1031, -2064)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespuestaA_5"]
+position = Vector2(-496, 427.5)
+shape = SubResource("RectangleShape2D_wxkyw")
+
+[node name="final" type="Area2D" parent="."]
+position = Vector2(1024, -2118)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="final"]
-position = Vector2(-481, 420)
+position = Vector2(-486, 273)
 shape = SubResource("RectangleShape2D_l43ii")
 
 [node name="Button" type="Button" parent="."]
@@ -31341,6 +31351,7 @@ visible = false
 position = Vector2(312, 326)
 scale = Vector2(3.48646, 5.21273)
 
+[connection signal="body_entered" from="RespuestaA_5" to="." method="_on_respuesta_a_5_body_entered"]
 [connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="PrimeraPregunta" to="." method="_on_area_2d_body_entered"]
