@@ -208,7 +208,7 @@ func _on_area_a_body_entered(body):
 func _on_area_d_body_entered(body):
 	contar+=1;
 	
-	print("Entra en perry")
+	
 	
 	$Node2D._process(body)
 	Saveus.contarpalabra=0
@@ -221,7 +221,7 @@ func _on_area_d_body_entered(body):
 func _on_area_c_body_entered(body):
 	contar+=1;
 	
-	print("Entra en perry")
+	
 	
 	$Node2D._process(body)
 	Saveus.contarpalabra=0

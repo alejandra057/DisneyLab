@@ -155,6 +155,7 @@ offset_left = 76.0
 offset_top = 507.0
 offset_right = 293.0
 offset_bottom = 564.0
+text = "REGRESAR"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 33.0

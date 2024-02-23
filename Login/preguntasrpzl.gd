@@ -4,11 +4,11 @@ var texts : Array = [
 	"1. Uno de los siguientes personajes fue el encargado de pintar la capilla Sixtina:
 A) Miguel Ángel. B) Donatello. C) Leonardo Da Vinci. D) Francis Bacon","
 2. Genio del renacimiento que esculpió el Moisés, el David y la Pietá:
-A) Miguel Ángel Buonarroti. B) Leonardo Da Vinci. C) Rafael Sanzio. D) Galileo Galilei","
+A) Leonardo Da Vinci. B) Miguel Ángel Buonarroti. C) Rafael Sanzio. D) Galileo Galilei","
 3. Durante el renacimiento el estilo artístico que impregnó el arte, la filosofía, la pintura escritura fue el:
-A) El Gótico. B) El barroco. C) el clasicismo. D) Romanticismo","
+A) El barroco. B) El Gótico C) el clasicismo. D) Romanticismo","
 4. Durante el renacimiento surge una nueva visión del hombre, que se vio reflejada en el arte, en la política y en las ciencias sociales y humanas, a lo que se denomina:
-A) Antropocentrismo. B) Humanismo. C) Paradigma antropológico. D) Teocentrismo.","
+A) Humanismo. B) Antropocentrismo. C) Paradigma antropológico. D) Teocentrismo.","
 5. Cuatro genios del renacimiento (Leonardo, Donatello, Rafael y Michelangelo) han sido llevados a la pantalla en los comics de:
 A) Las tortugas ninjas. B) Los caballeros del Zodiaco. C) Los cuatro fantásticos. D) Los antagonistas de Attack Titan"
 ]
