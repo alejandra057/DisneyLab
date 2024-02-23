@@ -1,0 +1,208 @@
+[gd_scene load_steps=25 format=3 uid="uid://2xrubq6qca8r"]
+
+[ext_resource type="Script" path="res://Rapunzel.gd" id="1_l5di2"]
+[ext_resource type="Texture2D" uid="uid://dyicq4lev2sw7" path="res://Art/Sprites/khsom___disney_characters_rpg_maker_vx_sprites_by_reversecrown_d6gq7ob.png" id="1_n2l8t"]
+[ext_resource type="Texture2D" uid="uid://dvywu2fs803in" path="res://Art/Sprites/0vida-removebg-preview.png" id="3_2bmiq"]
+[ext_resource type="FontFile" uid="uid://ccyvw17fux16l" path="res://Art/Font/pf_ronda_seven.ttf" id="3_8qtff"]
+[ext_resource type="Texture2D" uid="uid://vr70j17o482n" path="res://Art/Sprites/1vida-removebg-preview.png" id="4_hx88f"]
+[ext_resource type="Texture2D" uid="uid://d1y36pmdxeudt" path="res://Art/Sprites/2vida-removebg-preview.png" id="5_rpp0v"]
+[ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="6_frkib"]
+[ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="7_h4no7"]
+[ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="8_vlefo"]
+[ext_resource type="PackedScene" uid="uid://b6lg14t53541d" path="res://preguntasrpzl.tscn" id="10_n75c7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr0gt"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xarj7"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twe30"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv0qj"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l01yo"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58cv1"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4yxa"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm6ft"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xt5r"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odq7v"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcnb4"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ijx"]
+atlas = ExtResource("1_n2l8t")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ungk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr0gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xarj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twe30")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv0qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l01yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58cv1")
+}],
+"loop": true,
+"name": &"espalda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4yxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm6ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xt5r")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odq7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcnb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ijx")
+}],
+"loop": true,
+"name": &"izquierda",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geteg"]
+radius = 40.0
+height = 112.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_l5di2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(528, 824)
+scale = Vector2(4, 3.75)
+sprite_frames = SubResource("SpriteFrames_ungk8")
+animation = &"derecha"
+autoplay = "frente"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(520, 832)
+shape = SubResource("CapsuleShape2D_geteg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(520, 832)
+
+[node name="mensaje" type="Label" parent="."]
+visible = false
+offset_left = 342.0
+offset_top = 449.0
+offset_right = 721.0
+offset_bottom = 522.0
+theme_override_fonts/font = ExtResource("3_8qtff")
+theme_override_font_sizes/font_size = 21
+text = "¡FELICIDADES! ¡ADIVININASTE LA 
+RESPUESTA CORRECTA!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="mensaje"]
+visible = false
+layout_mode = 0
+offset_left = 76.0
+offset_top = 507.0
+offset_right = 293.0
+offset_bottom = 564.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 6.0
+offset_top = 396.0
+offset_right = 256.0
+offset_bottom = 493.0
+texture = ExtResource("3_2bmiq")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 9.0
+offset_top = 397.0
+offset_right = 261.0
+offset_bottom = 489.0
+texture = ExtResource("4_hx88f")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 12.0
+offset_top = 396.0
+offset_right = 254.0
+offset_bottom = 493.0
+texture = ExtResource("5_rpp0v")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 10.0
+offset_top = 396.0
+offset_right = 261.0
+offset_bottom = 494.0
+texture = ExtResource("6_frkib")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 8.0
+offset_top = 395.0
+offset_right = 259.0
+offset_bottom = 495.0
+texture = ExtResource("7_h4no7")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_left = 11.0
+offset_top = 401.0
+offset_right = 262.0
+offset_bottom = 493.0
+texture = ExtResource("8_vlefo")
+
+[node name="Node2D" parent="." instance=ExtResource("10_n75c7")]
+visible = false
+position = Vector2(64, -13)
+
+[connection signal="pressed" from="mensaje/Button" to="." method="_on_button_pressed"]

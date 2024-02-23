@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6lg14t53541d"]
+
+[ext_resource type="Script" path="res://preguntasrpzl.gd" id="1_5bhcu"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5bhcu")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 78.0
+offset_top = 510.0
+offset_right = 833.0
+offset_bottom = 663.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
