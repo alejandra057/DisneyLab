@@ -14,11 +14,13 @@ func _process(delta):
 func _on_empiristas_body_entered(body):
 	if body.is_in_group("player"):
 			DialogueManager.show_dialogue_balloon(load("res://empiristas.dialogue"), "capi")
+			$team_cap.show()
 			Saveus.capitan=true
 
 
 func _on_racionalistas_body_entered(body):
 	if body.is_in_group("player"):
 			DialogueManager.show_dialogue_balloon(load("res://racionalistas.dialogue"), "ironman")
+			$team_ironman.show()
 			Saveus.iron_man=true
 
