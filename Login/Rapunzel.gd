@@ -139,6 +139,7 @@ func _on_area_b_body_entered(body):
 		print("valorrr ",$Node2D.valor)
 		if $Node2D.valor==3:
 			vida3.show()
+			pieza3.show()
 			vida2.hide()
 			vida1.hide()
 			#temporizador.wait_time = 1.5
@@ -148,6 +149,7 @@ func _on_area_b_body_entered(body):
 			#temporizador.start()
 		if $Node2D.valor==4:
 			vida4.show()
+			pieza4.show()
 			vida3.hide()
 			#temporizador.wait_time = 1.5
 			#temporizador.start()
@@ -156,6 +158,8 @@ func _on_area_b_body_entered(body):
 			#temporizador.start()
 		if $Node2D.valor==5:
 			vida5.show()
+			pieza5.show()
+			pieza6.show()
 			vida4.hide()
 			$mensaje.text="Felicidades!"
 			$mensaje/Button.show()
@@ -183,12 +187,12 @@ func _on_area_a_body_entered(body):
 	if $Node2D.valor!=1:
 		Saveus.contarpalabra+=1
 		$Node2D._process(body)
-		#if $Node2D.valor==0:
+	#if $Node2D.valor==0:
 		vida1.show()
 		pieza1.show()
 		$mensaje.show()
-		#temporizador.wait_time = 1.5
-		#temporizador.start()
+		temporizador.wait_time = 1.5
+		temporizador.start()
 		print("valorrr ",$Node2D.valor)
 		print("entroxddd")
 	if $Node2D.valor==1:
@@ -197,49 +201,49 @@ func _on_area_a_body_entered(body):
 		vida2.show()
 		$mensaje.show()
 		$mensaje.text="Respuesta Correcta"
-		#temporizador.wait_time = 1.5
-		#temporizador.start()
+		temporizador.wait_time = 1.5
+		temporizador.start()
 	else:
 		print("Respuesta incorrecta")
 		#$"../Sprite2D3".show()
-		#temporizador.wait_time = 1.5
-		#temporizador.start()
+		temporizador.wait_time = 1.5
+		temporizador.start()
 	
 	
 		if $Node2D.valor==3:
 			vida3.show()
 			vida2.hide()
 			vida1.hide()
-			#temporizador.wait_time = 1.5
-			#temporizador.start()
+			temporizador.wait_time = 1.5
+			temporizador.start()
 			$mensaje.text="Respuesta Correcta"
-			#temporizador.wait_time = 1.5
-			#temporizador.start()
+			temporizador.wait_time = 1.5
+			temporizador.start()
 		if $Node2D.valor==4:
 			vida4.show()
 			vida3.hide()
-			#temporizador.wait_time = 1.5
-			#temporizador.start()
+			temporizador.wait_time = 1.5
+			temporizador.start()
 			$mensaje.text="Respuesta Correcta"
-			#temporizador.wait_time = 1.5
-			#temporizador.start()
+			temporizador.wait_time = 1.5
+			temporizador.start()
 		if $Node2D.valor==5:
 			vida5.show()
 			vida4.hide()
 			$mensaje.text="Felicidades!"
 			$mensaje/Button.show()
-			#temporizador.stop()
+			temporizador.stop()
 	#else:
 	#		print("un else")
-			#temporizador.wait_time = 1.5
-			#temporizador.start()
+			temporizador.wait_time = 1.5
+			temporizador.start()
 	#Saveus.contarpalabra=0
 	
 	$Node2D._process(body)
 	Saveus.contarpalabra=0
 	#$"../Sprite2D2".show()
-	#temporizador.wait_time = 1.5
-	#temporizador.start()
+	temporizador.wait_time = 1.5
+	temporizador.start()
 	pass # Replace with function body.
 
 
@@ -249,15 +253,16 @@ func _on_area_c_body_entered(body):
 		Saveus.contarpalabra+=1
 		$Node2D._process(body)
 		vida2.show()
+		pieza2.show()
 		$mensaje.show()
 		$mensaje.text="Respuesta Correcta"
-		#temporizador.wait_time = 1.5
-		#temporizador.start()
+		temporizador.wait_time = 1.5
+		temporizador.start()
 	else:
 		print("Respuesta incorrecta")
 		#$"../Sprite2D3".show()
-		#temporizador.wait_time = 1.5
-		#temporizador.start()
+		temporizador.wait_time = 1.5
+		temporizador.start()
 	
 	Saveus.contarpalabra=0
 	pass # Replace with function body.

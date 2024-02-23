@@ -11,15 +11,13 @@ A) El Gótico. B) El barroco. C) el clasicismo. D) Romanticismo","
 A) Antropocentrismo. B) Humanismo. C) Paradigma antropológico. D) Teocentrismo.","
 5. Cuatro genios del renacimiento (Leonardo, Donatello, Rafael y Michelangelo) han sido llevados a la pantalla en los comics de:
 A) Las tortugas ninjas. B) Los caballeros del Zodiaco. C) Los cuatro fantásticos. D) Los antagonistas de Attack Titan"
-
 ]
+
 var current_text: int=0
 var contar=0
 var valor : int=0
 @onready var visual_text :RichTextLabel =$PanelContainer/RichTextLabel
-#@onready var animation_mark: AnimationPlayer=$Panel/AnimationPlayer
 @onready var mark : Control=$PanelContainer/Control
-#@onready var animation_text: AnimationPlayer =$Panel/AnimationPlayer
 var mostrar=false
 var electC=false
 var electA=false
@@ -62,7 +60,6 @@ func show_text():
 
 func finish_showtext():
 	mark.visible = 1
-	#animation_mark.play("MasTexto")
 	set_process(true)
 
 
