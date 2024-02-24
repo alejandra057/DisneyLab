@@ -27,7 +27,7 @@ var electD=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#visual_text.visible_ratio=0
+	visual_text.visible_ratio=0
 	visual_text.text=texts[current_text]
 	mark.visible=0
 	#state = 1
@@ -68,45 +68,45 @@ func finish_showtext():
 	set_process(true)
 
 
-
-func _on_area_b_body_entered(body):
-	print("current ",valor)
-	if valor!=1:
-		valor==3
-		print("Respuesta correcta")
-	else:if valor==5:
-		print("Respuesta correcta")
-	else:
-		print("respuesta incorrecta")
-	
-	pass # Replace with function body.
-
-
-
-
-func _on_area_d_body_entered(body):
-	print("Respuesta incorrecta")
-	current_text-=1
-	pass # Replace with function body.
-
-
-
-func _on_area_a_body_entered(body):
-	if valor!=1:
-		print("Respuesta correcta")
-	else:if valor==1:
-		print("Respuesta correcta")
-	else:if valor==5:
-		valor+=1
-		print("Respuesta correcta")
-	else:
-		print("Respuesta Incorrecta")
-	pass # Replace with function body.
-
-
-
-func _on_area_c_body_entered(body):
-	print("Respuesta incorrecta")
-	current_text-=1
-	
-	pass # Replace with function body.
+#
+#func _on_area_b_body_entered(body):
+	#print("current ",valor)
+	#if valor!=1:
+		#valor==3
+		#print("Respuesta correcta")
+	#else:if valor==5:
+		#print("Respuesta correcta")
+	#else:
+		#print("respuesta incorrecta")
+	#
+	#pass # Replace with function body.
+#
+#
+#
+#
+#func _on_area_d_body_entered(body):
+	#print("Respuesta incorrecta")
+	#current_text-=1
+	#pass # Replace with function body.
+#
+#
+#
+#func _on_area_a_body_entered(body):
+	#if valor!=1:
+		#print("Respuesta correcta")
+	#else:if valor==1:
+		#print("Respuesta correcta")
+	#else:if valor==5:
+		#valor+=1
+		#print("Respuesta correcta")
+	#else:
+		#print("Respuesta Incorrecta")
+	#pass # Replace with function body.
+#
+#
+#
+#func _on_area_c_body_entered(body):
+	#print("Respuesta incorrecta")
+	#current_text-=1
+	#
+	#pass # Replace with function body.
