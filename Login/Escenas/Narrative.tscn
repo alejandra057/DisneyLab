@@ -53,23 +53,25 @@ script = ExtResource("1_pbiqi")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Image" type="TextureRect" parent="CanvasLayer"]
-offset_right = 1158.0
-offset_bottom = 723.0
+offset_left = 162.0
+offset_top = 3.0
+offset_right = 1348.0
+offset_bottom = 835.0
 expand_mode = 3
 stretch_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 2.0
-offset_top = 727.0
-offset_right = 1154.0
-offset_bottom = 899.0
+offset_left = -2.0
+offset_top = 810.0
+offset_right = 1150.0
+offset_bottom = 982.0
 color = Color(0.00784314, 0.00784314, 0.00784314, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 747.0
-offset_right = 113.0
-offset_bottom = 803.0
+offset_left = 6.0
+offset_top = 813.0
+offset_right = 103.0
+offset_bottom = 869.0
 label_settings = SubResource("LabelSettings_n15uq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
@@ -81,11 +83,17 @@ libraries = {
 [node name="Audios" type="AudioStreamPlayer" parent="CanvasLayer"]
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
-offset_left = 883.0
-offset_top = 850.0
-offset_right = 1128.0
-offset_bottom = 880.0
+offset_left = 860.0
+offset_top = 917.0
+offset_right = 1133.0
+offset_bottom = 956.0
+theme_override_font_sizes/font_size = 28
 text = "Enter para siguiente"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("2_hxo8m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 892.0

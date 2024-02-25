@@ -6,6 +6,14 @@ var ruta4 =""
 var tiempo
 func _ready():
 	tiempo=$Puertas/Timerpuerta1
+	if  Saveus.selecmorado==true:
+		$Puertas4.frame=11
+	if(Saveus.selectazul==true):
+		$Puertas.frame=11
+	if(Saveus.selectnara==true):
+		$Puertas3.frame=11
+	if(Saveus.selectrosa==true):
+		$Puertas2.frame=11
 	if(Saveus.habilitar==true):
 		$Roulette.show()
 	
