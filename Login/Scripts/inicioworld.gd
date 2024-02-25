@@ -8,6 +8,7 @@ func _ready():
 	tiempo=$Puertas/Timerpuerta1
 	if(Saveus.habilitar==true):
 		$Roulette.show()
+	
 
 func _process(delta):
 	if Saveus.habilitar==true:
@@ -50,7 +51,7 @@ func _on_area_2d_5_body_entered(body):
 	if(Saveus.selectrosa==true):
 		if body.is_in_group("player"):
 			$Puertas2.frame=11
-			ruta4 ="res://Escena_enredados.tscn"
+			ruta4 ="res://Escena_enredados.tscrn"
 			$Puertas2/Timerpuerta2.wait_time=1.3
 			$Puertas2/Timerpuerta2.start()
 			
@@ -84,4 +85,9 @@ func _on_timerpuerta_4_timeout():
 func _on_timerpuerta_3_timeout():
 	get_tree().change_scene_to_file(ruta3)
 	$Puertas3/Timerpuerta3.stop()
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body):
+	get_tree().change_scene_to_file("res://bandos.tscn")
 	pass # Replace with function body.

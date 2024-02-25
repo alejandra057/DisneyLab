@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ce2qsc71thjpc" path="res://Art/Sprites/gazelle-removebg-preview.png" id="4_ukplj"]
 [ext_resource type="Texture2D" uid="uid://d2hcbv4rcknbd" path="res://Art/Sprites/yaxfondo-removebg-preview.png" id="5_tlp0t"]
 [ext_resource type="Texture2D" uid="uid://bxs7l0etn0x8e" path="res://Art/Sprites/oficial.png" id="6_l05wi"]
-[ext_resource type="Texture2D" uid="uid://b5fscalw7u5qi" path="res://Art/Sprites/mrbig.jpg" id="7_tygdg"]
+[ext_resource type="Texture2D" uid="uid://du33tn2pqh5hg" path="res://Art/Sprites/mrbig-removebg-preview.png" id="7_auhao"]
 [ext_resource type="PackedScene" uid="uid://cn0q3cfb0dctw" path="res://introzootopia.tscn" id="8_x8b3o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oadss"]
@@ -133,15 +133,57 @@ texture = ExtResource("6_l05wi")
 
 [node name="Mrbig" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(590.625, 345.625)
-scale = Vector2(0.537024, 0.525281)
-texture = ExtResource("7_tygdg")
+position = Vector2(587, 319)
+scale = Vector2(0.834043, 0.848399)
+texture = ExtResource("7_auhao")
 
 [node name="Node2D" parent="." instance=ExtResource("8_x8b3o")]
 position = Vector2(12, 400)
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 275.0
+offset_top = 284.0
+offset_right = 413.0
+offset_bottom = 377.0
+theme_override_font_sizes/font_size = 65
+text = "A"
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+offset_left = 485.0
+offset_top = 281.0
+offset_right = 623.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 65
+text = "B"
+
+[node name="Button4" type="Button" parent="."]
+visible = false
+offset_left = 660.0
+offset_top = 271.0
+offset_right = 798.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 65
+text = "C
+"
+
+[node name="Button5" type="Button" parent="."]
+visible = false
+offset_left = 825.0
+offset_top = 266.0
+offset_right = 963.0
+offset_bottom = 364.0
+theme_override_font_sizes/font_size = 65
+text = "D
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="btA" to="." method="_on_bt_a_pressed"]
 [connection signal="pressed" from="btB" to="." method="_on_bt_b_pressed"]
 [connection signal="pressed" from="btC" to="." method="_on_bt_c_pressed"]
 [connection signal="pressed" from="btD" to="." method="_on_bt_d_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

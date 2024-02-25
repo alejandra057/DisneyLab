@@ -155,26 +155,16 @@ func contarclick():
 			$Mrbig.hide()
 			$"Sospechosos-removebg-preview".show()
 			if habilitar:
-				$Node2D.hide()
-				$Label.show()
-				$Label2.show()
-				$Label3.show()
-				$Label4.show()
 				$btA.hide()
 				$btB.hide()
 				$btC.hide()
 				$btD.hide()
 				DialogueManager.show_dialogue_balloon(load("res://final_interrogatorio.dialogue"),"final_inte")
-				if Input.is_action_just_pressed("a"): 
-					DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
-				elif Input.is_action_just_pressed("b"): 
-					DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
-				elif Input.is_action_just_pressed("c"): 
-					DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
-				elif Input.is_action_just_pressed("d"): 
-					$Button.show()
-					DialogueManager.show_dialogue_balloon(load("res://right_Aswer_zoo.dialogue"),"rightansw")
-				
+				$Button2.show()
+				$Button3.show()
+				$Button4.show()
+				$Button5.show()
+				$Node2D.hide()
 			
 	
 	
@@ -182,3 +172,20 @@ func contarclick():
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
+
+
+func _on_button_2_pressed():
+	DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+
+
+func _on_button_3_pressed():
+	DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+
+
+func _on_button_4_pressed():
+	DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+
+
+func _on_button_5_pressed():
+	$Button.show()
+	DialogueManager.show_dialogue_balloon(load("res://right_Aswer_zoo.dialogue"),"rightansw")
