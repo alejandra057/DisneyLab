@@ -8298,8 +8298,10 @@ visible = false
 visible = false
 
 [node name="capitana" parent="." instance=ExtResource("10_pomk4")]
+visible = false
 
 [node name="doctorStrnge" parent="." instance=ExtResource("11_v0u1w")]
+visible = false
 
 [node name="falcon" parent="." instance=ExtResource("18_g4lab")]
 
