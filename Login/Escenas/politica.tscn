@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://politica.gd" id="1_lv43u"]
 [ext_resource type="Texture2D" uid="uid://dx4hwtm4ckopm" path="res://Art/Escenarios_Mundos/Screenshot 2024-02-01 232903.png" id="2_te8f8"]
-[ext_resource type="Texture2D" uid="uid://dkca1clffxib3" path="res://Art/Fondos_Imagenes/celianna_castletiles (1).png" id="3_l7iwy"]
-[ext_resource type="Texture2D" uid="uid://d2jmje0kguxrh" path="res://Art/Fondos_Imagenes/Imagen de WhatsApp 2024-01-28 a las 15.03.14_8879de51.jpg" id="4_k1s31"]
+[ext_resource type="Texture2D" uid="uid://dkca1clffxib3" path="res://Art/Escenarios_objetos/celianna_castletiles (1).png" id="3_l7iwy"]
+[ext_resource type="Texture2D" uid="uid://d2jmje0kguxrh" path="res://Art/Escenarios_objetos/Imagen de WhatsApp 2024-01-28 a las 15.03.14_8879de51.jpg" id="4_k1s31"]
 [ext_resource type="PackedScene" uid="uid://dnnqpwoe88nfe" path="res://Escenas/character_body_2d.tscn" id="4_o5dj2"]
-[ext_resource type="Texture2D" uid="uid://dqlj2c6x5o1h7" path="res://Art/Escenarios_Mundos/Imagen_de_WhatsApp_2024-02-01_a_las_14.51.06_99a9fa69-removebg-preview.png" id="5_ejbg6"]
+[ext_resource type="Texture2D" uid="uid://dqlj2c6x5o1h7" path="res://Art/Escenarios_objetos/Imagen_de_WhatsApp_2024-02-01_a_las_14.51.06_99a9fa69-removebg-preview.png" id="5_ejbg6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf2wv"]
 texture = ExtResource("3_l7iwy")
