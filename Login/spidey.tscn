@@ -1,0 +1,189 @@
+[gd_scene load_steps=25 format=3 uid="uid://cq66cvbpoerx3"]
+
+[ext_resource type="Script" path="res://spidey.gd" id="1_gdw0e"]
+[ext_resource type="Texture2D" uid="uid://bcvnn47mlh6w6" path="res://Art/Sprites/Spider-Man SV Battler (1).png" id="2_8if6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ln53"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho7lu"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cyxw"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cohpa"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk7w4"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22nxk"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ucjr"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hu6j"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pubql"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdlue"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uapo5"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i04g"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6kso"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cchmu"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fau0k"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc86y"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rnq0"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egh4u"]
+atlas = ExtResource("2_8if6c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtwef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ln53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho7lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cyxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cohpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk7w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22nxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ucjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hu6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pubql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdlue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uapo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i04g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6kso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cchmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fau0k")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc86y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rnq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egh4u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_mycu5"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(849, 494), Vector2(849, 494)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aw3hr"]
+_data = {
+"new_animation": SubResource("Animation_mycu5")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_65b8s"]
+radius = 51.0
+height = 202.0
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+script = ExtResource("1_gdw0e")
+
+[node name="spidey" type="AnimatedSprite2D" parent="."]
+position = Vector2(849, 494)
+scale = Vector2(3.39063, 3.71875)
+sprite_frames = SubResource("SpriteFrames_wtwef")
+animation = &"ataque"
+frame_progress = 0.883131
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="spidey"]
+libraries = {
+"": SubResource("AnimationLibrary_aw3hr")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(844, 504)
+shape = SubResource("CapsuleShape2D_65b8s")
+
+[node name="spidey1" type="AnimatedSprite2D" parent="."]

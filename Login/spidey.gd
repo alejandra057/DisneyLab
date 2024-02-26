@@ -10,10 +10,10 @@ var animacion1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	animacion=$bw
-	$bw.play("idle")
-	animacion1=$bw1
-	animacion1.hide()
+	animacion=$spidey
+	$spidey.play("idle")
+	#animacion1=$bw1
+	#animacion1.hide()
 
 func _physics_process(delta):
 	player_movement (delta)
@@ -22,8 +22,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 #
 	## Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 
 	## Get the input direction and handle the movement/deceleration.
 	## As good practice, you should replace UI actions with custom gameplay actions.
@@ -67,47 +67,32 @@ func player_movement (delta):
 
 func play_anim(movement):
 	var dir= current_dir
-	var anim = $bw1
-	var anim1 = $bw
+	var anim = $spidey
+	#var anim1 = $bw
 
 	if dir == "right":
 		anim.flip_h = false 
 		if movement ==1:
-			anim1.hide()
-			anim.show()
+			#
+			#anim.show()
 			anim.play("derecha")
 		elif  movement == 0:
 			#anim.play("derecha")
 			#anim.stop()
-			anim.hide()
-			anim1.show()
-			animacion=$bw
-			$bw.play("idle")
+			#anim.hide()
+			#animacion=$bw
+			anim.play("idle")
 	if dir == "left":
 		anim.flip_h = false
 		if movement ==1:
-			anim1.hide()
-			anim.show()
+			#anim1.hide()
+			#anim.show()
 			anim.play("izquierda")
 		elif  movement == 0:
 			#anim.play("izquierdaa")
 			#anim.stop()
-			anim.hide()
-			anim1.show()
-			animacion=$bw
-			$bw.play("idle")
-	#if dir == "down":
-		#anim.flip_h = false 
-		#if movement ==1:
-			#anim.play("Frente")
-		#elif  movement == 0:
-			#anim.play("Frente")
-			#anim.stop()
-	#if dir == "up":
-		#anim.flip_h = false
-		#if movement ==1:
-			#anim.play("espalda")
-		#elif  movement == 0:
-			#anim.play("espalda")
-			#anim.stop()
-		#
+			#anim.hide()
+			#anim1.show()
+			#animacion=$bw
+			anim.play("idle")
+	
