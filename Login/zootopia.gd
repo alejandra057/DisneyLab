@@ -2,18 +2,14 @@ extends Node2D
 
 var contar=0
 var habilitar=false
+var terminado=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#DialogueManager.show_dialogue_balloon(load("res://interrogatorio.dialogue"),"interrogar")
 	
 	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	contarclick()
-	
-			
 
 func _on_bt_a_pressed():
 	hidesprites()
@@ -127,7 +123,7 @@ func hidesprites():
 func contarclick():
 	Saveus.contarpregunta=0;
 	
-	if Input.is_action_just_pressed("space bar"):
+	if Input.is_action_just_pressed("space bar") && terminado==false:
 		$Node2D.show()
 		contar+=1
 		print("contar ",contar)
@@ -143,7 +139,6 @@ func contarclick():
 			$"Sospechosos-removebg-preview".show()
 			Saveus.contarpregunta=1;
 		if contar>1:
-			
 			#DialogueManager.show_dialogue_balloon(load("res://1preguntapoli.dialogue"),"pregunta1")
 			$btA.show()
 			$btB.show()
@@ -175,17 +170,52 @@ func _on_button_pressed():
 
 
 func _on_button_2_pressed():
+	$Button.show()
 	DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+	hidesprites()
+	$Yax.show()
+	$Button2.hide()
+	$Button3.hide()
+	$Button4.hide()
+	$Button5.hide()
+	$Node2D.hide()
+	terminado=true
 
 
 func _on_button_3_pressed():
+	$Button.show()
 	DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+	hidesprites()
+	$Oficial.show()
+	$Button2.hide()
+	$Button3.hide()
+	$Button4.hide()
+	$Button5.hide()
+	$Node2D.hide()
+	terminado=true
 
 
 func _on_button_4_pressed():
+	$Button.show()
 	DialogueManager.show_dialogue_balloon(load("res://wrong_answer.dialogue"),"wrongans")
+	hidesprites()
+	$Gazelle.show()
+	$Button2.hide()
+	$Button3.hide()
+	$Button4.hide()
+	$Button5.hide()
+	$Node2D.hide()
+	terminado=true
 
 
 func _on_button_5_pressed():
 	$Button.show()
 	DialogueManager.show_dialogue_balloon(load("res://right_Aswer_zoo.dialogue"),"rightansw")
+	hidesprites()
+	$Mrbig.show()
+	$Button2.hide()
+	$Button3.hide()
+	$Button4.hide()
+	$Button5.hide()
+	$Node2D.hide()
+	terminado=true

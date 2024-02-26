@@ -14,10 +14,10 @@ script = ExtResource("1_ih0ww")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 7.0
+offset_left = -1.0
 offset_top = -1.0
-offset_right = 1147.0
-offset_bottom = 1023.0
+offset_right = 1153.0
+offset_bottom = 1049.0
 texture = ExtResource("2_slsln")
 
 [node name="Panel" type="Panel" parent="."]
