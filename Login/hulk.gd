@@ -10,9 +10,9 @@ var animacion1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	animacion=$vision
+	animacion=$hulk
 	animacion.play("idle")
-	animacion1 = $vision1
+	animacion1 = $hulkl1
 	animacion1.hide()
 
 func _physics_process(delta):
@@ -57,8 +57,8 @@ func player_movement (delta):
 
 func play_anim(movement):
 	var dir= current_dir
-	var anim = $vision1
-	var anim1 = $vision
+	var anim = $hulkl1
+	var anim1 = $hulk
 
 	if dir == "right":
 		anim.flip_h = false 

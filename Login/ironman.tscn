@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dy5hfo318vbvq"]
+[gd_scene load_steps=42 format=3 uid="uid://dy5hfo318vbvq"]
 
 [ext_resource type="Script" path="res://ironman.gd" id="1_65ikq"]
 [ext_resource type="Texture2D" uid="uid://co4nxckwyhpfy" path="res://Art/Sprites/cpi.png" id="2_otrxy"]
 [ext_resource type="Texture2D" uid="uid://bft5h0l057g68" path="res://Art/Sprites/Iron Man SV Battler.png" id="3_2og4u"]
+[ext_resource type="Texture2D" uid="uid://l1yt0trohcra" path="res://Art/Sprites/laser_sfx_by_blakeyagami_d7c177c-fullview-removebg-preview.png" id="4_fm6xh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_guxm5"]
 atlas = ExtResource("2_otrxy")
@@ -135,6 +136,22 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("3_2og4u")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sd6u"]
+atlas = ExtResource("3_2og4u")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iruym"]
+atlas = ExtResource("3_2og4u")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th7nn"]
+atlas = ExtResource("3_2og4u")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rcma"]
+atlas = ExtResource("3_2og4u")
+region = Rect2(448, 64, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_107b6"]
 animations = [{
 "frames": [{
@@ -208,6 +225,63 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sd6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iruym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th7nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rcma")
+}],
+"loop": true,
+"name": &"victoria",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdds5"]
+radius = 63.0
+height = 214.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t37kj"]
+atlas = ExtResource("4_fm6xh")
+region = Rect2(291, 0, 45, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttmw8"]
+atlas = ExtResource("4_fm6xh")
+region = Rect2(246, 0, 45, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8iud"]
+atlas = ExtResource("4_fm6xh")
+region = Rect2(240, 0, 60, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5leak"]
+atlas = ExtResource("4_fm6xh")
+region = Rect2(106, 0, 106, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5oyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t37kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttmw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8iud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5leak")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 5.0
 }]
 
 [node name="ironman" type="CharacterBody2D"]
@@ -224,7 +298,16 @@ frame_progress = 0.888043
 position = Vector2(839.5, 501.75)
 scale = Vector2(3.92188, 3.82031)
 sprite_frames = SubResource("SpriteFrames_107b6")
-animation = &"ataque"
-frame_progress = 0.320676
+animation = &"victoria"
+frame_progress = 0.42338
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(826, 517)
+shape = SubResource("CapsuleShape2D_sdds5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(587, 498)
+scale = Vector2(2.98889, 2.52703)
+sprite_frames = SubResource("SpriteFrames_r5oyi")
+animation = &"laser"
+frame_progress = 0.632141

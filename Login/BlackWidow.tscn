@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://diijtaeeihs2o"]
+[gd_scene load_steps=38 format=3 uid="uid://diijtaeeihs2o"]
 
 [ext_resource type="Script" path="res://BlackWidow.gd" id="1_hh8p3"]
 [ext_resource type="Texture2D" uid="uid://b3eeldn2uuk76" path="res://Art/Sprites/Black Widow SV Battler.png" id="2_5wj54"]
@@ -92,6 +92,18 @@ region = Rect2(256, 128, 64, 64)
 atlas = ExtResource("2_5wj54")
 region = Rect2(320, 128, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e8p0"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j183u"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adc5r"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(512, 64, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_v180y"]
 animations = [{
 "frames": [{
@@ -179,6 +191,20 @@ animations = [{
 "loop": true,
 "name": &"shoot",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e8p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j183u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adc5r")
+}],
+"loop": true,
+"name": &"victoria",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t0pw"]
@@ -247,9 +273,9 @@ script = ExtResource("1_hh8p3")
 position = Vector2(848, 496)
 scale = Vector2(2.95313, 3.35156)
 sprite_frames = SubResource("SpriteFrames_v180y")
-animation = &"dead"
+animation = &"victoria"
 autoplay = "idle"
-frame_progress = 0.201205
+frame_progress = 0.195238
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(852, 506)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwufd7xe4oocc"]
+[gd_scene load_steps=41 format=3 uid="uid://dwufd7xe4oocc"]
 
 [ext_resource type="Script" path="res://thor.gd" id="1_0csd4"]
 [ext_resource type="Texture2D" uid="uid://sxrbpf1j3rfg" path="res://Art/Sprites/Thor SV Battler.png" id="2_opbbw"]
 [ext_resource type="Texture2D" uid="uid://7av4wq4vkrc0" path="res://Art/Sprites/sprites marvel.png" id="3_1205e"]
+[ext_resource type="Texture2D" uid="uid://dm274rxwu5b6v" path="res://Art/Sprites/mugen_thor_sprite_sheet_by_jayhyperstarx_df0q5mh.png" id="4_hbhfs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaw6s"]
 atlas = ExtResource("2_opbbw")
@@ -76,6 +77,22 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("2_opbbw")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ancub"]
+atlas = ExtResource("2_opbbw")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csal8"]
+atlas = ExtResource("2_opbbw")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sd43"]
+atlas = ExtResource("2_opbbw")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41qtp"]
+atlas = ExtResource("2_opbbw")
+region = Rect2(320, 64, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbshk"]
 animations = [{
 "frames": [{
@@ -146,6 +163,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ancub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csal8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sd43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41qtp")
+}],
+"loop": true,
+"name": &"victoria",
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfxsd"]
@@ -207,6 +241,42 @@ animations = [{
 radius = 58.0
 height = 198.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke7ob"]
+atlas = ExtResource("4_hbhfs")
+region = Rect2(172, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3guoe"]
+atlas = ExtResource("4_hbhfs")
+region = Rect2(115, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2mhe"]
+atlas = ExtResource("4_hbhfs")
+region = Rect2(58, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ltbm"]
+atlas = ExtResource("4_hbhfs")
+region = Rect2(1, 0, 57, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egoqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke7ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3guoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2mhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ltbm")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_0csd4")
 
@@ -214,9 +284,12 @@ script = ExtResource("1_0csd4")
 position = Vector2(846, 501)
 scale = Vector2(3.14063, 3.53906)
 sprite_frames = SubResource("SpriteFrames_xbshk")
-animation = &"idle"
+animation = &"victoria"
+frame = 2
+frame_progress = 0.786164
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(844.906, 486.016)
 scale = Vector2(4.29557, 4.62435)
 sprite_frames = SubResource("SpriteFrames_u3215")
@@ -225,3 +298,11 @@ animation = &"derecha"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(841, 504)
 shape = SubResource("CapsuleShape2D_g5qwh")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(252, 93.5)
+scale = Vector2(4.49123, 2.91935)
+sprite_frames = SubResource("SpriteFrames_egoqt")
+animation = &"new_animation"
+frame = 3
+frame_progress = 0.605475
