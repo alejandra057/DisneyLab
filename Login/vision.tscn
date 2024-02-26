@@ -299,4 +299,4 @@ shape = SubResource("CapsuleShape2D_a40vu")
 [node name="laser" type="AnimatedSprite2D" parent="."]
 position = Vector2(604, 469)
 sprite_frames = SubResource("SpriteFrames_7kpi8")
-frame_progress = 0.961033
+frame_progress = 0.531261

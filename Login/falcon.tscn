@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=3 uid="uid://dhs5ynt37iihl"]
+
+[ext_resource type="Script" path="res://falcon.gd" id="1_q4dpi"]
+[ext_resource type="Texture2D" uid="uid://bd847oio5kbod" path="res://Art/Sprites/Captain America - Sam Wilson - Character Sheet 02 (4).png" id="2_ralpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbihl"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(240, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v45au"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(432, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blh5f"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(480, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_museg"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(528, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2m6f"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdkeh"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeiqy"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdqrp"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxloi"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv483"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evttl"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svuhh"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_117fm"]
+atlas = ExtResource("2_ralpy")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkoyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbihl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v45au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blh5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_museg")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2m6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdkeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeiqy")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdqrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxloi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv483")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evttl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svuhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_117fm")
+}],
+"loop": true,
+"name": &"izquierda",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh0m5"]
+radius = 61.0
+height = 204.0
+
+[node name="falcon" type="CharacterBody2D"]
+script = ExtResource("1_q4dpi")
+
+[node name="falcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(287, 494)
+scale = Vector2(4.66667, 4.66667)
+sprite_frames = SubResource("SpriteFrames_pkoyy")
+animation = &"dead"
+frame_progress = 0.0317451
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(282, 500)
+shape = SubResource("CapsuleShape2D_rh0m5")

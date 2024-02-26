@@ -1,16 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=23 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
+[ext_resource type="Texture2D" uid="uid://dvywu2fs803in" path="res://Art/Sprites/0vida-removebg-preview.png" id="2_t1eoj"]
 [ext_resource type="PackedScene" uid="uid://diijtaeeihs2o" path="res://BlackWidow.tscn" id="2_t8fa6"]
 [ext_resource type="PackedScene" uid="uid://cq66cvbpoerx3" path="res://spidey.tscn" id="3_1qycs"]
+[ext_resource type="Texture2D" uid="uid://vr70j17o482n" path="res://Art/Sprites/1vida-removebg-preview.png" id="3_b8woi"]
 [ext_resource type="PackedScene" uid="uid://dwufd7xe4oocc" path="res://thor.tscn" id="4_8g663"]
+[ext_resource type="Texture2D" uid="uid://d1y36pmdxeudt" path="res://Art/Sprites/2vida-removebg-preview.png" id="4_n14ip"]
+[ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="5_7smvg"]
 [ext_resource type="PackedScene" uid="uid://dy5hfo318vbvq" path="res://ironman.tscn" id="5_y5gmg"]
+[ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="6_1447x"]
 [ext_resource type="PackedScene" uid="uid://dyfucgaecy8wc" path="res://blackpanther.tscn" id="6_qqdqf"]
 [ext_resource type="PackedScene" uid="uid://bmy42h6c5v883" path="res://vision.tscn" id="7_jhjsc"]
+[ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="7_ovrf0"]
 [ext_resource type="PackedScene" uid="uid://ba14542ro4gj2" path="res://captain_america.tscn" id="8_b2p4d"]
 [ext_resource type="PackedScene" uid="uid://4u8rmerbktsk" path="res://hulk.tscn" id="9_vp8wr"]
 [ext_resource type="PackedScene" uid="uid://cj1pcjbo5adno" path="res://capitana.tscn" id="10_pomk4"]
 [ext_resource type="PackedScene" uid="uid://c81ibpo0j1hnt" path="res://doctor_strnge.tscn" id="11_v0u1w"]
+[ext_resource type="PackedScene" uid="uid://dhs5ynt37iihl" path="res://falcon.tscn" id="18_g4lab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osqre"]
 texture = ExtResource("1_j1k50")
@@ -8169,6 +8176,102 @@ tile_set = SubResource("TileSet_roxo7")
 format = 2
 layer_0/tile_data = PackedInt32Array(1966188, 3604480, 10, 0, 1835008, 7, 65536, 1835008, 7, 131072, 1835008, 7, 196608, 1835008, 7, 262144, 1835008, 7, 327680, 1835008, 7, 393216, 1835008, 7, 458752, 1835008, 7, 524288, 1835008, 7, 589824, 1835008, 7, 655360, 1835008, 7, 720896, 1835008, 7, 786432, 1835008, 7, 851968, 1835008, 7, 917504, 1835008, 7, 983040, 1835008, 7, 1048576, 1835008, 7, 1114112, 1835008, 7, 1179648, 1835008, 7, 1245184, 1835008, 7, 1310720, 1835008, 7, 1376256, 1835008, 7, 1441792, 1835008, 7, 1507328, 1835008, 7, 1572864, 1835008, 7, 1638400, 1835008, 7, 1703936, 1835008, 7, 1769472, 1835008, 7, 1835008, 1835008, 7, 1900544, 1835008, 7, 1966080, 1835008, 7, 2031616, 1835008, 7, 2097152, 1835008, 7, 2162688, 1835008, 7, 2228224, 1835008, 7, 2293760, 1835008, 7, 2359296, 1835008, 7, 2424832, 1835008, 7, 2490368, 1835008, 7, 71, 1835008, 7, 65607, 1835008, 7, 131143, 1835008, 7, 196679, 1835008, 7, 262215, 1835008, 7, 327751, 1835008, 7, 393287, 1835008, 7, 458823, 1835008, 7, 524359, 1835008, 7, 589895, 1835008, 7, 655431, 1835008, 7, 720967, 1835008, 7, 786503, 1835008, 7, 852039, 1835008, 7, 917575, 1835008, 7, 983111, 1835008, 7, 1048647, 1835008, 7, 1114183, 1835008, 7, 1179719, 1835008, 7, 1245255, 1835008, 7, 1310791, 1835008, 7, 1310792, 1835008, 7, 1376328, 1835008, 7, 1441864, 1835008, 7, 1507400, 1835008, 7, 1572936, 1835008, 7, 1638472, 1835008, 7, 1704008, 1835008, 7, 1769544, 1835008, 7, 1835080, 1835008, 7, 1900616, 1835008, 7, 1966152, 1835008, 7, 2031688, 1835008, 7, 2097224, 1835008, 7, 2162760, 1835008, 7, 2228296, 1835008, 7, 2293832, 1835008, 7, 2359368, 1835008, 7, 2424904, 1835008, 7, 2490440, 1835008, 7, 2555976, 1835008, 7, 2621512, 1835008, 7, 1376327, 1835008, 7, 1441863, 1835008, 7, 1507399, 1835008, 7, 1572935, 1835008, 7, 1638471, 1835008, 7, 2097223, 1835008, 7, 2031687, 1835008, 7, 1966151, 1835008, 7, 1900615, 1835008, 7, 1835079, 1835008, 7, 1769543, 1835008, 7, 1704007, 1835008, 7, 2162759, 1835008, 7, 2228295, 1835008, 7, 2293831, 1835008, 7, 2359367, 1835008, 7, 2424903, 1835008, 7, 2490439, 1835008, 7, 2555975, 1835008, 7, 2555974, 1835008, 7, 2555905, 1835008, 7, 2555906, 1835008, 7, 2555907, 1835008, 7, 2555908, 1835008, 7, 2555909, 1835008, 7, 2555910, 1835008, 7, 2555911, 1835008, 7, 2555912, 1835008, 7, 2555913, 1835008, 7, 2555914, 1835008, 7, 2555915, 1835008, 7, 2555916, 1835008, 7, 2555917, 1835008, 7, 2555918, 1835008, 7, 2555919, 1835008, 7, 2555920, 1835008, 7, 2555921, 1835008, 7, 2555922, 1835008, 7, 2555923, 1835008, 7, 2555924, 1835008, 7, 2621460, 1835008, 7, 2621461, 1835008, 7, 2621462, 1835008, 7, 2621463, 1835008, 7, 2621464, 1835008, 7, 2621465, 1835008, 7, 2621466, 1835008, 7, 2621467, 1835008, 7, 2621468, 1835008, 7, 2621469, 1835008, 7, 2555929, 1835008, 7, 2555928, 1835008, 7, 2555927, 1835008, 7, 2555926, 1835008, 7, 2621459, 1835008, 7, 2621470, 1835008, 7, 2621471, 1835008, 7, 2621472, 1835008, 7, 2621473, 1835008, 7, 2621474, 1835008, 7, 2621475, 1835008, 7, 2621476, 1835008, 7, 2621477, 1835008, 7, 2621478, 1835008, 7, 2621479, 1835008, 7, 2621480, 1835008, 7, 2621481, 1835008, 7, 2621482, 1835008, 7, 2621483, 1835008, 7, 2621484, 1835008, 7, 2621485, 1835008, 7, 2555950, 1835008, 7, 2555951, 1835008, 7, 2555952, 1835008, 7, 2555953, 1835008, 7, 2555954, 1835008, 7, 2555955, 1835008, 7, 2555956, 1835008, 7, 2555957, 1835008, 7, 2555958, 1835008, 7, 2555959, 1835008, 7, 2555960, 1835008, 7, 2555961, 1835008, 7, 2555962, 1835008, 7, 2555963, 1835008, 7, 2555964, 1835008, 7, 2555965, 1835008, 7, 2555966, 1835008, 7, 2555967, 1835008, 7, 2555968, 1835008, 7, 2555969, 1835008, 7, 2555970, 1835008, 7, 2555971, 1835008, 7, 2555972, 1835008, 7, 2555973, 1835008, 7, 2555930, 1835008, 7, 2555931, 1835008, 7, 2555932, 1835008, 7, 2555933, 1835008, 7, 2555934, 1835008, 7, 2555935, 1835008, 7, 2555936, 1835008, 7, 2555937, 1835008, 7, 2555938, 1835008, 7, 2555939, 1835008, 7, 2555940, 1835008, 7, 2555941, 1835008, 7, 2555942, 1835008, 7, 2555943, 1835008, 7, 2555944, 1835008, 7, 2555945, 1835008, 7, 2555946, 1835008, 7, 2555947, 1835008, 7, 2555948, 1835008, 7, 2555949, 1835008, 7, 2621440, 1835008, 7, 2621441, 1835008, 7, 2621442, 1835008, 7, 2621443, 1835008, 7, 2621444, 1835008, 7, 2621445, 1835008, 7, 2621446, 1835008, 7, 2621447, 1835008, 7, 2621448, 1835008, 7, 2621449, 1835008, 7, 2621450, 1835008, 7, 2621451, 1835008, 7, 2621452, 1835008, 7, 2621453, 1835008, 7, 2621454, 1835008, 7, 2621455, 1835008, 7, 2621456, 1835008, 7, 2621457, 1835008, 7, 2621458, 1835008, 7, 2555925, 1835008, 7, 2555904, 1835008, 7, 1, 1835008, 7, 2, 1835008, 7, 3, 1835008, 7, 4, 1835008, 7, 5, 1835008, 7, 6, 1835008, 7, 7, 1835008, 7, 8, 1835008, 7, 9, 1835008, 7, 10, 1835008, 7, 11, 1835008, 7, 12, 1835008, 7, 13, 1835008, 7, 14, 1835008, 7, 65550, 1835008, 7, 65551, 1835008, 7, 65552, 1835008, 7, 65553, 1835008, 7, 17, 1835008, 7, 16, 1835008, 7, 15, 1835008, 7)
 
+[node name="vida0" type="TextureRect" parent="."]
+offset_left = 324.0
+offset_top = 12.0
+offset_right = 456.0
+offset_bottom = 60.0
+texture = ExtResource("2_t1eoj")
+expand_mode = 1
+
+[node name="vida1" type="TextureRect" parent="."]
+offset_left = 323.0
+offset_top = 13.0
+offset_right = 456.0
+offset_bottom = 59.0
+texture = ExtResource("3_b8woi")
+expand_mode = 1
+
+[node name="vida2" type="TextureRect" parent="."]
+offset_left = 326.0
+offset_top = 13.0
+offset_right = 452.0
+offset_bottom = 59.0
+texture = ExtResource("4_n14ip")
+expand_mode = 1
+
+[node name="vida3" type="TextureRect" parent="."]
+offset_left = 325.0
+offset_top = 13.0
+offset_right = 454.0
+offset_bottom = 59.0
+texture = ExtResource("5_7smvg")
+expand_mode = 1
+
+[node name="vida4" type="TextureRect" parent="."]
+offset_left = 323.0
+offset_top = 11.0
+offset_right = 454.0
+offset_bottom = 62.0
+texture = ExtResource("6_1447x")
+expand_mode = 1
+
+[node name="vida5" type="TextureRect" parent="."]
+offset_left = 323.0
+offset_top = 11.0
+offset_right = 455.0
+offset_bottom = 63.0
+texture = ExtResource("7_ovrf0")
+expand_mode = 1
+
+[node name="vida00" type="TextureRect" parent="."]
+offset_left = 326.0
+offset_top = 110.0
+offset_right = 458.0
+offset_bottom = 158.0
+texture = ExtResource("2_t1eoj")
+expand_mode = 1
+
+[node name="vida01" type="TextureRect" parent="."]
+offset_left = 325.0
+offset_top = 111.0
+offset_right = 458.0
+offset_bottom = 157.0
+texture = ExtResource("3_b8woi")
+expand_mode = 1
+
+[node name="vida02" type="TextureRect" parent="."]
+offset_left = 328.0
+offset_top = 111.0
+offset_right = 454.0
+offset_bottom = 157.0
+texture = ExtResource("4_n14ip")
+expand_mode = 1
+
+[node name="vida03" type="TextureRect" parent="."]
+offset_left = 327.0
+offset_top = 111.0
+offset_right = 456.0
+offset_bottom = 157.0
+texture = ExtResource("5_7smvg")
+expand_mode = 1
+
+[node name="vida04" type="TextureRect" parent="."]
+offset_left = 325.0
+offset_top = 109.0
+offset_right = 456.0
+offset_bottom = 160.0
+texture = ExtResource("6_1447x")
+expand_mode = 1
+
+[node name="vida05" type="TextureRect" parent="."]
+offset_left = 325.0
+offset_top = 109.0
+offset_right = 457.0
+offset_bottom = 161.0
+texture = ExtResource("7_ovrf0")
+expand_mode = 1
+
 [node name="Blackwidow" parent="." instance=ExtResource("2_t8fa6")]
 
 [node name="Spidey" parent="." instance=ExtResource("3_1qycs")]
@@ -8198,14 +8301,20 @@ visible = false
 
 [node name="doctorStrnge" parent="." instance=ExtResource("11_v0u1w")]
 
+[node name="falcon" parent="." instance=ExtResource("18_g4lab")]
+
 [node name="racionalistas" type="Label" parent="."]
-offset_left = 326.0
-offset_top = 11.0
-offset_right = 559.0
-offset_bottom = 62.0
+offset_left = 341.0
+offset_top = 59.0
+offset_right = 574.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 30
+text = "
+"
 
 [node name="empiristas" type="Label" parent="."]
-offset_left = 324.0
-offset_top = 124.0
-offset_right = 547.0
-offset_bottom = 167.0
+offset_left = 341.0
+offset_top = 175.0
+offset_right = 564.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 30
