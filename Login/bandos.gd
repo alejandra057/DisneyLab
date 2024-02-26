@@ -13,14 +13,24 @@ func _process(delta):
 
 func _on_empiristas_body_entered(body):
 	if body.is_in_group("player"):
-			DialogueManager.show_dialogue_balloon(load("res://empiristas.dialogue"), "capi")
-			$team_cap.show()
-			Saveus.capitan=true
+			Saveus.bandoelegido=true
+			if (Saveus.bandoelegido==true):
+				DialogueManager.show_dialogue_balloon(load("res://empiristas.dialogue"), "capi")
+				$team_cap.show()
+				Saveus.capitan=true
+			else:
+				DialogueManager.show_dialogue_balloon(load("res://bandoelegido_Capi.dialogue"), "teamcap")
+				$team_ironman.hide()
 
 
 func _on_racionalistas_body_entered(body):
 	if body.is_in_group("player"):
-			DialogueManager.show_dialogue_balloon(load("res://racionalistas.dialogue"), "ironman")
-			$team_ironman.show()
-			Saveus.iron_man=true
-
+			Saveus.bandoelegido=true
+			if (Saveus.bandoelegido==true):
+				DialogueManager.show_dialogue_balloon(load("res://racionalistas.dialogue"), "ironman")
+				$team_ironman.show()
+				Saveus.iron_man=true
+				Saveus.bandoelegido=true
+			else:
+				DialogueManager.show_dialogue_balloon(load("res://bandoelegido_ironman.dialogue"), "teamironman")
+				$team_cap.hide()

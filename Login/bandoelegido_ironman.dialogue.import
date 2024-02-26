@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c78urj7us3grk"
+path="res://.godot/imported/bandoelegido_ironman.dialogue-7690ef1da8b3a44ce2df7ae28c192bf6.tres"
+
+[deps]
+
+source_file="res://bandoelegido_ironman.dialogue"
+dest_files=["res://.godot/imported/bandoelegido_ironman.dialogue-7690ef1da8b3a44ce2df7ae28c192bf6.tres"]
+
+[params]
+
+defaults=true

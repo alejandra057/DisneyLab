@@ -34,6 +34,10 @@ var habilitar=false
 var capitan=false
 var iron_man=false
 var win_spidey=false
+var mysterio=false
+var contadorcapi=0
+var contadoriron=0
+var bandoelegido=false
 func _ready():
 	cargar()
 	pass # Replace with function body.

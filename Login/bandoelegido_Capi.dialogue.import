@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://d3ls0y6m4opdm"
+path="res://.godot/imported/bandoelegido_Capi.dialogue-56261066cf56a1dfdd4ff97168f60ac9.tres"
+
+[deps]
+
+source_file="res://bandoelegido_Capi.dialogue"
+dest_files=["res://.godot/imported/bandoelegido_Capi.dialogue-56261066cf56a1dfdd4ff97168f60ac9.tres"]
+
+[params]
+
+defaults=true
