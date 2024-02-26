@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=12 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
 [ext_resource type="PackedScene" uid="uid://diijtaeeihs2o" path="res://BlackWidow.tscn" id="2_t8fa6"]
 [ext_resource type="PackedScene" uid="uid://cq66cvbpoerx3" path="res://spidey.tscn" id="3_1qycs"]
 [ext_resource type="PackedScene" uid="uid://dwufd7xe4oocc" path="res://thor.tscn" id="4_8g663"]
+[ext_resource type="PackedScene" uid="uid://dy5hfo318vbvq" path="res://ironman.tscn" id="5_y5gmg"]
+[ext_resource type="PackedScene" uid="uid://dyfucgaecy8wc" path="res://blackpanther.tscn" id="6_qqdqf"]
+[ext_resource type="PackedScene" uid="uid://bmy42h6c5v883" path="res://vision.tscn" id="7_jhjsc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osqre"]
 texture = ExtResource("1_j1k50")
@@ -8166,7 +8169,15 @@ layer_0/tile_data = PackedInt32Array(1966188, 3604480, 10, 0, 1835008, 7, 65536,
 visible = false
 
 [node name="Spidey" parent="." instance=ExtResource("3_1qycs")]
+visible = false
 position = Vector2(-11, 3)
 
 [node name="thor" parent="." instance=ExtResource("4_8g663")]
 visible = false
+
+[node name="ironman" parent="." instance=ExtResource("5_y5gmg")]
+visible = false
+
+[node name="blackpanther" parent="." instance=ExtResource("6_qqdqf")]
+
+[node name="vision" parent="." instance=ExtResource("7_jhjsc")]

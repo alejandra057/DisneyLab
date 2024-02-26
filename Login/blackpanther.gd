@@ -10,9 +10,9 @@ var animacion1
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	animacion=$thor
+	animacion=$blackpanther1
 	animacion.play("idle")
-	animacion1 = $AnimatedSprite2D
+	animacion1 = $blackpanther
 	animacion1.hide()
 
 func _physics_process(delta):
@@ -57,8 +57,8 @@ func player_movement (delta):
 
 func play_anim(movement):
 	var dir= current_dir
-	var anim = $AnimatedSprite2D
-	var anim1 = $thor
+	var anim = $blackpanther
+	var anim1 = $blackpanther1
 
 	if dir == "right":
 		anim.flip_h = false 
@@ -84,3 +84,4 @@ func play_anim(movement):
 			anim.hide()
 			anim1.show()
 			anim1.play("idle")
+

@@ -1,8 +1,32 @@
-[gd_scene load_steps=29 format=3 uid="uid://diijtaeeihs2o"]
+[gd_scene load_steps=35 format=3 uid="uid://diijtaeeihs2o"]
 
 [ext_resource type="Script" path="res://BlackWidow.gd" id="1_hh8p3"]
 [ext_resource type="Texture2D" uid="uid://b3eeldn2uuk76" path="res://Art/Sprites/Black Widow SV Battler.png" id="2_5wj54"]
 [ext_resource type="Texture2D" uid="uid://c1fs8p15wo1bq" path="res://Art/Sprites/wanda_natasha_vision.png" id="2_jb6dp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prvq0"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3po3n"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5m6m"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6iox"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(448, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f024"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ioe"]
+atlas = ExtResource("2_5wj54")
+region = Rect2(448, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6db7f"]
 atlas = ExtResource("2_5wj54")
@@ -70,6 +94,29 @@ region = Rect2(320, 128, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v180y"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prvq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3po3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5m6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6iox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f024")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ioe")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6db7f")
@@ -200,9 +247,9 @@ script = ExtResource("1_hh8p3")
 position = Vector2(848, 496)
 scale = Vector2(2.95313, 3.35156)
 sprite_frames = SubResource("SpriteFrames_v180y")
-animation = &"idle"
+animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.64123
+frame_progress = 0.201205
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(852, 506)
