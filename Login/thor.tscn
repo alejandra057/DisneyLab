@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=41 format=3 uid="uid://dwufd7xe4oocc"]
-=======
-[gd_scene load_steps=31 format=3 uid="uid://bcaqr8l5v45k4"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://thor.gd" id="1_0csd4"]
 [ext_resource type="Texture2D" uid="uid://sxrbpf1j3rfg" path="res://Art/Sprites/Thor SV Battler.png" id="2_opbbw"]
