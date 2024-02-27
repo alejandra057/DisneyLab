@@ -3,6 +3,8 @@ var time
 var positions=0
 func _ready():
 	time=$Timer
+	$fire_continously.play()
+	$AudioStreamPlayer.play()
 	$RespuestaA_1/fuegito.play("explosion")
 	$RespuestaB_1/fuegito1.play("explosion")
 	$RespuestaC_1/fuegito_correct1.play("explosion")
@@ -26,7 +28,11 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("x"): 
 			$CharacterBody2D2.show()
+			time.stop() 
+			time.wait_time = 2.5
+			$CharacterBody2D2.hide()
 func _on_button_pressed():
+	$AudioStreamPlayer.stop()
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
 
 
@@ -39,8 +45,10 @@ func _on_area_2d_body_entered(body):
 
 func _on_respuesta_c_1_body_entered(body):
 	if body.is_in_group("player2"):
-			$RespuestaC_1/fuegito_correct1.hide()
-			Saveus.right_answer1=true
+		$fire_Extinguisher.play()
+		$RespuestaC_1/fuegito_correct1.hide()
+		Saveus.right_answer1=true
+			
 
 func _on_segunda_pregunta_2_body_entered(body):
 	if body.is_in_group("player2"):
@@ -50,8 +58,9 @@ func _on_segunda_pregunta_2_body_entered(body):
 
 func _on_respuesta_b_2_body_entered(body):
 	if body.is_in_group("player2"):
-			$RespuestaB_2/fuegito_correct2.hide()
-			Saveus.right_answer2=true
+		$fire_Extinguisher.play()
+		$RespuestaB_2/fuegito_correct2.hide()
+		Saveus.right_answer2=true
 
 
 func _on_tercera_pregunta_2_body_entered(body):
@@ -62,9 +71,9 @@ func _on_tercera_pregunta_2_body_entered(body):
 
 func _on_respuesta_a_3_body_entered(body):
 	if body.is_in_group("player2"):
-			$RespuestaA_3/fuegito_correct3.hide()
-			Saveus.right_answer3=true
-			
+		$fire_Extinguisher.play()
+		$RespuestaA_3/fuegito_correct3.hide()
+		Saveus.right_answer3=true
 
 func _on_cuarta_pregunta_2_body_entered(body):
 	if body.is_in_group("player2"):
@@ -74,18 +83,20 @@ func _on_cuarta_pregunta_2_body_entered(body):
 
 func _on_respuesta_b_4_body_entered(body):
 	if body.is_in_group("player2"):
-			$QuintaPregunta2/CollisionShape2D/Camera2D.make_current()
-			$RespuestaB_4/fuegito_correct4.hide()
-			Saveus.right_answer4=true
+		$fire_Extinguisher.play()
+		$RespuestaB_4/fuegito_correct4.hide()
+		Saveus.right_answer4=true
 
 func _on_quinta_pregunta_2_body_entered(body):
 	if body.is_in_group("player2"):
-			DialogueManager.show_dialogue_balloon(load("res://Scripts/quinta_pregunta.dialogue"),"fifth_question")
+		$QuintaPregunta2/CollisionShape2D/Camera2D.make_current()
+		DialogueManager.show_dialogue_balloon(load("res://Scripts/quinta_pregunta.dialogue"),"fifth_question")
 
 
 func _on_respuesta_a_5_body_entered(body):
 	if body.is_in_group("player2"):
 			DialogueManager.show_dialogue_balloon(load("res://Scripts/respuesta_final.dialogue"), "final_answer")
+			$fire_Extinguisher.play()
 			$RespuestaA_5/fuegito_correct5.hide()
 			Saveus.right_answer5=true
 
@@ -97,6 +108,7 @@ func _on_respuesta_a_1_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -106,6 +118,7 @@ func _on_respuesta_b_1_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 func _on_respuesta_d_1_body_entered(body):
@@ -114,6 +127,7 @@ func _on_respuesta_d_1_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 func _on_respuesta_a_2_body_entered(body):
@@ -122,6 +136,7 @@ func _on_respuesta_a_2_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -131,6 +146,7 @@ func _on_respuesta_c_2_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -140,6 +156,7 @@ func _on_respuesta_d_2_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -149,6 +166,7 @@ func _on_respuesta_b_3_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -158,6 +176,7 @@ func _on_respuesta_c_3_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -167,6 +186,7 @@ func _on_respuesta_d_3_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 func _on_respuesta_a_4_body_entered(body):
@@ -175,6 +195,7 @@ func _on_respuesta_a_4_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -184,6 +205,7 @@ func _on_respuesta_c_4_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -194,6 +216,7 @@ func _on_respuesta_d_4_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
@@ -203,6 +226,7 @@ func _on_respuesta_b_5_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 func _on_respuesta_c_5_body_entered(body):
@@ -211,6 +235,7 @@ func _on_respuesta_c_5_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 func _on_respuesta_d_5_body_entered(body):
@@ -219,13 +244,17 @@ func _on_respuesta_d_5_body_entered(body):
 		Saveus.caida = true
 		time.stop() 
 		time.wait_time = 1.5
+		$explosion.play()
 		$CharacterBody2D.position = Saveus.initial_position
 
 
 func _on_final_body_entered(body):
 	if Saveus.right_answer5==true:
-		DialogueManager.show_dialogue_balloon(load("res://gamefinishdialogue.dialogue"), "final_dialogue")
+		$fire_continously.stop()
+		$CharacterBody2D2.show()
+		$punch.play()
 		Saveus.win_spidey=true
 		Saveus.mysterio=true
+		DialogueManager.show_dialogue_balloon(load("res://gamefinishdialogue.dialogue"), "final_dialogue")
 		$Button.show()
-			
+

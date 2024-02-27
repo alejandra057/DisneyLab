@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnwc2e30a26o6"
+path="res://.godot/imported/Fire Burning Sound Effect.mp3-1adc37d89745324af78057bf980798ed.mp3str"
+
+[deps]
+
+source_file="res://Art/Sounds/Fire Burning Sound Effect.mp3"
+dest_files=["res://.godot/imported/Fire Burning Sound Effect.mp3-1adc37d89745324af78057bf980798ed.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

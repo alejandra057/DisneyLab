@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duh8s8cowullk"
+path="res://.godot/imported/Fire Extinguisher Sound Effect (mp3cut.net).mp3-e233e90305e96e4555e50fff1cfc3e61.mp3str"
+
+[deps]
+
+source_file="res://Art/Sounds/Fire Extinguisher Sound Effect (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Fire Extinguisher Sound Effect (mp3cut.net).mp3-e233e90305e96e4555e50fff1cfc3e61.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
