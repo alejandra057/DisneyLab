@@ -324,8 +324,8 @@ script = ExtResource("1_gdw0e")
 position = Vector2(849, 494)
 scale = Vector2(3.39063, 3.71875)
 sprite_frames = SubResource("SpriteFrames_wtwef")
-animation = &"victoria"
-frame_progress = 0.59346
+animation = &"idle"
+frame_progress = 0.960774
 
 [node name="telaraña" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_qioky")
@@ -335,7 +335,7 @@ position = Vector2(525.148, 520)
 scale = Vector2(1.74924, 1.30556)
 sprite_frames = SubResource("SpriteFrames_v3l70")
 animation = &"telaraña"
-frame_progress = 0.992969
+frame_progress = 0.85201
 
 [node name="spidey1" type="AnimatedSprite2D" parent="."]
 position = Vector2(851, 487)
