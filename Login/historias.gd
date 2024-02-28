@@ -255,6 +255,9 @@ func _on_final_body_entered(body):
 		$punch.play()
 		Saveus.win_spidey=true
 		Saveus.mysterio=true
+		time.stop()
+		time.wait_time=2.5
+		$CharacterBody2D2.hide()
 		DialogueManager.show_dialogue_balloon(load("res://gamefinishdialogue.dialogue"), "final_dialogue")
 		$Button.show()
 
