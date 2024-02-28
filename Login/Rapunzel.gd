@@ -136,13 +136,13 @@ func _on_area_b_body_entered(body):
 		#if $Node2D.valor==0:
 		vida3.show()
 		pieza3.show()
-		$mensaje.show()
-		$mensaje.text="Respuesta Correcta"
+		$"../mensaje".show()
+		$"../mensaje".text="Respuesta Correcta"
 		temporizador.wait_time = 1.5
 		temporizador.start()
 	else:
-			$mensaje.show()
-			$mensaje.text="Respuesta Incorrecta"
+			$"../mensaje".show()
+			$"../mensaje".text="Respuesta Incorrecta"
 			temporizador.wait_time = 1.5
 			temporizador.start()
 	print("pregutna ", $Node2D.valor)
@@ -174,13 +174,13 @@ func _on_area_a_body_entered(body):
 		#if $Node2D.valor==0:
 		vida1.show()
 		pieza1.show()
-		$mensaje.show()
-		$mensaje.text="Respuesta Correcta"
+		$"../mensaje".show()
+		$"../mensaje".text="Respuesta Correcta"
 		temporizador.wait_time = 1.5
 		temporizador.start()
 	else:
-			$mensaje.show()
-			$mensaje.text="Respuesta Incorrecta"
+			$"../mensaje".show()
+			$"../mensaje".text="Respuesta Incorrecta"
 			temporizador.wait_time = 1.5
 			temporizador.start()
 	if $Node2D.valor==1:
@@ -190,8 +190,8 @@ func _on_area_a_body_entered(body):
 			#if $Node2D.valor==0:
 			vida2.show()
 			pieza2.show()
-			$mensaje.show()
-			$mensaje.text="Respuesta Correcta"
+			$"../mensaje".show()
+			$"../mensaje".text="Respuesta Correcta"
 			temporizador.wait_time = 1.5
 			temporizador.start()
 		#print("valorrr ",$Node2D.valor)
@@ -230,8 +230,8 @@ func _on_area_a_body_entered(body):
 			#temporizador.stop()
 		
 	else:
-			$mensaje.show()
-			$mensaje.text="Respuesta Incorrecta"
+			$"../mensaje".show()
+			$"../mensaje".text="Respuesta Incorrecta"
 			temporizador.wait_time = 1.5
 			temporizador.start()
 	print("pregutna ", $Node2D.valor)
@@ -283,9 +283,10 @@ func _on_pregunticas_body_exited(body):
 
 
 func _on_timer_timeout():
+	var mens = $"../mensaje"
 	$".".position=Saveus.posicioninicial
 	temporizador.stop()
-	$mensaje.hide()
+	mens.hide()
 	if $Node2D.valor==4:
 		$Node2D.valor+=1
 	pass # Replace with function body.
