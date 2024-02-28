@@ -34,7 +34,7 @@ func _process(delta):
 func _on_button_pressed():
 	$AudioStreamPlayer.stop()
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
-
+	Saveus.finished_game+=1
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player2"):
@@ -255,9 +255,8 @@ func _on_final_body_entered(body):
 		$punch.play()
 		Saveus.win_spidey=true
 		Saveus.mysterio=true
-		time.stop()
-		time.wait_time=2.5
 		$CharacterBody2D2.hide()
 		DialogueManager.show_dialogue_balloon(load("res://gamefinishdialogue.dialogue"), "final_dialogue")
 		$Button.show()
+		
 

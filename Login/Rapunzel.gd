@@ -188,25 +188,69 @@ func _on_area_a_body_entered(body):
 			$"../mensaje".text="Respuesta Correcta"
 			temporizador.wait_time = 1
 			temporizador.start()
-	elif $"../Node2D2".valor==5:
-			print("entro a pregunta 5")
-			vida5.show()
-			vida4.hide()
-			pieza5.show()
-			pieza6.show()
-			$"../mensaje".text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
-			$"../mensaje/Button".show()
-			temporizador.stop()
-	else:
-			$"../mensaje".show()
-			$"../mensaje".text="Respuesta Incorrecta"
-			temporizador.wait_time = 1
-			temporizador.start()
-	print("pregutna ", $"../Node2D2".valor)
-	Saveus.contarpalabra=0
+#<<<<<<< Updated upstream
+#=======
+#<<<<<<< HEAD
+		#print("valorrr ",$Node2D.valor)
+			
+		#if $Node2D.valor==3:
+			#
+			#vida3.show()
+			#vida2.hide()
+			#vida1.hide()
+			#pieza3.show()
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+			#$mensaje.text="Respuesta Correcta"
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+		#
+			#
+		#if $Node2D.valor==4:
+			#vida4.show()
+			#vida3.hide()
+			#pieza4.show()
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+			#$mensaje.text="Respuesta Correcta"
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+		#
+		#
+		#if $Node2D.valor==5:
+			#vida5.show()
+			#vida4.hide()
+			#pieza5.show()
+			#pieza6.show()
+			#$mensaje.text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
+			#Saveus.finished_game+=1
+			#$mensaje/Button.show()
+			#temporizador.stop()
+		
+#=======
+##>>>>>>> Stashed changes
+	#elif $"../Node2D2".valor==5:
+			#print("entro a pregunta 5")
+			#vida5.show()
+			#vida4.hide()
+			#pieza5.show()
+			#pieza6.show()
+			#$"../mensaje".text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
+			#$"../mensaje/Button".show()
+			#temporizador.stop()
+#<<<<<<< Updated upstream
+#=======
+#>>>>>>> 4069e21c2596802e26617447daca879e6c12fd83
+#>>>>>>> Stashed changes
+	#else:
+			#$"../mensaje".show()
+			#$"../mensaje".text="Respuesta Incorrecta"
+			#temporizador.wait_time = 1
+			#temporizador.start()
+	#print("pregutna ", $"../Node2D2".valor)
+	#Saveus.contarpalabra=0
 	
 	
-	pass # Replace with function body.
 
 func _on_area_d_body_entered(body):
 	contar+=1;
