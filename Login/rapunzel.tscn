@@ -1,15 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://2xrubq6qca8r"]
+[gd_scene load_steps=17 format=3 uid="uid://2xrubq6qca8r"]
 
 [ext_resource type="Script" path="res://Rapunzel.gd" id="1_l5di2"]
 [ext_resource type="Texture2D" uid="uid://dyicq4lev2sw7" path="res://Art/Sprites/khsom___disney_characters_rpg_maker_vx_sprites_by_reversecrown_d6gq7ob.png" id="1_n2l8t"]
-[ext_resource type="Texture2D" uid="uid://dvywu2fs803in" path="res://Art/Sprites/0vida-removebg-preview.png" id="3_2bmiq"]
-[ext_resource type="FontFile" uid="uid://ccyvw17fux16l" path="res://Art/Font/pf_ronda_seven.ttf" id="3_8qtff"]
-[ext_resource type="Texture2D" uid="uid://vr70j17o482n" path="res://Art/Sprites/1vida-removebg-preview.png" id="4_hx88f"]
-[ext_resource type="Texture2D" uid="uid://d1y36pmdxeudt" path="res://Art/Sprites/2vida-removebg-preview.png" id="5_rpp0v"]
-[ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="6_frkib"]
-[ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="7_h4no7"]
-[ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="8_vlefo"]
-[ext_resource type="PackedScene" uid="uid://b6lg14t53541d" path="res://preguntasrpzl.tscn" id="10_n75c7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mr0gt"]
 atlas = ExtResource("1_n2l8t")
@@ -135,74 +127,3 @@ autoplay = "frente"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(550, 571)
 shape = SubResource("CapsuleShape2D_geteg")
-
-[node name="mensaje" type="Label" parent="."]
-offset_left = 321.0
-offset_top = 693.0
-offset_right = 700.0
-offset_bottom = 766.0
-theme_override_fonts/font = ExtResource("3_8qtff")
-theme_override_font_sizes/font_size = 21
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="mensaje"]
-visible = false
-layout_mode = 0
-offset_left = 76.0
-offset_top = 507.0
-offset_right = 293.0
-offset_bottom = 564.0
-text = "REGRESAR"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-offset_left = 54.0
-offset_top = 32.0
-offset_right = 309.0
-offset_bottom = 129.0
-texture = ExtResource("3_2bmiq")
-
-[node name="TextureRect4" type="TextureRect" parent="."]
-visible = false
-offset_left = 57.0
-offset_top = 33.0
-offset_right = 309.0
-offset_bottom = 125.0
-texture = ExtResource("4_hx88f")
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-visible = false
-offset_left = 60.0
-offset_top = 32.0
-offset_right = 302.0
-offset_bottom = 129.0
-texture = ExtResource("5_rpp0v")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
-offset_left = 58.0
-offset_top = 32.0
-offset_right = 309.0
-offset_bottom = 130.0
-texture = ExtResource("6_frkib")
-
-[node name="TextureRect5" type="TextureRect" parent="."]
-visible = false
-offset_left = 56.0
-offset_top = 31.0
-offset_right = 307.0
-offset_bottom = 131.0
-texture = ExtResource("7_h4no7")
-
-[node name="TextureRect6" type="TextureRect" parent="."]
-visible = false
-offset_left = 59.0
-offset_top = 37.0
-offset_right = 310.0
-offset_bottom = 129.0
-texture = ExtResource("8_vlefo")
-
-[node name="Node2D" parent="." instance=ExtResource("10_n75c7")]
-position = Vector2(11, 66)
-
-[connection signal="pressed" from="mensaje/Button" to="." method="_on_button_pressed"]
