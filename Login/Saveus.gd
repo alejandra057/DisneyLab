@@ -38,6 +38,7 @@ var mysterio=false
 var contadorcapi=0
 var contadoriron=0
 var bandoelegido=false
+var finished_game=0
 func _ready():
 	cargar()
 	pass # Replace with function body.

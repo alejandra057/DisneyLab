@@ -202,6 +202,7 @@ func _on_areab_body_entered(body):
 			vida4.hide()
 			$"../alien4".hide()
 			$lbinfo.text="Felicidades!"
+			Saveus.finished_game+=1
 			$lbinfo/Button.show()
 			temporizador.stop()
 	else:

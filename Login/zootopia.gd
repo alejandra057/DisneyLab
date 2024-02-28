@@ -167,6 +167,7 @@ func contarclick():
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
+	Saveus.finished_game+=1
 
 
 func _on_button_2_pressed():

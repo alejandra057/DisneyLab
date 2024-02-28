@@ -1,10 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5y3gl3fd7y82"]
+[gd_scene load_steps=28 format=3 uid="uid://c5y3gl3fd7y82"]
 
 [ext_resource type="Script" path="res://Scripts/merida.gd" id="1_8pko1"]
 [ext_resource type="Texture2D" uid="uid://dyicq4lev2sw7" path="res://Art/Sprites/khsom___disney_characters_rpg_maker_vx_sprites_by_reversecrown_d6gq7ob.png" id="2_11us6"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="3_3tyvg"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="3_icank"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="4_5ocbp"]
+[ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="6_bqrdx"]
+[ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="7_ox6mg"]
+[ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="8_lwl1o"]
+[ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="9_83a4r"]
+[ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="10_d1t47"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2r7bf"]
 atlas = ExtResource("2_11us6")
@@ -182,3 +187,28 @@ visible = false
 position = Vector2(526, -269)
 scale = Vector2(0.464444, 0.397778)
 texture = ExtResource("4_5ocbp")
+
+[node name="Vida0" type="Sprite2D" parent="."]
+position = Vector2(-413, -245)
+scale = Vector2(0.706186, 1.34483)
+texture = ExtResource("6_bqrdx")
+
+[node name="Vida1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-412, -251)
+texture = ExtResource("7_ox6mg")
+
+[node name="Vida2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-412, -247)
+texture = ExtResource("8_lwl1o")
+
+[node name="Vida3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-412, -247)
+texture = ExtResource("9_83a4r")
+
+[node name="Vida4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-416, -245)
+texture = ExtResource("10_d1t47")

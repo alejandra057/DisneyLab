@@ -4,6 +4,11 @@ const speed= 400
 var current_dir = "none"
 var capi
 var ironman
+var vida0
+var vida1
+var vida2
+var vida3
+var vida4
 
 
 
@@ -11,6 +16,11 @@ func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	capi=$cap
 	ironman=$ironman
+	vida0=$Vida0
+	vida1=$Vida1
+	vida2=$Vida2
+	vida3=$Vida3
+	vida4=$Vida4
 func _process(delta):
 	if Saveus.capitan==true:
 		capi.show()
@@ -20,7 +30,23 @@ func _process(delta):
 		ironman.show()
 		$R.show()
 		Saveus.right_answer2=false
-
+		
+	if Saveus.finished_game==1:
+		vida0.hide()
+		vida1.show()
+	elif Saveus.finished_game==2:
+		vida0.hide()
+		vida1.hide()
+		vida2.show()
+	elif Saveus.finished_game==3:
+		vida0.hide()
+		vida2.hide()
+		vida3.show()
+	elif Saveus.finished_game==4:
+		vida0.hide()
+		vida3.hide()
+		vida4.show()
+		
 func _physics_process(delta):
 	player_movement(delta)
 	
