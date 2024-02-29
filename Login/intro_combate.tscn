@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://buojo0wbnoiy7"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_cwl4g"]
+[ext_resource type="AudioStream" uid="uid://bldkorjr5bi1n" path="res://Art/Sounds/y2mate.com - AVENGERS ENDGAME Trailer 2 Music Version  Best Proper Movie Trailer Soundtrack Final Theme Song.mp3" id="2_3kwn4"]
+[ext_resource type="Texture2D" uid="uid://44koj42g68vn" path="res://Art/Escenarios_Mundos/Pixel art - City view, Black Duck Overlord.jpeg" id="3_vexqh"]
+[ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="4_qjatp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cwl4g")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3kwn4")
+
+[node name="PixelArt-CityView,BlackDuckOverlord" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(578, 475)
+scale = Vector2(1.5625, 2.32432)
+texture = ExtResource("3_vexqh")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 80.0
+offset_right = 856.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("4_qjatp")
+theme_override_font_sizes/font_size = 78
+text = "Listo
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
