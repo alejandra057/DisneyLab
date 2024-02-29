@@ -45,7 +45,6 @@ func _ready():
 func _process(delta):
 	if Saveus.contarpregunta>0:
 		next_text()
-		set_process(false)
 		
 
 func next_text():
