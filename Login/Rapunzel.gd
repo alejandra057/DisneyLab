@@ -131,57 +131,52 @@ func _on_button_pressed():
 
 
 func _on_area_b_body_entered(body):
-	print("pregutna ", $"../Node2D2".valor)
-	print("entro a area b")
+	#print("pregutna ", $"../Node2D2".valor)
+	#print("entro a area b")
 	if $"../Node2D2".valor==2:
 		print("pregunta ", $"../Node2D2".valor)
 		Saveus.contarpalabra+=1
 		$"../Node2D2"._process(body)
-		#if $Node2D.valor==0:
 		vida3.show()
 		pieza3.show()
 		$"../mensaje".show()
 		$"../mensaje".text="Respuesta Correcta"
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 1
 		temporizador.start()
 		
-	if $"../Node2D2".valor==3:
-		
+	elif $"../Node2D2".valor==3:
 		print("entro a pregunta 4")
+		Saveus.contarpalabra+=1
+		$"../Node2D2"._process(body)
 		vida4.show()
 		vida3.hide()
 		pieza4.show()
 		$"../mensaje".show()
 		$"../mensaje".text="Respuesta Correcta"
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 1
 		temporizador.start()
-		Saveus.contarpalabra+=1
 		print($"../Node2D2".valor, "# de valor en prgunta 4")
 	else:
 			$"../mensaje".show()
-			$"../mensaje".text="Respuesta Incorrecta"
-			temporizador.wait_time = 1.5
+			$"../mensaje".text="Respuesta Incorrecta de B"
+			temporizador.wait_time = 1
 			temporizador.start()
 	
-	print("pregutna ", $"../Node2D2".valor)
+	print("pregunta ", $"../Node2D2".valor)
 	Saveus.contarpalabra=0
 	
 pass # Replace with function body.
 
 func _on_area_a_body_entered(body):
-	
-	contar+=1;
-	print("pregutna ", $"../Node2D2".valor)
-	if $"../Node2D2".valor==0:
-		print("pregutna ", $"../Node2D2".valor)
-		Saveus.contarpalabra+=1
+	if $"../Node2D2".valor == 0:
+		Saveus.contarpalabra += 1
 		$"../Node2D2"._process(body)
-		#if $Node2D.valor==0:
+		$"../TextureRect".hide()
 		vida1.show()
 		pieza1.show()
 		$"../mensaje".show()
 		$"../mensaje".text="Respuesta Correcta"
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 1
 		temporizador.start()
 	
 	elif $"../Node2D2".valor==1:
@@ -196,20 +191,19 @@ func _on_area_a_body_entered(body):
 			temporizador.start()
 			print("valorrr ",$"../Node2D2".valor)
 	elif $"../Node2D2".valor==4:
-		print("entro a pregunta 5")
-		vida5.show()
-		vida4.hide()
-		pieza5.show()
-		pieza6.show()
-		$"../mensaje".text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
-		Saveus.contarpalabra+=1
-		$"../mensaje/Button".show()
-		temporizador.stop()
-		
-
+			print("entro a pregunta 5")
+			vida5.show()
+			vida4.hide()
+			pieza5.show()
+			pieza6.show()
+			$"../mensaje".show()
+			$"../mensaje".text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
+			$"../mensaje/Button".show()
+			#Saveus.contarpalabra+=1
+			temporizador.stop()
 	else:
 			$"../mensaje".show()
-			$"../mensaje".text="Respuesta Incorrecta"
+			$"../mensaje".text="Respuesta Incorrecta de A"
 			temporizador.wait_time = 1
 			temporizador.start()
 	print("pregutna ", $"../Node2D2".valor)
@@ -218,27 +212,29 @@ func _on_area_a_body_entered(body):
 	
 
 func _on_area_d_body_entered(body):
-	contar+=1;
+	#contar+=1;
+	$"../mensaje".show()
+	$"../mensaje".text="Respuesta Incorrecta de d"
 	$"../Node2D2"._process(body)
 	Saveus.contarpalabra=0
-	temporizador.wait_time = 1.5
+	temporizador.wait_time = 1
 	temporizador.start()
 	
 	pass # Replace with function body.
 
 func _on_area_c_body_entered(body):
-	contar+=1;
+	#contar+=1;
+	$"../mensaje".show()
+	$"../mensaje".text="Respuesta Incorrecta de c"
 	$"../Node2D2"._process(body)
 	Saveus.contarpalabra=0
-
-	temporizador.wait_time = 1.5
+	temporizador.wait_time = 1
 	temporizador.start()
 	pass # Replace with function body.
 
 
-
 func _on_pregunticas_body_entered(body):
-	print("enrta")
+	print("entro a preguntica")
 	$"../Node2D2".show()
 	pass # Replace with function body.
 
@@ -250,10 +246,11 @@ func _on_pregunticas_body_exited(body):
 
 
 func _on_timer_timeout():
+	print("entro a timer out")
 	var mens = $"../mensaje"
 	$".".position=Saveus.posicioninicial
 	temporizador.stop()
 	mens.hide()
-	if $"../Node2D2".valor==3:
-		$"../Node2D2".valor+=1
+	#if $"../Node2D2".valor==3:
+		#$"../Node2D2".valor+=1
 	pass # Replace with function body.

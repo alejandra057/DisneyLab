@@ -13,12 +13,11 @@ A) Antropocentrismo.\n B) Humanismo.\n C) Paradigma antropológico.\n D) Teocent
 A) Las tortugas ninjas.\n B) Los caballeros del Zodiaco.\n C) Los cuatro fantásticos. \nD) Los antagonistas de Attack Titan\n"
 ]
 
+@onready var visual_text :RichTextLabel =$PanelContainer/RichTextLabel
+@onready var mark : Control=$PanelContainer/Control
 var current_text: int=0
 var contar=0
 var valor : int=0
-var state: int = 0
-@onready var visual_text :RichTextLabel =$PanelContainer/RichTextLabel
-@onready var mark : Control=$PanelContainer/Control
 var mostrar=false
 var electC=false
 var electA=false
@@ -30,7 +29,6 @@ func _ready():
 	visual_text.visible_ratio=0
 	visual_text.text=texts[current_text]
 	mark.visible=0
-	#state = 1
 	show_text()
 	pass # Replace with function body.
 
@@ -38,8 +36,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Saveus.contarpalabra>0:
-		#var state: int = 0
-		#state=1
 		next_text()
 		print("process: texto actual  ",current_text)
 		set_process(false)
@@ -64,5 +60,4 @@ func show_text():
 
 func finish_showtext():
 	mark.visible = 1
-	#state=0
 	set_process(true)
