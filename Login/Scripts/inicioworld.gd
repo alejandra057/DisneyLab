@@ -59,7 +59,7 @@ func _on_area_2d_5_body_entered(body):
 	if(Saveus.selectrosa==true):
 		if body.is_in_group("player"):
 			$Puertas2.frame=11
-			ruta4 ="res://Escena_enredados.tscrn"
+			ruta4 ="res://Escenas/Rapunzel_world.tscn"
 			$Puertas2/Timerpuerta2.wait_time=1.3
 			$Puertas2/Timerpuerta2.start()
 			
