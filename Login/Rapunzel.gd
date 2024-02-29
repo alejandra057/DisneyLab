@@ -124,11 +124,14 @@ func play_anim(movement):
 		
 
 func _on_button_pressed():
+	Saveus.finished_game+=1
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
+	
 	pass # Replace with function body.
 
 
 func _on_area_b_body_entered(body):
+	print("pregutna ", $"../Node2D2".valor)
 	print("entro a area b")
 	if $"../Node2D2".valor==2:
 		print("pregunta ", $"../Node2D2".valor)
@@ -142,8 +145,8 @@ func _on_area_b_body_entered(body):
 		temporizador.wait_time = 1.5
 		temporizador.start()
 		
-	elif $"../Node2D2".valor==3:
-		Saveus.contarpalabra+=1
+	if $"../Node2D2".valor==3:
+		
 		print("entro a pregunta 4")
 		vida4.show()
 		vida3.hide()
@@ -152,15 +155,18 @@ func _on_area_b_body_entered(body):
 		$"../mensaje".text="Respuesta Correcta"
 		temporizador.wait_time = 1.5
 		temporizador.start()
+		Saveus.contarpalabra+=1
+		print($"../Node2D2".valor, "# de valor en prgunta 4")
 	else:
 			$"../mensaje".show()
 			$"../mensaje".text="Respuesta Incorrecta"
 			temporizador.wait_time = 1.5
 			temporizador.start()
+	
 	print("pregutna ", $"../Node2D2".valor)
 	Saveus.contarpalabra=0
 	
-	pass # Replace with function body.
+pass # Replace with function body.
 
 func _on_area_a_body_entered(body):
 	
@@ -196,7 +202,7 @@ func _on_area_a_body_entered(body):
 		pieza5.show()
 		pieza6.show()
 		$"../mensaje".text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
-		Saveus.finished_game+=1
+		Saveus.contarpalabra+=1
 		$"../mensaje/Button".show()
 		temporizador.stop()
 		

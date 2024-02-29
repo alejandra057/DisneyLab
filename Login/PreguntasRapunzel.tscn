@@ -1,16 +1,14 @@
-[gd_scene format=3 uid="uid://tde33wurshh0"]
+[gd_scene format=3 uid="uid://du300y6te8ukn"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 offset_left = -96.0
 offset_top = 608.0
 offset_right = 1176.0
 offset_bottom = 952.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
-visible = false
 layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
@@ -18,7 +16,6 @@ offset_right = 1240.0
 offset_bottom = 320.0
 
 [node name="Control" type="Control" parent="Panel"]
-visible = false
 anchors_preset = 0
 offset_left = -8.0
 offset_top = 8.0
@@ -26,7 +23,6 @@ offset_right = 1280.0
 offset_bottom = 328.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Control"]
-visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = -480.0

@@ -41,7 +41,7 @@ func _process(delta):
 		#var state: int = 0
 		#state=1
 		next_text()
-		print("currentxx2 ",current_text)
+		print("process: texto actual  ",current_text)
 		set_process(false)
 	pass
 
@@ -49,15 +49,15 @@ func next_text():
 	if current_text < texts.size()-1:
 		current_text +=1
 		valor=current_text
-		print("valor",valor)
-		print("currentxx ",current_text)
+		print("next text: valor ",valor)
+		print("next text: texto actual  ",current_text)
 		visual_text.visible_ratio=0
 		visual_text.text=texts[current_text]
 		mark.visible=0
 		show_text()
 
 func show_text():
-	print("currentenshow ",current_text)
+	print("st: currentenshow ",current_text)
 	var tween = create_tween()
 	tween.tween_property(visual_text,"visible_ratio",1,1.5)
 	tween.tween_callback(finish_showtext)
