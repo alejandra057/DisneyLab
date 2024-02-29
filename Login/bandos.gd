@@ -15,6 +15,8 @@ func _on_empiristas_body_entered(body):
 				DialogueManager.show_dialogue_balloon(load("res://empiristas.dialogue"), "capi")
 				$team_cap.show()
 				Saveus.capitan=true
+				$portal.show()
+				$portal.play()
 			else:
 				DialogueManager.show_dialogue_balloon(load("res://bandoelegido_Capi.dialogue"), "teamcap")
 				
@@ -27,6 +29,13 @@ func _on_racionalistas_body_entered(body):
 				DialogueManager.show_dialogue_balloon(load("res://racionalistas.dialogue"), "ironman")
 				$team_ironman.show()
 				Saveus.iron_man=true
+				$portal.show()
+				$portal.play()
 			else:
 				DialogueManager.show_dialogue_balloon(load("res://bandoelegido_Capi.dialogue"), "teamcap")
 				
+
+
+func _on_area_2d_body_entered(body):
+	get_tree().change_scene_to_file("res://Escenas/combate.tscn")
+	pass # Replace with function body.
