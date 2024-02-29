@@ -37,5 +37,5 @@ func _on_racionalistas_body_entered(body):
 
 
 func _on_area_2d_body_entered(body):
-	get_tree().change_scene_to_file("res://Escenas/combate.tscn")
+	get_tree().change_scene_to_file("res://intro_combate.tscn")
 	pass # Replace with function body.

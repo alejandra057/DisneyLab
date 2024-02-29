@@ -325,7 +325,6 @@ position = Vector2(849, 494)
 scale = Vector2(3.39063, 3.71875)
 sprite_frames = SubResource("SpriteFrames_wtwef")
 animation = &"idle"
-frame_progress = 0.960774
 
 [node name="telaraña" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_qioky")
@@ -338,6 +337,7 @@ animation = &"telaraña"
 frame_progress = 0.85201
 
 [node name="spidey1" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(851, 487)
 scale = Vector2(4.66667, 5.30208)
 sprite_frames = SubResource("SpriteFrames_yv8uv")

@@ -2,8 +2,7 @@ extends Node2D
 var texts : Array = [
 	"1. Para algunos de los siguientes filósofos, el criterio de verdad es la evidencia sensible: 
 	A) Empiristas. B) Criticistas. C) Racionalistas. D) Dogmáticos",
-	"2. De las siguientes, una de ellas es la corriente filosófica que en general tiende a negar la 
-	posibilidad de la metafísica y a sostener que hay conocimiento únicamente de los fenómenos.
+	"2. De las siguientes, una de ellas es la corriente filosófica que en general tiende a negar la posibilidad de la metafísica y a sostener que hay conocimiento únicamente de los fenómenos.
 	A) Racionalistas. B) Empiristas. C) Escolásticos. D) Escépticos",
 	"3. Para unos de los siguientes filósofos, la experiencia como única fuente del conocimiento.
 	A) Epistemólogos. B) Racionalistas. C) Empiristas. D) Escépticos.",

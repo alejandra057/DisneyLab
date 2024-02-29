@@ -210,7 +210,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ataque",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -291,25 +291,27 @@ _data = {
 script = ExtResource("1_6vdpy")
 
 [node name="CA" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(306, 492)
 scale = Vector2(4.55208, 4.9375)
 sprite_frames = SubResource("SpriteFrames_xx8e3")
 animation = &"derecha"
+frame_progress = 0.0683899
 
 [node name="CA1" type="AnimatedSprite2D" parent="."]
 position = Vector2(311, 498)
 scale = Vector2(3.61719, 3.65625)
 sprite_frames = SubResource("SpriteFrames_x7clr")
-animation = &"victoria"
-frame_progress = 0.993893
+animation = &"ataque"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(309, 517)
 shape = SubResource("CapsuleShape2D_tkqd7")
 
 [node name="disco" type="Sprite2D" parent="."]
-position = Vector2(757, 512)
-scale = Vector2(2.61429, 2.6371)
+visible = false
+position = Vector2(294.75, 567.375)
+scale = Vector2(2.55, 2.52823)
 texture = ExtResource("4_cmuoh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="disco"]
