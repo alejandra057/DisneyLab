@@ -100616,23 +100616,23 @@ offset_bottom = 117.0
 texture = ExtResource("20_5ht7o")
 
 [node name="mensaje" type="Label" parent="."]
-offset_left = 536.0
-offset_top = 690.0
-offset_right = 743.0
-offset_bottom = 725.0
+offset_left = 545.0
+offset_top = 704.0
+offset_right = 752.0
+offset_bottom = 739.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("13_fh721")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="mensaje"]
-visible = false
 layout_mode = 0
-offset_left = 28.0
-offset_top = 194.0
-offset_right = 159.0
-offset_bottom = 228.0
+offset_left = 36.0
+offset_top = 115.0
+offset_right = 167.0
+offset_bottom = 149.0
 text = "REGRESAR"
 
 [node name="vida0" type="TextureRect" parent="."]
