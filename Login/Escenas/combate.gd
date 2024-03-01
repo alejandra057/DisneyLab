@@ -5,7 +5,7 @@ var respondio=false
 var respondiobien=0
 var respondiomal=0
 var rondas
-var velocidad = Vector2(100, 0)  # Velocidad inicial en píxeles por segundo
+var velocidad = Vector2(100, 0) 
 var direccion = Vector2.RIGHT
 var tiempoRonda=4
 var cantrondas=1
@@ -91,49 +91,41 @@ func _process(delta):
 		ocultarpregunta()
 		contador=0
 	
-	pass
 func perder_vidas():
-	match(puntosperdedor):
-		1:
-			if Saveus.capitan ==true:
-				print("entra en menos vidqa")
-				$vida4.hide()
-				vida_actual-=1
-			else:
-				$vida04.hide()
-		2:
-			if respondiomal==2 && Saveus.capitan ==true:
-				$vida3.hide()
-				vida_actual-=1
-			else:
-				$vida03.hide()
-		3:
-			if respondiomal ==3 && Saveus.capitan ==true:
-				$vida2.hide()
-				vida_actual-=1
-			else:
-				$vida02.hide()
-		4:
-			if respondiomal ==4 && Saveus.capitan ==true:
-				$vida1.hide()
-				vida_actual-=1
-			else:
-				$vida01.hide()
-
-func ganar_vidas():
-	if respondiomal==1 && Saveus.capitan ==true && vida_actual==3:
-		$vida04.show()
-		vida_actual+=1
-	elif respondiomal==2 && Saveus.capitan ==true && vida_actual==2:
-		$vida03.show()
-		vida_actual-=1
-	elif respondiomal ==3 && Saveus.capitan ==true:
+	if Saveus.capitan == true && puntosperdedor == 2:
+		$vida4.hide()
+	elif Saveus.iron_man ==true && puntosperdedor ==2:
+		$vida04.hide()
+	if Saveus.capitan == true && puntosperdedor == 4:
+		$vida3.hide()
+	elif Saveus.iron_man ==true && puntosperdedor ==4:
+		$vida03.hide()
+	if Saveus.capitan == true && puntosperdedor == 6:
+		$vida2.hide()
+	elif Saveus.iron_man ==true && puntosperdedor ==6:
 		$vida02.hide()
-		vida_actual-=1
-	elif respondiomal ==4 && Saveus.capitan ==true:
+	if Saveus.capitan == true && puntosperdedor == 8:
+		$vida1.hide()
+	elif Saveus.iron_man ==true && puntosperdedor ==8:
 		$vida01.hide()
-		vida_actual-=1
 		
+func ganar_vidas():
+	if Saveus.capitan == true && puntosganador == 2:
+		$vida4.show()
+	elif Saveus.iron_man ==true && puntosganador ==2:
+		$vida04.show()
+	if Saveus.capitan == true && puntosganador == 4:
+		$vida3.show()
+	elif Saveus.iron_man ==true && puntosganador ==4:
+		$vida03.show()
+	if Saveus.capitan == true && puntosganador == 6:
+		$vida2.show()
+	elif Saveus.iron_man ==true && puntosganador ==6:
+		$vida02.show()
+	if Saveus.capitan == true && puntosganador == 8:
+		$vida1.show()
+	elif Saveus.iron_man ==true && puntosganador ==8:
+		$vida01.show()
 
 func _on_tiempocontestar_timeout():
 	tiempo_restante -= 1
@@ -161,14 +153,15 @@ func _on_button_pressed():
 		respondio=true
 		tiempo_restante = 10
 		respondiobien+=1
-		
 		animacion_ganar()
+		#ganar_vidas()
 		print("bien ",respondiobien," mal ",respondiomal)
 	else:
 		respondio=false
 		tiempo_restante = 10
 		respondiomal+=1
 		animacion_perder()
+		perder_vidas()
 		#perder_vidas()
 		print("bien ",respondiobien," mal ",respondiomal)
 	pass # Replace with function body.
@@ -186,6 +179,7 @@ func _on_button_2_pressed():
 		respondio=true
 		tiempo_restante = 10
 		animacion_ganar()
+		#ganar_vidas()
 		respondiobien+=1
 		#empate()
 		print("bien ",respondiobien," mal ",respondiomal)
@@ -214,6 +208,7 @@ func _on_button_3_pressed():
 		respondio=true
 		tiempo_restante = 10
 		animacion_ganar()
+		#ganar_vidas()
 		respondiobien+=1
 		#empate()
 		print("bien ",respondiobien," mal ",respondiomal)
@@ -225,6 +220,7 @@ func _on_button_3_pressed():
 		#contarrondas+=1
 		tiempo_restante = 10
 		animacion_perder()
+		perder_vidas()
 		#perder_vidas()
 		respondiomal+=1
 		
@@ -238,6 +234,7 @@ func _on_button_4_pressed():
 	tiempo_restante = 10
 	respondio=false
 	animacion_perder()
+	perder_vidas()
 	#perder_vidas()
 	respondiomal+=1
 	if mostrarmsj:
@@ -270,7 +267,12 @@ func ocultarpregunta():
 	if cantrondas>4:
 		contarrondas=0
 		print("aqui iria el ganador")
-		
+		if Saveus.capitan==true && puntosganador>8:
+			$ganador.text ="Han ganado los empiristas"
+			$"captain america/CA1".play("victoria")
+		elif Saveus.iron_man==true && puntosganador>8:
+			$ganador.text ="Han ganado los racionalistas"
+			$ironman/ironman1.play("victoria")
 		ocultar()
 		return
 	tiempoRonda=4
@@ -278,9 +280,7 @@ func ocultarpregunta():
 	ocultar()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
-	perder_vidas()
-	
-	
+
 func empate():
 	if respondiobien!=0 && respondiomal!=0:
 		if respondiobien==respondiomal:
@@ -293,7 +293,7 @@ func empate():
 			mostrarmsj=true
 			contador=-1
 	$Node2D.next_text()
-	
+
 func ocultar():
 	$Node2D.hide()
 	$Button.hide()

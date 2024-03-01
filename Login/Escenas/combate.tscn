@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=31 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
@@ -8174,6 +8174,11 @@ font_size = 37
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_e0tk3"]
+font = ExtResource("20_mv1kf")
+font_size = 31
+font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sowe0")
 
@@ -8313,20 +8318,20 @@ visible = false
 position = Vector2(-139, 272)
 
 [node name="racionalistas" type="Label" parent="."]
-offset_left = 120.0
-offset_top = 36.0
-offset_right = 353.0
-offset_bottom = 87.0
+offset_left = 855.0
+offset_top = 30.0
+offset_right = 1088.0
+offset_bottom = 81.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Racionalista"
 label_settings = SubResource("LabelSettings_7cwwt")
 
 [node name="empiristas" type="Label" parent="."]
-offset_left = 827.0
-offset_top = 30.0
-offset_right = 1050.0
-offset_bottom = 76.0
+offset_left = 103.0
+offset_top = 31.0
+offset_right = 326.0
+offset_bottom = 78.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Empirista"
 label_settings = SubResource("LabelSettings_p8q3l")
@@ -8431,6 +8436,13 @@ offset_bottom = 541.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+
+[node name="ganador" type="Label" parent="."]
+offset_left = 367.0
+offset_top = 170.0
+offset_right = 717.0
+offset_bottom = 259.0
+label_settings = SubResource("LabelSettings_e0tk3")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
