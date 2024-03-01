@@ -5881,6 +5881,7 @@ libraries = {
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(92.0001, 159)
 scale = Vector2(1.36154, 1.39506)
 texture = ExtResource("6_fjwkx")
@@ -5893,6 +5894,7 @@ libraries = {
 }
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(755, 156)
 scale = Vector2(1.73846, 1.22222)
 texture = ExtResource("6_fjwkx")
@@ -5905,6 +5907,7 @@ libraries = {
 }
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(430, 162)
 scale = Vector2(1.84615, 1.51852)
 texture = ExtResource("6_fjwkx")
