@@ -74,6 +74,8 @@ func _process(delta):
 	if contarrondas==1:
 		ocultarpregunta()
 		contarrondas=0
+		respondiomal=0
+		respondiobien=0
 	pass
 func perder_vidas():
 	match(respondiomal):
@@ -237,8 +239,7 @@ func _on_timerrondas_timeout():
 	$Label.text = ""
 	if tiempoRonda > 0 && respondiobien!=respondiomal:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
-		#respondiobien=0
-		#respondiomal=0
+		
 		tiempo_restante = 10
 	else:
 			timer.start()
@@ -266,14 +267,15 @@ func ocultarpregunta():
 	print("bien ",respondiobien," mal ",respondiomal)
 	
 func empate():
-	if respondiobien==respondiomal:
-		$Node2D.valor-=1
-		$Node2D.current_text-=1
-		$Label.text = "Desempate "
-		ocultarpregunta()
-		cantrondas-=1
-		print("empate")
-		mostrarmsj=true
+	if respondiobien!=0 && respondiomal!=0:
+		if respondiobien==respondiomal:
+			$Node2D.valor-=1
+			$Node2D.current_text-=1
+			$Label.text = "Desempate "
+			ocultarpregunta()
+			cantrondas-=1
+			print("empate")
+			mostrarmsj=true
 	$Node2D.next_text()
 	
 
