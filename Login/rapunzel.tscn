@@ -110,8 +110,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geteg"]
-radius = 40.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bylkx"]
+radius = 37.0
 height = 112.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -125,5 +125,5 @@ animation = &"derecha"
 autoplay = "frente"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(550, 571)
-shape = SubResource("CapsuleShape2D_geteg")
+position = Vector2(547, 562)
+shape = SubResource("CapsuleShape2D_bylkx")
