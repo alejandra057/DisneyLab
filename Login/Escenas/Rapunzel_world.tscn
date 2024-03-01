@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dskrctam008cr"]
+[gd_scene load_steps=41 format=3 uid="uid://dskrctam008cr"]
 
 [ext_resource type="Texture2D" uid="uid://bfvhteq8lb26o" path="res://Art/Escenarios_Mundos/Game Boy Advance - Harvest Moon More Friends of Mineral Town - Forest Summer.png" id="1_png57"]
 [ext_resource type="Texture2D" uid="uid://b0xroqn2fgdst" path="res://Art/Escenarios_Mundos/DS DSi - Naruto Path of the Ninja 2 - Hidden Leaf Forest Konoha.png" id="2_qf7yw"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="18_dymej"]
 [ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="19_cupqm"]
 [ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="20_5ht7o"]
+[ext_resource type="Texture2D" uid="uid://djr4tjwrubfb" path="res://Art/Escenarios_objetos/Daco_476677.png" id="20_dnc0c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cs850"]
 texture = ExtResource("1_png57")
@@ -100529,8 +100530,8 @@ scale = Vector2(0.977, 0.9)
 texture = ExtResource("10_2h08a")
 
 [node name="colorpalette" type="Sprite2D" parent="."]
-position = Vector2(819, 756)
-scale = Vector2(0.0405872, 0.0435548)
+position = Vector2(835, 760)
+scale = Vector2(0.056393, 0.0583456)
 texture = ExtResource("12_4udmg")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_0nody")]
@@ -100541,7 +100542,7 @@ rotation = 3.14159
 scale = Vector2(515.383, -601.393)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaB"]
-position = Vector2(-1.10597, 1.07251)
+position = Vector2(-1.10209, 1.00434)
 rotation = -3.14159
 scale = Vector2(0.011906, -0.0138033)
 shape = SubResource("RectangleShape2D_q4thm")
@@ -100549,26 +100550,26 @@ shape = SubResource("RectangleShape2D_q4thm")
 [node name="AreaD" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaD"]
-position = Vector2(901, 609)
+position = Vector2(898, 589)
 shape = SubResource("RectangleShape2D_ma3cv")
 
 [node name="AreaA" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaA"]
-position = Vector2(384, 605)
+position = Vector2(390, 577)
 shape = SubResource("RectangleShape2D_1v7hg")
 
 [node name="AreaC" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaC"]
-position = Vector2(749, 650)
+position = Vector2(742, 605)
 shape = SubResource("RectangleShape2D_x2qfq")
 
 [node name="pregunticas" type="Area2D" parent="."]
 position = Vector2(396, 712)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pregunticas"]
-position = Vector2(417, 44)
+position = Vector2(431, 55)
 shape = SubResource("RectangleShape2D_30cif")
 
 [node name="Timer" type="Timer" parent="."]
@@ -100616,10 +100617,10 @@ offset_bottom = 117.0
 texture = ExtResource("20_5ht7o")
 
 [node name="mensaje" type="Label" parent="."]
-offset_left = 545.0
-offset_top = 704.0
-offset_right = 752.0
-offset_bottom = 739.0
+offset_left = 486.0
+offset_top = 683.0
+offset_right = 797.0
+offset_bottom = 794.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("13_fh721")
@@ -100630,19 +100631,20 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="mensaje"]
 visible = false
 layout_mode = 0
-offset_left = 36.0
-offset_top = 115.0
-offset_right = 167.0
-offset_bottom = 149.0
+offset_left = 91.0
+offset_top = 121.0
+offset_right = 222.0
+offset_bottom = 155.0
 text = "REGRESAR"
 
-[node name="vida0" type="TextureRect" parent="."]
+[node name="mancha" type="TextureRect" parent="."]
 visible = false
-offset_left = 54.0
-offset_top = 32.0
-offset_right = 309.0
-offset_bottom = 129.0
-texture = ExtResource("15_okyd3")
+offset_left = 448.0
+offset_top = 56.0
+offset_right = 893.0
+offset_bottom = 538.0
+texture = ExtResource("20_dnc0c")
+expand_mode = 1
 
 [node name="vida1" type="TextureRect" parent="."]
 visible = false

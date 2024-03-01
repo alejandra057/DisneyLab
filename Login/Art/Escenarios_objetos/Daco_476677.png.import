@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djr4tjwrubfb"
-path="res://.godot/imported/Daco_476677.png-440d96f1815eb7847503ecc0a655a77c.ctex"
+path="res://.godot/imported/Daco_476677.png-169881575fa271f6f296c6b441aa4f2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Daco_476677.png"
-dest_files=["res://.godot/imported/Daco_476677.png-440d96f1815eb7847503ecc0a655a77c.ctex"]
+source_file="res://Art/Escenarios_objetos/Daco_476677.png"
+dest_files=["res://.godot/imported/Daco_476677.png-169881575fa271f6f296c6b441aa4f2a.ctex"]
 
 [params]
 

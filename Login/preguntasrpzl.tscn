@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6lg14t53541d"]
+[gd_scene load_steps=2 format=3 uid="uid://b6lg14t53541d"]
 
 [ext_resource type="Script" path="res://preguntasrpzl.gd" id="1_5bhcu"]
-[ext_resource type="FontFile" uid="uid://ccyvw17fux16l" path="res://Art/Font/pf_ronda_seven.ttf" id="2_3w1jj"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5bhcu")
@@ -14,7 +13,6 @@ offset_bottom = 448.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_3w1jj")
 
 [node name="Control" type="Control" parent="PanelContainer"]
 layout_mode = 2

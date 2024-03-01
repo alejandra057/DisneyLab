@@ -139,9 +139,10 @@ func _on_area_b_body_entered(body):
 		$"../Node2D2"._process(body)
 		vida3.show()
 		pieza3.show()
+		$"../mancha".hide()
 		$"../mensaje".show()
 		$"../mensaje".text="Respuesta Correcta"
-		temporizador.wait_time = 1
+		temporizador.wait_time = 1.5
 		temporizador.start()
 		
 	elif $"../Node2D2".valor==3:
@@ -151,15 +152,17 @@ func _on_area_b_body_entered(body):
 		vida4.show()
 		vida3.hide()
 		pieza4.show()
+		$"../mancha".hide()
 		$"../mensaje".show()
-		$"../mensaje".text="Respuesta Correcta"
-		temporizador.wait_time = 1
+		$"../mensaje".text="Respuesta Correcta, ya casi, una más"
+		temporizador.wait_time = 1.5
 		temporizador.start()
 		print($"../Node2D2".valor, "# de valor en prgunta 4")
 	else:
+			$"../mancha".show()
 			$"../mensaje".show()
-			$"../mensaje".text="Respuesta Incorrecta de B"
-			temporizador.wait_time = 1
+			$"../mensaje".text="Creo que usaste el pincel incorrecto,\n Respuesta Incorrecta"
+			temporizador.wait_time = 1.5
 			temporizador.start()
 	
 	print("pregunta ", $"../Node2D2".valor)
@@ -174,9 +177,10 @@ func _on_area_a_body_entered(body):
 		$"../TextureRect".hide()
 		vida1.show()
 		pieza1.show()
+		$"../mancha".hide()
 		$"../mensaje".show()
-		$"../mensaje".text="Respuesta Correcta"
-		temporizador.wait_time = 1
+		$"../mensaje".text="Respuesta Correcta,\n!Vas bien!"
+		temporizador.wait_time = 1.5
 		temporizador.start()
 	
 	elif $"../Node2D2".valor==1:
@@ -186,8 +190,9 @@ func _on_area_a_body_entered(body):
 			vida2.show()
 			pieza2.show()
 			$"../mensaje".show()
-			$"../mensaje".text="Respuesta Correcta"
-			temporizador.wait_time = 1
+			$"../mancha".hide()
+			$"../mensaje".text="¡Respuesta Correcta, sigue asi!"
+			temporizador.wait_time = 1.5
 			temporizador.start()
 			print("valorrr ",$"../Node2D2".valor)
 	elif $"../Node2D2".valor==4:
@@ -196,15 +201,17 @@ func _on_area_a_body_entered(body):
 			vida4.hide()
 			pieza5.show()
 			pieza6.show()
+			$"../mancha".hide()
 			$"../mensaje".show()
 			$"../mensaje".text="¡FELICIDADES!\nHaz ganado, puedes regresar al menu inicio"
 			$"../mensaje/Button".show()
 			#Saveus.contarpalabra+=1
 			temporizador.stop()
 	else:
+			$"../mancha".show()
 			$"../mensaje".show()
-			$"../mensaje".text="Respuesta Incorrecta de A"
-			temporizador.wait_time = 1
+			$"../mensaje".text="¡Ups! Se manchó un poquito tu pintura, \nrespuesta incorrecta"
+			temporizador.wait_time = 1.5
 			temporizador.start()
 	print("pregutna ", $"../Node2D2".valor)
 	Saveus.contarpalabra=0
@@ -213,22 +220,24 @@ func _on_area_a_body_entered(body):
 
 func _on_area_d_body_entered(body):
 	#contar+=1;
+	$"../mancha".show()
 	$"../mensaje".show()
-	$"../mensaje".text="Respuesta Incorrecta de d"
+	$"../mensaje".text="No amigo, creo que eligeste un poquito mal,\nRespuesta Incorrecta"
 	$"../Node2D2"._process(body)
 	Saveus.contarpalabra=0
-	temporizador.wait_time = 1
+	temporizador.wait_time = 1.5
 	temporizador.start()
 	
 	pass # Replace with function body.
 
 func _on_area_c_body_entered(body):
 	#contar+=1;
+	$"../mancha".show()
 	$"../mensaje".show()
-	$"../mensaje".text="Respuesta Incorrecta de c"
+	$"../mensaje".text="Vuelve a pintar, tal vez puedas \nquitarle un poquito la mancha,\nRespuesta Incorrecta"
 	$"../Node2D2"._process(body)
 	Saveus.contarpalabra=0
-	temporizador.wait_time = 1
+	temporizador.wait_time = 1.5
 	temporizador.start()
 	pass # Replace with function body.
 
