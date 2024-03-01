@@ -31520,6 +31520,8 @@ position = Vector2(952, -1464)
 scale = Vector2(0.322, 0.311)
 texture = ExtResource("14_6iuey")
 
+[node name="mysterio_time" type="Timer" parent="."]
+
 [connection signal="body_entered" from="RespuestaA_5" to="." method="_on_respuesta_a_5_body_entered"]
 [connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
@@ -31548,3 +31550,4 @@ texture = ExtResource("14_6iuey")
 [connection signal="body_entered" from="RespuestaC_5" to="." method="_on_respuesta_c_5_body_entered"]
 [connection signal="body_entered" from="RespuestaD_5" to="." method="_on_respuesta_d_5_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="mysterio_time" to="." method="_on_mysterio_time_timeout"]

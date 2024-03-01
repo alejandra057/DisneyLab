@@ -1,8 +1,10 @@
 extends Node2D
 var time
+var mysterio1
 var positions=0
 func _ready():
 	time=$Timer
+	mysterio1=$mysterio_time
 	$fire_continously.play()
 	$AudioStreamPlayer.play()
 	$RespuestaA_1/fuegito.play("explosion")
@@ -251,12 +253,17 @@ func _on_respuesta_d_5_body_entered(body):
 func _on_final_body_entered(body):
 	if Saveus.right_answer5==true:
 		$fire_continously.stop()
-		$CharacterBody2D2.show()
+		$CharacterBody2D2.show() 
+		mysterio1.wait_time = 2.5
+		mysterio1.start()
 		$punch.play()
 		Saveus.win_spidey=true
 		Saveus.mysterio=true
-		$CharacterBody2D2.hide()
 		DialogueManager.show_dialogue_balloon(load("res://gamefinishdialogue.dialogue"), "final_dialogue")
 		$Button.show()
 		
 
+
+func _on_mysterio_time_timeout():
+	mysterio1.stop()
+	$CharacterBody2D2.hide() 
