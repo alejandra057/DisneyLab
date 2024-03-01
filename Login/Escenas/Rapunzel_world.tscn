@@ -1,5 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://dskrctam008cr"]
+[gd_scene load_steps=42 format=3 uid="uid://dskrctam008cr"]
 
+[ext_resource type="AudioStream" uid="uid://c8dbhxqe2e5fi" path="res://Art/Sounds/Kingdom Dance (From _Tangled_Score).mp3" id="1_juidp"]
 [ext_resource type="Texture2D" uid="uid://bfvhteq8lb26o" path="res://Art/Escenarios_Mundos/Game Boy Advance - Harvest Moon More Friends of Mineral Town - Forest Summer.png" id="1_png57"]
 [ext_resource type="Texture2D" uid="uid://b0xroqn2fgdst" path="res://Art/Escenarios_Mundos/DS DSi - Naruto Path of the Ninja 2 - Hidden Leaf Forest Konoha.png" id="2_qf7yw"]
 [ext_resource type="PackedScene" uid="uid://2xrubq6qca8r" path="res://rapunzel.tscn" id="3_0nody"]
@@ -100407,6 +100408,9 @@ size = Vector2(51, 24)
 size = Vector2(41, 43)
 
 [node name="Rapunzel_world" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_juidp")
 
 [node name="TileMap" type="TileMap" parent="."]
 visible = false

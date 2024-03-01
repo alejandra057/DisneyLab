@@ -27,6 +27,7 @@ var  cotext : int=0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var contar=0
 func _ready():
+	$"../AudioStreamPlayer".play()
 	animacion=$AnimatedSprite2D
 	temporizador = $"../Timer"
 	$AnimatedSprite2D.play("frente")
@@ -125,6 +126,7 @@ func play_anim(movement):
 
 func _on_button_pressed():
 	Saveus.finished_game+=1
+	$"../AudioStreamPlayer".stop()
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
 	
 	pass # Replace with function body.
