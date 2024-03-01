@@ -20,6 +20,7 @@ var vida2
 var vida3
 var vida4
 var vida_actual=4
+var contador=0
 var mostrarmsj=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,6 +77,10 @@ func _process(delta):
 		contarrondas=0
 		respondiomal=0
 		respondiobien=0
+	if respondiobien!=respondiomal && contador==2: 
+		print("entra")
+		ocultarpregunta()
+		contador=0
 	pass
 func perder_vidas():
 	match(respondiomal):
@@ -136,6 +141,8 @@ func _on_tiempocontestar_timeout():
 
 
 func _on_button_pressed():
+	contador+=1
+	print("contador")
 	if $Node2D.valor==0:
 		print("respuesta correcta")
 		respondio=true
@@ -162,6 +169,8 @@ func _on_button_pressed():
 
 
 func _on_button_2_pressed():
+	contador+=1
+	print("contador")
 	if $Node2D.valor==1 || $Node2D.valor==3:
 		respondio=true
 		#contarrondas+=1
@@ -191,6 +200,7 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
+	contador+=1
 	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 &&  $Node2D.valor!=3:
 		respondio=true
 		#contarrondas+=1
@@ -220,6 +230,7 @@ func _on_button_3_pressed():
 
 
 func _on_button_4_pressed():
+	contador+=1
 	print("respuesta incorrecta")
 	print("bien ",respondiobien," mal ",respondiomal)
 	tiempo_restante = 10
@@ -234,12 +245,10 @@ func _on_button_4_pressed():
 
 
 func _on_timerrondas_timeout():
-	
 	tiempoRonda -= 1
 	$Label.text = ""
 	if tiempoRonda > 0 && respondiobien!=respondiomal:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
-		
 		tiempo_restante = 10
 	else:
 			timer.start()
