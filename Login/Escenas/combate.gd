@@ -10,16 +10,53 @@ var direccion = Vector2.RIGHT
 var tiempoRonda=4
 var cantrondas=1
 var contarrondas=1
+var escudo
+var telarana
+var animation_time
+var animation_time2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
 	rondas.start()
-	
+	escudo=$"captain america/disco/AnimationPlayer"
+	animation_time=$animacion
+	animation_time2=$animacion2
+	telarana=$"Spidey/telaraña/AnimatedSprite2D"
 	pass # Replace with function body.
-
-
+func animacion_ganar():
+	if Saveus.capitan==true:
+		$"captain america/CA1".play("ataque")
+		#escudo.show()
+		escudo.play("disco")
+		$ironman/ironman1.play("dead")
+		animation_time.wait_time = 1.5  
+		animation_time.start()
+	elif Saveus.iron_man==true:
+		$ironman/ironman1.play("ataque")
+		$ironman/AnimatedSprite2D.show()
+		$ironman/AnimatedSprite2D.play("laser")
+		$"captain america/CA1".play("dead")
+		animation_time.wait_time = 1.5 
+		animation_time.start()
+		
+func animacion_perder():
+	if Saveus.capitan==true:
+		$ironman/ironman1.play("ataque")
+		$ironman/AnimatedSprite2D.show()
+		$ironman/AnimatedSprite2D.play("laser")
+		$"captain america/CA1".play("dead")
+		animation_time2.wait_time = 1.5 
+		animation_time2.start()
+	elif Saveus.iron_man==true:
+		$"captain america/CA1".play("ataque")
+		#escudo.show()
+		escudo.play("disco")
+		$ironman/ironman1.play("dead")
+		animation_time2.wait_time = 1.5  
+		animation_time2.start()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if contarrondas==3:
@@ -44,14 +81,12 @@ func _on_tiempocontestar_timeout():
 
 
 func _on_button_pressed():
-	if $Node2D.valor==0	:
+	if $Node2D.valor==0:
 		print("respuesta correcta")
 		respondio=true
 		tiempo_restante = 10
 		respondiobien+=1
-		#$"captain america/CA1".play("ataque")
-		#$"Spidey/spidey".play("dead")
-		#$capitan/CA1.play("ataque")
+		animacion_ganar()
 		contarrondas+=1
 		empate()
 	else:
@@ -60,6 +95,7 @@ func _on_button_pressed():
 		contarrondas+=1
 		tiempo_restante = 10
 		respondiomal+=1
+		animacion_perder()
 		empate()
 	pass # Replace with function body.
 
@@ -69,6 +105,7 @@ func _on_button_2_pressed():
 		respondio=true
 		contarrondas+=1
 		tiempo_restante = 10
+		animacion_ganar()
 		respondiobien+=1
 		empate()
 	else:
@@ -77,6 +114,7 @@ func _on_button_2_pressed():
 		#$Node2D.next_text()
 		contarrondas+=1
 		tiempo_restante = 10
+		animacion_perder()
 		respondiomal+=1
 		empate()
 	pass # Replace with function body.
@@ -87,6 +125,7 @@ func _on_button_3_pressed():
 		respondio=true
 		contarrondas+=1
 		tiempo_restante = 10
+		animacion_ganar()
 		respondiobien+=1
 		empate()
 	else:
@@ -95,6 +134,7 @@ func _on_button_3_pressed():
 		#$Node2D.next_text()
 		contarrondas+=1
 		tiempo_restante = 10
+		animacion_perder()
 		respondiomal+=1
 		empate()
 	pass # Replace with function body.
@@ -106,6 +146,7 @@ func _on_button_4_pressed():
 	respondio=false
 	#$Node2D.next_text()
 	contarrondas+=1
+	animacion_perder()
 	respondiomal+=1
 	#$Node2D.next_text()
 	empate()
@@ -150,3 +191,30 @@ func empate():
 		$Node2D.current_text=-1
 		print("empate")
 	$Node2D.next_text()
+
+
+func _on_animacion_timeout():
+	animation_time.stop()
+	$"captain america/CA1".stop()
+	$"captain america/CA1".play("idle")
+	$ironman/ironman1.stop()
+	$ironman/AnimatedSprite2D.stop()
+	$ironman/AnimatedSprite2D.hide()
+	$ironman/ironman1.play("idle")
+	escudo.stop()
+	#escudo.hide()
+
+
+
+
+
+func _on_animacion_2_timeout():
+	animation_time2.stop()
+	$"captain america/CA1".stop()
+	$"captain america/CA1".play("idle")
+	$ironman/ironman1.stop()
+	$ironman/AnimatedSprite2D.stop()
+	$ironman/AnimatedSprite2D.hide()
+	$ironman/ironman1.play("idle")
+	escudo.stop()
+	#escudo.hide()

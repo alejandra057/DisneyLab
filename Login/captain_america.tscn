@@ -310,7 +310,7 @@ shape = SubResource("CapsuleShape2D_tkqd7")
 
 [node name="disco" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(294.75, 567.375)
+position = Vector2(429.5, 516.75)
 scale = Vector2(2.55, 2.52823)
 texture = ExtResource("4_cmuoh")
 

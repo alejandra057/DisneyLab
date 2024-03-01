@@ -8297,13 +8297,14 @@ expand_mode = 1
 visible = false
 
 [node name="Spidey" parent="." instance=ExtResource("3_1qycs")]
-position = Vector2(-248, 274)
+visible = false
+position = Vector2(-99, 275)
 
 [node name="thor" parent="." instance=ExtResource("4_8g663")]
 visible = false
 
 [node name="ironman" parent="." instance=ExtResource("5_y5gmg")]
-visible = false
+position = Vector2(-8, 267)
 
 [node name="blackpanther" parent="." instance=ExtResource("6_qqdqf")]
 visible = false
@@ -8426,9 +8427,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
 
+[node name="animacion" type="Timer" parent="."]
+
+[node name="animacion2" type="Timer" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="timeout" from="tiempocontestar" to="." method="_on_tiempocontestar_timeout"]
 [connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
+[connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
+[connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]

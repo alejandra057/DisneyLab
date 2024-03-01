@@ -306,6 +306,7 @@ position = Vector2(826, 517)
 shape = SubResource("CapsuleShape2D_sdds5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(587, 498)
 scale = Vector2(2.98889, 2.52703)
 sprite_frames = SubResource("SpriteFrames_r5oyi")
