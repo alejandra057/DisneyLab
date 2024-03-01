@@ -1,21 +1,20 @@
-[gd_scene load_steps=31 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=30 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
 [ext_resource type="Script" path="res://Escenas/combate.gd" id="1_sowe0"]
-[ext_resource type="Texture2D" uid="uid://dvywu2fs803in" path="res://Art/Sprites/0vida-removebg-preview.png" id="2_t1eoj"]
 [ext_resource type="PackedScene" uid="uid://diijtaeeihs2o" path="res://BlackWidow.tscn" id="2_t8fa6"]
 [ext_resource type="PackedScene" uid="uid://cq66cvbpoerx3" path="res://spidey.tscn" id="3_1qycs"]
-[ext_resource type="Texture2D" uid="uid://vr70j17o482n" path="res://Art/Sprites/1vida-removebg-preview.png" id="3_b8woi"]
+[ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="4_3tgsu"]
 [ext_resource type="PackedScene" uid="uid://dwufd7xe4oocc" path="res://thor.tscn" id="4_8g663"]
-[ext_resource type="Texture2D" uid="uid://d1y36pmdxeudt" path="res://Art/Sprites/2vida-removebg-preview.png" id="4_n14ip"]
-[ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="5_7smvg"]
+[ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="5_llia7"]
 [ext_resource type="PackedScene" uid="uid://dy5hfo318vbvq" path="res://ironman.tscn" id="5_y5gmg"]
-[ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="6_1447x"]
+[ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="6_mcet1"]
 [ext_resource type="PackedScene" uid="uid://dyfucgaecy8wc" path="res://blackpanther.tscn" id="6_qqdqf"]
+[ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="7_188ov"]
 [ext_resource type="PackedScene" uid="uid://bmy42h6c5v883" path="res://vision.tscn" id="7_jhjsc"]
-[ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="7_ovrf0"]
 [ext_resource type="PackedScene" uid="uid://ba14542ro4gj2" path="res://captain_america.tscn" id="8_b2p4d"]
+[ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="8_trrfy"]
 [ext_resource type="PackedScene" uid="uid://4u8rmerbktsk" path="res://hulk.tscn" id="9_vp8wr"]
 [ext_resource type="PackedScene" uid="uid://cj1pcjbo5adno" path="res://capitana.tscn" id="10_pomk4"]
 [ext_resource type="PackedScene" uid="uid://c81ibpo0j1hnt" path="res://doctor_strnge.tscn" id="11_v0u1w"]
@@ -8198,99 +8197,83 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1966188, 3604480, 10, 0, 1835008, 7, 65536, 1835008, 7, 131072, 1835008, 7, 196608, 1835008, 7, 262144, 1835008, 7, 327680, 1835008, 7, 393216, 1835008, 7, 458752, 1835008, 7, 524288, 1835008, 7, 589824, 1835008, 7, 655360, 1835008, 7, 720896, 1835008, 7, 786432, 1835008, 7, 851968, 1835008, 7, 917504, 1835008, 7, 983040, 1835008, 7, 1048576, 1835008, 7, 1114112, 1835008, 7, 1179648, 1835008, 7, 1245184, 1835008, 7, 1310720, 1835008, 7, 1376256, 1835008, 7, 1441792, 1835008, 7, 1507328, 1835008, 7, 1572864, 1835008, 7, 1638400, 1835008, 7, 1703936, 1835008, 7, 1769472, 1835008, 7, 1835008, 1835008, 7, 1900544, 1835008, 7, 1966080, 1835008, 7, 2031616, 1835008, 7, 2097152, 1835008, 7, 2162688, 1835008, 7, 2228224, 1835008, 7, 2293760, 1835008, 7, 2359296, 1835008, 7, 2424832, 1835008, 7, 2490368, 1835008, 7, 71, 1835008, 7, 65607, 1835008, 7, 131143, 1835008, 7, 196679, 1835008, 7, 262215, 1835008, 7, 327751, 1835008, 7, 393287, 1835008, 7, 458823, 1835008, 7, 524359, 1835008, 7, 589895, 1835008, 7, 655431, 1835008, 7, 720967, 1835008, 7, 786503, 1835008, 7, 852039, 1835008, 7, 917575, 1835008, 7, 983111, 1835008, 7, 1048647, 1835008, 7, 1114183, 1835008, 7, 1179719, 1835008, 7, 1245255, 1835008, 7, 1310791, 1835008, 7, 1310792, 1835008, 7, 1376328, 1835008, 7, 1441864, 1835008, 7, 1507400, 1835008, 7, 1572936, 1835008, 7, 1638472, 1835008, 7, 1704008, 1835008, 7, 1769544, 1835008, 7, 1835080, 1835008, 7, 1900616, 1835008, 7, 1966152, 1835008, 7, 2031688, 1835008, 7, 2097224, 1835008, 7, 2162760, 1835008, 7, 2228296, 1835008, 7, 2293832, 1835008, 7, 2359368, 1835008, 7, 2424904, 1835008, 7, 2490440, 1835008, 7, 2555976, 1835008, 7, 2621512, 1835008, 7, 1376327, 1835008, 7, 1441863, 1835008, 7, 1507399, 1835008, 7, 1572935, 1835008, 7, 1638471, 1835008, 7, 2097223, 1835008, 7, 2031687, 1835008, 7, 1966151, 1835008, 7, 1900615, 1835008, 7, 1835079, 1835008, 7, 1769543, 1835008, 7, 1704007, 1835008, 7, 2162759, 1835008, 7, 2228295, 1835008, 7, 2293831, 1835008, 7, 2359367, 1835008, 7, 2424903, 1835008, 7, 2490439, 1835008, 7, 2555975, 1835008, 7, 2621440, 1835008, 7, 2555904, 1835008, 7, 1, 1835008, 7, 2, 1835008, 7, 3, 1835008, 7, 4, 1835008, 7, 5, 1835008, 7, 6, 1835008, 7, 7, 1835008, 7, 8, 1835008, 7, 9, 1835008, 7, 10, 1835008, 7, 11, 1835008, 7, 12, 1835008, 7, 13, 1835008, 7, 14, 1835008, 7, 65550, 1835008, 7, 65551, 1835008, 7, 65552, 1835008, 7, 65553, 1835008, 7, 17, 1835008, 7, 16, 1835008, 7, 15, 1835008, 7, 3604480, 983040, 8, 3604481, 983040, 8, 3604482, 983040, 8, 3604483, 983040, 8, 3604484, 983040, 8, 3604485, 983040, 8, 3604486, 983040, 8, 3604487, 983040, 8, 3604488, 983040, 8, 3604489, 983040, 8, 3604490, 983040, 8, 3604491, 983040, 8, 3604492, 983040, 8, 3604493, 983040, 8, 3604494, 983040, 8, 3604495, 983040, 8, 3604496, 983040, 8, 3604497, 983040, 8, 3604498, 983040, 8, 3604499, 983040, 8, 3604500, 983040, 8, 3604501, 983040, 8, 3604502, 983040, 8, 3604503, 983040, 8, 3604504, 983040, 8, 3604505, 983040, 8, 3604506, 983040, 8, 3604507, 983040, 8, 3670043, 983040, 8, 3670044, 983040, 8, 3670045, 983040, 8, 3670046, 983040, 8, 3670047, 983040, 8, 3670048, 983040, 8, 3604510, 983040, 8, 3604508, 983040, 8, 3604509, 983040, 8, 3604511, 983040, 8, 3604512, 983040, 8, 3604513, 983040, 8, 3604514, 983040, 8, 3604515, 983040, 8, 3604516, 983040, 8, 3604517, 983040, 8, 3604518, 983040, 8, 3604519, 983040, 8, 3604520, 983040, 8, 3604521, 983040, 8, 3604522, 983040, 8, 3604523, 983040, 8, 3604524, 983040, 8, 3604525, 983040, 8, 3604526, 983040, 8, 3604527, 983040, 8, 3604528, 983040, 8, 3604529, 983040, 8, 3604530, 983040, 8, 3604531, 983040, 8, 3604532, 983040, 8, 3604533, 983040, 8, 3604534, 983040, 8, 3604535, 983040, 8, 3604536, 983040, 8, 3604537, 983040, 8, 3604538, 983040, 8, 3604539, 983040, 8, 3604540, 983040, 8, 3604541, 983040, 8, 3604542, 983040, 8, 3604543, 983040, 8, 3604544, 983040, 8, 3604545, 983040, 8, 3604546, 983040, 8, 3604547, 983040, 8, 3604548, 983040, 8, 3604549, 983040, 8, 3604550, 983040, 8, 3604551, 983040, 8, 2621511, 983040, 8, 2687047, 983040, 8, 2752583, 983040, 8, 2818119, 983040, 8, 2883655, 983040, 8, 2949191, 983040, 8, 3014727, 983040, 8, 3080263, 983040, 8, 3145799, 983040, 8, 3211335, 983040, 8, 3276871, 983040, 8, 3342407, 983040, 8, 3407943, 983040, 8, 3473479, 983040, 8, 3539015, 983040, 8, 2686976, 983040, 8, 2752512, 983040, 8, 2818048, 983040, 8, 2883584, 983040, 8, 2949120, 983040, 8, 3014656, 983040, 8, 3080192, 983040, 8, 3145728, 983040, 8, 3211264, 983040, 8, 3276800, 983040, 8, 3342336, 983040, 8, 3407872, 983040, 8, 3473408, 983040, 8, 3538944, 983040, 8)
 
 [node name="vida0" type="TextureRect" parent="."]
-offset_left = 49.0
-offset_top = 542.0
-offset_right = 249.0
-offset_bottom = 617.0
-texture = ExtResource("2_t1eoj")
+offset_left = 53.0
+offset_top = 414.0
+offset_right = 286.0
+offset_bottom = 490.0
+texture = ExtResource("4_3tgsu")
 expand_mode = 1
 
 [node name="vida1" type="TextureRect" parent="."]
-offset_left = 51.0
-offset_top = 542.0
-offset_right = 251.0
-offset_bottom = 617.0
-texture = ExtResource("3_b8woi")
+offset_left = 54.0
+offset_top = 402.0
+offset_right = 289.0
+offset_bottom = 485.0
+texture = ExtResource("5_llia7")
 expand_mode = 1
 
 [node name="vida2" type="TextureRect" parent="."]
 offset_left = 53.0
-offset_top = 543.0
-offset_right = 253.0
-offset_bottom = 618.0
-texture = ExtResource("4_n14ip")
+offset_top = 407.0
+offset_right = 293.0
+offset_bottom = 489.0
+texture = ExtResource("6_mcet1")
 expand_mode = 1
 
 [node name="vida3" type="TextureRect" parent="."]
 offset_left = 53.0
-offset_top = 543.0
-offset_right = 253.0
-offset_bottom = 618.0
-texture = ExtResource("5_7smvg")
+offset_top = 410.0
+offset_right = 288.0
+offset_bottom = 486.0
+texture = ExtResource("7_188ov")
 expand_mode = 1
 
 [node name="vida4" type="TextureRect" parent="."]
-offset_left = 52.0
-offset_top = 543.0
-offset_right = 252.0
-offset_bottom = 618.0
-texture = ExtResource("6_1447x")
-expand_mode = 1
-
-[node name="vida5" type="TextureRect" parent="."]
-offset_left = 55.0
-offset_top = 545.0
-offset_right = 255.0
-offset_bottom = 620.0
-texture = ExtResource("7_ovrf0")
+offset_left = 54.0
+offset_top = 411.0
+offset_right = 282.0
+offset_bottom = 487.0
+texture = ExtResource("8_trrfy")
 expand_mode = 1
 
 [node name="vida00" type="TextureRect" parent="."]
-offset_left = 887.0
-offset_top = 526.0
-offset_right = 1087.0
-offset_bottom = 601.0
-texture = ExtResource("2_t1eoj")
+offset_left = 778.0
+offset_top = 426.0
+offset_right = 1066.0
+offset_bottom = 493.0
+texture = ExtResource("4_3tgsu")
 expand_mode = 1
 
 [node name="vida01" type="TextureRect" parent="."]
-offset_left = 886.0
-offset_top = 527.0
-offset_right = 1086.0
-offset_bottom = 602.0
-texture = ExtResource("3_b8woi")
+offset_left = 776.0
+offset_top = 414.0
+offset_right = 1072.0
+offset_bottom = 490.0
+texture = ExtResource("5_llia7")
 expand_mode = 1
 
 [node name="vida02" type="TextureRect" parent="."]
-offset_left = 889.0
-offset_top = 527.0
-offset_right = 1089.0
-offset_bottom = 602.0
-texture = ExtResource("4_n14ip")
+offset_left = 774.0
+offset_top = 418.0
+offset_right = 1067.0
+offset_bottom = 496.0
+texture = ExtResource("6_mcet1")
 expand_mode = 1
 
 [node name="vida03" type="TextureRect" parent="."]
-offset_left = 888.0
-offset_top = 527.0
-offset_right = 1088.0
-offset_bottom = 602.0
-texture = ExtResource("5_7smvg")
+offset_left = 775.0
+offset_top = 418.0
+offset_right = 1067.0
+offset_bottom = 493.0
+texture = ExtResource("7_188ov")
 expand_mode = 1
 
 [node name="vida04" type="TextureRect" parent="."]
-offset_left = 886.0
-offset_top = 525.0
-offset_right = 1086.0
-offset_bottom = 600.0
-texture = ExtResource("6_1447x")
-expand_mode = 1
-
-[node name="vida05" type="TextureRect" parent="."]
-offset_left = 886.0
-offset_top = 525.0
-offset_right = 1086.0
-offset_bottom = 600.0
-texture = ExtResource("7_ovrf0")
+offset_left = 775.0
+offset_top = 423.0
+offset_right = 1067.0
+offset_bottom = 492.0
+texture = ExtResource("8_trrfy")
 expand_mode = 1
 
 [node name="Blackwidow" parent="." instance=ExtResource("2_t8fa6")]
@@ -8336,7 +8319,7 @@ offset_right = 353.0
 offset_bottom = 87.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "racionalista"
+text = "Racionalista"
 label_settings = SubResource("LabelSettings_7cwwt")
 
 [node name="empiristas" type="Label" parent="."]
@@ -8345,7 +8328,7 @@ offset_top = 30.0
 offset_right = 1050.0
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "imperialista"
+text = "Empirista"
 label_settings = SubResource("LabelSettings_p8q3l")
 
 [node name="TextureRect2" type="TextureRect" parent="."]

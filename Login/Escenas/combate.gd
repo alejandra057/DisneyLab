@@ -14,6 +14,12 @@ var escudo
 var telarana
 var animation_time
 var animation_time2
+var vida0
+var vida1
+var vida2
+var vida3
+var vida4
+var vida_actual=4
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
@@ -24,6 +30,11 @@ func _ready():
 	animation_time=$animacion
 	animation_time2=$animacion2
 	telarana=$"Spidey/telaraña/AnimatedSprite2D"
+	vida0=$vida0
+	vida1=$vida1
+	vida2=$vida2
+	vida3=$vida3
+	vida4=$vida4
 	pass # Replace with function body.
 func animacion_ganar():
 	if Saveus.capitan==true:
@@ -63,7 +74,34 @@ func _process(delta):
 		ocultarpregunta()
 		contarrondas=1
 	pass
-
+func perder_vidas():
+	if respondiomal==1 && Saveus.capitan ==true:
+		$vida4.hide()
+		vida_actual-=1
+	elif respondiomal==2 && Saveus.capitan ==true:
+		$vida3.hide()
+		vida_actual-=1
+	elif respondiomal ==3 && Saveus.capitan ==true:
+		$vida2.hide()
+		vida_actual-=1
+	elif respondiomal ==4 && Saveus.capitan ==true:
+		$vida1.hide()
+		vida_actual-=1
+		
+func ganar_vidas():
+	if respondiomal==1 && Saveus.capitan ==true && vida_actual==3:
+		$vida04.show()
+		vida_actual+=1
+	elif respondiomal==2 && Saveus.capitan ==true && vida_actual==2:
+		$vida03.show()
+		vida_actual-=1
+	elif respondiomal ==3 && Saveus.capitan ==true:
+		$vida02.hide()
+		vida_actual-=1
+	elif respondiomal ==4 && Saveus.capitan ==true:
+		$vida01.hide()
+		vida_actual-=1
+		
 
 func _on_tiempocontestar_timeout():
 	tiempo_restante -= 1
@@ -96,8 +134,10 @@ func _on_button_pressed():
 		tiempo_restante = 10
 		respondiomal+=1
 		animacion_perder()
+		perder_vidas()
 		empate()
 	pass # Replace with function body.
+
 
 
 func _on_button_2_pressed():
@@ -187,8 +227,8 @@ func ocultarpregunta():
 	
 func empate():
 	if respondiobien==respondiomal:
-		$Node2D.valor=-1
-		$Node2D.current_text=-1
+		$Node2D.valor-1
+		$Node2D.current_text-1
 		print("empate")
 	$Node2D.next_text()
 

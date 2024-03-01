@@ -100628,6 +100628,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="mensaje"]
+visible = false
 layout_mode = 0
 offset_left = 36.0
 offset_top = 115.0
