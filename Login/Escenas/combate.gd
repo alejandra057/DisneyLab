@@ -9,7 +9,7 @@ var velocidad = Vector2(100, 0)  # Velocidad inicial en píxeles por segundo
 var direccion = Vector2.RIGHT
 var tiempoRonda=4
 var cantrondas=1
-var contarrondas=1
+var contarrondas=0
 var escudo
 var telarana
 var animation_time
@@ -20,6 +20,7 @@ var vida2
 var vida3
 var vida4
 var vida_actual=4
+var mostrarmsj=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
@@ -70,24 +71,38 @@ func animacion_perder():
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if contarrondas==3:
+	if contarrondas==1:
 		ocultarpregunta()
-		contarrondas=1
+		contarrondas=0
 	pass
 func perder_vidas():
-	if respondiomal==1 && Saveus.capitan ==true:
-		$vida4.hide()
-		vida_actual-=1
-	elif respondiomal==2 && Saveus.capitan ==true:
-		$vida3.hide()
-		vida_actual-=1
-	elif respondiomal ==3 && Saveus.capitan ==true:
-		$vida2.hide()
-		vida_actual-=1
-	elif respondiomal ==4 && Saveus.capitan ==true:
-		$vida1.hide()
-		vida_actual-=1
-		
+	match(respondiomal):
+		1:
+			if Saveus.capitan ==true:
+				print("entra en menos vidqa")
+				$vida4.hide()
+				vida_actual-=1
+			else:
+				$vida04.hide()
+		2:
+			if respondiomal==2 && Saveus.capitan ==true:
+				$vida3.hide()
+				vida_actual-=1
+			else:
+				$vida03.hide()
+		3:
+			if respondiomal ==3 && Saveus.capitan ==true:
+				$vida2.hide()
+				vida_actual-=1
+			else:
+				$vida02.hide()
+		4:
+			if respondiomal ==4 && Saveus.capitan ==true:
+				$vida1.hide()
+				vida_actual-=1
+			else:
+				$vida01.hide()
+	
 func ganar_vidas():
 	if respondiomal==1 && Saveus.capitan ==true && vida_actual==3:
 		$vida04.show()
@@ -114,7 +129,7 @@ func _on_tiempocontestar_timeout():
 		contarrondas+=1
 		tiempo_restante = 10
 		respondiomal+=1
-		empate()
+		#empate()
 	pass # Replace with function body.
 
 
@@ -125,17 +140,21 @@ func _on_button_pressed():
 		tiempo_restante = 10
 		respondiobien+=1
 		animacion_ganar()
-		contarrondas+=1
-		empate()
+		print("bien ",respondiobien," mal ",respondiomal)
+		if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	else:
 		respondio=false
-		#$Node2D.next_text()
-		contarrondas+=1
 		tiempo_restante = 10
 		respondiomal+=1
 		animacion_perder()
 		perder_vidas()
-		empate()
+		#empate()
+		print("bien ",respondiobien," mal ",respondiomal)
+		if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	pass # Replace with function body.
 
 
@@ -143,61 +162,83 @@ func _on_button_pressed():
 func _on_button_2_pressed():
 	if $Node2D.valor==1 || $Node2D.valor==3:
 		respondio=true
-		contarrondas+=1
+		#contarrondas+=1
 		tiempo_restante = 10
 		animacion_ganar()
 		respondiobien+=1
-		empate()
+		#empate()
+		print("bien ",respondiobien," mal ",respondiomal)
+		if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	else:
 		print("respuesta incorrecta")
 		respondio=false
 		#$Node2D.next_text()
-		contarrondas+=1
+		#contarrondas+=1
 		tiempo_restante = 10
 		animacion_perder()
+		perder_vidas()
+		print("bien ",respondiobien," mal ",respondiomal)
 		respondiomal+=1
-		empate()
+		#empate()
+		if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	pass # Replace with function body.
 
 
 func _on_button_3_pressed():
 	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 &&  $Node2D.valor!=3:
 		respondio=true
-		contarrondas+=1
+		#contarrondas+=1
 		tiempo_restante = 10
 		animacion_ganar()
 		respondiobien+=1
-		empate()
+		#empate()
+		print("bien ",respondiobien," mal ",respondiomal)
+		if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	else:
 		print("respuesta incorrecta")
+		print("bien ",respondiobien," mal ",respondiomal)
 		respondio=false
 		#$Node2D.next_text()
-		contarrondas+=1
+		#contarrondas+=1
 		tiempo_restante = 10
 		animacion_perder()
+		perder_vidas()
 		respondiomal+=1
-		empate()
+		#empate()
+		if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	pass # Replace with function body.
 
 
 func _on_button_4_pressed():
 	print("respuesta incorrecta")
+	print("bien ",respondiobien," mal ",respondiomal)
 	tiempo_restante = 10
 	respondio=false
-	#$Node2D.next_text()
-	contarrondas+=1
 	animacion_perder()
+	perder_vidas()
 	respondiomal+=1
-	#$Node2D.next_text()
-	empate()
+	if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
 	pass # Replace with function body.
 
 
 func _on_timerrondas_timeout():
 	
 	tiempoRonda -= 1
-	if tiempoRonda > 0:
+	$Label.text = ""
+	if tiempoRonda > 0 && respondiobien!=respondiomal:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
+		#respondiobien=0
+		#respondiomal=0
 		tiempo_restante = 10
 	else:
 			timer.start()
@@ -211,7 +252,6 @@ func _on_timerrondas_timeout():
 	pass # Replace with function body.
 
 func ocultarpregunta():
-	
 	cantrondas+=1
 	tiempoRonda=4
 	rondas.start()
@@ -227,10 +267,15 @@ func ocultarpregunta():
 	
 func empate():
 	if respondiobien==respondiomal:
-		$Node2D.valor-1
-		$Node2D.current_text-1
+		$Node2D.valor-=1
+		$Node2D.current_text-=1
+		$Label.text = "Desempate "
+		ocultarpregunta()
+		cantrondas-=1
 		print("empate")
+		mostrarmsj=true
 	$Node2D.next_text()
+	
 
 
 func _on_animacion_timeout():
@@ -241,11 +286,9 @@ func _on_animacion_timeout():
 	$ironman/AnimatedSprite2D.stop()
 	$ironman/AnimatedSprite2D.hide()
 	$ironman/ironman1.play("idle")
+	empate()
 	escudo.stop()
 	#escudo.hide()
-
-
-
 
 
 func _on_animacion_2_timeout():
@@ -257,4 +300,5 @@ func _on_animacion_2_timeout():
 	$ironman/AnimatedSprite2D.hide()
 	$ironman/ironman1.play("idle")
 	escudo.stop()
+	empate()
 	#escudo.hide()
