@@ -8414,6 +8414,24 @@ theme_override_font_sizes/font_size = 70
 
 [node name="animacion2" type="Timer" parent="."]
 
+[node name="punto1" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 489.0
+offset_right = 215.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Puntos: 0"
+
+[node name="punto2" type="Label" parent="."]
+offset_left = 868.0
+offset_top = 486.0
+offset_right = 1046.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Puntos: 0"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

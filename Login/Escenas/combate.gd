@@ -22,6 +22,8 @@ var vida4
 var vida_actual=4
 var contador=0
 var mostrarmsj=false
+var puntosganador=0
+var puntosperdedor=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
@@ -70,9 +72,11 @@ func animacion_perder():
 		animation_time2.wait_time = 1.5  
 		animation_time2.start()
 		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$punto1.text="Puntos: "+str(puntosganador)
+	$punto2.text="Puntos: "+str(puntosperdedor)
 	if contarrondas==1:
+		print("enprocess contarronda")
 		ocultarpregunta()
 		contarrondas=0
 		respondiomal=0
@@ -81,6 +85,7 @@ func _process(delta):
 		print("entra")
 		ocultarpregunta()
 		contador=0
+	
 	pass
 func perder_vidas():
 	match(respondiomal):
@@ -132,56 +137,57 @@ func _on_tiempocontestar_timeout():
 	else:
 		if respondio==false:
 			$lbtiempo.text = "Tiempo agotado"
-		#$Node2D.next_text()
-		contarrondas+=1
 		tiempo_restante = 10
 		respondiomal+=1
-		#empate()
+		puntosperdedor+=1
+		contador+=1
+		animacion_perder()
 	pass # Replace with function body.
 
 
 func _on_button_pressed():
 	contador+=1
-	print("contador")
+	if mostrarmsj:
+			print("entro al mostrar msj")
+			contarrondas+=1
+			mostrarmsj=false
+	print("contador",contador)
 	if $Node2D.valor==0:
 		print("respuesta correcta")
 		respondio=true
 		tiempo_restante = 10
 		respondiobien+=1
+		puntosganador+=1
 		animacion_ganar()
 		print("bien ",respondiobien," mal ",respondiomal)
-		if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
 	else:
 		respondio=false
 		tiempo_restante = 10
 		respondiomal+=1
 		animacion_perder()
 		perder_vidas()
-		#empate()
 		print("bien ",respondiobien," mal ",respondiomal)
-		if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
+		puntosperdedor+=1
 	pass # Replace with function body.
 
 
 
 func _on_button_2_pressed():
 	contador+=1
-	print("contador")
+	if mostrarmsj:
+			print("entro al mostrar msj")
+			contarrondas+=1
+			mostrarmsj=false
+	print("contador",contador)
 	if $Node2D.valor==1 || $Node2D.valor==3:
 		respondio=true
-		#contarrondas+=1
+		puntosganador+=1
 		tiempo_restante = 10
 		animacion_ganar()
 		respondiobien+=1
 		#empate()
 		print("bien ",respondiobien," mal ",respondiomal)
-		if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
+		
 	else:
 		print("respuesta incorrecta")
 		respondio=false
@@ -192,26 +198,26 @@ func _on_button_2_pressed():
 		perder_vidas()
 		print("bien ",respondiobien," mal ",respondiomal)
 		respondiomal+=1
-		#empate()
-		if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
+		puntosperdedor+=1
+		
 	pass # Replace with function body.
 
 
 func _on_button_3_pressed():
 	contador+=1
+	if mostrarmsj:
+			contarrondas+=1
+			mostrarmsj=false
+	print("contador",contador)
 	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 &&  $Node2D.valor!=3:
 		respondio=true
-		#contarrondas+=1
+		puntosganador+=1
 		tiempo_restante = 10
 		animacion_ganar()
 		respondiobien+=1
 		#empate()
 		print("bien ",respondiobien," mal ",respondiomal)
-		if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
+		
 	else:
 		print("respuesta incorrecta")
 		print("bien ",respondiobien," mal ",respondiomal)
@@ -222,10 +228,8 @@ func _on_button_3_pressed():
 		animacion_perder()
 		perder_vidas()
 		respondiomal+=1
-		#empate()
-		if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
+		puntosperdedor+=1
+		
 	pass # Replace with function body.
 
 
@@ -238,6 +242,7 @@ func _on_button_4_pressed():
 	animacion_perder()
 	perder_vidas()
 	respondiomal+=1
+	puntosperdedor+=1
 	if mostrarmsj:
 			contarrondas+=1
 			mostrarmsj=false
@@ -247,10 +252,10 @@ func _on_button_4_pressed():
 func _on_timerrondas_timeout():
 	tiempoRonda -= 1
 	$Label.text = ""
-	if tiempoRonda > 0 && respondiobien!=respondiomal:
+	if tiempoRonda > 0:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
 		tiempo_restante = 10
-	else:
+	elif cantrondas<5:
 			timer.start()
 			$Node2D.show()
 			$Button.show()
@@ -263,15 +268,15 @@ func _on_timerrondas_timeout():
 
 func ocultarpregunta():
 	cantrondas+=1
+	print("cantrondas",cantrondas)
+	if cantrondas>4:
+		contarrondas=0
+		print("aqui iria el ganador")
+		ocultar()
+		return
 	tiempoRonda=4
 	rondas.start()
-	$Node2D.hide()
-	$Button.hide()
-	$Button2.hide()
-	$Button3.hide()
-	$Button4.hide()
-	$Label.show()
-	$lbtiempo.hide()
+	ocultar()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 	
@@ -285,8 +290,17 @@ func empate():
 			cantrondas-=1
 			print("empate")
 			mostrarmsj=true
+			contador=-1
 	$Node2D.next_text()
 	
+func ocultar():
+	$Node2D.hide()
+	$Button.hide()
+	$Button2.hide()
+	$Button3.hide()
+	$Button4.hide()
+	$Label.show()
+	$lbtiempo.hide()
 
 
 func _on_animacion_timeout():
