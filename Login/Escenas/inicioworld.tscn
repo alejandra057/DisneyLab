@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkmh8sq5qgcai"]
+[gd_scene load_steps=25 format=3 uid="uid://bkmh8sq5qgcai"]
 
 [ext_resource type="Script" path="res://Scripts/inicioworld.gd" id="1_xqpst"]
 [ext_resource type="Texture2D" uid="uid://ds54bpgvqsso3" path="res://Art/Escenarios_Mundos/mapainicio.jpg" id="2_moi1m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5y3gl3fd7y82" path="res://Escenas/merida.tscn" id="5_fyx88"]
 [ext_resource type="PackedScene" uid="uid://byu00r7ls52pj" path="res://Escenas/Puertass.tscn" id="6_5popp"]
 [ext_resource type="Texture2D" uid="uid://dd7hhutxhvjhq" path="res://Art/Imagenes Narrativa/7ma_imagen.jpg" id="7_1mkcd"]
+[ext_resource type="Texture2D" uid="uid://cdnscqe4p4fwq" path="res://Art/Sprites/portal-removebg-preview.png" id="9_lft30"]
 [ext_resource type="Texture2D" uid="uid://bgkiva4tb3p7u" path="res://Art/Sprites/atrilanim-removebg-preview.png" id="9_teq1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38iro"]
@@ -12335,7 +12336,43 @@ size = Vector2(78.5938, 84.1407)
 size = Vector2(102.27, 129.47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2nr3"]
-size = Vector2(52, 52)
+size = Vector2(64, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mec5"]
+atlas = ExtResource("9_lft30")
+region = Rect2(0, 0, 162, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kof7q"]
+atlas = ExtResource("9_lft30")
+region = Rect2(162, 0, 162, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef773"]
+atlas = ExtResource("9_lft30")
+region = Rect2(324, 0, 162, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by0tq"]
+atlas = ExtResource("9_lft30")
+region = Rect2(486, 0, 162, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_us446"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mec5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kof7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef773")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by0tq")
+}],
+"loop": true,
+"name": &"portal_",
+"speed": 5.0
+}]
 
 [node name="castillo" type="Node2D"]
 script = ExtResource("1_xqpst")
@@ -12466,8 +12503,15 @@ shape = SubResource("RectangleShape2D_gga20")
 position = Vector2(1073, -146)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4, -5)
+position = Vector2(-268, 43)
 shape = SubResource("RectangleShape2D_p2nr3")
+
+[node name="transition" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(805, -95)
+scale = Vector2(0.481481, 0.359375)
+sprite_frames = SubResource("SpriteFrames_us446")
+animation = &"portal_"
 
 [connection signal="timeout" from="Puertas/Timerpuerta1" to="." method="_on_timerpuerta_1_timeout"]
 [connection signal="timeout" from="Puertas2/Timerpuerta2" to="." method="_on_timerpuerta_2_timeout"]

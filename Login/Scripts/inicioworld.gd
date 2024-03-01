@@ -16,7 +16,9 @@ func _ready():
 		$Puertas2.frame=11
 	if(Saveus.habilitar==true):
 		$Roulette.show()
-	
+	if(Saveus.finished_game==4):
+		$transition.show()
+		$transition.play("portal_")
 
 func _process(delta):
 	if Saveus.habilitar==true:
