@@ -259,7 +259,7 @@ func _on_timerrondas_timeout():
 			$lbtiempo.show()
 			$Label.hide()
 		
-	pass # Replace with function body.
+	pass 
 
 func ocultarpregunta():
 	cantrondas+=1
