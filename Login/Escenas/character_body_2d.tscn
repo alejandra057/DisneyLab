@@ -139,12 +139,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s40y"]
-radius = 28.0
-height = 56.0
+radius = 25.0
+height = 60.0001
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2vt2"]
-radius = 33.0
-height = 66.0
+radius = 20.0
+height = 58.0
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
@@ -152,14 +152,13 @@ position = Vector2(5, -5)
 script = ExtResource("1_4v0ba")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(568.5, 595)
-scale = Vector2(2.03125, 2.04167)
+position = Vector2(561.25, 523)
+scale = Vector2(1.82812, 1.375)
 sprite_frames = SubResource("SpriteFrames_hcyka")
-animation = &"left_idle"
-frame_progress = 0.563738
+animation = &"back_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(573, 598)
+position = Vector2(563, 525)
 shape = SubResource("CapsuleShape2D_5s40y")
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
@@ -167,5 +166,8 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(573, 598)
+position = Vector2(562, 525)
 shape = SubResource("CapsuleShape2D_y2vt2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(564, 484)
