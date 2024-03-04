@@ -12372,6 +12372,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pntmn"]
+radius = 36.9423
+height = 110.4
 
 [node name="castillo" type="Node2D"]
 script = ExtResource("1_xqpst")
@@ -12500,7 +12502,7 @@ shape = SubResource("RectangleShape2D_gga20")
 
 [node name="transition" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(853, 594)
+position = Vector2(775, 572)
 scale = Vector2(0.774691, 0.46875)
 sprite_frames = SubResource("SpriteFrames_us446")
 animation = &"portal_"
@@ -12510,7 +12512,7 @@ position = Vector2(1032.23, -525.913)
 scale = Vector2(2.07693, 2.78261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition/Area2D"]
-position = Vector2(-501, 174)
+position = Vector2(-496.376, 172.9)
 shape = SubResource("CapsuleShape2D_pntmn")
 
 [connection signal="timeout" from="Puertas/Timerpuerta1" to="." method="_on_timerpuerta_1_timeout"]

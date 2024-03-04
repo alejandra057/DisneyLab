@@ -7,8 +7,8 @@
 script = ExtResource("1_l5vsb")
 
 [node name="Descarga" type="Sprite2D" parent="."]
-position = Vector2(575.75, 321)
-scale = Vector2(1.57347, 1.30612)
+position = Vector2(575.75, 471)
+scale = Vector2(1.57347, 1.91837)
 texture = ExtResource("2_4ocvn")
 
 [node name="Button" type="Button" parent="."]
