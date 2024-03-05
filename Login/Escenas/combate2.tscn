@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://01vg1vwcips"]
+[gd_scene load_steps=19 format=3 uid="uid://01vg1vwcips"]
 
+[ext_resource type="Script" path="res://Escenas/combate2.gd" id="1_kyoie"]
 [ext_resource type="Texture2D" uid="uid://dc3hdl8gj7m6x" path="res://Art/Escenarios_Mundos/87ae2987eb0cca2c39c8e558eafd4f84.png" id="1_xavhg"]
 [ext_resource type="PackedScene" uid="uid://4u8rmerbktsk" path="res://hulk.tscn" id="3_q50lx"]
 [ext_resource type="PackedScene" uid="uid://dwufd7xe4oocc" path="res://thor.tscn" id="3_wjtc0"]
@@ -11,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="9_44065"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="10_ksp0d"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="11_rq62o"]
+[ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="12_yhvfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fteex"]
 texture = ExtResource("1_xavhg")
@@ -11513,7 +11515,13 @@ font_size = 37
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_x6b0a"]
+font = ExtResource("9_44065")
+font_size = 31
+font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_kyoie")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1149.0
@@ -11647,3 +11655,95 @@ offset_right = 1111.0
 offset_bottom = 100.0
 texture = ExtResource("11_rq62o")
 expand_mode = 1
+
+[node name="Node2D" parent="." instance=ExtResource("12_yhvfs")]
+visible = false
+position = Vector2(105, 48)
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 147.0
+offset_top = 283.0
+offset_right = 308.0
+offset_bottom = 378.0
+theme_override_font_sizes/font_size = 60
+text = "A"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 393.0
+offset_top = 283.0
+offset_right = 554.0
+offset_bottom = 378.0
+theme_override_font_sizes/font_size = 60
+text = "B
+"
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+offset_left = 619.0
+offset_top = 283.0
+offset_right = 780.0
+offset_bottom = 378.0
+theme_override_font_sizes/font_size = 60
+text = "C"
+
+[node name="Button4" type="Button" parent="."]
+visible = false
+offset_left = 854.0
+offset_top = 283.0
+offset_right = 1015.0
+offset_bottom = 378.0
+theme_override_font_sizes/font_size = 60
+text = "D
+"
+
+[node name="lbtiempo" type="Label" parent="."]
+offset_left = 349.0
+offset_top = 19.0
+offset_right = 641.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+
+[node name="tiempocontestar" type="Timer" parent="."]
+
+[node name="timerrondas" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 142.0
+offset_right = 891.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+
+[node name="animacion" type="Timer" parent="."]
+
+[node name="animacion2" type="Timer" parent="."]
+
+[node name="punto1" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 489.0
+offset_right = 215.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Puntos: 0"
+
+[node name="punto2" type="Label" parent="."]
+offset_left = 868.0
+offset_top = 486.0
+offset_right = 1046.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Puntos: 0"
+
+[node name="ganador" type="Label" parent="."]
+offset_left = 367.0
+offset_top = 170.0
+offset_right = 717.0
+offset_bottom = 259.0
+label_settings = SubResource("LabelSettings_x6b0a")

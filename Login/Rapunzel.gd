@@ -224,7 +224,7 @@ func _on_area_d_body_entered(body):
 	#contar+=1;
 	$"../mancha".show()
 	$"../mensaje".show()
-	$"../mensaje".text="No amigo, creo que eligeste un poquito mal,\nRespuesta Incorrecta"
+	$"../mensaje".text="No amigo, creo que elegiste un poquito mal,\nRespuesta Incorrecta"
 	$"../Node2D2"._process(body)
 	Saveus.contarpalabra=0
 	temporizador.wait_time = 1.5
