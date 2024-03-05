@@ -143,8 +143,8 @@ radius = 25.0
 height = 60.0001
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2vt2"]
-radius = 20.0
-height = 58.0
+radius = 54.0
+height = 108.0
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
