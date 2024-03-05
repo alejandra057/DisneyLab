@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://h5e0c5x1lyij"]
+
+[ext_resource type="Texture2D" uid="uid://bw8bq6l0n6sov" path="res://Art/Escenarios_Mundos/futuristic_city.jpg" id="1_7yi5u"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 944.0
+texture = ExtResource("1_7yi5u")
+expand_mode = 1
