@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var tiempoanim
 var temporizador
 const speed= 250
 var current_dir = "none"
@@ -11,11 +11,7 @@ var ronda4=false
 var ronda5=false
 var cntarentrada=0;
 var posicioninicial
-var vida1
-var vida2
-var vida3
-var vida4
-var vida5
+var contarvidas=3
 var habilitarA=false
 var habilitarB=false
 var habilitarC=false
@@ -30,26 +26,20 @@ var contar=0
 func _ready():
 	temporizador = $"../Timer"
 	animacion=$spriteironman
+	tiempoanim=$irondead/tiempoanimacion
 	$spriteironman.play("espalda")
 	Saveus.posicioninicial=$".".position
 	print("posicion ",posicioninicial)
-	vida1=$"1vida"
-	vida2=$"2vida"
-	vida3=$"3vida"
-	vida4=$"4vida"
-	vida5=$"5vida"
-	vida5.hide()
-	vida4.hide()
-	vida3.hide()
-	vida2.hide()
-	vida1.hide()
 
+func _process(delta):
+	if contarvidas==0:
+		print("gameover")
+	pass
 
 func _physics_process(delta):
 	player_movement(delta)
 	
 func player_movement (delta):
-	
 	if Input.is_action_pressed("ui_right"):
 		current_dir= "right"
 		play_anim(1)
@@ -79,7 +69,6 @@ func player_movement (delta):
 func play_anim(movement):
 	var dir= current_dir
 	var anim = $spriteironman
-
 	if dir == "right":
 		anim.flip_h = false 
 		if movement ==1:
@@ -111,33 +100,38 @@ func play_anim(movement):
 		
 
 
-
 func _on_area_2d_body_entered(body):
 	print("entroxddd")
 	$"../FondoC".hide()
 	if $Node2D.valor==1:
+		$"../vidaC".show()
 		Saveus.contarpalabra+=1
 		$"../alien2".stop()
 		$"../alien2".hide()
 		$Node2D._process(body)
-		vida2.show()
+		contarvidas+=1
 		$lbinfo.show()
 		$lbinfo.text="Respuesta Correcta"
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 2
 		temporizador.start()
 	else:
 		print("Respuesta incorrecta")
+		contarvidas-=1
 		$"../alien2".show()
 		$"../alien2".play()
 		$"../Sprite2D3".show()
 		anima3.play("exp")
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 2
 		temporizador.start()
-	
+		
+		$irondead. set_flip_h(true)
+		morir()
+	$cantvidas.text="x 0"+str(contarvidas)
 	Saveus.contarpalabra=0
 	pass # Replace with function body.
 
 func _on_area_a_body_entered(body):
+	$irondead. set_flip_h(false)
 	contar+=1;
 	animacion.play("abajo")
 	print("Entra en perry")
@@ -146,73 +140,81 @@ func _on_area_a_body_entered(body):
 	Saveus.contarpalabra=0
 	$"../Sprite2D2".show()
 	anima2.play("exp")
-	temporizador.wait_time = 1.5
+	temporizador.wait_time = 2
 	temporizador.start()
 	$"../alien".play()
+	contarvidas-=1
 	
+	morir()
+	$cantvidas.text="x 0"+str(contarvidas)
 	pass # Replace with function body.
 
 
 func _on_area_d_body_entered(body):
+	$irondead. set_flip_h(true)
 	contar+=1;
 	$"../FondoD".hide()
 	$Node2D._process(body)
 	Saveus.contarpalabra=0
 	$"../Sprite2D".show()
 	anima.play("exp")
-	temporizador.wait_time = 1.5
+	temporizador.wait_time = 2
 	temporizador.start()
 	$"../alien3".play()
+	contarvidas-=1
+	morir()
+	$cantvidas.text="x 0"+str(contarvidas)
 	pass # Replace with function body.
 
 
 func _on_areab_body_entered(body):
+	$irondead. set_flip_h(false)
 	contar+=1;
 	$"../FondoB".hide()
 	if $Node2D.valor!=1:
 		Saveus.contarpalabra+=1
+		$"../vidaB".show()
 		$Node2D._process(body)
 		#if $Node2D.valor==0:
-		vida1.show()
+		contarvidas+=1
 		$lbinfo.show()
 		temporizador.wait_time = 1.5
 		temporizador.start()
 		print("valorrr ",$Node2D.valor)
-		if $Node2D.valor==3:
-			$"../alien4".hide()
-			vida3.show()
-			vida2.hide()
-			vida1.hide()
-			temporizador.wait_time = 1.5
-			temporizador.start()
-			$lbinfo.text="Respuesta Correcta"
-			temporizador.wait_time = 1.5
-			temporizador.start()
-		if $Node2D.valor==4:
-			$"../alien4".hide()
-			vida4.show()
-			vida3.hide()
-			temporizador.wait_time = 1.5
-			temporizador.start()
-			$lbinfo.text="Respuesta Correcta"
-			temporizador.wait_time = 1.5
-			temporizador.start()
+		#if $Node2D.valor==3:
+			#$"../alien4".hide()
+			#contarvidas+=1
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+			#$lbinfo.text="Respuesta Correcta"
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+		#if $Node2D.valor==4:
+			#$"../alien4".hide()
+			#contarvidas+=1
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
+			#$lbinfo.text="Respuesta Correcta"
+			#temporizador.wait_time = 1.5
+			#temporizador.start()
 		if $Node2D.valor==5:
-			vida5.show()
-			vida4.hide()
+			contarvidas+=1
 			$"../alien4".hide()
 			$lbinfo.text="Felicidades!"
 			Saveus.finished_game+=1
 			$lbinfo/Button.show()
 			temporizador.stop()
 	else:
+			morir()
 			$"../Sprite2D4".show()
 			anima4.play("exp")
-			temporizador.wait_time = 1.5
+			temporizador.wait_time = 2
 			temporizador.start()
 			$"../alien4".show()
 			$"../alien4".play()
+			contarvidas-=1
 	Saveus.contarpalabra=0
+	$cantvidas.text="x 0"+str(contarvidas)
 	pass # Replace with function body.
 
 
@@ -230,7 +232,6 @@ func _on_señal_body_exited(body):
 
 
 func _on_preguntas_body_entered(body):
-	
 	#DialogueManager.show_dialogue_balloon(load("res://PreguntasCiencia.dialogue"),"Preguntas")
 	$Node2D.show()
 	pass # Replace with function body.
@@ -238,16 +239,21 @@ func _on_preguntas_body_entered(body):
 
 func _on_preguntas_body_exited(body):
 	$Node2D.hide()
-	pass # Replace with function body.
 
 
 func _on_timer_timeout():
+	$"../abrir".hide()
+	$"../cerrada".show()
+	$"../abrir3".hide()
+	$"../cerrada3".show()
+	$"../cerrada2".show()
+	$"../cerrada4".show()
+	$"../abrir2".hide()
+	$"../abrir4".hide()
+	$spriteironman.show()
+	$irondead.hide()
 	$".".position=Saveus.posicioninicial
 	temporizador.stop()
-	$"../abrirA".stop()
-	$"../abrirB".stop()
-	$"../abrirc".stop()
-	$"../abrird".stop()
 	$"../FondoC".show()
 	$"../FondoA".show()
 	$"../FondoB".show()
@@ -256,77 +262,56 @@ func _on_timer_timeout():
 	$lbinfo.hide()
 	if $Node2D.valor==4:
 		$Node2D.valor+=1
-	pass # Replace with function body."res://Escenas/inicioworld.tscn"
 
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
 
-
 func _on_area_puerta_a_body_entered(body):
-	$"../abrirA".play("Abrir")
-	$"../AreaPuertaA/TimerArea".wait_time=0.8
-	$"../AreaPuertaA/TimerArea".start()
-	habilitarA=true
-	$"../abrirB".stop()
-	$"../abrirc".stop()
-	$"../abrird".stop()
-	pass # Replace with function body.
-
+	$"../cerrada2".hide()
+	$"../abrir2".show()
 
 func _on_timer_area_timeout():
 	$"../AreaPuertaA/TimerArea".stop()
-	if(habilitarA==true):
-		$"../abrirA".stop()
-		$"../abrirA".frame=3
-		
-		habilitarA=false
-	if(habilitarB==true):
-		$"../abrirB".stop()
-		$"../abrirB".frame=3
-		
-		habilitarB=false
-	if(habilitarC==true):
-		$"../abrirc".stop()
-		$"../abrirc".frame=3
-		
-		habilitarC=false
-	if(habilitarD==true):
-		$"../abrird".stop()
-		$"../abrird".frame=3
-		
-		habilitarD=false
 	pass # Replace with function body.
 
 
 func _on_area_puerta_b_body_entered(body):
-	$"../abrirB".play("Abrir")
-	$"../AreaPuertaA/TimerArea".wait_time=0.8
-	$"../AreaPuertaA/TimerArea".start()
-	habilitarB=true
-	$"../abrirA".stop()
-	$"../abrirc".stop()
-	$"../abrird".stop()
-	pass # Replace with function body.
+	$"../abrir".show()
+	$"../cerrada".hide()
 
 
 func _on_area_puerta_c_body_entered(body):
-	$"../abrirc".play("Abrir")
-	$"../AreaPuertaA/TimerArea".wait_time=0.8
-	$"../AreaPuertaA/TimerArea".start()
-	habilitarC=true
-	$"../abrirA".stop()
-	$"../abrirB".stop()
-	$"../abrird".stop()
+	$"../cerrada4".hide()
+	$"../abrir4".show()
 	pass # Replace with function body.
 
 
 func _on_area_puerta_d_body_entered(body):
-	$"../abrird".play("Abrir")
-	$"../AreaPuertaA/TimerArea".wait_time=0.8
-	$"../AreaPuertaA/TimerArea".start()
-	habilitarD=true
-	$"../abrirA".stop()
-	$"../abrirB".stop()
-	$"../abrirc".stop()
+	$"../abrir3".show()
+	$"../cerrada3".hide()
 	pass # Replace with function body.
+
+
+func _on_tiempoanimacion_timeout():
+	tiempoanim.stop()
+	$irondead.stop()
+	pass # Replace with function body.
+
+func morir():
+	$irondead.show()
+	$irondead.play("dead")
+	tiempoanim.wait_time=0.5
+	tiempoanim.start()
+	$spriteironman.hide()
+
+
+func _on_areacorazon_b_body_entered(body):
+	$"../vidaB".hide()
+	pass # Replace with function body.
+
+func _on_area_corazon_c_body_entered(body):
+	$"../vidaC".hide()
+	pass # Replace with function body.
+
+

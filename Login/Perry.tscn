@@ -1,14 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://dy68ly1paaqnh"]
+[gd_scene load_steps=28 format=3 uid="uid://dy68ly1paaqnh"]
 
 [ext_resource type="Script" path="res://PERRY.gd" id="1_mwycj"]
 [ext_resource type="Texture2D" uid="uid://7av4wq4vkrc0" path="res://Art/Sprites/sprites marvel.png" id="2_4c2bx"]
-[ext_resource type="Texture2D" uid="uid://dvywu2fs803in" path="res://Art/Sprites/0vida-removebg-preview.png" id="3_swikq"]
-[ext_resource type="Texture2D" uid="uid://vr70j17o482n" path="res://Art/Sprites/1vida-removebg-preview.png" id="4_cl11o"]
-[ext_resource type="Texture2D" uid="uid://d1y36pmdxeudt" path="res://Art/Sprites/2vida-removebg-preview.png" id="5_eog3x"]
-[ext_resource type="Texture2D" uid="uid://cqou37hupt4sc" path="res://Art/Sprites/3vida-removebg-preview.png" id="6_cae5s"]
-[ext_resource type="Texture2D" uid="uid://v28uk83g8bt6" path="res://Art/Sprites/4vida-removebg-preview.png" id="7_p2blw"]
-[ext_resource type="Texture2D" uid="uid://cn1pok1v2rn62" path="res://Art/Sprites/5vida-removebg-preview.png" id="8_8crua"]
+[ext_resource type="Texture2D" uid="uid://bft5h0l057g68" path="res://Art/Sprites/Iron Man SV Battler.png" id="3_hlhbs"]
 [ext_resource type="PackedScene" uid="uid://bs1v1qgqjtsd3" path="res://Preguntas.tscn" id="9_ry4ap"]
+[ext_resource type="Texture2D" uid="uid://dqywlvnamwfth" path="res://Art/Sprites/vida.png" id="11_n2kae"]
+[ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="12_u80i7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0fvm"]
 atlas = ExtResource("2_4c2bx")
@@ -117,6 +114,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu0ii"]
+atlas = ExtResource("3_hlhbs")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc40d"]
+atlas = ExtResource("3_hlhbs")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrxjw"]
+atlas = ExtResource("3_hlhbs")
+region = Rect2(512, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqy0r"]
+atlas = ExtResource("3_hlhbs")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iays"]
+atlas = ExtResource("3_hlhbs")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arq8k"]
+atlas = ExtResource("3_hlhbs")
+region = Rect2(512, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njy26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu0ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc40d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrxjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqy0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iays")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arq8k")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5m645"]
 radius = 25.0
 height = 82.0
@@ -133,9 +180,21 @@ zoom = Vector2(1.5, 1.5)
 position = Vector2(44, 294)
 scale = Vector2(1.85937, 1.72917)
 sprite_frames = SubResource("SpriteFrames_plvno")
-animation = &"izquierda"
-frame_progress = 0.0341365
+animation = &"Frente"
+frame_progress = 0.284206
 speed_scale = 2.0
+
+[node name="irondead" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(42.5, 297)
+scale = Vector2(1.35938, 1.34375)
+sprite_frames = SubResource("SpriteFrames_njy26")
+animation = &"dead"
+frame = 5
+frame_progress = 0.742819
+speed_scale = 2.0
+
+[node name="tiempoanimacion" type="Timer" parent="irondead"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(43, 298)
@@ -145,53 +204,6 @@ shape = SubResource("CapsuleShape2D_5m645")
 position = Vector2(11, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -338.0
-offset_top = -3.0
-offset_right = -156.0
-offset_bottom = 72.0
-texture = ExtResource("3_swikq")
-expand_mode = 1
-
-[node name="1vida" type="TextureRect" parent="."]
-offset_left = -336.0
-offset_top = -1.0
-offset_right = -157.0
-offset_bottom = 67.0
-texture = ExtResource("4_cl11o")
-expand_mode = 1
-
-[node name="2vida" type="TextureRect" parent="."]
-offset_left = -333.0
-offset_right = -162.0
-offset_bottom = 67.0
-texture = ExtResource("5_eog3x")
-expand_mode = 1
-
-[node name="3vida" type="TextureRect" parent="."]
-offset_left = -335.0
-offset_top = -2.0
-offset_right = -157.0
-offset_bottom = 65.0
-texture = ExtResource("6_cae5s")
-expand_mode = 1
-
-[node name="4vida" type="TextureRect" parent="."]
-offset_left = -336.0
-offset_top = -2.0
-offset_right = -159.0
-offset_bottom = 67.0
-texture = ExtResource("7_p2blw")
-expand_mode = 1
-
-[node name="5vida" type="TextureRect" parent="."]
-offset_left = -336.0
-offset_top = -1.0
-offset_right = -156.0
-offset_bottom = 65.0
-texture = ExtResource("8_8crua")
-expand_mode = 1
 
 [node name="Node2D" parent="." instance=ExtResource("9_ry4ap")]
 visible = false
@@ -215,4 +227,23 @@ offset_right = 137.0
 offset_bottom = 68.0
 text = "Regresar"
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -346.0
+offset_top = 4.0
+offset_right = -229.0
+offset_bottom = 65.0
+texture = ExtResource("11_n2kae")
+expand_mode = 1
+
+[node name="cantvidas" type="RichTextLabel" parent="."]
+offset_left = -240.0
+offset_top = 6.0
+offset_right = -121.0
+offset_bottom = 82.0
+theme_override_fonts/normal_font = ExtResource("12_u80i7")
+theme_override_font_sizes/normal_font_size = 49
+theme_override_font_sizes/bold_font_size = 32
+text = "x 03"
+
+[connection signal="timeout" from="irondead/tiempoanimacion" to="." method="_on_tiempoanimacion_timeout"]
 [connection signal="pressed" from="lbinfo/Button" to="." method="_on_button_pressed"]
