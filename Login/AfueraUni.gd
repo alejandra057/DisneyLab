@@ -17,13 +17,14 @@ func _on_area_2d_body_entered(body):
 		print("entrar")
 		#$AnimatedSprite2D.play("abrirpuerta")
 		$AnimatedSprite2D.frame=7
-		get_tree().change_scene_to_file("res://adentro_uni.tscn")
-		#tiempo.wait_time=1.5
-		#tiempo.start()
+		
+		tiempo.wait_time=1.5
+		tiempo.start()
 	pass # Replace with function body.
 
 
 func _on_timerabrir_timeout():
-	#tiempo.stop()
+	tiempo.stop()
+	get_tree().change_scene_to_file("res://adentro_uni.tscn")					
 	#$AnimatedSprite2D.stop()
 	pass # Replace with function body.

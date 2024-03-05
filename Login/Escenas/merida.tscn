@@ -144,6 +144,7 @@ sprite_frames = SubResource("SpriteFrames_aiai2")
 animation = &"back_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(3, 221)
 shape = SubResource("CapsuleShape2D_ph2ne")
 
