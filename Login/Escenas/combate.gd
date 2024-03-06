@@ -39,6 +39,10 @@ func _ready():
 	vida2=$vida2
 	vida3=$vida3
 	vida4=$vida4
+	if Saveus.iron_man==true:
+		$Bando_elegido2.show()
+	elif Saveus.capitan==true:
+		$Bando_elegido.show()
 	pass # Replace with function body.
 func animacion_ganar():
 	if Saveus.capitan==true:
@@ -249,7 +253,7 @@ func _on_timerrondas_timeout():
 	if tiempoRonda > 0:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
 		tiempo_restante = 10
-	elif cantrondas<5:
+	elif cantrondas<2:
 			timer.start()
 			$Node2D.show()
 			$Button.show()
@@ -259,23 +263,22 @@ func _on_timerrondas_timeout():
 			$lbtiempo.show()
 			$Label.hide()
 		
-	pass 
 
 func ocultarpregunta():
 	cantrondas+=1
 	print("cantrondas",cantrondas)
-	if cantrondas>4:
+	if cantrondas>1:
 		contarrondas=0
 		print("aqui iria el ganador")
-		if Saveus.capitan==true && puntosganador>8:
+		if Saveus.capitan==true && puntosganador>1:
 			$ganador.text ="Han ganado los empiristas"
 			$"captain america/CA1".play("victoria")
-		elif Saveus.iron_man==true && puntosganador>8:
+		elif Saveus.iron_man==true && puntosganador>1:
 			$ganador.text ="Han ganado los racionalistas"
 			$ironman/ironman1.play("victoria")
 		ocultar()
 		return
-	tiempoRonda=4
+	tiempoRonda=2
 	rondas.start()
 	ocultar()
 	tiempo_restante = 10
@@ -302,6 +305,7 @@ func ocultar():
 	$Button4.hide()
 	$Label.show()
 	$lbtiempo.hide()
+	timer.stop()
 
 
 func _on_animacion_timeout():

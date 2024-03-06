@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=32 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
@@ -23,6 +23,10 @@
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="20_mv1kf"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="21_prtai"]
 [ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="23_a673q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy2yv"]
+font = ExtResource("20_mv1kf")
+font_size = 57
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osqre"]
 texture = ExtResource("1_j1k50")
@@ -8188,6 +8192,26 @@ offset_bottom = 944.0
 texture = ExtResource("1_itiqo")
 expand_mode = 5
 
+[node name="Bando_elegido" type="Label" parent="."]
+visible = false
+offset_left = 75.0
+offset_top = 229.0
+offset_right = 192.0
+offset_bottom = 300.0
+text = "You"
+label_settings = SubResource("LabelSettings_dy2yv")
+horizontal_alignment = 1
+
+[node name="Bando_elegido2" type="Label" parent="."]
+visible = false
+offset_left = 922.0
+offset_top = 224.0
+offset_right = 1039.0
+offset_bottom = 295.0
+text = "You"
+label_settings = SubResource("LabelSettings_dy2yv")
+horizontal_alignment = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 visible = false
 scale = Vector2(1.03, 1.03)
@@ -8234,10 +8258,10 @@ texture = ExtResource("7_188ov")
 expand_mode = 1
 
 [node name="vida4" type="TextureRect" parent="."]
-offset_left = 54.0
-offset_top = 411.0
-offset_right = 282.0
-offset_bottom = 487.0
+offset_left = 50.0
+offset_top = 410.0
+offset_right = 278.0
+offset_bottom = 486.0
 texture = ExtResource("8_trrfy")
 expand_mode = 1
 
@@ -8318,37 +8342,37 @@ visible = false
 position = Vector2(-139, 272)
 
 [node name="racionalistas" type="Label" parent="."]
-offset_left = 855.0
-offset_top = 30.0
-offset_right = 1088.0
-offset_bottom = 81.0
+offset_left = 895.0
+offset_top = 4.0
+offset_right = 1128.0
+offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Racionalista"
 label_settings = SubResource("LabelSettings_7cwwt")
 
 [node name="empiristas" type="Label" parent="."]
-offset_left = 103.0
-offset_top = 31.0
-offset_right = 326.0
-offset_bottom = 78.0
+offset_left = 81.0
+offset_top = 5.0
+offset_right = 230.0
+offset_bottom = 54.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Empirista"
 label_settings = SubResource("LabelSettings_p8q3l")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 112.0
-offset_bottom = 110.0
+offset_left = -2.0
+offset_top = 3.0
+offset_right = 74.0
+offset_bottom = 86.0
 texture = ExtResource("20_cb3pt")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 1029.0
-offset_top = 12.0
-offset_right = 1111.0
-offset_bottom = 100.0
+offset_left = 1069.0
+offset_top = 2.0
+offset_right = 1145.0
+offset_bottom = 80.0
 texture = ExtResource("21_prtai")
 expand_mode = 1
 
@@ -8438,10 +8462,10 @@ theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
 
 [node name="ganador" type="Label" parent="."]
-offset_left = 367.0
-offset_top = 170.0
-offset_right = 717.0
-offset_bottom = 259.0
+offset_left = 650.0
+offset_top = 221.0
+offset_right = 1000.0
+offset_bottom = 310.0
 label_settings = SubResource("LabelSettings_e0tk3")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
