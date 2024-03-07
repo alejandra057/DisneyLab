@@ -302,19 +302,19 @@ frame_progress = 0.0683899
 position = Vector2(311, 498)
 scale = Vector2(3.61719, 3.65625)
 sprite_frames = SubResource("SpriteFrames_x7clr")
-animation = &"ataque"
+animation = &"victoria"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(309, 517)
 shape = SubResource("CapsuleShape2D_tkqd7")
 
-[node name="disco" type="Sprite2D" parent="."]
+[node name="escudo" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(429.5, 516.75)
 scale = Vector2(2.55, 2.52823)
 texture = ExtResource("4_cmuoh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="disco"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="escudo"]
 libraries = {
 "": SubResource("AnimationLibrary_hpne1")
 }
