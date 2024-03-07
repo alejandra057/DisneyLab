@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnnqpwoe88nfe" path="res://Escenas/character_body_2d.tscn" id="3_q2ex4"]
 [ext_resource type="Texture2D" uid="uid://dj5sswep45maq" path="res://universidad/Escritorio.png" id="4_8d5im"]
 [ext_resource type="Texture2D" uid="uid://bnvqe56i8fhjf" path="res://universidad/Baños.png" id="4_x1f5x"]
-[ext_resource type="PackedScene" uid="uid://dqnqpskuxieyn" path="res://Escenas/guardia.tscn" id="7_2p00g"]
+[ext_resource type="PackedScene" path="res://Escenas/guardia.tscn" id="7_2p00g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtvfw"]
 texture = ExtResource("2_cwrhq")

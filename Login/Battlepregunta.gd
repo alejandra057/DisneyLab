@@ -4,18 +4,7 @@ var texts : Array = [
 	A) Empiristas. B) Criticistas. C) Racionalistas. D) Dogmáticos",
 	"2. De las siguientes, una de ellas es la corriente filosófica que en general tiende a negar la posibilidad de la metafísica y a sostener que hay conocimiento únicamente de los fenómenos.
 	A) Racionalistas. B) Empiristas. C) Escolásticos. D) Escépticos",
-	"3. Para unos de los siguientes filósofos, la experiencia como única fuente del conocimiento.
-	A) Epistemólogos. B) Racionalistas. C) Empiristas. D) Escépticos.",
-	"4. Filósofos para quienes la única fuente del conocimiento es la razón. 
-	A) Epistemólogos. B) Racionalistas. C) Empiristas. D) Escépticos",
-	"5. Filósofos que postulan las ideas innatas en el sujeto. 
-	A) Empiristas. B) Idealistas. C) Racionalistas. D) Innatistas.",
-	"6. De los siguientes filósofos selecciones el que no se considera Racionalista: 
-	A) David Hume. B) John Locke. C) Nicolas Malebranch. D) Francis Bacon.",
-	"7. Es la doctrina que establece que todos nuestros conocimientos provienen de la razón. 
-	A) Empirismo. B) Criticismo. C) Racionalismo. D) Epistemología",
-	"8. Uno de los siguientes filósofos, postula las ideas innatas en el sujeto: 
-	A) George Berkeley. B) David Hume. C) Leibniz. D) Hipatía."
+	
 	
 ]
 var current_text: int=0

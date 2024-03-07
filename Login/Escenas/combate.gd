@@ -175,7 +175,7 @@ func _on_button_2_pressed():
 			contarrondas+=1
 			mostrarmsj=false
 	print("contador",contador)
-	if $Node2D.valor==1 || $Node2D.valor==3:
+	if $Node2D.valor==1 :
 		respondio=true
 		tiempo_restante = 10
 		animacion_ganar()
@@ -204,7 +204,7 @@ func _on_button_3_pressed():
 			contarrondas+=1
 			mostrarmsj=false
 	print("contador",contador)
-	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 &&  $Node2D.valor!=3:
+	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 :
 		respondio=true
 		tiempo_restante = 10
 		animacion_ganar()
@@ -264,7 +264,7 @@ func _on_timerrondas_timeout():
 func ocultarpregunta():
 	cantrondas+=1
 	print("cantrondas",cantrondas)
-	if cantrondas>4:
+	if cantrondas>2:
 		contarrondas=0
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>8:
@@ -275,7 +275,7 @@ func ocultarpregunta():
 			$ironman/ironman1.play("victoria")
 		ocultar()
 		return
-	tiempoRonda=4
+	tiempoRonda=2
 	rondas.start()
 	ocultar()
 	tiempo_restante = 10

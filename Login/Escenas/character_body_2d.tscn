@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnnqpwoe88nfe"]
+[gd_scene load_steps=18 format=3 uid="uid://dnnqpwoe88nfe"]
 
 [ext_resource type="Script" path="res://Escenas/character_body_2d.gd" id="1_4v0ba"]
 [ext_resource type="Texture2D" uid="uid://bd0vwxa65o0b5" path="res://Art/Sprites/peter.png" id="2_o1m13"]
@@ -38,10 +38,6 @@ region = Rect2(48, 240, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_iycs3"]
 atlas = ExtResource("2_o1m13")
 region = Rect2(96, 240, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6528"]
-atlas = ExtResource("2_o1m13")
-region = Rect2(96, 288, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xc24"]
 atlas = ExtResource("2_o1m13")
@@ -94,9 +90,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iycs3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t6528")
 }],
 "loop": true,
 "name": &"left_idle",
