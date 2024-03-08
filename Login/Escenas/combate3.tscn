@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c81ibpo0j1hnt" path="res://doctor_strnge.tscn" id="3_uyq0g"]
 [ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="4_l0gy2"]
 [ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="5_jgxm1"]
-[ext_resource type="PackedScene" path="res://Battlepregunta3.tscn" id="5_or8qj"]
+[ext_resource type="PackedScene" uid="uid://7sjr7yqj6j4d" path="res://Battlepregunta3.tscn" id="5_or8qj"]
 [ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="6_l8pte"]
 [ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="7_g0o7w"]
 [ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="8_g2puy"]
@@ -2629,7 +2629,7 @@ font_size = 30
 font = ExtResource("9_8k3f5")
 font_size = 31
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_ttt5c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
