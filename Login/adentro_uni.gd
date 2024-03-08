@@ -220,4 +220,3 @@ func _on_button_5_pressed():
 	$Button5.hide()
 	$Node2D.hide()
 	terminado=true
-

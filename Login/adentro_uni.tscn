@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bh1hq6nirwlt4"]
+[gd_scene load_steps=24 format=3 uid="uid://bh1hq6nirwlt4"]
 
 [ext_resource type="Script" path="res://adentro_uni.gd" id="1_0xvh5"]
 [ext_resource type="Texture2D" uid="uid://dkottgm4rj6u3" path="res://universidad/suelos.png" id="2_cwrhq"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dnnqpwoe88nfe" path="res://Escenas/character_body_2d.tscn" id="3_q2ex4"]
 [ext_resource type="Texture2D" uid="uid://dj5sswep45maq" path="res://universidad/Escritorio.png" id="4_8d5im"]
 [ext_resource type="Texture2D" uid="uid://bnvqe56i8fhjf" path="res://universidad/Baños.png" id="4_x1f5x"]
-[ext_resource type="PackedScene" uid="uid://dqnqpskuxieyn" path="res://Escenas/guardia.tscn" id="7_2p00g"]
+[ext_resource type="PackedScene" path="res://Escenas/guardia.tscn" id="7_2p00g"]
 [ext_resource type="Texture2D" uid="uid://crp2hgxga3xkq" path="res://Art/Escenarios_objetos/custom_relto_bookshelf_by_amcalmaron_d2tylz4.jpg" id="8_8hsqo"]
 [ext_resource type="Texture2D" uid="uid://dwq5dalsqx3rq" path="res://Art/Escenarios_objetos/book_icon_by_vanmall_d60a8na.png" id="9_2mwf3"]
 [ext_resource type="PackedScene" uid="uid://cn0q3cfb0dctw" path="res://introzootopia.tscn" id="10_geg8p"]
 [ext_resource type="Script" path="res://introAdentroUni.gd" id="11_1n7ol"]
+[ext_resource type="PackedScene" uid="uid://cvj3haa5fhbus" path="res://node_2d_2.tscn" id="12_etb0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtvfw"]
 texture = ExtResource("2_cwrhq")
@@ -35909,6 +35910,7 @@ position = Vector2(2019, 399)
 shape = SubResource("RectangleShape2D_hxji0")
 
 [node name="Node2D" parent="." instance=ExtResource("10_geg8p")]
+visible = false
 position = Vector2(1506, 384)
 script = ExtResource("11_1n7ol")
 
@@ -35936,7 +35938,40 @@ shape = SubResource("RectangleShape2D_w1iy0")
 position = Vector2(-417, 389)
 shape = SubResource("RectangleShape2D_w1iy0")
 
-[node name="Node2D2" type="Node2D" parent="."]
+[node name="Node2D2" parent="." instance=ExtResource("12_etb0s")]
+position = Vector2(1365, 363)
+
+[node name="btA" type="Button" parent="."]
+offset_left = 1759.0
+offset_top = 285.0
+offset_right = 1823.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 65
+text = "A"
+
+[node name="btB" type="Button" parent="."]
+offset_left = 1866.0
+offset_top = 287.0
+offset_right = 1930.0
+offset_bottom = 385.0
+theme_override_font_sizes/font_size = 65
+text = "B"
+
+[node name="btC" type="Button" parent="."]
+offset_left = 1986.0
+offset_top = 288.0
+offset_right = 2050.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 65
+text = "C"
+
+[node name="btD" type="Button" parent="."]
+offset_left = 2085.0
+offset_top = 283.0
+offset_right = 2149.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 65
+text = "D"
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areamesa1" to="player" method="_on_areamesa_1_body_entered"]
@@ -35947,3 +35982,4 @@ shape = SubResource("RectangleShape2D_w1iy0")
 [connection signal="body_exited" from="areamesa3" to="player" method="_on_areamesa_3_body_exited"]
 [connection signal="body_entered" from="areamesa4" to="player" method="_on_areamesa_4_body_entered"]
 [connection signal="body_exited" from="areamesa4" to="player" method="_on_areamesa_4_body_exited"]
+[connection signal="pressed" from="btA" to="Node2D2" method="_on_bt_a_pressed"]
