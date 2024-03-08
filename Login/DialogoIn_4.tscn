@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://wetac5tqpf23"]
+
+[ext_resource type="Script" path="res://dialogo_intermedio.gd" id="1_nvljy"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nvljy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 652.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 430.0
+offset_top = 232.0
+offset_right = 725.0
+offset_bottom = 325.0
+text = "Siguiente
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

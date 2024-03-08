@@ -267,8 +267,7 @@ animation = &"derecha"
 position = Vector2(287.75, 500.5)
 scale = Vector2(3.41406, 3.39063)
 sprite_frames = SubResource("SpriteFrames_hfuqk")
-animation = &"idle"
-frame_progress = 0.645833
+animation = &"ataque"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(291, 501)

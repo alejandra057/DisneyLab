@@ -1,9 +1,9 @@
 extends Node2D
 var texts : Array = [
-	"1. Para algunos de los siguientes filósofos, el criterio de verdad es la evidencia sensible: 
-	A) Empiristas. B) Criticistas. C) Racionalistas. D) Dogmáticos",
-	"2. De las siguientes, una de ellas es la corriente filosófica que en general tiende a negar la posibilidad de la metafísica y a sostener que hay conocimiento únicamente de los fenómenos.
-	A) Racionalistas. B) Empiristas. C) Escolásticos. D) Escépticos",
+"5. Filósofos que postulan las ideas innatas en el sujeto. 
+A) Empiristas. B) Idealistas. C) Racionalistas. D) Innatistas",
+"6. De los siguientes filósofos selecciones el que no se considera Racionalista: 
+A) David Hume. B) John Locke. C) Nicolas Malebranch. D) Francis Bacon",
 ]
 var current_text: int=0
 var contar=0
