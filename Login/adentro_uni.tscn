@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bh1hq6nirwlt4"]
+[gd_scene load_steps=23 format=3 uid="uid://bh1hq6nirwlt4"]
 
 [ext_resource type="Script" path="res://adentro_uni.gd" id="1_0xvh5"]
 [ext_resource type="Texture2D" uid="uid://dkottgm4rj6u3" path="res://universidad/suelos.png" id="2_cwrhq"]
@@ -35860,6 +35860,9 @@ sources/0 = SubResource("TileSetAtlasSource_de50w")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxji0"]
 size = Vector2(19, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1iy0"]
+size = Vector2(99.5, 89.5)
+
 [node name="AdentroUni" type="Node2D"]
 script = ExtResource("1_0xvh5")
 
@@ -35909,4 +35912,36 @@ shape = SubResource("RectangleShape2D_hxji0")
 position = Vector2(1506, 384)
 script = ExtResource("11_1n7ol")
 
+[node name="areamesa1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areamesa1"]
+position = Vector2(-741.75, 794.75)
+shape = SubResource("RectangleShape2D_w1iy0")
+
+[node name="areamesa2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areamesa2"]
+position = Vector2(-732, 594)
+shape = SubResource("RectangleShape2D_w1iy0")
+
+[node name="areamesa3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areamesa3"]
+position = Vector2(-742, 399)
+shape = SubResource("RectangleShape2D_w1iy0")
+
+[node name="areamesa4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areamesa4"]
+position = Vector2(-417, 389)
+shape = SubResource("RectangleShape2D_w1iy0")
+
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="areamesa1" to="player" method="_on_areamesa_1_body_entered"]
+[connection signal="body_exited" from="areamesa1" to="player" method="_on_areamesa_1_body_exited"]
+[connection signal="body_entered" from="areamesa2" to="player" method="_on_areamesa_2_body_entered"]
+[connection signal="body_exited" from="areamesa2" to="player" method="_on_areamesa_2_body_exited"]
+[connection signal="body_entered" from="areamesa3" to="player" method="_on_areamesa_3_body_entered"]
+[connection signal="body_exited" from="areamesa3" to="player" method="_on_areamesa_3_body_exited"]
+[connection signal="body_entered" from="areamesa4" to="player" method="_on_areamesa_4_body_entered"]
+[connection signal="body_exited" from="areamesa4" to="player" method="_on_areamesa_4_body_exited"]

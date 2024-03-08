@@ -123,45 +123,45 @@ func hidesprites():
 func contarclick():
 	Saveus.contarpregunta=0;
 	
-	if Input.is_action_just_pressed("space bar") && terminado==false:
-		$Node2D.show()
-		contar+=1
-		print("contar ",contar)
-		if contar==1:
-			$btA.show()
-			$btB.show()
-			$btC.show()
-			$btD.show()
-			$Yax.hide()
-			$Oficial.hide()
-			$Gazelle.hide()
-			$Mrbig.hide()
-			$"Sospechosos-removebg-preview".show()
-			Saveus.contarpregunta=1;
-		if contar>1:
-			#DialogueManager.show_dialogue_balloon(load("res://1preguntapoli.dialogue"),"pregunta1")
-			$btA.show()
-			$btB.show()
-			$btC.show()
-			$btD.show()
-			$Yax.hide()
-			$Oficial.hide()
-			$Gazelle.hide()
-			$Mrbig.hide()
-			$"Sospechosos-removebg-preview".show()
-			if habilitar:
-				$btA.hide()
-				$btB.hide()
-				$btC.hide()
-				$btD.hide()
-				DialogueManager.show_dialogue_balloon(load("res://final_interrogatorio.dialogue"),"final_inte")
-				$Button2.show()
-				$Button3.show()
-				$Button4.show()
-				$Button5.show()
-				$Node2D.hide()
-			
-	
+	#if Input.is_action_just_pressed("space bar") && terminado==false:
+		#$Node2D.show()
+		#contar+=1
+		#print("contar ",contar)
+		#if contar==1:
+			#$btA.show()
+			#$btB.show()
+			#$btC.show()
+			#$btD.show()
+			#$Yax.hide()
+			#$Oficial.hide()
+			#$Gazelle.hide()
+			#$Mrbig.hide()
+			#$"Sospechosos-removebg-preview".show()
+			#Saveus.contarpregunta=1;
+		#if contar>1:
+			##DialogueManager.show_dialogue_balloon(load("res://1preguntapoli.dialogue"),"pregunta1")
+			#$btA.show()
+			#$btB.show()
+			#$btC.show()
+			#$btD.show()
+			#$Yax.hide()
+			#$Oficial.hide()
+			#$Gazelle.hide()
+			#$Mrbig.hide()
+			#$"Sospechosos-removebg-preview".show()
+			#if habilitar:
+				#$btA.hide()
+				#$btB.hide()
+				#$btC.hide()
+				#$btD.hide()
+				#DialogueManager.show_dialogue_balloon(load("res://final_interrogatorio.dialogue"),"final_inte")
+				#$Button2.show()
+				#$Button3.show()
+				#$Button4.show()
+				#$Button5.show()
+				#$Node2D.hide()
+			#
+	#
 	
 
 

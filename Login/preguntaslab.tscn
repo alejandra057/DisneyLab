@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://tg7dsvyd8dl3"]
+[gd_scene load_steps=12 format=3 uid="uid://8vl564apqrpn"]
 
-[ext_resource type="Script" path="res://Texto.gd" id="1_6cji6"]
-[ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="3_510hn"]
-[ext_resource type="Texture2D" uid="uid://bpr02i5skrrko" path="res://Art/flecha.png" id="4_kj4q7"]
+[ext_resource type="Script" path="res://preguntaslab.gd" id="1_hqjd2"]
+[ext_resource type="Texture2D" uid="uid://4n7v0uv15t2e" path="res://Art/Escenarios_objetos/Diseño sin título (1).png" id="2_oy2de"]
+[ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="3_sb33k"]
+[ext_resource type="Texture2D" uid="uid://bpr02i5skrrko" path="res://Art/flecha.png" id="4_fhac2"]
 
 [sub_resource type="Animation" id="Animation_eeh8k"]
 length = 0.001
@@ -94,22 +95,30 @@ _data = {
 "RESET": SubResource("Animation_c4vpe")
 }
 
-[node name="Node2D2" type="Node2D"]
-script = ExtResource("1_6cji6")
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hqjd2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 16.0
+offset_top = 49.0
+offset_right = 590.0
+offset_bottom = 246.0
+texture = ExtResource("2_oy2de")
+expand_mode = 1
 
 [node name="panel" type="PanelContainer" parent="."]
-offset_left = 185.0
+offset_left = 27.0
 offset_top = 62.0
-offset_right = 475.0
-offset_bottom = 168.0
+offset_right = 577.0
+offset_bottom = 233.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="panel"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("3_510hn")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 32
+theme_override_fonts/normal_font = ExtResource("3_sb33k")
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "  Probando"
 visible_characters = 0
@@ -119,6 +128,7 @@ visible_ratio = 0.0
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="panel/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -132,7 +142,7 @@ offset_bottom = 201.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 1.5708
-texture = ExtResource("4_kj4q7")
+texture = ExtResource("4_fhac2")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="panel"]
 root_node = NodePath("../..")
@@ -144,3 +154,45 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_mfr5q")
 }
+
+[node name="RESPA" type="Button" parent="."]
+visible = false
+offset_left = 22.0
+offset_top = 192.0
+offset_right = 100.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 30
+text = "A"
+
+[node name="RESPB" type="Button" parent="."]
+visible = false
+offset_left = 186.0
+offset_top = 187.0
+offset_right = 264.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 30
+text = "B
+"
+
+[node name="RESPC" type="Button" parent="."]
+visible = false
+offset_left = 350.0
+offset_top = 189.0
+offset_right = 428.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 30
+text = "C"
+
+[node name="RESPD" type="Button" parent="."]
+visible = false
+offset_left = 499.0
+offset_top = 190.0
+offset_right = 577.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 30
+text = "D"
+
+[connection signal="pressed" from="RESPA" to="." method="_on_respa_pressed"]
+[connection signal="pressed" from="RESPB" to="." method="_on_respb_pressed"]
+[connection signal="pressed" from="RESPC" to="." method="_on_respc_pressed"]
+[connection signal="pressed" from="RESPD" to="." method="_on_respd_pressed"]

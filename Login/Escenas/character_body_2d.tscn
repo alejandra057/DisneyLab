@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnnqpwoe88nfe"]
+[gd_scene load_steps=19 format=3 uid="uid://dnnqpwoe88nfe"]
 
 [ext_resource type="Script" path="res://Escenas/character_body_2d.gd" id="1_4v0ba"]
 [ext_resource type="Texture2D" uid="uid://bd0vwxa65o0b5" path="res://Art/Sprites/peter.png" id="2_o1m13"]
+[ext_resource type="PackedScene" uid="uid://8vl564apqrpn" path="res://preguntaslab.tscn" id="3_cutgt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbsf4"]
 atlas = ExtResource("2_o1m13")
@@ -143,3 +144,7 @@ shape = SubResource("CapsuleShape2D_y2vt2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(564, 484)
+
+[node name="Node2D" parent="." instance=ExtResource("3_cutgt")]
+visible = false
+position = Vector2(259, 12)

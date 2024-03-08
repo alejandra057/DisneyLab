@@ -70,4 +70,50 @@ func play_anim(movement):
 
 
 func _on_area_2d_body_entered(body):
+	#$Node2D.show()
+	pass # Replace with function body.
+
+
+func _on_areamesa_1_body_entered(body):
+	$Node2D.show()
+	if $Node2D.current_text==3:
+		$Node2D.hide()
+	pass # Replace with function body.
+
+
+func _on_areamesa_2_body_entered(body):
+	$Node2D.current_text==3
+	$Node2D.next_text()
+	$Node2D.show()
+	
+	pass # Replace with function body.
+
+
+func _on_areamesa_3_body_entered(body):
+	$Node2D.show()
+	pass # Replace with function body.
+
+
+func _on_areamesa_4_body_entered(body):
+	$Node2D.show()
+	pass # Replace with function body.
+
+
+func _on_areamesa_1_body_exited(body):
+	$Node2D.hide()
+	pass # Replace with function body.
+
+
+func _on_areamesa_2_body_exited(body):
+	$Node2D.hide()
+	pass # Replace with function body.
+
+
+func _on_areamesa_3_body_exited(body):
+	$Node2D.hide()
+	pass # Replace with function body.
+
+
+func _on_areamesa_4_body_exited(body):
+	$Node2D.hide()
 	pass # Replace with function body.
