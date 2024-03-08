@@ -68,33 +68,39 @@ func play_anim(movement):
 		
 		
 
-
+func _process(delta):
+	if $Node2D.valor==4 || $Node2D.valor==8 || $Node2D.valor==12:
+		$Node2D.hide()
+		
 func _on_area_2d_body_entered(body):
-	#$Node2D.show()
+	$Node2D.show()
 	pass # Replace with function body.
 
 
 func _on_areamesa_1_body_entered(body):
 	$Node2D.show()
-	if $Node2D.current_text==3:
-		$Node2D.hide()
+	
 	pass # Replace with function body.
 
 
 func _on_areamesa_2_body_entered(body):
-	$Node2D.current_text==3
-	$Node2D.next_text()
+	if $Node2D.valor==4:
+		$Node2D.next_text()
 	$Node2D.show()
 	
 	pass # Replace with function body.
 
 
 func _on_areamesa_3_body_entered(body):
+	if $Node2D.valor==8:
+		$Node2D.next_text()
 	$Node2D.show()
 	pass # Replace with function body.
 
 
 func _on_areamesa_4_body_entered(body):
+	if $Node2D.valor==12:
+		$Node2D.next_text()
 	$Node2D.show()
 	pass # Replace with function body.
 
