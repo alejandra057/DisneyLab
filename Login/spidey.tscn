@@ -324,12 +324,9 @@ script = ExtResource("1_gdw0e")
 position = Vector2(849, 494)
 scale = Vector2(3.39063, 3.71875)
 sprite_frames = SubResource("SpriteFrames_wtwef")
-animation = &"ataque"
-frame = 1
-frame_progress = 0.874296
+animation = &"idle"
 
 [node name="telaraña" type="Sprite2D" parent="."]
-visible = false
 texture = SubResource("AtlasTexture_qioky")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="telaraña"]

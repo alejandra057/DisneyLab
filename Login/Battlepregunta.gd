@@ -4,6 +4,8 @@ var texts : Array = [
 	A) Empiristas. B) Criticistas. C) Racionalistas. D) Dogmáticos",
 	"2. De las siguientes, una de ellas es la corriente filosófica que en general tiende a negar la posibilidad de la metafísica y a sostener que hay conocimiento únicamente de los fenómenos.
 	A) Racionalistas. B) Empiristas. C) Escolásticos. D) Escépticos",
+	
+	
 ]
 var current_text: int=0
 var contar=0
@@ -41,7 +43,17 @@ func next_text():
 		visual_text.text=texts[current_text]
 		mark.visible=0
 		print("current ",current_text)
-		
+		if current_text==1:
+			Saveus.pregunta1=true
+		if current_text==2:
+			Saveus.pregunta2=true
+		if current_text==3:
+			Saveus.pregunta3=true
+		if current_text==4:
+			Saveus.pregunta4=true
+		if current_text==5:
+			Saveus.pregunta5=true
+		show_text()
 
 func show_text():
 	var tween = create_tween()
