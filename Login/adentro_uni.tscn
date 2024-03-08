@@ -35906,7 +35906,7 @@ position = Vector2(2019, 399)
 shape = SubResource("RectangleShape2D_hxji0")
 
 [node name="Node2D" parent="." instance=ExtResource("10_geg8p")]
-position = Vector2(3, 722)
+position = Vector2(1506, 384)
 script = ExtResource("11_1n7ol")
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]

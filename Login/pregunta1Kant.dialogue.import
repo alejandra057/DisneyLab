@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dqjkhxj5dhnen"
+path="res://.godot/imported/pregunta1Kant.dialogue-86d594c9a1d1387ed61d63cbc9fee845.tres"
+
+[deps]
+
+source_file="res://pregunta1Kant.dialogue"
+dest_files=["res://.godot/imported/pregunta1Kant.dialogue-86d594c9a1d1387ed61d63cbc9fee845.tres"]
+
+[params]
+
+defaults=true
