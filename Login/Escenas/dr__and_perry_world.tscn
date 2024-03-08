@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d3elj2nrlc38d"]
+[gd_scene load_steps=48 format=3 uid="uid://d3elj2nrlc38d"]
 
 [ext_resource type="PackedScene" uid="uid://tg7dsvyd8dl3" path="res://Texto.tscn" id="2_ah2vt"]
 [ext_resource type="Texture2D" uid="uid://dhdc7ljr2fcsn" path="res://Art/Escenarios_Mundos/laberinto.png" id="2_ycr82"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cfcgx8klime6t" path="res://Art/Escenarios_Mundos/tilesetminijuego.png" id="11_j70e1"]
 [ext_resource type="Texture2D" uid="uid://dqywlvnamwfth" path="res://Art/Sprites/vida.png" id="12_fy66v"]
 [ext_resource type="Texture2D" uid="uid://bjd4wu66126ai" path="res://Art/Sprites/puertalado-removebg-preview.png" id="12_nkljr"]
+[ext_resource type="Texture2D" uid="uid://cjro5swxriw1x" path="res://Art/Sprites/regalo.png" id="13_j8kri"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgwkb"]
 texture = ExtResource("3_m73hr")
@@ -6187,6 +6188,45 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wtg78"]
 radius = 35.2278
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x68j"]
+atlas = ExtResource("13_j8kri")
+region = Rect2(0, 0, 157, 335)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yix0"]
+atlas = ExtResource("13_j8kri")
+region = Rect2(157, 0, 157, 335)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucxnm"]
+atlas = ExtResource("13_j8kri")
+region = Rect2(300, 0, 150, 335)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vkpd"]
+atlas = ExtResource("13_j8kri")
+region = Rect2(440, 0, 208, 335)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o50sp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x68j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yix0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucxnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vkpd")
+}],
+"loop": true,
+"name": &"abrir",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cprn"]
+size = Vector2(120.87, 125.364)
+
 [node name="dr_ and perry_world" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -6500,6 +6540,7 @@ position = Vector2(62, 35)
 shape = SubResource("CircleShape2D_wtg78")
 
 [node name="vidaC" type="TextureRect" parent="."]
+visible = false
 offset_left = 971.0
 offset_top = 251.0
 offset_right = 1092.0
@@ -6512,6 +6553,34 @@ expand_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vidaC/AreaCorazonC"]
 position = Vector2(64, 32)
 shape = SubResource("CircleShape2D_wtg78")
+
+[node name="regaloB" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(80, 383)
+scale = Vector2(0.761146, 0.71791)
+sprite_frames = SubResource("SpriteFrames_o50sp")
+animation = &"abrir"
+
+[node name="arearegalob" type="Area2D" parent="regaloB"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="regaloB/arearegalob"]
+position = Vector2(13.1381, 29.2516)
+shape = SubResource("RectangleShape2D_4cprn")
+
+[node name="RegaloC" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1048, 389)
+scale = Vector2(0.761146, 0.71791)
+sprite_frames = SubResource("SpriteFrames_o50sp")
+animation = &"abrir"
+
+[node name="arearegaloc" type="Area2D" parent="RegaloC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RegaloC/arearegaloc"]
+position = Vector2(13.1381, 29.2516)
+shape = SubResource("RectangleShape2D_4cprn")
+
+[node name="regalos" type="Timer" parent="."]
 
 [connection signal="body_entered" from="areac" to="Node2D" method="_on_areac_body_entered"]
 [connection signal="body_entered" from="areac" to="CharacterBody2D" method="_on_area_2d_body_entered"]
@@ -6534,3 +6603,6 @@ shape = SubResource("CircleShape2D_wtg78")
 [connection signal="body_entered" from="AreaPuertaD" to="CharacterBody2D" method="_on_area_puerta_d_body_entered"]
 [connection signal="body_entered" from="vidaB/AreacorazonB" to="CharacterBody2D" method="_on_areacorazon_b_body_entered"]
 [connection signal="body_entered" from="vidaC/AreaCorazonC" to="CharacterBody2D" method="_on_area_corazon_c_body_entered"]
+[connection signal="body_entered" from="regaloB/arearegalob" to="CharacterBody2D" method="_on_arearegalob_body_entered"]
+[connection signal="body_entered" from="RegaloC/arearegaloc" to="CharacterBody2D" method="_on_arearegaloc_body_entered"]
+[connection signal="timeout" from="regalos" to="CharacterBody2D" method="_on_regalos_timeout"]

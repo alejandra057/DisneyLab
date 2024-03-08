@@ -12,10 +12,7 @@ var ronda5=false
 var cntarentrada=0;
 var posicioninicial
 var contarvidas=3
-var habilitarA=false
-var habilitarB=false
-var habilitarC=false
-var habilitarD=false
+var tiemporegalo
 @onready var anima=$"../Sprite2D/animacionD"
 @onready var anima2=$"../Sprite2D2/AnimacionA"
 @onready var anima3=$"../Sprite2D3/AnimacionC"
@@ -27,13 +24,17 @@ func _ready():
 	temporizador = $"../Timer"
 	animacion=$spriteironman
 	tiempoanim=$irondead/tiempoanimacion
+	tiemporegalo=$"../regalos"
 	$spriteironman.play("espalda")
 	Saveus.posicioninicial=$".".position
 	print("posicion ",posicioninicial)
 
 func _process(delta):
+	$numpregunta.text="Pregunta "+str($Node2D.current_text+1)
 	if contarvidas==0:
-		print("gameover")
+		$Node2D.current_text=-1
+		contarvidas=3
+		$cantvidas.text=str(contarvidas)
 	pass
 
 func _physics_process(delta):
@@ -108,7 +109,6 @@ func _on_area_2d_body_entered(body):
 		Saveus.contarpalabra+=1
 		$"../alien2".stop()
 		$"../alien2".hide()
-		$Node2D._process(body)
 		contarvidas+=1
 		$lbinfo.show()
 		$lbinfo.text="Respuesta Correcta"
@@ -154,7 +154,6 @@ func _on_area_d_body_entered(body):
 	$irondead. set_flip_h(true)
 	contar+=1;
 	$"../FondoD".hide()
-	$Node2D._process(body)
 	Saveus.contarpalabra=0
 	$"../Sprite2D".show()
 	anima.play("exp")
@@ -174,11 +173,11 @@ func _on_areab_body_entered(body):
 	if $Node2D.valor!=1:
 		Saveus.contarpalabra+=1
 		$"../vidaB".show()
-		$Node2D._process(body)
+		
 		#if $Node2D.valor==0:
 		contarvidas+=1
 		$lbinfo.show()
-		temporizador.wait_time = 1.5
+		temporizador.wait_time = 4
 		temporizador.start()
 		print("valorrr ",$Node2D.valor)
 		#if $Node2D.valor==3:
@@ -260,6 +259,8 @@ func _on_timer_timeout():
 	$"../FondoD".show()
 	$"../alien".stop()
 	$lbinfo.hide()
+	$Node2D.next_text()
+	
 	if $Node2D.valor==4:
 		$Node2D.valor+=1
 
@@ -315,3 +316,17 @@ func _on_area_corazon_c_body_entered(body):
 	pass # Replace with function body.
 
 
+func _on_arearegalob_body_entered(body):
+	$"../regaloB".play("abrir")
+	tiemporegalo.wait_time=1
+	tiemporegalo.start()
+	pass # Replace with function body.
+
+func _on_arearegaloc_body_entered(body):
+	pass # Replace with function body.
+
+func _on_regalos_timeout():
+	tiemporegalo.stop()
+	$"../regaloB".stop()
+	$"../regaloB".hide()
+	pass # Replace with function body.

@@ -245,5 +245,14 @@ theme_override_font_sizes/normal_font_size = 49
 theme_override_font_sizes/bold_font_size = 32
 text = "x 03"
 
+[node name="numpregunta" type="RichTextLabel" parent="."]
+offset_left = -77.0
+offset_top = -10.0
+offset_right = 235.0
+offset_bottom = 66.0
+theme_override_fonts/normal_font = ExtResource("12_u80i7")
+theme_override_font_sizes/normal_font_size = 49
+theme_override_font_sizes/bold_font_size = 32
+
 [connection signal="timeout" from="irondead/tiempoanimacion" to="." method="_on_tiempoanimacion_timeout"]
 [connection signal="pressed" from="lbinfo/Button" to="." method="_on_button_pressed"]
