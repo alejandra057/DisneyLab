@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnnqpwoe88nfe" path="res://Escenas/character_body_2d.tscn" id="3_q2ex4"]
 [ext_resource type="Texture2D" uid="uid://dj5sswep45maq" path="res://universidad/Escritorio.png" id="4_8d5im"]
 [ext_resource type="Texture2D" uid="uid://bnvqe56i8fhjf" path="res://universidad/Baños.png" id="4_x1f5x"]
-[ext_resource type="PackedScene" path="res://Escenas/guardia.tscn" id="7_2p00g"]
+[ext_resource type="PackedScene" uid="uid://dqnqpskuxieyn" path="res://Escenas/guardia.tscn" id="7_2p00g"]
 [ext_resource type="Texture2D" uid="uid://crp2hgxga3xkq" path="res://Art/Escenarios_objetos/custom_relto_bookshelf_by_amcalmaron_d2tylz4.jpg" id="8_8hsqo"]
 [ext_resource type="Texture2D" uid="uid://dwq5dalsqx3rq" path="res://Art/Escenarios_objetos/book_icon_by_vanmall_d60a8na.png" id="9_2mwf3"]
 [ext_resource type="PackedScene" uid="uid://cn0q3cfb0dctw" path="res://introzootopia.tscn" id="10_geg8p"]
@@ -35935,6 +35935,8 @@ shape = SubResource("RectangleShape2D_w1iy0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areamesa4"]
 position = Vector2(-417, 389)
 shape = SubResource("RectangleShape2D_w1iy0")
+
+[node name="Node2D2" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areamesa1" to="player" method="_on_areamesa_1_body_entered"]
