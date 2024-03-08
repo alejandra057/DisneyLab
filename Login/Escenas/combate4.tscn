@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dl57a1mv6qr7b"]
+[gd_scene load_steps=16 format=3 uid="uid://dl57a1mv6qr7b"]
 
 [ext_resource type="Script" path="res://Escenas/combate4.gd" id="1_tuy11"]
 [ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="1_uo6js"]
 [ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="2_edx08"]
-[ext_resource type="PackedScene" uid="uid://befdf4ptv3t83" path="res://Battlepregunta4.tscn" id="2_ip2gl"]
 [ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="3_am2qs"]
 [ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="4_cclg6"]
 [ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="5_5a6bq"]
@@ -12,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="8_pxqtx"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="9_5sl6w"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="10_6tkxt"]
+[ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="11_6t7ec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r0m5v"]
 font = ExtResource("8_pxqtx")
@@ -25,22 +25,10 @@ font_size = 37
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_o3dsq"]
-font = ExtResource("8_pxqtx")
-font_size = 45
-
-[sub_resource type="LabelSettings" id="LabelSettings_h1lw2"]
-font = ExtResource("8_pxqtx")
-font_size = 45
-
 [sub_resource type="LabelSettings" id="LabelSettings_4eows"]
 font = ExtResource("8_pxqtx")
 font_size = 31
 font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_r44d2"]
-font = ExtResource("8_pxqtx")
-font_size = 31
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tuy11")
@@ -49,14 +37,10 @@ script = ExtResource("1_tuy11")
 offset_right = 1154.0
 offset_bottom = 952.0
 
-[node name="Node2D" parent="." instance=ExtResource("2_ip2gl")]
-position = Vector2(132, 68)
-
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
 
 [node name="vida0" type="TextureRect" parent="."]
-visible = false
 offset_left = 53.0
 offset_top = 414.0
 offset_right = 286.0
@@ -65,7 +49,6 @@ texture = ExtResource("1_uo6js")
 expand_mode = 1
 
 [node name="vida1" type="TextureRect" parent="."]
-visible = false
 offset_left = 54.0
 offset_top = 402.0
 offset_right = 289.0
@@ -74,7 +57,6 @@ texture = ExtResource("2_edx08")
 expand_mode = 1
 
 [node name="vida2" type="TextureRect" parent="."]
-visible = false
 offset_left = 53.0
 offset_top = 407.0
 offset_right = 293.0
@@ -83,7 +65,6 @@ texture = ExtResource("3_am2qs")
 expand_mode = 1
 
 [node name="vida3" type="TextureRect" parent="."]
-visible = false
 offset_left = 53.0
 offset_top = 410.0
 offset_right = 288.0
@@ -92,7 +73,6 @@ texture = ExtResource("4_cclg6")
 expand_mode = 1
 
 [node name="vida4" type="TextureRect" parent="."]
-visible = false
 offset_left = 54.0
 offset_top = 411.0
 offset_right = 282.0
@@ -101,7 +81,6 @@ texture = ExtResource("5_5a6bq")
 expand_mode = 1
 
 [node name="vida00" type="TextureRect" parent="."]
-visible = false
 offset_left = 778.0
 offset_top = 426.0
 offset_right = 1066.0
@@ -110,7 +89,6 @@ texture = ExtResource("1_uo6js")
 expand_mode = 1
 
 [node name="vida01" type="TextureRect" parent="."]
-visible = false
 offset_left = 776.0
 offset_top = 414.0
 offset_right = 1072.0
@@ -119,7 +97,6 @@ texture = ExtResource("2_edx08")
 expand_mode = 1
 
 [node name="vida02" type="TextureRect" parent="."]
-visible = false
 offset_left = 774.0
 offset_top = 418.0
 offset_right = 1067.0
@@ -128,7 +105,6 @@ texture = ExtResource("3_am2qs")
 expand_mode = 1
 
 [node name="vida03" type="TextureRect" parent="."]
-visible = false
 offset_left = 775.0
 offset_top = 418.0
 offset_right = 1067.0
@@ -137,7 +113,6 @@ texture = ExtResource("4_cclg6")
 expand_mode = 1
 
 [node name="vida04" type="TextureRect" parent="."]
-visible = false
 offset_left = 775.0
 offset_top = 423.0
 offset_right = 1067.0
@@ -185,6 +160,10 @@ offset_right = 1111.0
 offset_bottom = 100.0
 texture = ExtResource("10_6tkxt")
 expand_mode = 1
+
+[node name="Node2D" parent="." instance=ExtResource("11_6t7ec")]
+visible = false
+position = Vector2(105, 48)
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -237,10 +216,10 @@ theme_override_font_sizes/font_size = 33
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 372.0
-offset_top = 170.0
-offset_right = 831.0
-offset_bottom = 341.0
+offset_left = 432.0
+offset_top = 142.0
+offset_right = 891.0
+offset_bottom = 313.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
@@ -257,7 +236,6 @@ offset_bottom = 544.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
-label_settings = SubResource("LabelSettings_o3dsq")
 
 [node name="punto2" type="Label" parent="."]
 offset_left = 868.0
@@ -267,27 +245,10 @@ offset_bottom = 541.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
-label_settings = SubResource("LabelSettings_h1lw2")
 
 [node name="ganador" type="Label" parent="."]
-offset_left = 419.0
-offset_top = 286.0
-offset_right = 769.0
-offset_bottom = 375.0
+offset_left = 367.0
+offset_top = 170.0
+offset_right = 717.0
+offset_bottom = 259.0
 label_settings = SubResource("LabelSettings_4eows")
-
-[node name="Bandoelegido" type="Label" parent="."]
-offset_left = 108.0
-offset_top = 68.0
-offset_right = 181.0
-offset_bottom = 123.0
-text = "You"
-label_settings = SubResource("LabelSettings_r44d2")
-
-[node name="Bandoelegido2" type="Label" parent="."]
-offset_left = 960.0
-offset_top = 72.0
-offset_right = 1033.0
-offset_bottom = 127.0
-text = "You"
-label_settings = SubResource("LabelSettings_r44d2")
