@@ -24,13 +24,15 @@ var contador=0
 var mostrarmsj=false
 var puntosganador=0
 var puntosperdedor=0
+var progress_game
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
 	rondas.start()
-	escudo=$"captain america/disco/AnimationPlayer"
+	progress_game=$ProgressBar
+	escudo=$"captain america/escudo"
 	animation_time=$animacion
 	animation_time2=$animacion2
 	telarana=$"Spidey/telaraña/AnimatedSprite2D"
@@ -39,12 +41,16 @@ func _ready():
 	vida2=$vida2
 	vida3=$vida3
 	vida4=$vida4
+	if Saveus.iron_man==true:
+		$Bandoelegido2.show()
+	elif Saveus.capitan==true:
+		$Bandoelegido.show()
 	pass # Replace with function body.
 func animacion_ganar():
 	if Saveus.capitan==true:
 		$"captain america/CA1".play("ataque")
-		#escudo.show()
-		escudo.play("disco")
+		escudo.show()
+		$"captain america/escudo/AnimationPlayer".play("disco")
 		$ironman/ironman1.play("dead")
 		animation_time.wait_time = 1.5  
 		animation_time.start()
@@ -71,8 +77,8 @@ func animacion_perder():
 		$punto2.text="Puntos: "+str(puntosperdedor)
 	elif Saveus.iron_man==true:
 		$"captain america/CA1".play("ataque")
-		#escudo.show()
-		escudo.play("disco")
+		escudo.show()
+		$"captain america/escudo/AnimationPlayer".play("disco")
 		$ironman/ironman1.play("dead")
 		animation_time2.wait_time = 1.5  
 		animation_time2.start()
@@ -91,42 +97,6 @@ func _process(delta):
 		ocultarpregunta()
 		contador=0
 	
-func perder_vidas():
-	if Saveus.capitan == true && puntosperdedor == 2:
-		$vida4.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==2:
-		$vida04.hide()
-	if Saveus.capitan == true && puntosperdedor == 4:
-		$vida3.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==4:
-		$vida03.hide()
-	if Saveus.capitan == true && puntosperdedor == 6:
-		$vida2.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==6:
-		$vida02.hide()
-	if Saveus.capitan == true && puntosperdedor == 8:
-		$vida1.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==8:
-		$vida01.hide()
-		
-func ganar_vidas():
-	if Saveus.capitan == true && puntosganador == 2:
-		$vida4.show()
-	elif Saveus.iron_man ==true && puntosganador ==2:
-		$vida04.show()
-	if Saveus.capitan == true && puntosganador == 4:
-		$vida3.show()
-	elif Saveus.iron_man ==true && puntosganador ==4:
-		$vida03.show()
-	if Saveus.capitan == true && puntosganador == 6:
-		$vida2.show()
-	elif Saveus.iron_man ==true && puntosganador ==6:
-		$vida02.show()
-	if Saveus.capitan == true && puntosganador == 8:
-		$vida1.show()
-	elif Saveus.iron_man ==true && puntosganador ==8:
-		$vida01.show()
-
 func _on_tiempocontestar_timeout():
 	tiempo_restante -= 1
 	if tiempo_restante > 0:
@@ -139,8 +109,6 @@ func _on_tiempocontestar_timeout():
 		contador+=1
 		animacion_perder()
 	pass # Replace with function body.
-
-
 func _on_button_pressed():
 	contador+=1
 	if mostrarmsj:
@@ -161,11 +129,9 @@ func _on_button_pressed():
 		tiempo_restante = 10
 		respondiomal+=1
 		animacion_perder()
-		perder_vidas()
 		#perder_vidas()
 		print("bien ",respondiobien," mal ",respondiomal)
 	pass # Replace with function body.
-
 
 
 func _on_button_2_pressed():
@@ -175,7 +141,7 @@ func _on_button_2_pressed():
 			contarrondas+=1
 			mostrarmsj=false
 	print("contador",contador)
-	if $Node2D.valor==1 :
+	if $Node2D.valor==1:
 		respondio=true
 		tiempo_restante = 10
 		animacion_ganar()
@@ -200,31 +166,17 @@ func _on_button_2_pressed():
 
 func _on_button_3_pressed():
 	contador+=1
+	print("respuesta incorrecta")
+	print("bien ",respondiobien," mal ",respondiomal)
+	tiempo_restante = 10
+	respondio=false
+	animacion_perder()
+	#perder_vidas()
+	respondiomal+=1
 	if mostrarmsj:
 			contarrondas+=1
 			mostrarmsj=false
-	print("contador",contador)
-	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 :
-		respondio=true
-		tiempo_restante = 10
-		animacion_ganar()
-		#ganar_vidas()
-		respondiobien+=1
-		#empate()
-		print("bien ",respondiobien," mal ",respondiomal)
-	else:
-		print("respuesta incorrecta")
-		print("bien ",respondiobien," mal ",respondiomal)
-		respondio=false
-		#$Node2D.next_text()
-		#contarrondas+=1
-		tiempo_restante = 10
-		animacion_perder()
-		perder_vidas()
-		#perder_vidas()
-		respondiomal+=1
-		
-	pass # Replace with function body.
+	pass # Replace with function body
 
 
 func _on_button_4_pressed():
@@ -234,7 +186,6 @@ func _on_button_4_pressed():
 	tiempo_restante = 10
 	respondio=false
 	animacion_perder()
-	perder_vidas()
 	#perder_vidas()
 	respondiomal+=1
 	if mostrarmsj:
@@ -249,7 +200,7 @@ func _on_timerrondas_timeout():
 	if tiempoRonda > 0:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
 		tiempo_restante = 10
-	elif cantrondas<5:
+	elif cantrondas<2:
 			timer.start()
 			$Node2D.show()
 			$Button.show()
@@ -258,26 +209,29 @@ func _on_timerrondas_timeout():
 			$Button4.show()
 			$lbtiempo.show()
 			$Label.hide()
-		
-	pass 
 
 func ocultarpregunta():
 	cantrondas+=1
 	print("cantrondas",cantrondas)
-	if cantrondas>2:
+	if cantrondas>1:
 		contarrondas=0
 		print("aqui iria el ganador")
-		if Saveus.capitan==true && puntosganador>8:
-			$ganador.text ="Han ganado los empiristas"
+		if Saveus.capitan==true && puntosganador>1:
+			$ganador.text ="Los empiristas han ganado el primer combate"
 			$"captain america/CA1".play("victoria")
-		elif Saveus.iron_man==true && puntosganador>8:
-			$ganador.text ="Han ganado los racionalistas"
+			$ProgressBar.show()
+			$ProgressBar.value=25*100/100
+		elif Saveus.iron_man==true && puntosganador>1:
+			$ganador.text ="Los racionalistas han ganado el primer combate"
 			$ironman/ironman1.play("victoria")
-		ocultar()
-		return
+			$ProgressBar.show()
+			$ProgressBar.value=25*100/100
+			ocultar()
 	tiempoRonda=2
 	rondas.start()
 	ocultar()
+	await get_tree().create_timer(10).timeout
+	get_tree().change_scene_to_file("res://DialogoIn_1.tscn")
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 
@@ -302,7 +256,7 @@ func ocultar():
 	$Button4.hide()
 	$Label.show()
 	$lbtiempo.hide()
-
+	timer.stop()
 
 func _on_animacion_timeout():
 	animation_time.stop()
@@ -312,9 +266,11 @@ func _on_animacion_timeout():
 	$ironman/AnimatedSprite2D.stop()
 	$ironman/AnimatedSprite2D.hide()
 	$ironman/ironman1.play("idle")
+	$"captain america/escudo/AnimationPlayer".stop()
+	escudo.hide()
 	empate()
-	escudo.stop()
-	#escudo.hide()
+
+
 
 
 func _on_animacion_2_timeout():
@@ -325,6 +281,6 @@ func _on_animacion_2_timeout():
 	$ironman/AnimatedSprite2D.stop()
 	$ironman/AnimatedSprite2D.hide()
 	$ironman/ironman1.play("idle")
-	escudo.stop()
+	$"captain america/escudo/AnimationPlayer".stop()
+	escudo.hide()
 	empate()
-	#escudo.hide()

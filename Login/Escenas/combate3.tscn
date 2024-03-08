@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://h5e0c5x1lyij"]
+[gd_scene load_steps=23 format=3 uid="uid://h5e0c5x1lyij"]
 
 [ext_resource type="Texture2D" uid="uid://bw8bq6l0n6sov" path="res://Art/Escenarios_Mundos/futuristic_city.jpg" id="1_7yi5u"]
 [ext_resource type="Script" path="res://Escenas/combate3.gd" id="1_ttt5c"]
@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c81ibpo0j1hnt" path="res://doctor_strnge.tscn" id="3_uyq0g"]
 [ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="4_l0gy2"]
 [ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="5_jgxm1"]
+[ext_resource type="PackedScene" uid="uid://7sjr7yqj6j4d" path="res://Battlepregunta3.tscn" id="5_or8qj"]
 [ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="6_l8pte"]
 [ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="7_g0o7w"]
 [ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="8_g2puy"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="9_8k3f5"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="10_j1u7s"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="11_aipth"]
-[ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="12_j0iix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pw51c"]
 texture = ExtResource("1_7yi5u")
@@ -2608,10 +2608,26 @@ font_size = 37
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_v7oe7"]
+font = ExtResource("9_8k3f5")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hd18"]
+font = ExtResource("9_8k3f5")
+font_size = 45
+
 [sub_resource type="LabelSettings" id="LabelSettings_5s5he"]
 font = ExtResource("9_8k3f5")
 font_size = 31
-font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+font_color = Color(0.988235, 0.988235, 0.988235, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m62oa"]
+font = ExtResource("9_8k3f5")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_obqxd"]
+font = ExtResource("9_8k3f5")
+font_size = 31
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ttt5c")
@@ -2633,7 +2649,12 @@ position = Vector2(-89, 278)
 [node name="doctorStrnge" parent="." instance=ExtResource("3_uyq0g")]
 position = Vector2(56, 287)
 
+[node name="Node2D" parent="." instance=ExtResource("5_or8qj")]
+visible = false
+position = Vector2(104, 80)
+
 [node name="vida0" type="TextureRect" parent="."]
+visible = false
 offset_left = 53.0
 offset_top = 414.0
 offset_right = 286.0
@@ -2642,6 +2663,7 @@ texture = ExtResource("4_l0gy2")
 expand_mode = 1
 
 [node name="vida1" type="TextureRect" parent="."]
+visible = false
 offset_left = 54.0
 offset_top = 402.0
 offset_right = 289.0
@@ -2650,6 +2672,7 @@ texture = ExtResource("5_jgxm1")
 expand_mode = 1
 
 [node name="vida2" type="TextureRect" parent="."]
+visible = false
 offset_left = 53.0
 offset_top = 407.0
 offset_right = 293.0
@@ -2658,6 +2681,7 @@ texture = ExtResource("6_l8pte")
 expand_mode = 1
 
 [node name="vida3" type="TextureRect" parent="."]
+visible = false
 offset_left = 53.0
 offset_top = 410.0
 offset_right = 288.0
@@ -2666,6 +2690,7 @@ texture = ExtResource("7_g0o7w")
 expand_mode = 1
 
 [node name="vida4" type="TextureRect" parent="."]
+visible = false
 offset_left = 54.0
 offset_top = 411.0
 offset_right = 282.0
@@ -2674,6 +2699,7 @@ texture = ExtResource("8_g2puy")
 expand_mode = 1
 
 [node name="vida00" type="TextureRect" parent="."]
+visible = false
 offset_left = 778.0
 offset_top = 426.0
 offset_right = 1066.0
@@ -2682,6 +2708,7 @@ texture = ExtResource("4_l0gy2")
 expand_mode = 1
 
 [node name="vida01" type="TextureRect" parent="."]
+visible = false
 offset_left = 776.0
 offset_top = 414.0
 offset_right = 1072.0
@@ -2690,6 +2717,7 @@ texture = ExtResource("5_jgxm1")
 expand_mode = 1
 
 [node name="vida02" type="TextureRect" parent="."]
+visible = false
 offset_left = 774.0
 offset_top = 418.0
 offset_right = 1067.0
@@ -2698,6 +2726,7 @@ texture = ExtResource("6_l8pte")
 expand_mode = 1
 
 [node name="vida03" type="TextureRect" parent="."]
+visible = false
 offset_left = 775.0
 offset_top = 418.0
 offset_right = 1067.0
@@ -2706,6 +2735,7 @@ texture = ExtResource("7_g0o7w")
 expand_mode = 1
 
 [node name="vida04" type="TextureRect" parent="."]
+visible = false
 offset_left = 775.0
 offset_top = 423.0
 offset_right = 1067.0
@@ -2747,10 +2777,6 @@ offset_right = 1111.0
 offset_bottom = 100.0
 texture = ExtResource("11_aipth")
 expand_mode = 1
-
-[node name="Node2D" parent="." instance=ExtResource("12_j0iix")]
-visible = false
-position = Vector2(105, 48)
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -2803,10 +2829,10 @@ theme_override_font_sizes/font_size = 33
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 432.0
-offset_top = 142.0
-offset_right = 891.0
-offset_bottom = 313.0
+offset_left = 336.0
+offset_top = 154.0
+offset_right = 795.0
+offset_bottom = 325.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
@@ -2823,6 +2849,7 @@ offset_bottom = 544.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+label_settings = SubResource("LabelSettings_v7oe7")
 
 [node name="punto2" type="Label" parent="."]
 offset_left = 868.0
@@ -2832,10 +2859,35 @@ offset_bottom = 541.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+label_settings = SubResource("LabelSettings_1hd18")
 
 [node name="ganador" type="Label" parent="."]
-offset_left = 367.0
-offset_top = 170.0
-offset_right = 717.0
-offset_bottom = 259.0
+offset_left = 399.0
+offset_top = 262.0
+offset_right = 749.0
+offset_bottom = 351.0
 label_settings = SubResource("LabelSettings_5s5he")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 396.0
+offset_top = 12.0
+offset_right = 720.0
+offset_bottom = 75.0
+
+[node name="Bandoelegido" type="Label" parent="."]
+visible = false
+offset_left = 140.0
+offset_top = 84.0
+offset_right = 248.0
+offset_bottom = 123.0
+text = "You"
+label_settings = SubResource("LabelSettings_m62oa")
+
+[node name="Bandoelegido2" type="Label" parent="."]
+visible = false
+offset_left = 956.0
+offset_top = 80.0
+offset_right = 1024.0
+offset_bottom = 131.0
+text = "You"
+label_settings = SubResource("LabelSettings_obqxd")

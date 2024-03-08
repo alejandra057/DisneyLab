@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bsjme2pcniomq"
+path="res://.godot/imported/dialogo_intermedio2..dialogue-d3c7854b93768a91af8357b1bd4e2c33.tres"
+
+[deps]
+
+source_file="res://dialogo_intermedio2..dialogue"
+dest_files=["res://.godot/imported/dialogo_intermedio2..dialogue-d3c7854b93768a91af8357b1bd4e2c33.tres"]
+
+[params]
+
+defaults=true
