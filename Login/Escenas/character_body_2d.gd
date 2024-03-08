@@ -67,3 +67,7 @@ func play_anim(movement):
 			anim.play("front_idle")
 		
 		
+
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.
