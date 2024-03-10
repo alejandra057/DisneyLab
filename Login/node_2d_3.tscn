@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvj3haa5fhbus"]
+[gd_scene load_steps=12 format=3 uid="uid://ciqatq8tglltj"]
 
-[ext_resource type="Script" path="res://Node2D2.gd" id="1_3rfqu"]
-[ext_resource type="Texture2D" uid="uid://4n7v0uv15t2e" path="res://Art/Escenarios_objetos/Diseño sin título (1).png" id="2_cdqga"]
-[ext_resource type="Texture2D" uid="uid://bkcxjmgf8nfxy" path="res://Art/Escenarios_objetos/libro_Kant.png" id="2_v8mpj"]
-[ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="3_npm8x"]
-[ext_resource type="Texture2D" uid="uid://bpr02i5skrrko" path="res://Art/flecha.png" id="4_0mxvu"]
+[ext_resource type="Script" path="res://Escenas/preguntasRPura.gd" id="1_c1v2n"]
+[ext_resource type="Texture2D" uid="uid://bkcxjmgf8nfxy" path="res://Art/Escenarios_objetos/libro_Kant.png" id="2_38men"]
+[ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="3_cjabj"]
+[ext_resource type="Texture2D" uid="uid://bpr02i5skrrko" path="res://Art/flecha.png" id="4_i61yp"]
 
 [sub_resource type="Animation" id="Animation_eeh8k"]
 length = 0.001
@@ -96,49 +95,30 @@ _data = {
 "RESET": SubResource("Animation_c4vpe")
 }
 
-[node name="Node2D2" type="Node2D"]
-script = ExtResource("1_3rfqu")
+[node name="Node2D3" type="Node2D"]
+script = ExtResource("1_c1v2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(482, 384)
 rotation = 3.14159
 scale = Vector2(2.13844, -1.96178)
-texture = ExtResource("2_v8mpj")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-offset_left = 60.0
-offset_top = 53.0
-offset_right = 488.0
-offset_bottom = 578.0
-texture = ExtResource("2_cdqga")
-expand_mode = 1
+texture = ExtResource("2_38men")
 
 [node name="panel" type="PanelContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 141.0
-offset_top = 121.0
+offset_left = 128.0
+offset_top = 114.0
 offset_right = 463.0
-offset_bottom = 535.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="panel"]
-layout_mode = 2
-bbcode_enabled = true
+offset_bottom = 530.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="panel"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_npm8x")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_cjabj")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "[center] dgd"
-scroll_active = false
+text = "  Probando"
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -160,7 +140,7 @@ offset_bottom = 201.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 1.5708
-texture = ExtResource("4_0mxvu")
+texture = ExtResource("4_i61yp")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="panel"]
 root_node = NodePath("../..")
@@ -173,7 +153,7 @@ libraries = {
 "": SubResource("AnimationLibrary_mfr5q")
 }
 
-[node name="btA" type="Button" parent="."]
+[node name="btA1" type="Button" parent="."]
 visible = false
 offset_left = 638.0
 offset_top = 161.0
@@ -213,7 +193,7 @@ theme_override_font_sizes/font_size = 65
 text = "D"
 flat = true
 
-[connection signal="pressed" from="btA" to="." method="_on_bt_a_pressed"]
+[connection signal="pressed" from="btA1" to="." method="_on_bt_a_pressed"]
 [connection signal="pressed" from="btB" to="." method="_on_bt_b_pressed"]
 [connection signal="pressed" from="btC" to="." method="_on_bt_c_pressed"]
 [connection signal="pressed" from="btD" to="." method="_on_bt_d_pressed"]

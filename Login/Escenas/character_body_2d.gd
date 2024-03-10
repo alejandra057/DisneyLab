@@ -69,11 +69,14 @@ func play_anim(movement):
 		
 
 func _process(delta):
+	#$"../Node2D2".show()
+	#if $Node2D2.valor==3:
+		#$Node2D2.hide()
 	if $Node2D.valor==4 || $Node2D.valor==8 || $Node2D.valor==12:
 		$Node2D.hide()
 		
 func _on_area_2d_body_entered(body):
-	$Node2D.show()
+	$Node2D2.show()
 	pass # Replace with function body.
 
 
@@ -122,4 +125,28 @@ func _on_areamesa_3_body_exited(body):
 
 func _on_areamesa_4_body_exited(body):
 	$Node2D.hide()
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body):
+	$Node2D2.hide()
+	#$btA.hide()
+	#$btB.hide()
+	#$btC.hide()
+	#$btD.hide()
+	pass # Replace with function body.
+
+
+func _on_libro_r_pura_body_entered(body):
+	#if $Node2D2.terminado == true:
+	$Node2D3.show()
+	pass # Replace with function body.
+
+
+func _on_libro_r_pura_body_exited(body):
+	$Node2D3.hide()
+	#$btA1.hide()
+	#$btB.hide()
+	#$btC.hide()
+	#$btD.hide()
 	pass # Replace with function body.

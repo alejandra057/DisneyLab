@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dqnqpskuxieyn"]
+[gd_scene load_steps=23 format=3 uid="uid://cp6yk8v3njhii"]
 
 [ext_resource type="Script" path="res://guardia.gd" id="1_cx0y8"]
 [ext_resource type="Texture2D" uid="uid://cf8mlve6utkoc" path="res://universidad/guardia-removebg-preview.png" id="2_sboil"]

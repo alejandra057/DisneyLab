@@ -1,29 +1,24 @@
 extends Node2D
 
 var texts : Array = [
-"1. Seleccione el mandato cuya obligación viene del miedo al castigo o la búsqueda de un premio:\n 
+"Seleccione el mandato cuya obligación viene del miedo al castigo o la búsqueda de un premio:\n 
 A) Imperativo Hipotético. B) Imperativo categórico. C) Ambos. D) Ninguno","
-2. Para Emanuel Kant, es posible conocer lo que las cosas nos permiten (como lo superficial) a través de nuestros sentidos:\n
+Para Emanuel Kant, es posible conocer lo que las cosas nos permiten (como lo superficial) a través de nuestros sentidos:\n
 A) Conocimiento Noumenico. B) Conocimiento fenoménico. C) conocimiento Empírico.
 D) Conocimiento Racional","
-3. Kant decía que el lema de la ilustración era “Sapere aude”, que significa:\n
+Kant decía que el lema de la ilustración era “Sapere aude”, que significa:\n
 A) Sopesa tus acciones. B) Atrévete a saber por ti mismo. C) Saber a la fuerza.
-D) Someterse al conocimiento","
-4. Kant (igual que Copérnico cambió el centro del universo de la tierra al sol), cambia el centro del conocimiento del objeto al sujeto, a esto se le llama:\n
-A) Subjetivismo. B) Prejuicio. C) giro copernicano. D) Suerte","
-5. La postura conciliadora de Kant respecto a los empiristas y racionalistas define que los datos experimentales son la fuente del conocimiento racional del sujeto:\n
-A) Racionalismo. B) Empirismo. C) Criticismo. D) Escepticismo","
-6. De las siguientes obras de Emanuel Kant, seleccione aquella que define su epistemología:\n
-A) Critica de la razón práctica. B) Critica de la razón pura. C) Critica del juicio. D) Critica fenomenológica"
+D) Someterse al conocimiento","...",""
 	
 ]
 var current_text: int=0
 var contar=0
 var valor : int=0
+var terminado = false
 
-@onready var visual_text :RichTextLabel =$PanelContainer/RichTextLabel
+@onready var visual_text :RichTextLabel =$panel/RichTextLabel2
 #@onready var animation_mark: AnimationPlayer=$panel/AnimationPlayer
-@onready var mark : Control=$PanelContainer/Control
+@onready var mark : Control=$panel/Control
 #@onready var animation_text: AnimationPlayer =$panel/AnimationPlayer
 var mostrar=false
 var electC=false
@@ -40,9 +35,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Saveus.contarpregunta>0:
-		next_text()
-		set_process(false)
+	if Input.is_action_just_pressed("space bar"): 
+		print("reconoce")
+		#if current_text==0 || current_text==1 || current_text==3 || current_text==5 || current_text==7 || current_text==9 || current_text==11 || current_text==13:
+			#$btA.hide()
+			#$RESPB.hide()
+			#$RESPC.hide()
+			#$RESPD.hide()
+			#next_text()
+		#else:
+		$btA.show()
+		$btB.show()
+		$btC.show()
+		$btD.show()
 		
 
 func next_text():
@@ -53,21 +58,6 @@ func next_text():
 		visual_text.text=texts[current_text]
 		mark.visible=0
 		print("current ",current_text)
-		if current_text==0:
-			Saveus.pregunta0=true
-		if current_text==1:
-			Saveus.pregunta1=true
-		if current_text==2:
-			Saveus.pregunta2=true
-		if current_text==3:
-			Saveus.pregunta3=true
-		if current_text==4:
-			Saveus.pregunta4=true
-		if current_text==5:
-			Saveus.pregunta5=true
-		if current_text==6:
-			Saveus.pregunta6=true
-		
 		show_text()
 
 func show_text():
@@ -88,4 +78,40 @@ func _on_señal_area_entered(area):
 	pass # Replace with function body.
 
 func _on_bt_a_pressed():
+	if current_text==0:
+		print("repcorrecta")
+	else:
+		print("repincorrecta")
+	next_text()
+	pass # Replace with function body.
+
+
+func _on_bt_b_pressed():
+	if current_text==1 || current_text==2 :
+		print("repcorrecta")
+	else:
+		print("repincorrecta")
+	next_text()
+	proximo_libro()
+	pass # Replace with function body.
+
+func proximo_libro():
+	if current_text==4:
+		$btA.hide()
+		$btB.hide()
+		$btC.hide()
+		$btD.hide()
+		$".".hide()
+		#terminado=true
+	pass
+
+func _on_bt_c_pressed():
+	print("no hay respuestas correctas aqui")
+	next_text()
+	pass # Replace with function body.
+
+
+func _on_bt_d_pressed():
+	print("no hay respuestas correctas aqui")
+	next_text()
 	pass # Replace with function body.
