@@ -273,7 +273,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8ltbm")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"martillo",
 "speed": 5.0
 }]
 
@@ -284,9 +284,7 @@ script = ExtResource("1_0csd4")
 position = Vector2(846, 501)
 scale = Vector2(3.14063, 3.53906)
 sprite_frames = SubResource("SpriteFrames_xbshk")
-animation = &"victoria"
-frame = 2
-frame_progress = 0.786164
+animation = &"idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -300,9 +298,10 @@ position = Vector2(841, 504)
 shape = SubResource("CapsuleShape2D_g5qwh")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(252, 93.5)
+visible = false
+position = Vector2(773, 563)
 scale = Vector2(4.49123, 2.91935)
 sprite_frames = SubResource("SpriteFrames_egoqt")
-animation = &"new_animation"
-frame = 3
-frame_progress = 0.605475
+animation = &"martillo"
+frame = 1
+frame_progress = 0.550914

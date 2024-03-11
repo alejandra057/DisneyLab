@@ -18,15 +18,20 @@ var contador=0
 var mostrarmsj=false
 var puntosganador=0
 var puntosperdedor=0
-var some_health_amount =150
-var current_value:int
-var max_value: int
-@onready var health_bar : ProgressBar=$CanvasLayer/ColorRect/HealthBar
-@onready var health_text : RichTextLabel=$CanvasLayer/ColorRect/HealthBar/RichTextLabel
-
+var some_health_amount_c=150
+var current_value_c:int
+var max_value_c: int
+var some_health_amount_i=150
+var current_value_i:int
+var max_value_i: int
+@onready var health_barC : ProgressBar=$CanvasLayer/ColorRect/HealthBarC
+@onready var health_textC: RichTextLabel=$CanvasLayer/ColorRect/HealthBarC/RichTextLabel
+@onready var health_barI : ProgressBar=$CanvasLayer2/ColorRect/HealthBarI
+@onready var health_textI: RichTextLabel=$CanvasLayer2/ColorRect/HealthBarI/RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_update_health_bar(1000,1000)
+	_update_health_bar_Cap(1000,1000)
+	_update_health_bar_iron(1000,1000)
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -40,76 +45,110 @@ func _ready():
 	elif Saveus.capitan==true:
 		$Bandoelegido.show()
 	pass # Replace with function body.
+	#vidas capitan
+func _update_health_bar_Cap(current_hp_c:int,max_hp_c:int)->void:
+	current_value_c= current_hp_c
+	max_value_c = max_hp_c
+	health_barC.max_value=max_hp_c
+	health_barC.value=current_hp_c
+	health_textC.clear()
+	health_textC.append_text("[center][b]%s/%s"% [current_hp_c,max_hp_c])
 	
-func _update_health_bar(current_hp:int,max_hp:int)->void:
-	current_value= current_hp
-	max_value = max_hp
-	health_bar.max_value=max_hp
-	health_bar.value=current_hp
-	health_text.clear()
-	health_text.append_text("[center][b]%s/%s"% [current_hp,max_hp])
-	
-func _update_health_bar_color(current_hp:int,max_hp:int)->void:
-	if(current_hp > max_hp * 0.6):
-		health_bar.set_theme_type_variation("HealthBar")
-	elif(current_hp > max_hp * 0.3):
-		health_bar.set_theme_type_variation("HealthBarMid")
+func _update_health_bar_color_Cap(current_hp_c:int,max_hp_c:int)->void:
+	if(current_hp_c > max_hp_c * 0.6):
+		health_barC.set_theme_type_variation("HealthBar")
+	elif(current_hp_c > max_hp_c * 0.3):
+		health_barC.set_theme_type_variation("HealthBarMid")
 	else:
-		health_bar.set_theme_type_variation("HealthBarLow")
+		health_barC.set_theme_type_variation("HealthBarLow")
 	
-func add_health()->void:
-	current_value +=some_health_amount
-	if(current_value > max_value):
-		current_value=max_value
-	_update_health_bar(current_value,max_value)
-func reduce_health()->void:
-	current_value -=some_health_amount
-	if(current_value <0):
-		current_value=0
-	_update_health_bar(current_value,max_value)
+func add_health_Cap()->void:
+	current_value_c += some_health_amount_c
+	if(current_value_c > max_value_c):
+		current_value_c=max_value_c
+	_update_health_bar_Cap(current_value_c,max_value_c)
+func reduce_health_Cap()->void:
+	current_value_c -=some_health_amount_c
+	if(current_value_c <0):
+		current_value_c=0
+	_update_health_bar_Cap(current_value_c,max_value_c)
 	
+	
+#vidas ironman
+func _update_health_bar_iron(current_hp_i:int,max_hp_i:int)->void:
+	current_value_i= current_hp_i
+	max_value_i = max_hp_i
+	health_barI.max_value=max_hp_i
+	health_barI.value=current_hp_i
+	health_textI.clear()
+	health_textI.append_text("[center][b]%s/%s"% [current_hp_i,max_hp_i])
+	
+func _update_health_bar_color_iron(current_hp_i:int,max_hp_i:int)->void:
+	if(current_hp_i > max_hp_i * 0.6):
+		health_barI.set_theme_type_variation("HealthBar")
+	elif(current_hp_i > max_hp_i * 0.3):
+		health_barI.set_theme_type_variation("HealthBarMid")
+	else:
+		health_barI.set_theme_type_variation("HealthBarLow")
+func add_health_iron()->void:
+	current_value_i +=some_health_amount_i
+	if(current_value_i > max_value_i):
+		current_value_i=max_value_i
+	_update_health_bar_iron(current_value_i,max_value_i)
+func reduce_health_iron()->void:
+	current_value_i -=some_health_amount_i
+	if(current_value_i <0):
+		current_value_i=0
+	_update_health_bar_iron(current_value_i,max_value_i)
+	
+#funcion ganar
 func animacion_ganar():
 	if Saveus.capitan==true:
+		add_health_Cap()
 		$"captain america/CA1".play("ataque")
 		escudo.show()
 		$"captain america/escudo/AnimationPlayer".play("disco")
 		$ironman/ironman1.play("dead")
+		reduce_health_iron()
 		animation_time.wait_time = 1.5  
 		animation_time.start()
 		puntosganador+=1
-		add_health()
 		$punto1.text="Puntos: "+str(puntosganador)
 	elif Saveus.iron_man==true:
+		add_health_iron()
 		$ironman/ironman1.play("ataque")
 		$ironman/AnimatedSprite2D.show()
 		$ironman/AnimatedSprite2D.play("laser")
 		$"captain america/CA1".play("dead")
+		reduce_health_Cap()
 		animation_time.wait_time = 1.5 
 		animation_time.start()
 		puntosganador+=1
-		
 		$punto2.text="Puntos: "+str(puntosganador)
+#funcion perder
 func animacion_perder():
 	if Saveus.capitan==true:
-		reduce_health()
+		reduce_health_Cap()
 		$ironman/ironman1.play("ataque")
 		$ironman/AnimatedSprite2D.show()
 		$ironman/AnimatedSprite2D.play("laser")
 		$"captain america/CA1".play("dead")
+		add_health_iron()
 		animation_time2.wait_time = 1.5 
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto2.text="Puntos: "+str(puntosperdedor)
 	elif Saveus.iron_man==true:
+		reduce_health_iron()
 		$"captain america/CA1".play("ataque")
 		escudo.show()
 		$"captain america/escudo/AnimationPlayer".play("disco")
 		$ironman/ironman1.play("dead")
+		add_health_Cap()
 		animation_time2.wait_time = 1.5  
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto1.text="Puntos: "+str(puntosperdedor)
-		
 func _process(delta):
 	if contarrondas==1:
 		print("enprocess contarronda")
@@ -157,7 +196,7 @@ func _on_button_pressed():
 		respondiomal+=1
 		animacion_perder()
 		print("bien ",respondiobien," mal ",respondiomal)
-	pass # Replace with function body.
+	pass
 
 
 
@@ -251,14 +290,14 @@ func ocultarpregunta():
 		elif Saveus.iron_man==true && puntosganador>1:
 			$ganador.text ="Los racionalista han ganado el primer combate"
 			$ironman/ironman1.play("victoria")
-			$Progreso_game.value=25*100/100
 			$Progreso_game.show()
+			$Progreso_game.value=25*100/100
 		ocultar()
-	tiempoRonda=2
+	tiempoRonda=1
 	rondas.start()
 	ocultar()
 	await get_tree().create_timer(10).timeout
-	get_tree().change_scene_to_file("res://Escenas/combate2.tscn")
+	get_tree().change_scene_to_file("res://intro_combate2.tscn")
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 

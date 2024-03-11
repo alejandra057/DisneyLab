@@ -14,71 +14,138 @@ var escudo
 var telarana
 var animation_time
 var animation_time2
-var vida0
-var vida1
-var vida2
-var vida3
-var vida4
-var vida_actual=4
 var contador=0
 var mostrarmsj=false
 var puntosganador=0
 var puntosperdedor=0
+var some_health_amount_h=150
+var current_value_h:int
+var max_value_h: int
+var some_health_amount_t=150
+var current_value_t:int
+var max_value_t: int
+@onready var health_barH : ProgressBar=$CanvasLayer2/ColorRect/HealthBarH
+@onready var health_textH: RichTextLabel=$CanvasLayer2/ColorRect/HealthBarH/RichTextLabel
+@onready var health_barT : ProgressBar=$CanvasLayer/ColorRect/HealthBarT
+@onready var health_textT: RichTextLabel=$CanvasLayer/ColorRect/HealthBarT/RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_update_health_bar_hulk(1000,1000)
+	_update_health_bar_thor(1000,1000)
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
 	rondas.start()
-	escudo=$"captain america/disco/AnimationPlayer"
+	escudo=$"captain america/escudo"
 	animation_time=$animacion
 	animation_time2=$animacion2
-	telarana=$"Spidey/telaraña/AnimatedSprite2D"
-	vida0=$vida0
-	vida1=$vida1
-	vida2=$vida2
-	vida3=$vida3
-	vida4=$vida4
+	Saveus.juego_progreso=$Progress_game
+	$Progress_game.value=Saveus.juego_progreso
+	if Saveus.iron_man==true:
+		$Bandoelegido2.show()
+	elif Saveus.capitan==true:
+		$Bandoelegido.show()
 	pass # Replace with function body.
+	#vidas hulk
+func _update_health_bar_hulk(current_hp_h:int,max_hp_h:int)->void:
+	current_value_h= current_hp_h
+	max_value_h = max_hp_h
+	health_barH.max_value=max_hp_h
+	health_barH.value=current_hp_h
+	health_textH.clear()
+	health_textH.append_text("[center][b]%s/%s"% [current_hp_h,max_hp_h])
+	
+func _update_health_bar_color_hulk(current_hp_h:int,max_hp_h:int)->void:
+	if(current_hp_h > max_hp_h * 0.6):
+		health_barH.set_theme_type_variation("HealthBar")
+	elif(current_hp_h > max_hp_h * 0.3):
+		health_barH.set_theme_type_variation("HealthBarMid")
+	else:
+		health_barH.set_theme_type_variation("HealthBarLow")
+	
+func add_health_hulk()->void:
+	current_value_h += some_health_amount_h
+	if(current_value_h > max_value_h):
+		current_value_h=max_value_h
+	_update_health_bar_hulk(current_value_h,max_value_h)
+func reduce_health_hulk()->void:
+	current_value_h -=some_health_amount_h
+	if(current_value_h <0):
+		current_value_h=0
+	_update_health_bar_hulk(current_value_h,max_value_h)
+	
+	
+#vidas thor
+func _update_health_bar_thor(current_hp_t:int,max_hp_t:int)->void:
+	current_value_t= current_hp_t
+	max_value_t = max_hp_t
+	health_barT.max_value=max_hp_t
+	health_barT.value=current_hp_t
+	health_textT.clear()
+	health_textT.append_text("[center][b]%s/%s"% [current_hp_t,max_hp_t])
+	
+func _update_health_bar_color_iron(current_hp_t:int,max_hp_t:int)->void:
+	if(current_hp_t > max_hp_t * 0.6):
+		health_barT.set_theme_type_variation("HealthBar")
+	elif(current_hp_t > max_hp_t * 0.3):
+		health_barT.set_theme_type_variation("HealthBarMid")
+	else:
+		health_barT.set_theme_type_variation("HealthBarLow")
+func add_health_thor()->void:
+	current_value_t +=some_health_amount_t
+	if(current_value_t > max_value_t):
+		current_value_t=max_value_t
+	_update_health_bar_thor(current_value_t,max_value_t)
+func reduce_health_thor()->void:
+	current_value_t -=some_health_amount_t
+	if(current_value_t <0):
+		current_value_t=0
+	_update_health_bar_thor(current_value_t,max_value_t)
+	
+#funcion ganar
 func animacion_ganar():
 	if Saveus.capitan==true:
-		$"captain america/CA1".play("ataque")
-		#escudo.show()
-		escudo.play("disco")
-		$ironman/ironman1.play("dead")
+		add_health_hulk()
+		$hulk/hulk.play("ataque")
+		$thor/thor.play("dead")
+		reduce_health_hulk()
 		animation_time.wait_time = 1.5  
 		animation_time.start()
 		puntosganador+=1
 		$punto1.text="Puntos: "+str(puntosganador)
 	elif Saveus.iron_man==true:
-		$ironman/ironman1.play("ataque")
-		$ironman/AnimatedSprite2D.show()
-		$ironman/AnimatedSprite2D.play("laser")
-		$"captain america/CA1".play("dead")
+		add_health_thor()
+		$thor/thor.play("ataque")
+		$thor/AnimatedSprite2D2.show()
+		$thor/AnimatedSprite2D2.play("martillo")
+		$hulk/hulk.play("dead")
+		reduce_health_hulk()
 		animation_time.wait_time = 1.5 
 		animation_time.start()
 		puntosganador+=1
 		$punto2.text="Puntos: "+str(puntosganador)
+#funcion perder
 func animacion_perder():
 	if Saveus.capitan==true:
-		$ironman/ironman1.play("ataque")
-		$ironman/AnimatedSprite2D.show()
-		$ironman/AnimatedSprite2D.play("laser")
-		$"captain america/CA1".play("dead")
+		reduce_health_hulk()
+		$thor/thor.play("ataque")
+		$thor/AnimatedSprite2D2.show()
+		$thor/AnimatedSprite2D2.play("martillo")
+		$hulk/hulk.play("dead")
+		add_health_thor()
 		animation_time2.wait_time = 1.5 
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto2.text="Puntos: "+str(puntosperdedor)
 	elif Saveus.iron_man==true:
-		$"captain america/CA1".play("ataque")
-		#escudo.show()
-		escudo.play("disco")
-		$ironman/ironman1.play("dead")
+		reduce_health_thor()
+		$hulk/hulk.play("ataque")
+		$thor/thor.play("dead")
+		add_health_hulk()
 		animation_time2.wait_time = 1.5  
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto1.text="Puntos: "+str(puntosperdedor)
-		
 func _process(delta):
 	if contarrondas==1:
 		print("enprocess contarronda")
@@ -91,41 +158,6 @@ func _process(delta):
 		ocultarpregunta()
 		contador=0
 	
-func perder_vidas():
-	if Saveus.capitan == true && puntosperdedor == 2:
-		$vida4.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==2:
-		$vida04.hide()
-	if Saveus.capitan == true && puntosperdedor == 4:
-		$vida3.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==4:
-		$vida03.hide()
-	if Saveus.capitan == true && puntosperdedor == 6:
-		$vida2.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==6:
-		$vida02.hide()
-	if Saveus.capitan == true && puntosperdedor == 8:
-		$vida1.hide()
-	elif Saveus.iron_man ==true && puntosperdedor ==8:
-		$vida01.hide()
-		
-func ganar_vidas():
-	if Saveus.capitan == true && puntosganador == 2:
-		$vida4.show()
-	elif Saveus.iron_man ==true && puntosganador ==2:
-		$vida04.show()
-	if Saveus.capitan == true && puntosganador == 4:
-		$vida3.show()
-	elif Saveus.iron_man ==true && puntosganador ==4:
-		$vida03.show()
-	if Saveus.capitan == true && puntosganador == 6:
-		$vida2.show()
-	elif Saveus.iron_man ==true && puntosganador ==6:
-		$vida02.show()
-	if Saveus.capitan == true && puntosganador == 8:
-		$vida1.show()
-	elif Saveus.iron_man ==true && puntosganador ==8:
-		$vida01.show()
 
 func _on_tiempocontestar_timeout():
 	tiempo_restante -= 1
@@ -154,17 +186,14 @@ func _on_button_pressed():
 		tiempo_restante = 10
 		respondiobien+=1
 		animacion_ganar()
-		#ganar_vidas()
 		print("bien ",respondiobien," mal ",respondiomal)
 	else:
 		respondio=false
 		tiempo_restante = 10
 		respondiomal+=1
 		animacion_perder()
-		perder_vidas()
-		#perder_vidas()
 		print("bien ",respondiobien," mal ",respondiomal)
-	pass # Replace with function body.
+	pass
 
 
 
@@ -175,23 +204,21 @@ func _on_button_2_pressed():
 			contarrondas+=1
 			mostrarmsj=false
 	print("contador",contador)
-	if $Node2D.valor==1 || $Node2D.valor==3:
+	if $Node2D.valor==1 :
 		respondio=true
 		tiempo_restante = 10
 		animacion_ganar()
-		#ganar_vidas()
 		respondiobien+=1
-		#empate()
+		
 		print("bien ",respondiobien," mal ",respondiomal)
 		
 	else:
 		print("respuesta incorrecta")
 		respondio=false
-		#$Node2D.next_text()
-		#contarrondas+=1
+		
 		tiempo_restante = 10
 		animacion_perder()
-		#perder_vidas()
+		
 		print("bien ",respondiobien," mal ",respondiomal)
 		respondiomal+=1
 		
@@ -200,30 +227,16 @@ func _on_button_2_pressed():
 
 func _on_button_3_pressed():
 	contador+=1
+	print("respuesta incorrecta")
+	print("bien ",respondiobien," mal ",respondiomal)
+	tiempo_restante = 10
+	respondio=false
+	animacion_perder()
+	
+	respondiomal+=1
 	if mostrarmsj:
 			contarrondas+=1
 			mostrarmsj=false
-	print("contador",contador)
-	if  $Node2D.valor!=1 &&  $Node2D.valor!=0 &&  $Node2D.valor!=3:
-		respondio=true
-		tiempo_restante = 10
-		animacion_ganar()
-		#ganar_vidas()
-		respondiobien+=1
-		#empate()
-		print("bien ",respondiobien," mal ",respondiomal)
-	else:
-		print("respuesta incorrecta")
-		print("bien ",respondiobien," mal ",respondiomal)
-		respondio=false
-		#$Node2D.next_text()
-		#contarrondas+=1
-		tiempo_restante = 10
-		animacion_perder()
-		perder_vidas()
-		#perder_vidas()
-		respondiomal+=1
-		
 	pass # Replace with function body.
 
 
@@ -234,8 +247,7 @@ func _on_button_4_pressed():
 	tiempo_restante = 10
 	respondio=false
 	animacion_perder()
-	perder_vidas()
-	#perder_vidas()
+	
 	respondiomal+=1
 	if mostrarmsj:
 			contarrondas+=1
@@ -249,7 +261,7 @@ func _on_timerrondas_timeout():
 	if tiempoRonda > 0:
 		$Label.text = "Ronda "+str(cantrondas)+"\n"+ "       "+str(tiempoRonda) 
 		tiempo_restante = 10
-	elif cantrondas<5:
+	elif cantrondas<2:
 			timer.start()
 			$Node2D.show()
 			$Button.show()
@@ -264,20 +276,23 @@ func _on_timerrondas_timeout():
 func ocultarpregunta():
 	cantrondas+=1
 	print("cantrondas",cantrondas)
-	if cantrondas>4:
+	if cantrondas>1:
 		contarrondas=0
 		print("aqui iria el ganador")
-		if Saveus.capitan==true && puntosganador>8:
-			$ganador.text ="Han ganado los empiristas"
-			$"captain america/CA1".play("victoria")
-		elif Saveus.iron_man==true && puntosganador>8:
-			$ganador.text ="Han ganado los racionalistas"
-			$ironman/ironman1.play("victoria")
+		if Saveus.capitan==true && puntosganador>1:
+			$ganador.text ="Los empiristas han ganado el primer combate "
+			$hulk/hulk.play("victoria")
+			$Progress_game.value=25*100/100
+		elif Saveus.iron_man==true && puntosganador>1:
+			$ganador.text ="Los racionalista han ganado el primer combate"
+			$thor/thor.play("victoria")
+			$Progress_game.value=25*100/100
 		ocultar()
-		return
-	tiempoRonda=4
+	tiempoRonda=1
 	rondas.start()
 	ocultar()
+	await get_tree().create_timer(10).timeout
+	get_tree().change_scene_to_file("res://intro_combate3.tscn")
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 
@@ -302,29 +317,28 @@ func ocultar():
 	$Button4.hide()
 	$Label.show()
 	$lbtiempo.hide()
+	timer.stop()
 
 
 func _on_animacion_timeout():
 	animation_time.stop()
-	$"captain america/CA1".stop()
-	$"captain america/CA1".play("idle")
-	$ironman/ironman1.stop()
-	$ironman/AnimatedSprite2D.stop()
-	$ironman/AnimatedSprite2D.hide()
-	$ironman/ironman1.play("idle")
+	$hulk/hulk.stop()
+	$hulk/hulk.play("idle")
+	$thor/thor.stop()
+	$thor/AnimatedSprite2D2.stop()
+	$thor/AnimatedSprite2D2.hide()
+	$thor/thor.play("idle")
 	empate()
-	escudo.stop()
-	#escudo.hide()
+	
 
 
 func _on_animacion_2_timeout():
 	animation_time2.stop()
-	$"captain america/CA1".stop()
-	$"captain america/CA1".play("idle")
-	$ironman/ironman1.stop()
-	$ironman/AnimatedSprite2D.stop()
-	$ironman/AnimatedSprite2D.hide()
-	$ironman/ironman1.play("idle")
-	escudo.stop()
+	$hulk/hulk.stop()
+	$hulk/hulk.play("idle")
+	$thor/thor.stop()
+	$thor/AnimatedSprite2D2.stop()
+	$thor/AnimatedSprite2D2.hide()
+	$thor/thor.play("idle")
 	empate()
-	#escudo.hide()
+	

@@ -229,8 +229,7 @@ script = ExtResource("1_6e2sf")
 position = Vector2(310, 497)
 scale = Vector2(3.42187, 3.35937)
 sprite_frames = SubResource("SpriteFrames_7js1b")
-animation = &"idle"
-frame_progress = 0.423639
+animation = &"ataque"
 
 [node name="hulkl1" type="AnimatedSprite2D" parent="."]
 position = Vector2(294, 491)
