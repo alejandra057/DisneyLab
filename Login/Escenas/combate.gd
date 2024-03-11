@@ -24,6 +24,7 @@ var max_value_c: int
 var some_health_amount_i=150
 var current_value_i:int
 var max_value_i: int
+var progreso
 @onready var health_barC : ProgressBar=$CanvasLayer/ColorRect/HealthBarC
 @onready var health_textC: RichTextLabel=$CanvasLayer/ColorRect/HealthBarC/RichTextLabel
 @onready var health_barI : ProgressBar=$CanvasLayer2/ColorRect/HealthBarI
@@ -39,7 +40,7 @@ func _ready():
 	escudo=$"captain america/escudo"
 	animation_time=$animacion
 	animation_time2=$animacion2
-	Saveus.juego_progreso=$Progreso_game
+	Saveus.juego_progreso=progreso
 	if Saveus.iron_man==true:
 		$Bandoelegido_2.show()
 	elif Saveus.capitan==true:

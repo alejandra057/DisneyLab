@@ -1,14 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://01vg1vwcips"]
+[gd_scene load_steps=20 format=3 uid="uid://01vg1vwcips"]
 
 [ext_resource type="Script" path="res://Escenas/combate2.gd" id="1_kyoie"]
 [ext_resource type="Texture2D" uid="uid://dc3hdl8gj7m6x" path="res://Art/Escenarios_Mundos/87ae2987eb0cca2c39c8e558eafd4f84.png" id="1_xavhg"]
+[ext_resource type="PackedScene" uid="uid://fgjv1i51vfe1" path="res://Battlepregunta2.tscn" id="2_saqqa"]
 [ext_resource type="PackedScene" uid="uid://4u8rmerbktsk" path="res://hulk.tscn" id="3_q50lx"]
 [ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="3_u1pmo"]
 [ext_resource type="PackedScene" uid="uid://dwufd7xe4oocc" path="res://thor.tscn" id="3_wjtc0"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="9_44065"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="10_ksp0d"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="11_rq62o"]
-[ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="12_yhvfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fteex"]
 texture = ExtResource("1_xavhg")
@@ -11511,6 +11511,14 @@ font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_aiowp"]
+font = ExtResource("9_44065")
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_481dr"]
+font = ExtResource("9_44065")
+font_size = 26
+
 [sub_resource type="LabelSettings" id="LabelSettings_bujkl"]
 font = ExtResource("9_44065")
 font_size = 45
@@ -11522,7 +11530,6 @@ font_size = 45
 [sub_resource type="LabelSettings" id="LabelSettings_x6b0a"]
 font = ExtResource("9_44065")
 font_size = 31
-font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xejdd"]
 font = ExtResource("9_44065")
@@ -11537,6 +11544,43 @@ offset_right = 1149.0
 offset_bottom = 954.0
 texture = ExtResource("1_xavhg")
 expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 830.0
+offset_top = 383.0
+offset_right = 1152.0
+offset_bottom = 427.0
+color = Color(0.282353, 0.545098, 0.231373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 316.0
+offset_bottom = 54.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBarT" type="ProgressBar" parent="CanvasLayer/ColorRect"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 323.0
+offset_bottom = 45.0
+theme = ExtResource("3_u1pmo")
+theme_type_variation = &"HealthBarT"
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBarT"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 320.0
+offset_bottom = 42.0
+theme_type_variation = &"HealthBar"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -11569,45 +11613,10 @@ show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/HealthBarH"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 16.0
-offset_right = 318.0
-offset_bottom = 53.0
-theme_type_variation = &"HealthBar"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 822.0
-offset_top = 366.0
-offset_right = 1144.0
-offset_bottom = 410.0
-color = Color(0.282353, 0.545098, 0.231373, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
-layout_mode = 0
-offset_right = 316.0
-offset_bottom = 54.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
-layout_mode = 2
-
-[node name="HealthBarT" type="ProgressBar" parent="CanvasLayer/ColorRect"]
-layout_mode = 2
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 323.0
-offset_bottom = 45.0
-theme = ExtResource("3_u1pmo")
-theme_type_variation = &"HealthBarT"
-step = 1.0
-value = 100.0
-show_percentage = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBarT"]
-layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
 offset_right = 322.0
-offset_bottom = 44.0
+offset_bottom = 40.0
 theme_type_variation = &"HealthBar"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -11657,9 +11666,9 @@ offset_bottom = 84.0
 texture = ExtResource("11_rq62o")
 expand_mode = 1
 
-[node name="Node2D" parent="." instance=ExtResource("12_yhvfs")]
+[node name="Node2D" parent="." instance=ExtResource("2_saqqa")]
 visible = false
-position = Vector2(105, 48)
+position = Vector2(131, 36)
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -11706,19 +11715,21 @@ offset_right = 719.0
 offset_bottom = 129.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
+label_settings = SubResource("LabelSettings_aiowp")
 
 [node name="tiempocontestar" type="Timer" parent="."]
 
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 374.0
+offset_left = 314.0
 offset_top = 96.0
 offset_right = 833.0
-offset_bottom = 267.0
+offset_bottom = 247.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
+label_settings = SubResource("LabelSettings_481dr")
 
 [node name="animacion" type="Timer" parent="."]
 
@@ -11770,7 +11781,16 @@ text = "You"
 label_settings = SubResource("LabelSettings_xejdd")
 
 [node name="Progress_game" type="ProgressBar" parent="."]
-offset_left = 427.0
-offset_top = 4.0
-offset_right = 625.0
-offset_bottom = 31.0
+offset_left = 389.0
+offset_top = 2.0
+offset_right = 744.0
+offset_bottom = 59.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="timeout" from="tiempocontestar" to="." method="_on_tiempocontestar_timeout"]
+[connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
+[connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
+[connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]

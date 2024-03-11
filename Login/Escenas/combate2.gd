@@ -39,8 +39,7 @@ func _ready():
 	escudo=$"captain america/escudo"
 	animation_time=$animacion
 	animation_time2=$animacion2
-	Saveus.juego_progreso=$Progress_game
-	$Progress_game.value=Saveus.juego_progreso
+	$Progress_game.value=25
 	if Saveus.iron_man==true:
 		$Bandoelegido2.show()
 	elif Saveus.capitan==true:
@@ -180,6 +179,45 @@ func _on_button_pressed():
 			contarrondas+=1
 			mostrarmsj=false
 	print("contador",contador)
+	respondio=false
+	tiempo_restante = 10
+	respondiomal+=1
+	animacion_perder()
+	print("bien ",respondiobien," mal ",respondiomal)
+	pass
+
+
+
+func _on_button_2_pressed():
+	contador+=1
+	if mostrarmsj:
+			print("entro al mostrar msj")
+			contarrondas+=1
+			mostrarmsj=false
+	print("contador",contador)
+	if $Node2D.valor==1:
+		print("respuesta correcta")
+		respondio=true
+		tiempo_restante = 10
+		respondiobien+=1
+		animacion_ganar()
+		print("bien ",respondiobien," mal ",respondiomal)
+	else:
+		respondio=false
+		tiempo_restante = 10
+		respondiomal+=1
+		animacion_perder()
+		print("bien ",respondiobien," mal ",respondiomal)
+	pass
+
+
+func _on_button_3_pressed():
+	contador+=1
+	if mostrarmsj:
+			print("entro al mostrar msj")
+			contarrondas+=1
+			mostrarmsj=false
+	print("contador",contador)
 	if $Node2D.valor==0:
 		print("respuesta correcta")
 		respondio=true
@@ -196,50 +234,6 @@ func _on_button_pressed():
 	pass
 
 
-
-func _on_button_2_pressed():
-	contador+=1
-	if mostrarmsj:
-			print("entro al mostrar msj")
-			contarrondas+=1
-			mostrarmsj=false
-	print("contador",contador)
-	if $Node2D.valor==1 :
-		respondio=true
-		tiempo_restante = 10
-		animacion_ganar()
-		respondiobien+=1
-		
-		print("bien ",respondiobien," mal ",respondiomal)
-		
-	else:
-		print("respuesta incorrecta")
-		respondio=false
-		
-		tiempo_restante = 10
-		animacion_perder()
-		
-		print("bien ",respondiobien," mal ",respondiomal)
-		respondiomal+=1
-		
-	pass # Replace with function body.
-
-
-func _on_button_3_pressed():
-	contador+=1
-	print("respuesta incorrecta")
-	print("bien ",respondiobien," mal ",respondiomal)
-	tiempo_restante = 10
-	respondio=false
-	animacion_perder()
-	
-	respondiomal+=1
-	if mostrarmsj:
-			contarrondas+=1
-			mostrarmsj=false
-	pass # Replace with function body.
-
-
 func _on_button_4_pressed():
 	contador+=1
 	print("respuesta incorrecta")
@@ -247,7 +241,6 @@ func _on_button_4_pressed():
 	tiempo_restante = 10
 	respondio=false
 	animacion_perder()
-	
 	respondiomal+=1
 	if mostrarmsj:
 			contarrondas+=1
@@ -280,13 +273,13 @@ func ocultarpregunta():
 		contarrondas=0
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>1:
-			$ganador.text ="Los empiristas han ganado el primer combate "
+			$ganador.text ="Los empiristas han ganado el segundo combate "
 			$hulk/hulk.play("victoria")
-			$Progress_game.value=25*100/100
+			$Progress_game.value=50
 		elif Saveus.iron_man==true && puntosganador>1:
-			$ganador.text ="Los racionalista han ganado el primer combate"
+			$ganador.text ="Los racionalista han ganado el segundo combate"
 			$thor/thor.play("victoria")
-			$Progress_game.value=25*100/100
+			$Progress_game.value=50
 		ocultar()
 	tiempoRonda=1
 	rondas.start()
