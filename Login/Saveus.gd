@@ -41,6 +41,7 @@ var contadorcapi=0
 var contadoriron=0
 var bandoelegido=false
 var finished_game=0
+var juego_progreso=0
 func _ready():
 	cargar()
 	pass # Replace with function body.

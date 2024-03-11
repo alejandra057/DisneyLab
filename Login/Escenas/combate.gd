@@ -14,18 +14,19 @@ var escudo
 var telarana
 var animation_time
 var animation_time2
-var vida0
-var vida1
-var vida2
-var vida3
-var vida4
-var vida_actual=4
 var contador=0
 var mostrarmsj=false
 var puntosganador=0
 var puntosperdedor=0
+var some_health_amount =150
+var current_value:int
+var max_value: int
+@onready var health_bar : ProgressBar=$CanvasLayer/ColorRect/HealthBar
+@onready var health_text : RichTextLabel=$CanvasLayer/ColorRect/HealthBar/RichTextLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_update_health_bar(1000,1000)
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -33,16 +34,40 @@ func _ready():
 	escudo=$"captain america/escudo"
 	animation_time=$animacion
 	animation_time2=$animacion2
-	vida0=$vida0
-	vida1=$vida1
-	vida2=$vida2
-	vida3=$vida3
-	vida4=$vida4
+	Saveus.juego_progreso=$Progreso_game
 	if Saveus.iron_man==true:
 		$Bandoelegido_2.show()
 	elif Saveus.capitan==true:
 		$Bandoelegido.show()
 	pass # Replace with function body.
+	
+func _update_health_bar(current_hp:int,max_hp:int)->void:
+	current_value= current_hp
+	max_value = max_hp
+	health_bar.max_value=max_hp
+	health_bar.value=current_hp
+	health_text.clear()
+	health_text.append_text("[center][b]%s/%s"% [current_hp,max_hp])
+	
+func _update_health_bar_color(current_hp:int,max_hp:int)->void:
+	if(current_hp > max_hp * 0.6):
+		health_bar.set_theme_type_variation("HealthBar")
+	elif(current_hp > max_hp * 0.3):
+		health_bar.set_theme_type_variation("HealthBarMid")
+	else:
+		health_bar.set_theme_type_variation("HealthBarLow")
+	
+func add_health()->void:
+	current_value +=some_health_amount
+	if(current_value > max_value):
+		current_value=max_value
+	_update_health_bar(current_value,max_value)
+func reduce_health()->void:
+	current_value -=some_health_amount
+	if(current_value <0):
+		current_value=0
+	_update_health_bar(current_value,max_value)
+	
 func animacion_ganar():
 	if Saveus.capitan==true:
 		$"captain america/CA1".play("ataque")
@@ -52,6 +77,7 @@ func animacion_ganar():
 		animation_time.wait_time = 1.5  
 		animation_time.start()
 		puntosganador+=1
+		add_health()
 		$punto1.text="Puntos: "+str(puntosganador)
 	elif Saveus.iron_man==true:
 		$ironman/ironman1.play("ataque")
@@ -61,9 +87,11 @@ func animacion_ganar():
 		animation_time.wait_time = 1.5 
 		animation_time.start()
 		puntosganador+=1
+		
 		$punto2.text="Puntos: "+str(puntosganador)
 func animacion_perder():
 	if Saveus.capitan==true:
+		reduce_health()
 		$ironman/ironman1.play("ataque")
 		$ironman/AnimatedSprite2D.show()
 		$ironman/AnimatedSprite2D.play("laser")
@@ -218,11 +246,14 @@ func ocultarpregunta():
 		if Saveus.capitan==true && puntosganador>1:
 			$ganador.text ="Los empiristas han ganado el primer combate "
 			$"captain america/CA1".play("victoria")
+			$Progreso_game.show()
+			$Progreso_game.value=25*100/100
 		elif Saveus.iron_man==true && puntosganador>1:
 			$ganador.text ="Los racionalista han ganado el primer combate"
 			$ironman/ironman1.play("victoria")
+			$Progreso_game.value=25*100/100
+			$Progreso_game.show()
 		ocultar()
-		return
 	tiempoRonda=2
 	rondas.start()
 	ocultar()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=28 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
 [ext_resource type="Script" path="res://Escenas/combate.gd" id="1_sowe0"]
+[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="2_fpl6g"]
 [ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="4_3tgsu"]
 [ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="5_llia7"]
 [ext_resource type="PackedScene" uid="uid://dy5hfo318vbvq" path="res://ironman.tscn" id="5_y5gmg"]
@@ -8193,6 +8194,44 @@ font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sowe0")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 155.0
+offset_right = 550.0
+offset_bottom = 209.0
+color = Color(0.282353, 0.545098, 0.231373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 501.0
+offset_bottom = 52.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/ColorRect"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 501.0
+offset_bottom = 55.0
+theme = ExtResource("2_fpl6g")
+theme_type_variation = &"HealthBar"
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 505.0
+offset_bottom = 59.0
+theme_type_variation = &"HealthBar"
+
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 offset_right = 1150.0
@@ -8457,6 +8496,13 @@ offset_top = 163.0
 offset_right = 759.0
 offset_bottom = 252.0
 label_settings = SubResource("LabelSettings_e0tk3")
+
+[node name="Progreso_game" type="ProgressBar" parent="."]
+visible = false
+offset_left = 422.0
+offset_top = 5.0
+offset_right = 730.0
+offset_bottom = 32.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
