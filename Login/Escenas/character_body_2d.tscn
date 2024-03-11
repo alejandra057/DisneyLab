@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dnnqpwoe88nfe"]
+[gd_scene load_steps=22 format=3 uid="uid://dnnqpwoe88nfe"]
 
 [ext_resource type="Script" path="res://Escenas/character_body_2d.gd" id="1_4v0ba"]
 [ext_resource type="Texture2D" uid="uid://bd0vwxa65o0b5" path="res://Art/Sprites/peter.png" id="2_o1m13"]
@@ -29,6 +29,10 @@ region = Rect2(48, 192, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6oev2"]
 atlas = ExtResource("2_o1m13")
 region = Rect2(96, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysccj"]
+atlas = ExtResource("2_o1m13")
+region = Rect2(48, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7otfd"]
 atlas = ExtResource("2_o1m13")
@@ -86,6 +90,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ysccj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7otfd")
 }, {
 "duration": 1.0,
@@ -130,7 +142,7 @@ script = ExtResource("1_4v0ba")
 position = Vector2(561.25, 523)
 scale = Vector2(1.82812, 1.375)
 sprite_frames = SubResource("SpriteFrames_hcyka")
-animation = &"right_idle"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(563, 525)
