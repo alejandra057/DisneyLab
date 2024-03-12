@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://86py360b7nnx"
+path="res://.godot/imported/racionalistas_gane.dialogue-4d7b921b803fe58456d3361b9e3c9e92.tres"
+
+[deps]
+
+source_file="res://racionalistas_gane.dialogue"
+dest_files=["res://.godot/imported/racionalistas_gane.dialogue-4d7b921b803fe58456d3361b9e3c9e92.tres"]
+
+[params]
+
+defaults=true

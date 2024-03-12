@@ -1,34 +1,263 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl57a1mv6qr7b"]
+[gd_scene load_steps=20 format=3 uid="uid://dl57a1mv6qr7b"]
 
 [ext_resource type="Script" path="res://Escenas/combate4.gd" id="1_tuy11"]
-[ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="1_uo6js"]
-[ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="2_edx08"]
-[ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="3_am2qs"]
-[ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="4_cclg6"]
-[ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="5_5a6bq"]
+[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="2_3cq5n"]
+[ext_resource type="Texture2D" uid="uid://dmugly6yly48c" path="res://Art/fondoxs.png" id="3_cdrgb"]
 [ext_resource type="PackedScene" uid="uid://diijtaeeihs2o" path="res://BlackWidow.tscn" id="6_lebti"]
 [ext_resource type="PackedScene" uid="uid://cj1pcjbo5adno" path="res://capitana.tscn" id="7_f0duo"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="8_pxqtx"]
+[ext_resource type="PackedScene" uid="uid://c7wo65m871yvi" path="res://Battlepregunta4.tscn" id="9_1gojf"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="9_5sl6w"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="10_6tkxt"]
-[ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="11_6t7ec"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8d4ay"]
+texture = ExtResource("3_cdrgb")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+11:0/0 = 0
+11:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:0/0/physics_layer_0/angular_velocity = 0.0
+12:0/0 = 0
+12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:0/0/physics_layer_0/angular_velocity = 0.0
+13:0/0 = 0
+13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:0/0/physics_layer_0/angular_velocity = 0.0
+14:0/0 = 0
+14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:0/0/physics_layer_0/angular_velocity = 0.0
+15:0/0 = 0
+15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:0/0/physics_layer_0/angular_velocity = 0.0
+16:0/0 = 0
+16:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0 = 0
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0 = 0
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+10:1/0 = 0
+10:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:1/0/physics_layer_0/angular_velocity = 0.0
+11:1/0 = 0
+11:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:1/0/physics_layer_0/angular_velocity = 0.0
+12:1/0 = 0
+12:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:1/0/physics_layer_0/angular_velocity = 0.0
+13:1/0 = 0
+13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:1/0/physics_layer_0/angular_velocity = 0.0
+14:1/0 = 0
+14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:1/0/physics_layer_0/angular_velocity = 0.0
+15:1/0 = 0
+15:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:1/0/physics_layer_0/angular_velocity = 0.0
+16:1/0 = 0
+16:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/0 = 0
+6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/0/physics_layer_0/angular_velocity = 0.0
+7:2/0 = 0
+7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:2/0/physics_layer_0/angular_velocity = 0.0
+8:2/0 = 0
+8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:2/0/physics_layer_0/angular_velocity = 0.0
+9:2/0 = 0
+9:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:2/0/physics_layer_0/angular_velocity = 0.0
+10:2/0 = 0
+10:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:2/0/physics_layer_0/angular_velocity = 0.0
+11:2/0 = 0
+11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:2/0/physics_layer_0/angular_velocity = 0.0
+12:2/0 = 0
+12:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:2/0/physics_layer_0/angular_velocity = 0.0
+13:2/0 = 0
+13:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:2/0/physics_layer_0/angular_velocity = 0.0
+14:2/0 = 0
+14:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:2/0/physics_layer_0/angular_velocity = 0.0
+15:2/0 = 0
+15:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:2/0/physics_layer_0/angular_velocity = 0.0
+16:2/0 = 0
+16:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+6:3/0 = 0
+6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:3/0/physics_layer_0/angular_velocity = 0.0
+7:3/0 = 0
+7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:3/0/physics_layer_0/angular_velocity = 0.0
+8:3/0 = 0
+8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:3/0/physics_layer_0/angular_velocity = 0.0
+9:3/0 = 0
+9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:3/0/physics_layer_0/angular_velocity = 0.0
+10:3/0 = 0
+10:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:3/0/physics_layer_0/angular_velocity = 0.0
+11:3/0 = 0
+11:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:3/0/physics_layer_0/angular_velocity = 0.0
+12:3/0 = 0
+12:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:3/0/physics_layer_0/angular_velocity = 0.0
+13:3/0 = 0
+13:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:3/0/physics_layer_0/angular_velocity = 0.0
+14:3/0 = 0
+14:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+14:3/0/physics_layer_0/angular_velocity = 0.0
+15:3/0 = 0
+15:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:3/0/physics_layer_0/angular_velocity = 0.0
+16:3/0 = 0
+16:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+16:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_g8jjw"]
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_8d4ay")
 
 [sub_resource type="LabelSettings" id="LabelSettings_r0m5v"]
 font = ExtResource("8_pxqtx")
-font_size = 36
+font_size = 27
 outline_size = 2
 outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_pgfh6"]
 font = ExtResource("8_pxqtx")
-font_size = 37
+font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8c8rq"]
+font = ExtResource("8_pxqtx")
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_7oxb1"]
+font = ExtResource("8_pxqtx")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_qb7h3"]
+font = ExtResource("8_pxqtx")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_oicu7"]
+font = ExtResource("8_pxqtx")
+font_size = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_4eows"]
 font = ExtResource("8_pxqtx")
 font_size = 31
-font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+font_color = Color(0.988235, 0.988235, 0.988235, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g7f36"]
+font = ExtResource("8_pxqtx")
+font_size = 24
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tuy11")
@@ -37,133 +266,130 @@ script = ExtResource("1_tuy11")
 offset_right = 1154.0
 offset_bottom = 952.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 371.0
+offset_right = 331.0
+offset_bottom = 423.0
+color = Color(0.282353, 0.545098, 0.231373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 316.0
+offset_bottom = 54.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBarM" type="ProgressBar" parent="CanvasLayer/ColorRect"]
+layout_mode = 2
+offset_left = -2.0
+offset_right = 316.0
+offset_bottom = 52.0
+theme = ExtResource("2_3cq5n")
+theme_type_variation = &"HealthBarM"
+max_value = 200.0
+step = 1.0
+value = 200.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBarM"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 51.0
+theme_type_variation = &"HealthBar"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+offset_left = 804.0
+offset_top = 377.0
+offset_right = 1119.0
+offset_bottom = 429.0
+color = Color(0.282353, 0.545098, 0.231373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/ColorRect"]
+layout_mode = 0
+offset_right = 316.0
+offset_bottom = 54.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBarB" type="ProgressBar" parent="CanvasLayer2/ColorRect"]
+layout_mode = 2
+offset_left = -2.0
+offset_right = 316.0
+offset_bottom = 52.0
+theme = ExtResource("2_3cq5n")
+theme_type_variation = &"HealthBarB"
+max_value = 200.0
+step = 1.0
+value = 200.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/HealthBarB"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 51.0
+theme_type_variation = &"HealthBar"
+
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource("TileSet_g8jjw")
 format = 2
-
-[node name="vida0" type="TextureRect" parent="."]
-offset_left = 53.0
-offset_top = 414.0
-offset_right = 286.0
-offset_bottom = 490.0
-texture = ExtResource("1_uo6js")
-expand_mode = 1
-
-[node name="vida1" type="TextureRect" parent="."]
-offset_left = 54.0
-offset_top = 402.0
-offset_right = 289.0
-offset_bottom = 485.0
-texture = ExtResource("2_edx08")
-expand_mode = 1
-
-[node name="vida2" type="TextureRect" parent="."]
-offset_left = 53.0
-offset_top = 407.0
-offset_right = 293.0
-offset_bottom = 489.0
-texture = ExtResource("3_am2qs")
-expand_mode = 1
-
-[node name="vida3" type="TextureRect" parent="."]
-offset_left = 53.0
-offset_top = 410.0
-offset_right = 288.0
-offset_bottom = 486.0
-texture = ExtResource("4_cclg6")
-expand_mode = 1
-
-[node name="vida4" type="TextureRect" parent="."]
-offset_left = 54.0
-offset_top = 411.0
-offset_right = 282.0
-offset_bottom = 487.0
-texture = ExtResource("5_5a6bq")
-expand_mode = 1
-
-[node name="vida00" type="TextureRect" parent="."]
-offset_left = 778.0
-offset_top = 426.0
-offset_right = 1066.0
-offset_bottom = 493.0
-texture = ExtResource("1_uo6js")
-expand_mode = 1
-
-[node name="vida01" type="TextureRect" parent="."]
-offset_left = 776.0
-offset_top = 414.0
-offset_right = 1072.0
-offset_bottom = 490.0
-texture = ExtResource("2_edx08")
-expand_mode = 1
-
-[node name="vida02" type="TextureRect" parent="."]
-offset_left = 774.0
-offset_top = 418.0
-offset_right = 1067.0
-offset_bottom = 496.0
-texture = ExtResource("3_am2qs")
-expand_mode = 1
-
-[node name="vida03" type="TextureRect" parent="."]
-offset_left = 775.0
-offset_top = 418.0
-offset_right = 1067.0
-offset_bottom = 493.0
-texture = ExtResource("4_cclg6")
-expand_mode = 1
-
-[node name="vida04" type="TextureRect" parent="."]
-offset_left = 775.0
-offset_top = 423.0
-offset_right = 1067.0
-offset_bottom = 492.0
-texture = ExtResource("5_5a6bq")
-expand_mode = 1
+layer_0/tile_data = PackedInt32Array(2621440, 458752, 1, 2621441, 458752, 1, 2621442, 458752, 1, 2621443, 458752, 1, 2621444, 458752, 1, 2621445, 458752, 1, 2621446, 458752, 1, 2621447, 458752, 1, 2621448, 458752, 1, 2621449, 458752, 1, 2621450, 458752, 1, 2621451, 458752, 1, 2621452, 458752, 1, 2555916, 458752, 1, 2555917, 458752, 1, 2555918, 458752, 1, 2555919, 458752, 1, 2555920, 458752, 1, 2621453, 458752, 1, 2621454, 458752, 1, 2621455, 458752, 1, 2621456, 458752, 1, 2621457, 458752, 1, 2621458, 458752, 1, 2621459, 458752, 1, 2621460, 458752, 1, 2621461, 458752, 1, 2621462, 458752, 1, 2621463, 458752, 1, 2621464, 458752, 1, 2621465, 458752, 1, 2621466, 458752, 1, 2621467, 458752, 1, 2621468, 458752, 1, 2621469, 458752, 1, 2621470, 458752, 1, 2621471, 458752, 1, 2621472, 458752, 1, 2621473, 458752, 1, 2621474, 458752, 1, 2621475, 458752, 1, 2621476, 458752, 1, 2555941, 458752, 1, 2555942, 458752, 1, 2555943, 458752, 1, 2555944, 458752, 1, 2555945, 458752, 1, 2555946, 458752, 1, 2555947, 458752, 1, 2555948, 458752, 1, 2555949, 458752, 1, 2555950, 458752, 1, 2555951, 458752, 1, 2555952, 458752, 1, 2555953, 458752, 1, 2555954, 458752, 1, 2555955, 458752, 1, 2555956, 458752, 1, 2555957, 458752, 1, 2555958, 458752, 1, 2555959, 458752, 1, 2555960, 458752, 1, 2555961, 458752, 1, 2555962, 458752, 1, 2555963, 458752, 1, 2555964, 458752, 1, 2555965, 458752, 1, 2555966, 458752, 1, 2555967, 458752, 1, 2555968, 458752, 1, 2555969, 458752, 1, 2555970, 458752, 1, 2555971, 458752, 1, 2555972, 458752, 1, 2555973, 458752, 1, 2555974, 458752, 1, 2555975, 458752, 1, 2621511, 458752, 1, 2621510, 458752, 1, 2621509, 458752, 1, 2621508, 458752, 1, 2621507, 458752, 1, 2687042, 458752, 1, 2687041, 458752, 1, 2687040, 458752, 1, 2687039, 458752, 1, 2687038, 458752, 1, 2687037, 458752, 1, 2687036, 458752, 1, 2687035, 458752, 1, 2687034, 458752, 1, 2687033, 458752, 1, 2687032, 458752, 1, 2687031, 458752, 1, 2687030, 458752, 1, 2687029, 458752, 1, 2687028, 458752, 1, 2687027, 458752, 1, 2687026, 458752, 1, 2687025, 458752, 1, 2687024, 458752, 1, 2687023, 458752, 1, 2687022, 458752, 1, 2687021, 458752, 1, 2687020, 458752, 1, 2687019, 458752, 1, 2687018, 458752, 1, 2687017, 458752, 1, 2687016, 458752, 1, 2687015, 458752, 1, 2687014, 458752, 1, 2687013, 458752, 1, 2687012, 458752, 1, 2621477, 458752, 1, 2621478, 458752, 1, 2621479, 458752, 1, 2621480, 458752, 1, 2621481, 458752, 1, 2621482, 458752, 1, 2621483, 458752, 1, 2621484, 458752, 1, 2621485, 458752, 1, 2621486, 458752, 1, 2621487, 458752, 1, 2621488, 458752, 1, 2621506, 458752, 1, 2621505, 458752, 1, 2621504, 458752, 1, 2621503, 458752, 1, 2621502, 458752, 1, 2621501, 458752, 1, 2621500, 458752, 1, 2621499, 458752, 1, 2621498, 458752, 1, 2621497, 458752, 1, 2621496, 458752, 1, 2621495, 458752, 1, 2621490, 458752, 1, 2621491, 458752, 1, 2621492, 458752, 1, 2621493, 458752, 1, 2621494, 458752, 1, 2621489, 458752, 1)
 
 [node name="Blackwidow" parent="." instance=ExtResource("6_lebti")]
-position = Vector2(4, 249)
+position = Vector2(72, 37)
 
 [node name="capitana" parent="." instance=ExtResource("7_f0duo")]
-position = Vector2(-55, 241)
+position = Vector2(-43, 41)
 
 [node name="racionalistas" type="Label" parent="."]
-offset_left = 855.0
-offset_top = 30.0
-offset_right = 1088.0
-offset_bottom = 81.0
+offset_left = 933.0
+offset_top = 8.0
+offset_right = 1068.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Racionalista"
 label_settings = SubResource("LabelSettings_r0m5v")
 
 [node name="empiristas" type="Label" parent="."]
-offset_left = 103.0
-offset_top = 31.0
-offset_right = 326.0
-offset_bottom = 78.0
+offset_left = 93.0
+offset_top = 9.0
+offset_right = 196.0
+offset_bottom = 43.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Empirista"
 label_settings = SubResource("LabelSettings_pgfh6")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 112.0
-offset_bottom = 110.0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 90.0
+offset_bottom = 92.0
 texture = ExtResource("9_5sl6w")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 1029.0
-offset_top = 12.0
-offset_right = 1111.0
-offset_bottom = 100.0
+offset_left = 1069.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 90.0
 texture = ExtResource("10_6tkxt")
 expand_mode = 1
 
-[node name="Node2D" parent="." instance=ExtResource("11_6t7ec")]
+[node name="Node2D" parent="." instance=ExtResource("9_1gojf")]
 visible = false
-position = Vector2(105, 48)
+position = Vector2(140, 68)
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -204,47 +430,51 @@ text = "D
 "
 
 [node name="lbtiempo" type="Label" parent="."]
-offset_left = 349.0
-offset_top = 19.0
-offset_right = 641.0
-offset_bottom = 87.0
+offset_left = 355.0
+offset_top = 51.0
+offset_right = 819.0
+offset_bottom = 123.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
+label_settings = SubResource("LabelSettings_8c8rq")
 
 [node name="tiempocontestar" type="Timer" parent="."]
 
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 432.0
+offset_left = 334.0
 offset_top = 142.0
 offset_right = 891.0
-offset_bottom = 313.0
+offset_bottom = 279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
+label_settings = SubResource("LabelSettings_7oxb1")
 
 [node name="animacion" type="Timer" parent="."]
 
 [node name="animacion2" type="Timer" parent="."]
 
 [node name="punto1" type="Label" parent="."]
-offset_left = 37.0
-offset_top = 489.0
-offset_right = 215.0
-offset_bottom = 544.0
+offset_left = -1.0
+offset_top = 589.0
+offset_right = 177.0
+offset_bottom = 645.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+label_settings = SubResource("LabelSettings_qb7h3")
 
 [node name="punto2" type="Label" parent="."]
-offset_left = 868.0
-offset_top = 486.0
-offset_right = 1046.0
-offset_bottom = 541.0
+offset_left = 978.0
+offset_top = 592.0
+offset_right = 1156.0
+offset_bottom = 648.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+label_settings = SubResource("LabelSettings_oicu7")
 
 [node name="ganador" type="Label" parent="."]
 offset_left = 367.0
@@ -252,3 +482,34 @@ offset_top = 170.0
 offset_right = 717.0
 offset_bottom = 259.0
 label_settings = SubResource("LabelSettings_4eows")
+
+[node name="Bandoelegido" type="Label" parent="."]
+offset_left = 108.0
+offset_top = 42.0
+offset_right = 168.0
+offset_bottom = 71.0
+text = "You"
+label_settings = SubResource("LabelSettings_g7f36")
+
+[node name="Bandoelegido2" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 44.0
+offset_right = 1072.0
+offset_bottom = 75.0
+text = "You"
+label_settings = SubResource("LabelSettings_g7f36")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 450.0
+offset_top = 2.0
+offset_right = 792.0
+offset_bottom = 37.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="timeout" from="tiempocontestar" to="." method="_on_tiempocontestar_timeout"]
+[connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
+[connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
+[connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]

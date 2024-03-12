@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=24 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
@@ -8161,13 +8161,17 @@ font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_atsqg"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_rmnmo"]
 font = ExtResource("20_mv1kf")
 font_size = 35
+font_color = Color(0.0313726, 0.0392157, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kn5oy"]
 font = ExtResource("20_mv1kf")
 font_size = 45
+font_color = Color(0.329412, 0.329412, 0.929412, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0s1xk"]
 font = ExtResource("20_mv1kf")
@@ -8185,7 +8189,7 @@ font_color = Color(0.054902, 0, 1, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_e0tk3"]
 font = ExtResource("20_mv1kf")
 font_size = 31
-font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+font_color = Color(0.647059, 0.172549, 1, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sowe0")
@@ -8199,47 +8203,49 @@ expand_mode = 5
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-offset_left = 840.0
-offset_top = 366.0
-offset_right = 1144.0
-offset_bottom = 402.0
+offset_left = 843.0
+offset_top = 375.0
+offset_right = 1149.0
+offset_bottom = 422.0
 color = Color(0.282353, 0.545098, 0.231373, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/ColorRect"]
 layout_mode = 0
-offset_right = 316.0
-offset_bottom = 54.0
+offset_left = 18.0
+offset_top = -46.0
+offset_right = 334.0
+offset_bottom = 8.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/VBoxContainer"]
 layout_mode = 2
 
 [node name="HealthBarI" type="ProgressBar" parent="CanvasLayer2/ColorRect"]
 layout_mode = 2
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 308.0
-offset_bottom = 37.0
+offset_left = -1.0
+offset_right = 304.0
+offset_bottom = 46.0
 theme = ExtResource("2_fpl6g")
 theme_type_variation = &"HealthBarI"
+max_value = 200.0
 step = 1.0
-value = 100.0
+value = 200.0
 show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/HealthBarI"]
 layout_mode = 0
-offset_left = -5.0
+offset_left = 5.0
 offset_top = 1.0
-offset_right = 306.0
-offset_bottom = 42.0
+offset_right = 305.0
+offset_bottom = 48.0
 theme_type_variation = &"HealthBar"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 369.0
-offset_right = 324.0
-offset_bottom = 421.0
+offset_left = 16.0
+offset_top = 371.0
+offset_right = 331.0
+offset_bottom = 423.0
 color = Color(0.282353, 0.545098, 0.231373, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
@@ -8257,8 +8263,9 @@ offset_right = 316.0
 offset_bottom = 52.0
 theme = ExtResource("2_fpl6g")
 theme_type_variation = &"HealthBarC"
+max_value = 200.0
 step = 1.0
-value = 100.0
+value = 200.0
 show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBarC"]
@@ -8283,7 +8290,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1966188, 3604480, 10, 0, 1835008, 7, 65536, 1835008, 7, 131072, 1835008, 7, 196608, 1835008, 7, 262144, 1835008, 7, 327680, 1835008, 7, 393216, 1835008, 7, 458752, 1835008, 7, 524288, 1835008, 7, 589824, 1835008, 7, 655360, 1835008, 7, 720896, 1835008, 7, 786432, 1835008, 7, 851968, 1835008, 7, 917504, 1835008, 7, 983040, 1835008, 7, 1048576, 1835008, 7, 1114112, 1835008, 7, 1179648, 1835008, 7, 1245184, 1835008, 7, 1310720, 1835008, 7, 1376256, 1835008, 7, 1441792, 1835008, 7, 1507328, 1835008, 7, 1572864, 1835008, 7, 1638400, 1835008, 7, 1703936, 1835008, 7, 1769472, 1835008, 7, 1835008, 1835008, 7, 1900544, 1835008, 7, 1966080, 1835008, 7, 2031616, 1835008, 7, 2097152, 1835008, 7, 2162688, 1835008, 7, 2228224, 1835008, 7, 2293760, 1835008, 7, 2359296, 1835008, 7, 2424832, 1835008, 7, 2490368, 1835008, 7, 71, 1835008, 7, 65607, 1835008, 7, 131143, 1835008, 7, 196679, 1835008, 7, 262215, 1835008, 7, 327751, 1835008, 7, 393287, 1835008, 7, 458823, 1835008, 7, 524359, 1835008, 7, 589895, 1835008, 7, 655431, 1835008, 7, 720967, 1835008, 7, 786503, 1835008, 7, 852039, 1835008, 7, 917575, 1835008, 7, 983111, 1835008, 7, 1048647, 1835008, 7, 1114183, 1835008, 7, 1179719, 1835008, 7, 1245255, 1835008, 7, 1310791, 1835008, 7, 1310792, 1835008, 7, 1376328, 1835008, 7, 1441864, 1835008, 7, 1507400, 1835008, 7, 1572936, 1835008, 7, 1638472, 1835008, 7, 1704008, 1835008, 7, 1769544, 1835008, 7, 1835080, 1835008, 7, 1900616, 1835008, 7, 1966152, 1835008, 7, 2031688, 1835008, 7, 2097224, 1835008, 7, 2162760, 1835008, 7, 2228296, 1835008, 7, 2293832, 1835008, 7, 2359368, 1835008, 7, 2424904, 1835008, 7, 2490440, 1835008, 7, 2555976, 1835008, 7, 2621512, 1835008, 7, 1376327, 1835008, 7, 1441863, 1835008, 7, 1507399, 1835008, 7, 1572935, 1835008, 7, 1638471, 1835008, 7, 2097223, 1835008, 7, 2031687, 1835008, 7, 1966151, 1835008, 7, 1900615, 1835008, 7, 1835079, 1835008, 7, 1769543, 1835008, 7, 1704007, 1835008, 7, 2162759, 1835008, 7, 2228295, 1835008, 7, 2293831, 1835008, 7, 2359367, 1835008, 7, 2424903, 1835008, 7, 2490439, 1835008, 7, 2555975, 1835008, 7, 2621440, 1835008, 7, 2555904, 1835008, 7, 1, 1835008, 7, 2, 1835008, 7, 3, 1835008, 7, 4, 1835008, 7, 5, 1835008, 7, 6, 1835008, 7, 7, 1835008, 7, 8, 1835008, 7, 9, 1835008, 7, 10, 1835008, 7, 11, 1835008, 7, 12, 1835008, 7, 13, 1835008, 7, 14, 1835008, 7, 65550, 1835008, 7, 65551, 1835008, 7, 65552, 1835008, 7, 65553, 1835008, 7, 17, 1835008, 7, 16, 1835008, 7, 15, 1835008, 7, 3604480, 983040, 8, 3604481, 983040, 8, 3604482, 983040, 8, 3604483, 983040, 8, 3604484, 983040, 8, 3604485, 983040, 8, 3604486, 983040, 8, 3604487, 983040, 8, 3604488, 983040, 8, 3604489, 983040, 8, 3604490, 983040, 8, 3604491, 983040, 8, 3604492, 983040, 8, 3604493, 983040, 8, 3604494, 983040, 8, 3604495, 983040, 8, 3604496, 983040, 8, 3604497, 983040, 8, 3604498, 983040, 8, 3604499, 983040, 8, 3604500, 983040, 8, 3604501, 983040, 8, 3604502, 983040, 8, 3604503, 983040, 8, 3604504, 983040, 8, 3604505, 983040, 8, 3604506, 983040, 8, 3604507, 983040, 8, 3670043, 983040, 8, 3670044, 983040, 8, 3670045, 983040, 8, 3670046, 983040, 8, 3670047, 983040, 8, 3670048, 983040, 8, 3604510, 983040, 8, 3604508, 983040, 8, 3604509, 983040, 8, 3604511, 983040, 8, 3604512, 983040, 8, 3604513, 983040, 8, 3604514, 983040, 8, 3604515, 983040, 8, 3604516, 983040, 8, 3604517, 983040, 8, 3604518, 983040, 8, 3604519, 983040, 8, 3604520, 983040, 8, 3604521, 983040, 8, 3604522, 983040, 8, 3604523, 983040, 8, 3604524, 983040, 8, 3604525, 983040, 8, 3604526, 983040, 8, 3604527, 983040, 8, 3604528, 983040, 8, 3604529, 983040, 8, 3604530, 983040, 8, 3604531, 983040, 8, 3604532, 983040, 8, 3604533, 983040, 8, 3604534, 983040, 8, 3604535, 983040, 8, 3604536, 983040, 8, 3604537, 983040, 8, 3604538, 983040, 8, 3604539, 983040, 8, 3604540, 983040, 8, 3604541, 983040, 8, 3604542, 983040, 8, 3604543, 983040, 8, 3604544, 983040, 8, 3604545, 983040, 8, 3604546, 983040, 8, 3604547, 983040, 8, 3604548, 983040, 8, 3604549, 983040, 8, 3604550, 983040, 8, 3604551, 983040, 8, 2621511, 983040, 8, 2687047, 983040, 8, 2752583, 983040, 8, 2818119, 983040, 8, 2883655, 983040, 8, 2949191, 983040, 8, 3014727, 983040, 8, 3080263, 983040, 8, 3145799, 983040, 8, 3211335, 983040, 8, 3276871, 983040, 8, 3342407, 983040, 8, 3407943, 983040, 8, 3473479, 983040, 8, 3539015, 983040, 8, 2686976, 983040, 8, 2752512, 983040, 8, 2818048, 983040, 8, 2883584, 983040, 8, 2949120, 983040, 8, 3014656, 983040, 8, 3080192, 983040, 8, 3145728, 983040, 8, 3211264, 983040, 8, 3276800, 983040, 8, 3342336, 983040, 8, 3407872, 983040, 8, 3473408, 983040, 8, 3538944, 983040, 8, 2621495, 1835008, 7, 2621496, 1835008, 7, 2621497, 1835008, 7, 2621498, 1835008, 7, 2621499, 1835008, 7, 2621500, 1835008, 7, 2621501, 1835008, 7, 2621502, 1835008, 7, 2621503, 1835008, 7, 2621504, 1835008, 7, 2621505, 1835008, 7, 2621506, 1835008, 7, 2621507, 1835008, 7, 2621508, 1835008, 7, 2621509, 1835008, 7, 2621510, 1835008, 7, 2621441, 1835008, 7, 2621442, 1835008, 7, 2555907, 1835008, 7, 2555908, 1835008, 7, 2555909, 1835008, 7, 2555910, 1835008, 7, 2555911, 1835008, 7, 2555912, 1835008, 7, 2621448, 1835008, 7, 2621447, 1835008, 7, 2621446, 1835008, 7, 2621445, 1835008, 7, 2621444, 1835008, 7, 2621443, 1835008, 7, 2621449, 1835008, 7, 2621450, 1835008, 7, 2621451, 1835008, 7, 2686987, 1835008, 7, 2686988, 1835008, 7, 2686989, 1835008, 7, 2686990, 1835008, 7, 2686991, 1835008, 7, 2621455, 1835008, 7, 2621456, 1835008, 7, 2621454, 1835008, 7, 2621453, 1835008, 7, 2621452, 1835008, 7, 2621457, 1835008, 7, 2621458, 1835008, 7, 2621459, 1835008, 7, 2621460, 1835008, 7, 2621461, 1835008, 7, 2621462, 1835008, 7, 2621463, 1835008, 7, 2621464, 1835008, 7, 2621465, 1835008, 7, 2621466, 1835008, 7, 2621467, 1835008, 7, 2621468, 1835008, 7, 2621469, 1835008, 7, 2621470, 1835008, 7, 2621471, 1835008, 7, 2621472, 1835008, 7, 2621473, 1835008, 7, 2621474, 1835008, 7, 2621475, 1835008, 7, 2621476, 1835008, 7, 2621477, 1835008, 7, 2621478, 1835008, 7, 2621479, 1835008, 7, 2621480, 1835008, 7, 2621481, 1835008, 7, 2621482, 1835008, 7, 2621483, 1835008, 7, 2621484, 1835008, 7, 2621485, 1835008, 7, 2621486, 1835008, 7, 2621487, 1835008, 7, 2621488, 1835008, 7, 2621489, 1835008, 7, 2621490, 1835008, 7, 2621491, 1835008, 7, 2621492, 1835008, 7, 2621493, 1835008, 7, 2621494, 1835008, 7)
 
 [node name="ironman" parent="." instance=ExtResource("5_y5gmg")]
-position = Vector2(227, 25)
+position = Vector2(212, 26)
 
 [node name="captain america" parent="." instance=ExtResource("8_b2p4d")]
 position = Vector2(-167, 26)
@@ -8326,14 +8333,12 @@ expand_mode = 1
 visible = false
 position = Vector2(105, 48)
 
-[node name="Button" type="Button" parent="."]
-visible = false
+[node name="Button" type="TextureButton" parent="."]
 offset_left = 147.0
 offset_top = 283.0
 offset_right = 308.0
 offset_bottom = 378.0
-theme_override_font_sizes/font_size = 60
-text = "A"
+action_mode = 0
 
 [node name="Button2" type="Button" parent="."]
 visible = false
@@ -8344,6 +8349,7 @@ offset_bottom = 378.0
 theme_override_font_sizes/font_size = 60
 text = "B
 "
+icon = SubResource("ViewportTexture_atsqg")
 
 [node name="Button3" type="Button" parent="."]
 visible = false
@@ -8365,10 +8371,10 @@ text = "D
 "
 
 [node name="lbtiempo" type="Label" parent="."]
-offset_left = 497.0
+offset_left = 401.0
 offset_top = 71.0
 offset_right = 789.0
-offset_bottom = 139.0
+offset_bottom = 116.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
 label_settings = SubResource("LabelSettings_rmnmo")
@@ -8378,14 +8384,17 @@ label_settings = SubResource("LabelSettings_rmnmo")
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 321.0
-offset_top = 100.0
-offset_right = 886.0
-offset_bottom = 271.0
+offset_left = 307.0
+offset_top = 104.0
+offset_right = 931.0
+offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
+text = "{{{{"
 label_settings = SubResource("LabelSettings_kn5oy")
+
+[node name="animacion_ganar" type="Timer" parent="."]
 
 [node name="animacion" type="Timer" parent="."]
 
@@ -8438,10 +8447,13 @@ label_settings = SubResource("LabelSettings_e0tk3")
 
 [node name="Progreso_game" type="ProgressBar" parent="."]
 visible = false
-offset_left = 405.0
-offset_top = 22.0
-offset_right = 836.0
-offset_bottom = 59.0
+offset_left = 396.0
+offset_top = 4.0
+offset_right = 827.0
+offset_bottom = 41.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(143, 635)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
@@ -8449,5 +8461,6 @@ offset_bottom = 59.0
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="timeout" from="tiempocontestar" to="." method="_on_tiempocontestar_timeout"]
 [connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
+[connection signal="timeout" from="animacion_ganar" to="." method="_on_animacion_ganar_timeout"]
 [connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
 [connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]

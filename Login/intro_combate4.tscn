@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cthiah4wwnwl2"]
 
-[ext_resource type="Script" path="res://intro_combate3.gd" id="1_673wf"]
+[ext_resource type="Script" path="res://intro_combate4.gd" id="1_35w8l"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_673wf")
+script = ExtResource("1_35w8l")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 342.0

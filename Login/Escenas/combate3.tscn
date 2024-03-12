@@ -1,18 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://h5e0c5x1lyij"]
+[gd_scene load_steps=20 format=3 uid="uid://h5e0c5x1lyij"]
 
 [ext_resource type="Texture2D" uid="uid://bw8bq6l0n6sov" path="res://Art/Escenarios_Mundos/futuristic_city.jpg" id="1_7yi5u"]
 [ext_resource type="Script" path="res://Escenas/combate3.gd" id="1_ttt5c"]
 [ext_resource type="PackedScene" uid="uid://cq66cvbpoerx3" path="res://spidey.tscn" id="2_2ps1i"]
+[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="3_7nvjo"]
 [ext_resource type="PackedScene" uid="uid://c81ibpo0j1hnt" path="res://doctor_strnge.tscn" id="3_uyq0g"]
-[ext_resource type="Texture2D" uid="uid://b5n2qybwhothh" path="res://Art/Vidas/0vida_merida.png" id="4_l0gy2"]
-[ext_resource type="Texture2D" uid="uid://t11kqlfinfoh" path="res://Art/Vidas/vida1_merida.png" id="5_jgxm1"]
-[ext_resource type="Texture2D" uid="uid://do7wv65qnlgt0" path="res://Art/Vidas/vida2_merida.png" id="6_l8pte"]
-[ext_resource type="Texture2D" uid="uid://cfexu2np10xer" path="res://Art/Vidas/vida3_merida.png" id="7_g0o7w"]
-[ext_resource type="Texture2D" uid="uid://bgwuvbx72wbh1" path="res://Art/Vidas/vida4_merida.png" id="8_g2puy"]
+[ext_resource type="PackedScene" uid="uid://d15feyh2x6wch" path="res://Battlepregunta3.tscn" id="7_86uuf"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="9_8k3f5"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="10_j1u7s"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="11_aipth"]
-[ext_resource type="PackedScene" uid="uid://cjspvk1gmksjj" path="res://Battlepregunta.tscn" id="12_j0iix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pw51c"]
 texture = ExtResource("1_7yi5u")
@@ -2598,20 +2594,40 @@ sources/0 = SubResource("TileSetAtlasSource_pw51c")
 
 [sub_resource type="LabelSettings" id="LabelSettings_w24sa"]
 font = ExtResource("9_8k3f5")
-font_size = 36
+font_size = 27
 outline_size = 2
 outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nc4so"]
 font = ExtResource("9_8k3f5")
-font_size = 37
+font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_66bpd"]
+font = ExtResource("9_8k3f5")
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_eji75"]
+font = ExtResource("9_8k3f5")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_6wian"]
+font = ExtResource("9_8k3f5")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpwc1"]
+font = ExtResource("9_8k3f5")
+font_size = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_5s5he"]
 font = ExtResource("9_8k3f5")
 font_size = 31
-font_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+font_color = Color(0.980392, 0.980392, 0.980392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqg6o"]
+font = ExtResource("9_8k3f5")
+font_size = 28
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ttt5c")
@@ -2622,135 +2638,133 @@ offset_bottom = 944.0
 texture = ExtResource("1_7yi5u")
 expand_mode = 1
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 843.0
+offset_top = 375.0
+offset_right = 1149.0
+offset_bottom = 422.0
+color = Color(0.282353, 0.545098, 0.231373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 300.0
+offset_bottom = 50.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBarS" type="ProgressBar" parent="CanvasLayer/ColorRect"]
+layout_mode = 2
+offset_left = -1.0
+offset_right = 304.0
+offset_bottom = 46.0
+theme = ExtResource("3_7nvjo")
+theme_type_variation = &"HealthBarS"
+max_value = 200.0
+step = 1.0
+value = 200.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBarS"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 305.0
+offset_bottom = 48.0
+theme_type_variation = &"HealthBar"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+offset_left = 79.0
+offset_top = 381.0
+offset_right = 385.0
+offset_bottom = 428.0
+color = Color(0.282353, 0.545098, 0.231373, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/ColorRect"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 300.0
+offset_bottom = 42.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBarD" type="ProgressBar" parent="CanvasLayer2/ColorRect"]
+layout_mode = 2
+offset_left = -1.0
+offset_right = 304.0
+offset_bottom = 46.0
+theme = ExtResource("3_7nvjo")
+theme_type_variation = &"HealthBarD"
+max_value = 200.0
+step = 1.0
+value = 200.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/HealthBarD"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 305.0
+offset_bottom = 48.0
+theme_type_variation = &"HealthBar"
+
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource("TileSet_yuf3j")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 10, 65536, 0, 10, 131072, 0, 10, 196608, 0, 10, 262144, 0, 10, 327680, 0, 10, 393216, 0, 10, 458752, 0, 10, 524288, 0, 10, 589824, 0, 10, 655360, 0, 10, 720896, 0, 10, 786432, 0, 10, 851968, 0, 10, 917504, 0, 10, 983040, 0, 10, 1048576, 0, 10, 1114112, 0, 10, 1179648, 0, 10, 1245184, 0, 10, 1310720, 0, 10, 1376256, 0, 10, 1441792, 0, 10, 1507328, 0, 10, 1572864, 0, 10, 1638400, 0, 10, 1703936, 0, 10, 1769472, 0, 10, 1835008, 0, 10, 1900544, 0, 10, 1966080, 0, 10, 2031616, 0, 10, 2097152, 0, 10, 2162688, 0, 10, 2228224, 0, 10, 2293760, 0, 10, 2359296, 0, 10, 2424832, 0, 10, 2490368, 0, 10, 2555904, 0, 10, 2621440, 0, 10, 2686976, 0, 10, 2752512, 0, 10, 2818048, 0, 10, 2883584, 0, 10, 2949120, 0, 10, 3014656, 0, 10, 3080192, 0, 10, 3145728, 0, 10, 3211264, 0, 10, 3276800, 0, 10, 3342336, 0, 10, 3407872, 0, 10, 3407873, 0, 10, 3473409, 0, 10, 3538945, 0, 10, 3604481, 0, 10, 3670017, 0, 10, 3735553, 0, 10, 3801089, 0, 10, 3866625, 0, 10, 3670016, 0, 10, 3735552, 0, 10, 3735554, 0, 10, 3735555, 0, 10, 3735556, 0, 10, 3670020, 0, 10, 3670021, 0, 10, 3670022, 0, 10, 3670023, 0, 10, 3670024, 0, 10, 3670025, 0, 10, 3670026, 0, 10, 3670027, 0, 10, 3670028, 0, 10, 3670029, 0, 10, 3670030, 0, 10, 3670031, 0, 10, 3670032, 0, 10, 3670033, 0, 10, 3670034, 0, 10, 3670035, 0, 10, 3670036, 0, 10, 3670037, 0, 10, 3670038, 0, 10, 3670039, 0, 10, 3670040, 0, 10, 3670041, 0, 10, 3670042, 0, 10, 3670043, 0, 10, 3670044, 0, 10, 3670045, 0, 10, 3670046, 0, 10, 3670047, 0, 10, 3670048, 0, 10, 3670049, 0, 10, 3670050, 0, 10, 3670051, 0, 10, 3670052, 0, 10, 3670053, 0, 10, 3670054, 0, 10, 3670055, 0, 10, 3670056, 0, 10, 3670057, 0, 10, 3670058, 0, 10, 3670059, 0, 10, 3670060, 0, 10, 3670061, 0, 10, 3670062, 0, 10, 3670063, 0, 10, 3670064, 0, 10, 3670065, 0, 10, 3670066, 0, 10, 3670067, 0, 10, 3670068, 0, 10, 3670069, 0, 10, 3670070, 0, 10, 3670071, 0, 10, 3670072, 0, 10, 3670073, 0, 10, 3670074, 0, 10, 3670075, 0, 10, 3670076, 0, 10, 3670077, 0, 10, 3670078, 0, 10, 3670079, 0, 10, 3670080, 0, 10, 3670081, 0, 10, 3670082, 0, 10, 3670083, 0, 10, 3670084, 0, 10, 3670085, 0, 10, 3670086, 0, 10, 3670087, 0, 10, 3670088, 0, 10, 3604551, 0, 10, 3539015, 0, 10, 3473479, 0, 10, 3407943, 0, 10, 3342407, 0, 10, 3276871, 0, 10, 3211335, 0, 10, 3145799, 0, 10, 3080263, 0, 10, 3014727, 0, 10, 2949191, 0, 10, 2883655, 0, 10, 2818119, 0, 10, 2752583, 0, 10, 2687047, 0, 10, 2621511, 0, 10, 2555975, 0, 10, 2490439, 0, 10, 2424903, 0, 10, 2359367, 0, 10, 2293831, 0, 10, 2293830, 0, 10, 2228294, 0, 10, 2162758, 0, 10, 2097222, 0, 10, 2031686, 0, 10, 1966150, 0, 10, 1900615, 0, 10, 1835079, 0, 10, 1769543, 0, 10, 1704007, 0, 10, 1638471, 0, 10, 1572935, 0, 10, 1507399, 0, 10, 1441863, 0, 10, 1376327, 0, 10, 1310791, 0, 10, 1245255, 0, 10, 1179719, 0, 10, 1114183, 0, 10, 1048647, 0, 10, 983111, 0, 10, 917575, 0, 10, 852039, 0, 10, 786503, 0, 10, 720967, 0, 10, 655431, 0, 10, 589895, 0, 10, 524359, 0, 10, 458823, 0, 10, 393287, 0, 10, 327751, 0, 10, 262215, 0, 10, 196679, 0, 10, 131143, 0, 10, 65607, 0, 10, 71, 0, 10, 70, 0, 10, 69, 0, 10, 68, 0, 10, 67, 0, 10, -65535, 0, 10, -65534, 0, 10, 6, 0, 10, 7, 0, 10, 8, 0, 10, 65545, 0, 10, 65546, 0, 10, 65547, 0, 10, 65548, 0, 10, 65549, 0, 10, 65550, 0, 10, 65551, 0, 10, 65552, 0, 10, 131088, 0, 10, 131089, 0, 10, 131090, 0, 10, 65553, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 10, 4, 0, 10, 5, 0, 10, 9, 0, 10, 10, 0, 10, 11, 0, 10, 12, 0, 10, 65554, 0, 10, 65555, 0, 10, 65556, 0, 10, 65557, 0, 10, 65558, 0, 10, 23, 0, 10, 24, 0, 10, 25, 0, 10, 26, 0, 10, 27, 0, 10, 28, 0, 10, 29, 0, 10, 30, 0, 10, 31, 0, 10, 32, 0, 10, 33, 0, 10, 34, 0, 10, 35, 0, 10, 36, 0, 10, 37, 0, 10, 38, 0, 10, 39, 0, 10, 40, 0, 10, 41, 0, 10, 42, 0, 10, 43, 0, 10, 44, 0, 10, 45, 0, 10, 46, 0, 10, 47, 0, 10, 48, 0, 10, 49, 0, 10, 50, 0, 10, 65587, 0, 10, 65588, 0, 10, 65589, 0, 10, 65590, 0, 10, 65591, 0, 10, 65592, 0, 10, 65593, 0, 10, 65594, 0, 10, 65595, 0, 10, 65596, 0, 10, 65597, 0, 10, 65598, 0, 10, 65599, 0, 10, 65600, 0, 10, 65601, 0, 10, 65602, 0, 10, 65603, 0, 10, 65604, 0, 10, 65605, 0, 10)
+layer_0/tile_data = PackedInt32Array(0, 0, 10, 65536, 0, 10, 131072, 0, 10, 196608, 0, 10, 262144, 0, 10, 327680, 0, 10, 393216, 0, 10, 458752, 0, 10, 524288, 0, 10, 589824, 0, 10, 655360, 0, 10, 720896, 0, 10, 786432, 0, 10, 851968, 0, 10, 917504, 0, 10, 983040, 0, 10, 1048576, 0, 10, 1114112, 0, 10, 1179648, 0, 10, 1245184, 0, 10, 1310720, 0, 10, 1376256, 0, 10, 1441792, 0, 10, 1507328, 0, 10, 1572864, 0, 10, 1638400, 0, 10, 1703936, 0, 10, 1769472, 0, 10, 1835008, 0, 10, 1900544, 0, 10, 1966080, 0, 10, 2031616, 0, 10, 2097152, 0, 10, 2162688, 0, 10, 2228224, 0, 10, 2293760, 0, 10, 2359296, 0, 10, 2424832, 0, 10, 2490368, 0, 10, 2555904, 0, 10, 2621440, 0, 10, 2686976, 0, 10, 2752512, 0, 10, 2818048, 0, 10, 2883584, 0, 10, 2949120, 0, 10, 3014656, 0, 10, 3080192, 0, 10, 3145728, 0, 10, 3211264, 0, 10, 3276800, 0, 10, 3342336, 0, 10, 3407872, 0, 10, 3407873, 0, 10, 3473409, 0, 10, 3538945, 0, 10, 3604481, 0, 10, 3670017, 0, 10, 3735553, 0, 10, 3801089, 0, 10, 3866625, 0, 10, 3670016, 0, 10, 3735552, 0, 10, 3735554, 0, 10, 3735555, 0, 10, 3735556, 0, 10, 3670020, 0, 10, 3670021, 0, 10, 3670022, 0, 10, 3670023, 0, 10, 3670024, 0, 10, 3670025, 0, 10, 3670026, 0, 10, 3670027, 0, 10, 3670028, 0, 10, 3670029, 0, 10, 3670030, 0, 10, 3670031, 0, 10, 3670032, 0, 10, 3670033, 0, 10, 3670034, 0, 10, 3670035, 0, 10, 3670036, 0, 10, 3670037, 0, 10, 3670038, 0, 10, 3670039, 0, 10, 3670040, 0, 10, 3670041, 0, 10, 3670042, 0, 10, 3670043, 0, 10, 3670044, 0, 10, 3670045, 0, 10, 3670046, 0, 10, 3670047, 0, 10, 3670048, 0, 10, 3670049, 0, 10, 3670050, 0, 10, 3670051, 0, 10, 3670052, 0, 10, 3670053, 0, 10, 3670054, 0, 10, 3670055, 0, 10, 3670056, 0, 10, 3670057, 0, 10, 3670058, 0, 10, 3670059, 0, 10, 3670060, 0, 10, 3670061, 0, 10, 3670062, 0, 10, 3670063, 0, 10, 3670064, 0, 10, 3670065, 0, 10, 3670066, 0, 10, 3670067, 0, 10, 3670068, 0, 10, 3670069, 0, 10, 3670070, 0, 10, 3670071, 0, 10, 3670072, 0, 10, 3670073, 0, 10, 3670074, 0, 10, 3670075, 0, 10, 3670076, 0, 10, 3670077, 0, 10, 3670078, 0, 10, 3670079, 0, 10, 3670080, 0, 10, 3670081, 0, 10, 3670082, 0, 10, 3670083, 0, 10, 3670084, 0, 10, 3670085, 0, 10, 3670086, 0, 10, 3670087, 0, 10, 3670088, 0, 10, 3604551, 0, 10, 3539015, 0, 10, 3473479, 0, 10, 3407943, 0, 10, 3342407, 0, 10, 3276871, 0, 10, 3211335, 0, 10, 3145799, 0, 10, 3080263, 0, 10, 3014727, 0, 10, 2949191, 0, 10, 2883655, 0, 10, 2818119, 0, 10, 2752583, 0, 10, 2687047, 0, 10, 2621511, 0, 10, 2555975, 0, 10, 2490439, 0, 10, 2424903, 0, 10, 2359367, 0, 10, 2293831, 0, 10, 2293830, 0, 10, 2228294, 0, 10, 2162758, 0, 10, 2097222, 0, 10, 2031686, 0, 10, 1966150, 0, 10, 1900615, 0, 10, 1835079, 0, 10, 1769543, 0, 10, 1704007, 0, 10, 1638471, 0, 10, 1572935, 0, 10, 1507399, 0, 10, 1441863, 0, 10, 1376327, 0, 10, 1310791, 0, 10, 1245255, 0, 10, 1179719, 0, 10, 1114183, 0, 10, 1048647, 0, 10, 983111, 0, 10, 917575, 0, 10, 852039, 0, 10, 786503, 0, 10, 720967, 0, 10, 655431, 0, 10, 589895, 0, 10, 524359, 0, 10, 458823, 0, 10, 393287, 0, 10, 327751, 0, 10, 262215, 0, 10, 196679, 0, 10, 131143, 0, 10, 65607, 0, 10, 71, 0, 10, 70, 0, 10, 69, 0, 10, 68, 0, 10, 67, 0, 10, -65535, 0, 10, -65534, 0, 10, 6, 0, 10, 7, 0, 10, 8, 0, 10, 65545, 0, 10, 65546, 0, 10, 65547, 0, 10, 65548, 0, 10, 65549, 0, 10, 65550, 0, 10, 65551, 0, 10, 65552, 0, 10, 131088, 0, 10, 131089, 0, 10, 131090, 0, 10, 65553, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 10, 4, 0, 10, 5, 0, 10, 9, 0, 10, 10, 0, 10, 11, 0, 10, 12, 0, 10, 65554, 0, 10, 65555, 0, 10, 65556, 0, 10, 65557, 0, 10, 65558, 0, 10, 23, 0, 10, 24, 0, 10, 25, 0, 10, 26, 0, 10, 27, 0, 10, 28, 0, 10, 29, 0, 10, 30, 0, 10, 31, 0, 10, 32, 0, 10, 33, 0, 10, 34, 0, 10, 35, 0, 10, 36, 0, 10, 37, 0, 10, 38, 0, 10, 39, 0, 10, 40, 0, 10, 41, 0, 10, 42, 0, 10, 43, 0, 10, 44, 0, 10, 45, 0, 10, 46, 0, 10, 47, 0, 10, 48, 0, 10, 49, 0, 10, 50, 0, 10, 65587, 0, 10, 65588, 0, 10, 65589, 0, 10, 65590, 0, 10, 65591, 0, 10, 65592, 0, 10, 65593, 0, 10, 65594, 0, 10, 65595, 0, 10, 65596, 0, 10, 65597, 0, 10, 65598, 0, 10, 65599, 0, 10, 65600, 0, 10, 65601, 0, 10, 65602, 0, 10, 65603, 0, 10, 65604, 0, 10, 65605, 0, 10, 2621446, 0, 10, 2621447, 0, 10, 2621448, 0, 10, 2621449, 0, 10, 2621450, 0, 10, 2621451, 0, 10, 2621452, 0, 10, 2621453, 0, 10, 2621454, 0, 10, 2621455, 0, 10, 2621456, 0, 10, 2621457, 0, 10, 2621458, 0, 10, 2621459, 0, 10, 2621460, 0, 10, 2621461, 0, 10, 2621462, 0, 10, 2621463, 0, 10, 2621464, 0, 10, 2621465, 0, 10, 2621466, 0, 10, 2621467, 0, 10, 2621468, 0, 10, 2621469, 0, 10, 2621470, 0, 10, 2621471, 0, 10, 2621472, 0, 10, 2621473, 0, 10, 2621474, 0, 10, 2621475, 0, 10, 2621476, 0, 10, 2621477, 0, 10, 2621478, 0, 10, 2621479, 0, 10, 2621480, 0, 10, 2621481, 0, 10, 2621482, 0, 10, 2621483, 0, 10, 2621484, 0, 10, 2621485, 0, 10, 2621486, 0, 10, 2621487, 0, 10, 2621488, 0, 10, 2621489, 0, 10, 2621490, 0, 10, 2621491, 0, 10, 2621492, 0, 10, 2621493, 0, 10, 2621494, 0, 10, 2621495, 0, 10, 2621496, 0, 10, 2621497, 0, 10, 2621498, 0, 10, 2621499, 0, 10, 2687036, 0, 10, 2687037, 0, 10, 2687038, 0, 10, 2687039, 0, 10, 2621501, 0, 10, 2621500, 0, 10, 2621502, 0, 10, 2621503, 0, 10, 2621504, 0, 10, 2621505, 0, 10, 2621506, 0, 10, 2621507, 0, 10, 2621508, 0, 10, 2621509, 0, 10, 2621510, 0, 10, 2621512, 0, 10, 196617, 0, 10)
 
 [node name="Spidey" parent="." instance=ExtResource("2_2ps1i")]
-position = Vector2(-89, 278)
+position = Vector2(193, 32)
 
 [node name="doctorStrnge" parent="." instance=ExtResource("3_uyq0g")]
-position = Vector2(56, 287)
-
-[node name="vida0" type="TextureRect" parent="."]
-offset_left = 53.0
-offset_top = 414.0
-offset_right = 286.0
-offset_bottom = 490.0
-texture = ExtResource("4_l0gy2")
-expand_mode = 1
-
-[node name="vida1" type="TextureRect" parent="."]
-offset_left = 54.0
-offset_top = 402.0
-offset_right = 289.0
-offset_bottom = 485.0
-texture = ExtResource("5_jgxm1")
-expand_mode = 1
-
-[node name="vida2" type="TextureRect" parent="."]
-offset_left = 53.0
-offset_top = 407.0
-offset_right = 293.0
-offset_bottom = 489.0
-texture = ExtResource("6_l8pte")
-expand_mode = 1
-
-[node name="vida3" type="TextureRect" parent="."]
-offset_left = 53.0
-offset_top = 410.0
-offset_right = 288.0
-offset_bottom = 486.0
-texture = ExtResource("7_g0o7w")
-expand_mode = 1
-
-[node name="vida4" type="TextureRect" parent="."]
-offset_left = 54.0
-offset_top = 411.0
-offset_right = 282.0
-offset_bottom = 487.0
-texture = ExtResource("8_g2puy")
-expand_mode = 1
-
-[node name="vida00" type="TextureRect" parent="."]
-offset_left = 778.0
-offset_top = 426.0
-offset_right = 1066.0
-offset_bottom = 493.0
-texture = ExtResource("4_l0gy2")
-expand_mode = 1
-
-[node name="vida01" type="TextureRect" parent="."]
-offset_left = 776.0
-offset_top = 414.0
-offset_right = 1072.0
-offset_bottom = 490.0
-texture = ExtResource("5_jgxm1")
-expand_mode = 1
-
-[node name="vida02" type="TextureRect" parent="."]
-offset_left = 774.0
-offset_top = 418.0
-offset_right = 1067.0
-offset_bottom = 496.0
-texture = ExtResource("6_l8pte")
-expand_mode = 1
-
-[node name="vida03" type="TextureRect" parent="."]
-offset_left = 775.0
-offset_top = 418.0
-offset_right = 1067.0
-offset_bottom = 493.0
-texture = ExtResource("7_g0o7w")
-expand_mode = 1
-
-[node name="vida04" type="TextureRect" parent="."]
-offset_left = 775.0
-offset_top = 423.0
-offset_right = 1067.0
-offset_bottom = 492.0
-texture = ExtResource("8_g2puy")
-expand_mode = 1
+position = Vector2(-72, 39)
 
 [node name="racionalistas" type="Label" parent="."]
-offset_left = 855.0
-offset_top = 30.0
-offset_right = 1088.0
-offset_bottom = 81.0
+offset_left = 943.0
+offset_top = 8.0
+offset_right = 1069.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Racionalista"
 label_settings = SubResource("LabelSettings_w24sa")
 
 [node name="empiristas" type="Label" parent="."]
-offset_left = 103.0
-offset_top = 31.0
-offset_right = 326.0
-offset_bottom = 78.0
+offset_left = 84.0
+offset_right = 185.0
+offset_bottom = 34.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Empirista"
 label_settings = SubResource("LabelSettings_nc4so")
 
+[node name="Node2D" parent="." instance=ExtResource("7_86uuf")]
+visible = false
+position = Vector2(175, 71)
+
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 112.0
-offset_bottom = 110.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 89.0
+offset_bottom = 90.0
 texture = ExtResource("10_j1u7s")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 1029.0
-offset_top = 12.0
-offset_right = 1111.0
-offset_bottom = 100.0
+offset_left = 1071.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 86.0
 texture = ExtResource("11_aipth")
 expand_mode = 1
-
-[node name="Node2D" parent="." instance=ExtResource("12_j0iix")]
-visible = false
-position = Vector2(105, 48)
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -2791,51 +2805,86 @@ text = "D
 "
 
 [node name="lbtiempo" type="Label" parent="."]
-offset_left = 349.0
-offset_top = 19.0
-offset_right = 641.0
-offset_bottom = 87.0
+offset_left = 482.0
+offset_top = 61.0
+offset_right = 774.0
+offset_bottom = 129.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
+label_settings = SubResource("LabelSettings_66bpd")
 
 [node name="tiempocontestar" type="Timer" parent="."]
 
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 432.0
+offset_left = 339.0
 offset_top = 142.0
 offset_right = 891.0
-offset_bottom = 313.0
+offset_bottom = 307.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
+label_settings = SubResource("LabelSettings_eji75")
 
 [node name="animacion" type="Timer" parent="."]
 
 [node name="animacion2" type="Timer" parent="."]
 
 [node name="punto1" type="Label" parent="."]
-offset_left = 37.0
-offset_top = 489.0
-offset_right = 215.0
-offset_bottom = 544.0
+offset_left = 49.0
+offset_top = 601.0
+offset_right = 227.0
+offset_bottom = 656.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+label_settings = SubResource("LabelSettings_6wian")
 
 [node name="punto2" type="Label" parent="."]
-offset_left = 868.0
-offset_top = 486.0
-offset_right = 1046.0
-offset_bottom = 541.0
+offset_left = 974.0
+offset_top = 600.0
+offset_right = 1152.0
+offset_bottom = 656.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
+label_settings = SubResource("LabelSettings_fpwc1")
 
 [node name="ganador" type="Label" parent="."]
 offset_left = 367.0
 offset_top = 170.0
-offset_right = 717.0
-offset_bottom = 259.0
+offset_right = 901.0
+offset_bottom = 307.0
 label_settings = SubResource("LabelSettings_5s5he")
+
+[node name="Bandoelegido" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 28.0
+offset_right = 144.0
+offset_bottom = 57.0
+text = "You"
+label_settings = SubResource("LabelSettings_dqg6o")
+
+[node name="Bandoelegido2" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 39.0
+offset_right = 1072.0
+offset_bottom = 75.0
+text = "You"
+label_settings = SubResource("LabelSettings_dqg6o")
+
+[node name="Progress_game" type="ProgressBar" parent="."]
+offset_left = 362.0
+offset_top = 3.0
+offset_right = 931.0
+offset_bottom = 67.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="timeout" from="tiempocontestar" to="." method="_on_tiempocontestar_timeout"]
+[connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
+[connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
+[connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]

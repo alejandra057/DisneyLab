@@ -268,7 +268,6 @@ height = 206.0
 [sub_resource type="Animation" id="Animation_a83fl"]
 resource_name = "disco"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -310,7 +309,7 @@ shape = SubResource("CapsuleShape2D_tkqd7")
 
 [node name="escudo" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(429.5, 516.75)
+position = Vector2(299, 568)
 scale = Vector2(3, 3.03226)
 texture = ExtResource("4_cmuoh")
 

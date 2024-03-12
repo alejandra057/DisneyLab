@@ -330,6 +330,7 @@ animation = &"idle"
 texture = SubResource("AtlasTexture_qioky")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="telaraña"]
+visible = false
 position = Vector2(525.148, 520)
 scale = Vector2(1.74924, 1.30556)
 sprite_frames = SubResource("SpriteFrames_v3l70")
