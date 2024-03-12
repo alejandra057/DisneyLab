@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=25 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
@@ -8191,6 +8191,11 @@ font = ExtResource("20_mv1kf")
 font_size = 31
 font_color = Color(0.647059, 0.172549, 1, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_bcgd6"]
+font = ExtResource("20_mv1kf")
+font_size = 21
+font_color = Color(0.0705882, 0, 1, 1)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sowe0")
 
@@ -8371,10 +8376,10 @@ text = "D
 "
 
 [node name="lbtiempo" type="Label" parent="."]
-offset_left = 401.0
-offset_top = 71.0
-offset_right = 789.0
-offset_bottom = 116.0
+offset_left = 424.0
+offset_top = 80.0
+offset_right = 812.0
+offset_bottom = 125.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
 label_settings = SubResource("LabelSettings_rmnmo")
@@ -8391,7 +8396,6 @@ offset_bottom = 252.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
-text = "{{{{"
 label_settings = SubResource("LabelSettings_kn5oy")
 
 [node name="animacion_ganar" type="Timer" parent="."]
@@ -8454,6 +8458,16 @@ offset_bottom = 41.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(143, 635)
+
+[node name="Perdistelb" type="Label" parent="."]
+visible = false
+offset_left = 428.0
+offset_top = 276.0
+offset_right = 737.0
+offset_bottom = 331.0
+text = "¡Perdiste tus vidas! Deberas regresar
+ al mundo principal a recuperar vidas."
+label_settings = SubResource("LabelSettings_bcgd6")
 
 [node name="Backbtn" type="Button" parent="."]
 visible = false

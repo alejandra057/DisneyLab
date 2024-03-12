@@ -2857,6 +2857,7 @@ offset_bottom = 307.0
 label_settings = SubResource("LabelSettings_5s5he")
 
 [node name="Bandoelegido" type="Label" parent="."]
+visible = false
 offset_left = 96.0
 offset_top = 28.0
 offset_right = 144.0
@@ -2865,6 +2866,7 @@ text = "You"
 label_settings = SubResource("LabelSettings_dqg6o")
 
 [node name="Bandoelegido2" type="Label" parent="."]
+visible = false
 offset_left = 1024.0
 offset_top = 39.0
 offset_right = 1072.0

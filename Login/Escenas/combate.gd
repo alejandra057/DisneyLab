@@ -314,6 +314,7 @@ func ocultarpregunta():
 		await get_tree().create_timer(10).timeout
 		get_tree().change_scene_to_file("res://intro_combate2.tscn")
 	else:
+		$Perdistelb.show()
 		$Backbtn.show()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
