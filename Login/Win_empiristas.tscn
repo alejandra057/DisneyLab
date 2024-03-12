@@ -12,4 +12,6 @@ offset_right = 668.0
 offset_bottom = 195.0
 text = "Siguiente"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

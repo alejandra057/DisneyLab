@@ -30,8 +30,8 @@ var progreso
 @onready var health_textB: RichTextLabel=$CanvasLayer2/ColorRect/HealthBarB/RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_update_health_bar_blackwidow(2000,2000)
-	_update_health_bar_capmarvel(2000,2000)
+	_update_health_bar_blackwidow(1000,1000)
+	_update_health_bar_capmarvel(1000,1000)
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -39,7 +39,7 @@ func _ready():
 	animation_time=$animacion
 	animation_time2=$animacion2
 	animation_victory=$animacion_ganar
-	$Progress_game.value=75
+	$ProgressBar.value=75
 	
 	if Saveus.iron_man==true:
 		$Bandoelegido2.show()
@@ -56,9 +56,9 @@ func _update_health_bar_capmarvel(current_hp_m:int,max_hp_m:int)->void:
 	health_textM.append_text("[center][b]%s/%s"% [current_hp_m,max_hp_m])
 	
 func _update_health_bar_color_capmarvel(current_hp_m:int,max_hp_m:int)->void:
-	if(current_hp_m > max_hp_m * 0.7):
+	if(current_hp_m > max_hp_m * 0.6):
 		health_barM.set_theme_type_variation("HealthBar")
-	elif(current_hp_m > max_hp_m * 0.4):
+	elif(current_hp_m > max_hp_m * 0.3):
 		health_barM.set_theme_type_variation("HealthBarMid")
 	else:
 		health_barM.set_theme_type_variation("HealthBarLow")
@@ -274,19 +274,17 @@ func ocultarpregunta():
 		contarrondas=0
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>1:
-			$ganador.text ="Los empiristas han ganado el combate final"
-			animacion_victoria()
-			$Progreso_game.value=100
+			$ProgressBar.value=100
+			await get_tree().create_timer(5).timeout
+			get_tree().change_scene_to_file("res://Win_empiristas.tscn")
 		elif Saveus.iron_man==true && puntosganador>1:
-			$ganador.text ="Los racionalista han ganado el combate final"
-			animacion_victoria()
-			$Progreso_game.value=100
+			$ProgressBar.value=100
+			await get_tree().create_timer(5).timeout
+			get_tree().change_scene_to_file("res://Win_racionalistas.tscn")
 		ocultar()
 	tiempoRonda=1
 	rondas.start()
 	ocultar()
-	await get_tree().create_timer(10).timeout
-	get_tree().change_scene_to_file("res://intro_combate4.tscn")
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 

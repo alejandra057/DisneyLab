@@ -290,9 +290,8 @@ offset_right = 316.0
 offset_bottom = 52.0
 theme = ExtResource("2_3cq5n")
 theme_type_variation = &"HealthBarM"
-max_value = 200.0
 step = 1.0
-value = 200.0
+value = 100.0
 show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/HealthBarM"]
@@ -327,9 +326,8 @@ offset_right = 316.0
 offset_bottom = 52.0
 theme = ExtResource("2_3cq5n")
 theme_type_variation = &"HealthBarB"
-max_value = 200.0
 step = 1.0
-value = 200.0
+value = 100.0
 show_percentage = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/ColorRect/HealthBarB"]
@@ -484,6 +482,7 @@ offset_bottom = 259.0
 label_settings = SubResource("LabelSettings_4eows")
 
 [node name="Bandoelegido" type="Label" parent="."]
+visible = false
 offset_left = 108.0
 offset_top = 42.0
 offset_right = 168.0
@@ -492,6 +491,7 @@ text = "You"
 label_settings = SubResource("LabelSettings_g7f36")
 
 [node name="Bandoelegido2" type="Label" parent="."]
+visible = false
 offset_left = 1024.0
 offset_top = 44.0
 offset_right = 1072.0

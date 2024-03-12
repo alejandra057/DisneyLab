@@ -107,7 +107,7 @@ func animacion_ganar():
 		add_health_hulk()
 		$hulk/hulk.play("ataque")
 		$thor/thor.play("dead")
-		reduce_health_hulk()
+		reduce_health_thor()
 		animation_time.wait_time = 1.5  
 		animation_time.start()
 		puntosganador+=1
@@ -135,7 +135,7 @@ func animacion_perder():
 		animation_time2.wait_time = 1.5 
 		animation_time2.start()
 		puntosperdedor+=1
-		$punto1.text="Puntos: "+str(puntosperdedor)
+		$punto2.text="Puntos: "+str(puntosperdedor)
 	elif Saveus.iron_man==true:
 		add_health_thor()
 		$hulk/hulk.play("ataque")
@@ -144,7 +144,7 @@ func animacion_perder():
 		animation_time2.wait_time = 1.5  
 		animation_time2.start()
 		puntosperdedor+=1
-		$punto2.text="Puntos: "+str(puntosperdedor)
+		$punto1.text="Puntos: "+str(puntosperdedor)
 func _process(delta):
 	if contarrondas==1:
 		print("enprocess contarronda")

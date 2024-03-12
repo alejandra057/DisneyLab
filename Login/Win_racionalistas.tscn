@@ -6,7 +6,12 @@
 script = ExtResource("1_jnea6")
 
 [node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 357.0
+offset_top = 218.0
+offset_right = 861.0
+offset_bottom = 296.0
+text = "Siguiente"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

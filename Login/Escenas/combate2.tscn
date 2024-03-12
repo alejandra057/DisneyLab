@@ -11548,16 +11548,16 @@ expand_mode = 1
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 830.0
-offset_top = 383.0
-offset_right = 1152.0
-offset_bottom = 427.0
+offset_left = 824.0
+offset_top = 385.0
+offset_right = 1146.0
+offset_bottom = 429.0
 color = Color(0.282353, 0.545098, 0.231373, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
-offset_right = 316.0
-offset_bottom = 54.0
+offset_right = 322.0
+offset_bottom = 46.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect/VBoxContainer"]
 layout_mode = 2

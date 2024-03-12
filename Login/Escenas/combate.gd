@@ -32,8 +32,8 @@ var progreso
 @onready var health_textI: RichTextLabel=$CanvasLayer2/ColorRect/HealthBarI/RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_update_health_bar_Cap(2000,2000)
-	_update_health_bar_iron(2000,2000)
+	_update_health_bar_Cap(1000,1000)
+	_update_health_bar_iron(1000,1000)
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -58,9 +58,9 @@ func _update_health_bar_Cap(current_hp_c:int,max_hp_c:int)->void:
 	health_textC.append_text("[center][b]%s/%s"% [current_hp_c,max_hp_c])
 	
 func _update_health_bar_color_Cap(current_hp_c:int,max_hp_c:int)->void:
-	if(current_hp_c > max_hp_c * 0.7):
+	if(current_hp_c > max_hp_c * 0.6):
 		health_barC.set_theme_type_variation("HealthBar")
-	elif(current_hp_c > max_hp_c * 0.4):
+	elif(current_hp_c > max_hp_c * 0.3):
 		health_barC.set_theme_type_variation("HealthBarMid")
 	else:
 		health_barC.set_theme_type_variation("HealthBarLow")
@@ -93,6 +93,7 @@ func _update_health_bar_color_iron(current_hp_i:int,max_hp_i:int)->void:
 		health_barI.set_theme_type_variation("HealthBarMid")
 	else:
 		health_barI.set_theme_type_variation("HealthBarLow")
+
 func add_health_iron()->void:
 	current_value_i +=some_health_amount_i
 	if(current_value_i > max_value_i):
@@ -309,8 +310,11 @@ func ocultarpregunta():
 	tiempoRonda=1
 	rondas.start()
 	ocultar()
-	await get_tree().create_timer(10).timeout
-	get_tree().change_scene_to_file("res://intro_combate2.tscn")
+	if Saveus.capitan==true && puntosganador>1 || Saveus.iron_man==true && puntosganador>1:
+		await get_tree().create_timer(10).timeout
+		get_tree().change_scene_to_file("res://intro_combate2.tscn")
+	else:
+		$Backbtn.show()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 
@@ -376,3 +380,7 @@ func _on_animacion_ganar_timeout():
 	$ironman/ironman1.play("idle")
 	$"captain america/escudo/AnimationPlayer".stop()
 	escudo.hide()
+
+
+func _on_backbtn_pressed():
+	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")

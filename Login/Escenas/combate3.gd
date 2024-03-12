@@ -32,8 +32,8 @@ var progreso
 @onready var health_textD: RichTextLabel=$CanvasLayer2/ColorRect/HealthBarD/RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_update_health_bar_strange(2000,2000)
-	_update_health_bar_spidey(2000,2000)
+	_update_health_bar_strange(1000,1000)
+	_update_health_bar_spidey(1000,1000)
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -59,9 +59,9 @@ func _update_health_bar_strange(current_hp_d:int,max_hp_d:int)->void:
 	health_textD.append_text("[center][b]%s/%s"% [current_hp_d,max_hp_d])
 	
 func _update_health_bar_color_strange(current_hp_d:int,max_hp_d:int)->void:
-	if(current_hp_d > max_hp_d * 0.7):
+	if(current_hp_d > max_hp_d * 0.6):
 		health_barD.set_theme_type_variation("HealthBar")
-	elif(current_hp_d > max_hp_d * 0.4):
+	elif(current_hp_d > max_hp_d * 0.3):
 		health_barD.set_theme_type_variation("HealthBarMid")
 	else:
 		health_barD.set_theme_type_variation("HealthBarLow")
@@ -139,7 +139,7 @@ func animacion_perder():
 		animation_time2.wait_time = 1.5 
 		animation_time2.start()
 		puntosperdedor+=1
-		$punto1.text="Puntos: "+str(puntosperdedor)
+		$punto2.text="Puntos: "+str(puntosperdedor)
 	elif Saveus.iron_man==true:
 		reduce_health_spidey()
 		$doctorStrnge/strange.play("ataque")
@@ -148,16 +148,7 @@ func animacion_perder():
 		animation_time2.wait_time = 1.5  
 		animation_time2.start()
 		puntosperdedor+=1
-		$punto2.text="Puntos: "+str(puntosperdedor)
-func animacion_victoria():
-	if Saveus.capitan==true:
-		$doctorStrnge/strange.play("victoria")
-		animation_victory.wait_time = 1.5  
-		animation_victory.start()
-	elif Saveus.iron_man==true:
-		$Spidey/spidey.play("victoria")
-		animation_victory.wait_time = 1.5  
-		animation_victory.start()
+		$punto1.text="Puntos: "+str(puntosperdedor)
 func _process(delta):
 	if contarrondas==1:
 		print("enprocess contarronda")
@@ -282,12 +273,12 @@ func ocultarpregunta():
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>1:
 			$ganador.text ="Los empiristas han ganado el tercer combate "
-			animacion_victoria()
-			$Progreso_game.value=75
+			$doctorStrnge/strange.play("victoria")
+			$Progress_game.value=75
 		elif Saveus.iron_man==true && puntosganador>1:
 			$ganador.text ="Los racionalista han ganado el tercer combate"
-			animacion_victoria()
-			$Progreso_game.value=75
+			$Spidey/spidey.play("victoria")
+			$Progress_game.value=75
 		ocultar()
 	tiempoRonda=1
 	rondas.start()
