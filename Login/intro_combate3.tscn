@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjq4cl0hbdt7c"]
+[gd_scene load_steps=4 format=3 uid="uid://bjq4cl0hbdt7c"]
 
 [ext_resource type="Script" path="res://intro_combate3.gd" id="1_iplai"]
+[ext_resource type="Texture2D" uid="uid://cy5r12g3hukjw" path="res://Art/Escenarios_Mundos/descarga (4).jpeg" id="2_4x5ut"]
+[ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="3_o4p67"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_iplai")
+
+[node name="Descarga(4)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(578, 438)
+scale = Vector2(1.57065, 1.59058)
+texture = ExtResource("2_4x5ut")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 342.0
 offset_top = 117.0
 offset_right = 778.0
 offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("3_o4p67")
+theme_override_font_sizes/font_size = 39
 text = "Listo
 "
 

@@ -48,6 +48,7 @@ func _ready():
 	elif Saveus.capitan==true:
 		$Bandoelegido.show()
 	pass # Replace with function body.
+	
 	#vidas capitan
 func _update_health_bar_Cap(current_hp_c:int,max_hp_c:int)->void:
 	current_value_c= current_hp_c

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h5e0c5x1lyij"]
+[gd_scene load_steps=25 format=3 uid="uid://h5e0c5x1lyij"]
 
 [ext_resource type="Texture2D" uid="uid://bw8bq6l0n6sov" path="res://Art/Escenarios_Mundos/futuristic_city.jpg" id="1_7yi5u"]
 [ext_resource type="Script" path="res://Escenas/combate3.gd" id="1_ttt5c"]
@@ -2604,6 +2604,18 @@ font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jm87"]
+bg_color = Color(0.694118, 0.596078, 0.152941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21f3d"]
+bg_color = Color(0.517647, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnw3n"]
+bg_color = Color(0.694118, 0.596078, 0.152941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1slbs"]
+bg_color = Color(0.517647, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_66bpd"]
 font = ExtResource("9_8k3f5")
 font_size = 27
@@ -2628,6 +2640,10 @@ font_color = Color(0.980392, 0.980392, 0.980392, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_dqg6o"]
 font = ExtResource("9_8k3f5")
 font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxbes"]
+font = ExtResource("9_8k3f5")
+font_size = 22
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ttt5c")
@@ -2770,7 +2786,9 @@ offset_left = 147.0
 offset_top = 283.0
 offset_right = 308.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_8k3f5")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_5jm87")
 text = "A"
 
 [node name="Button2" type="Button" parent="."]
@@ -2779,7 +2797,9 @@ offset_left = 393.0
 offset_top = 283.0
 offset_right = 554.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_8k3f5")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_21f3d")
 text = "B
 "
 
@@ -2789,7 +2809,9 @@ offset_left = 619.0
 offset_top = 283.0
 offset_right = 780.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_8k3f5")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_jnw3n")
 text = "C"
 
 [node name="Button4" type="Button" parent="."]
@@ -2798,15 +2820,17 @@ offset_left = 854.0
 offset_top = 283.0
 offset_right = 1015.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_8k3f5")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_1slbs")
 text = "D
 "
 
 [node name="lbtiempo" type="Label" parent="."]
-offset_left = 482.0
-offset_top = 61.0
-offset_right = 774.0
-offset_bottom = 129.0
+offset_left = 414.0
+offset_top = 73.0
+offset_right = 874.0
+offset_bottom = 137.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
 label_settings = SubResource("LabelSettings_66bpd")
@@ -2851,9 +2875,9 @@ label_settings = SubResource("LabelSettings_fpwc1")
 
 [node name="ganador" type="Label" parent="."]
 offset_left = 367.0
-offset_top = 170.0
+offset_top = 270.0
 offset_right = 901.0
-offset_bottom = 307.0
+offset_bottom = 407.0
 label_settings = SubResource("LabelSettings_5s5he")
 
 [node name="Bandoelegido" type="Label" parent="."]
@@ -2880,11 +2904,26 @@ offset_top = 3.0
 offset_right = 931.0
 offset_bottom = 67.0
 
-[node name="Button5" type="Button" parent="."]
+[node name="Perdistelb" type="Label" parent="."]
+visible = false
+offset_left = 477.0
+offset_top = 199.0
+offset_right = 779.0
+offset_bottom = 258.0
+text = "¡Perdiste tus vidas! Deberas regresar
+ al mundo principal a recuperar vidas."
+label_settings = SubResource("LabelSettings_fxbes")
+
+[node name="Backbtn" type="Button" parent="."]
+visible = false
 offset_left = 458.0
 offset_top = 263.0
 offset_right = 817.0
 offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("9_8k3f5")
+theme_override_font_sizes/font_size = 28
+text = "Regresar
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
@@ -2894,4 +2933,4 @@ offset_bottom = 345.0
 [connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
 [connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
 [connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]
-[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Backbtn" to="." method="_on_button_5_pressed"]

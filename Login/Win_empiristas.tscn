@@ -1,16 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cludisy41bknj"]
+[gd_scene load_steps=5 format=3 uid="uid://cludisy41bknj"]
 
 [ext_resource type="Script" path="res://win_empiristas.gd" id="1_lqp1r"]
 [ext_resource type="AudioStream" uid="uid://ct36xmfktivd0" path="res://Art/Sounds/Hallowed Be Thy Name 2015 Remaster.mp3" id="2_npggj"]
+[ext_resource type="Texture2D" uid="uid://b5fhb3v1douwe" path="res://Art/Escenarios_Mundos/080 Team Cap by barakongitlog on DeviantArt.jpeg" id="2_y20ka"]
+[ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="3_qeeey"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_lqp1r")
 
+[node name="080TeamCapByBarakongitlogOnDeviantArt" type="Sprite2D" parent="."]
+position = Vector2(578, 472)
+scale = Vector2(1.55978, 1.65845)
+texture = ExtResource("2_y20ka")
+
 [node name="Button" type="Button" parent="."]
-offset_left = 456.0
-offset_top = 148.0
-offset_right = 668.0
-offset_bottom = 195.0
+offset_left = 458.0
+offset_top = 16.0
+offset_right = 798.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("3_qeeey")
+theme_override_font_sizes/font_size = 25
 text = "Siguiente"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

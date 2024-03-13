@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://01vg1vwcips"]
+[gd_scene load_steps=25 format=3 uid="uid://01vg1vwcips"]
 
 [ext_resource type="Script" path="res://Escenas/combate2.gd" id="1_kyoie"]
 [ext_resource type="Texture2D" uid="uid://dc3hdl8gj7m6x" path="res://Art/Escenarios_Mundos/87ae2987eb0cca2c39c8e558eafd4f84.png" id="1_xavhg"]
@@ -11511,6 +11511,18 @@ font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kapye"]
+bg_color = Color(0.0392157, 0.2, 0.152941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld67r"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph1rg"]
+bg_color = Color(0.0392157, 0.2, 0.152941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccemy"]
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_aiowp"]
 font = ExtResource("9_44065")
 font_size = 26
@@ -11539,7 +11551,7 @@ font_size = 29
 font = ExtResource("9_44065")
 font_color = Color(0.972549, 0.984314, 1, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_kyoie")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -11679,7 +11691,9 @@ offset_left = 147.0
 offset_top = 283.0
 offset_right = 308.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_44065")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_kapye")
 text = "A"
 
 [node name="Button2" type="Button" parent="."]
@@ -11688,7 +11702,9 @@ offset_left = 393.0
 offset_top = 283.0
 offset_right = 554.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_44065")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld67r")
 text = "B
 "
 
@@ -11698,7 +11714,9 @@ offset_left = 619.0
 offset_top = 283.0
 offset_right = 780.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_44065")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ph1rg")
 text = "C"
 
 [node name="Button4" type="Button" parent="."]
@@ -11707,15 +11725,17 @@ offset_left = 854.0
 offset_top = 283.0
 offset_right = 1015.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("9_44065")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ccemy")
 text = "D
 "
 
 [node name="lbtiempo" type="Label" parent="."]
-offset_left = 427.0
-offset_top = 61.0
-offset_right = 719.0
-offset_bottom = 129.0
+offset_left = 369.0
+offset_top = 79.0
+offset_right = 797.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 33
 label_settings = SubResource("LabelSettings_aiowp")
@@ -11725,10 +11745,10 @@ label_settings = SubResource("LabelSettings_aiowp")
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 314.0
-offset_top = 96.0
-offset_right = 833.0
-offset_bottom = 247.0
+offset_left = 317.0
+offset_top = 182.0
+offset_right = 836.0
+offset_bottom = 333.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
@@ -11795,6 +11815,8 @@ offset_left = 433.0
 offset_top = 283.0
 offset_right = 734.0
 offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("9_44065")
+theme_override_font_sizes/font_size = 24
 text = "Regresar
 "
 

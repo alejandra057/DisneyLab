@@ -142,15 +142,6 @@ func animacion_perder():
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto1.text="Puntos: "+str(puntosperdedor)
-func animacion_victoria():
-	if Saveus.capitan==true:
-		$capitana/capitana1.play("victoria")
-		animation_victory.wait_time = 1.5  
-		animation_victory.start()
-	elif Saveus.iron_man==true:
-		$Blackwidow/bw.play("victoria")
-		animation_victory.wait_time = 1.5  
-		animation_victory.start()
 func _process(delta):
 	if contarrondas==1:
 		print("enprocess contarronda")
@@ -275,12 +266,12 @@ func ocultarpregunta():
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>1:
 			$ProgressBar.value=100
-			$Blackwidow/bw.play("victoria")
+			$capitana/capitana1.play("victoria")
 			await get_tree().create_timer(5).timeout
 			get_tree().change_scene_to_file("res://Win_empiristas.tscn")
 		elif Saveus.iron_man==true && puntosganador>1:
 			$ProgressBar.value=100
-			$capitana/capitana1.play("victoria")
+			$Blackwidow/bw.play("victoria")
 			await get_tree().create_timer(5).timeout
 			get_tree().change_scene_to_file("res://Win_racionalistas.tscn")
 		ocultar()
@@ -335,3 +326,7 @@ func _on_animacion_2_timeout():
 	$capitana/capitana1.play("idle")
 	empate()
 	
+
+
+func _on_backbtn_pressed():
+	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")

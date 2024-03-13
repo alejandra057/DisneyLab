@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dl57a1mv6qr7b"]
+[gd_scene load_steps=26 format=3 uid="uid://dl57a1mv6qr7b"]
 
 [ext_resource type="Script" path="res://Escenas/combate4.gd" id="1_tuy11"]
 [ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="2_3cq5n"]
+[ext_resource type="Texture2D" uid="uid://bpm0hscs6rrt6" path="res://Art/Escenarios_Mundos/d.jpeg" id="2_pcbi4"]
 [ext_resource type="Texture2D" uid="uid://dmugly6yly48c" path="res://Art/fondoxs.png" id="3_cdrgb"]
 [ext_resource type="PackedScene" uid="uid://diijtaeeihs2o" path="res://BlackWidow.tscn" id="6_lebti"]
 [ext_resource type="PackedScene" uid="uid://cj1pcjbo5adno" path="res://capitana.tscn" id="7_f0duo"]
@@ -234,9 +235,21 @@ font_size = 27
 outline_size = 2
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw0lp"]
+bg_color = Color(0.243137, 0.654902, 0.788235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq83j"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n31vj"]
+bg_color = Color(0.243137, 0.654902, 0.788235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8s6y"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_8c8rq"]
 font = ExtResource("8_pxqtx")
-font_size = 21
+font_size = 33
 
 [sub_resource type="LabelSettings" id="LabelSettings_7oxb1"]
 font = ExtResource("8_pxqtx")
@@ -259,12 +272,17 @@ font_color = Color(0.988235, 0.988235, 0.988235, 1)
 font = ExtResource("8_pxqtx")
 font_size = 24
 
+[sub_resource type="LabelSettings" id="LabelSettings_5awr0"]
+font = ExtResource("8_pxqtx")
+font_size = 23
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tuy11")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1154.0
 offset_bottom = 952.0
+texture = ExtResource("2_pcbi4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -395,7 +413,9 @@ offset_left = 147.0
 offset_top = 283.0
 offset_right = 308.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("8_pxqtx")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_mw0lp")
 text = "A"
 
 [node name="Button2" type="Button" parent="."]
@@ -404,7 +424,9 @@ offset_left = 393.0
 offset_top = 283.0
 offset_right = 554.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("8_pxqtx")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_bq83j")
 text = "B
 "
 
@@ -414,7 +436,9 @@ offset_left = 619.0
 offset_top = 283.0
 offset_right = 780.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("8_pxqtx")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_n31vj")
 text = "C"
 
 [node name="Button4" type="Button" parent="."]
@@ -423,7 +447,9 @@ offset_left = 854.0
 offset_top = 283.0
 offset_right = 1015.0
 offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("8_pxqtx")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8s6y")
 text = "D
 "
 
@@ -505,6 +531,24 @@ offset_top = 2.0
 offset_right = 792.0
 offset_bottom = 37.0
 
+[node name="Perdistelb" type="Label" parent="."]
+visible = false
+offset_left = 464.0
+offset_top = 241.0
+offset_right = 814.0
+offset_bottom = 310.0
+text = "¡Perdiste tus vidas! Deberas regresar
+ al mundo principal a recuperar vidas."
+label_settings = SubResource("LabelSettings_5awr0")
+
+[node name="Backbtn" type="Button" parent="."]
+visible = false
+offset_left = 547.0
+offset_top = 193.0
+offset_right = 730.0
+offset_bottom = 233.0
+text = "Regresar"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -513,3 +557,4 @@ offset_bottom = 37.0
 [connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
 [connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
 [connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]
+[connection signal="pressed" from="Backbtn" to="." method="_on_backbtn_pressed"]

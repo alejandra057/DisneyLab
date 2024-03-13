@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cthiah4wwnwl2"]
+[gd_scene load_steps=4 format=3 uid="uid://cthiah4wwnwl2"]
 
 [ext_resource type="Script" path="res://intro_combate4.gd" id="1_35w8l"]
+[ext_resource type="Texture2D" uid="uid://dqpvpdu2be81d" path="res://Art/Escenarios_Mundos/Civil war art.jpeg" id="2_22bsj"]
+[ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="3_4yupl"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_35w8l")
+
+[node name="CivilWarArt" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(578, 445)
+scale = Vector2(1.80625, 2.3545)
+texture = ExtResource("2_22bsj")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 342.0
 offset_top = 117.0
 offset_right = 778.0
 offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("3_4yupl")
+theme_override_font_sizes/font_size = 36
 text = "Listo
 "
 

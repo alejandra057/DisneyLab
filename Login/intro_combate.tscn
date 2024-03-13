@@ -13,8 +13,8 @@ stream = ExtResource("2_3kwn4")
 
 [node name="PixelArt-CityView,BlackDuckOverlord" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(578, 475)
-scale = Vector2(1.5625, 2.32432)
+position = Vector2(574, 469)
+scale = Vector2(1.55707, 2.35381)
 texture = ExtResource("3_vexqh")
 
 [node name="Button" type="Button" parent="."]
