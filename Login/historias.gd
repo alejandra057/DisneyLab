@@ -267,3 +267,237 @@ func _on_final_body_entered(body):
 func _on_mysterio_time_timeout():
 	mysterio1.stop()
 	$CharacterBody2D2.hide() 
+
+
+func _on_fila_1_2_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_1_4_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_1_5_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_1_7_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_1_9_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_2_2_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_2_4_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_2_5_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_2_7_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_2_9_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_3_2_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_3_4_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_3_5_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_3_7_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_3_9_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_4_2_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_4_4_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_4_5_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_4_7_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_4_9_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_5_2_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_5_4_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_5_5_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+
+func _on_fila_5_7_body_entered(body):
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
+
+func _on_fila_5_9_body_entered(body):
+	pass # Replace with function body.
