@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpccc8h1ijgk7"]
+[gd_scene load_steps=35 format=3 uid="uid://dpccc8h1ijgk7"]
 
 [ext_resource type="Script" path="res://historias.gd" id="1_wj62t"]
 [ext_resource type="Texture2D" uid="uid://b8aks5k02nr62" path="res://Art/Escenarios_Mundos/primerapregunta.png" id="2_1a1f5"]
@@ -30831,6 +30831,12 @@ font = ExtResource("10_mtblj")
 font_size = 41
 font_color = Color(0.709804, 0.117647, 0.14902, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjw1r"]
+size = Vector2(87, 34.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thk36"]
+size = Vector2(79.4375, 41)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxkyw"]
 size = Vector2(60, 61)
 
@@ -31196,6 +31202,232 @@ limit_left = 0
 limit_right = 1600
 limit_bottom = 600
 
+[node name="fila1_2" type="Area2D" parent="."]
+position = Vector2(1031, -2064)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_2"]
+position = Vector2(-378.5, 2089.75)
+shape = SubResource("RectangleShape2D_xjw1r")
+
+[node name="fuegito_1_2" parent="fila1_2" instance=ExtResource("8_vweot")]
+position = Vector2(-381, 2074)
+
+[node name="fila1_4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_4"]
+position = Vector2(875.125, 25)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_1_4" parent="fila1_4" instance=ExtResource("8_vweot")]
+position = Vector2(885, 9)
+
+[node name="fila1_5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_5"]
+position = Vector2(989, 25)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_1_5" parent="fila1_5" instance=ExtResource("8_vweot")]
+position = Vector2(990, 14)
+
+[node name="fila1_7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_7"]
+position = Vector2(1215.56, 18.75)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_1_7" parent="fila1_7" instance=ExtResource("8_vweot")]
+position = Vector2(1214, 16)
+
+[node name="fila1_9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_9"]
+position = Vector2(1439, 32)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_1_9" parent="fila1_9" instance=ExtResource("8_vweot")]
+position = Vector2(1440, 11)
+
+[node name="fila2_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila2_2"]
+position = Vector2(655, -464)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_2_2" parent="fila2_2" instance=ExtResource("8_vweot")]
+position = Vector2(658, -402)
+
+[node name="fila2_4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila2_4"]
+position = Vector2(882, -462)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_2_4" parent="fila2_4" instance=ExtResource("8_vweot")]
+position = Vector2(883, -409)
+
+[node name="fila2_5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila2_5"]
+position = Vector2(995, -465)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_2_5" parent="fila2_5" instance=ExtResource("8_vweot")]
+position = Vector2(992, -407)
+
+[node name="fila2_7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila2_7"]
+position = Vector2(1215, -467)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_2_7" parent="fila2_7" instance=ExtResource("8_vweot")]
+position = Vector2(1222, -409)
+
+[node name="fila2_9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila2_9"]
+position = Vector2(1440, -465)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_2_9" parent="fila2_9" instance=ExtResource("8_vweot")]
+position = Vector2(1442, -402)
+
+[node name="fila3_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila3_2"]
+position = Vector2(662, -899)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_3_2" parent="fila3_2" instance=ExtResource("8_vweot")]
+position = Vector2(656, -848)
+
+[node name="fila3_4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila3_4"]
+position = Vector2(881, -897)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_3_4" parent="fila3_4" instance=ExtResource("8_vweot")]
+position = Vector2(881, -838)
+
+[node name="fila3_5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila3_5"]
+position = Vector2(992, -902)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_3_5" parent="fila3_5" instance=ExtResource("8_vweot")]
+position = Vector2(995, -840)
+
+[node name="fila3_7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila3_7"]
+position = Vector2(1219, -900)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_3_7" parent="fila3_7" instance=ExtResource("8_vweot")]
+position = Vector2(1219, -837)
+
+[node name="fila3_9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila3_9"]
+position = Vector2(1449, -886)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_3_9" parent="fila3_9" instance=ExtResource("8_vweot")]
+position = Vector2(1441, -839)
+
+[node name="fila4_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila4_2"]
+position = Vector2(658, -1317)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_4_2" parent="fila4_2" instance=ExtResource("8_vweot")]
+position = Vector2(658, -1250)
+
+[node name="fila4_4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila4_4"]
+position = Vector2(878, -1315)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_4_4" parent="fila4_4" instance=ExtResource("8_vweot")]
+position = Vector2(887, -1245)
+
+[node name="fuegito_5_9" parent="fila4_4" instance=ExtResource("8_vweot")]
+position = Vector2(1439, -1591)
+
+[node name="fila4_5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila4_5"]
+position = Vector2(991, -1313)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_4_4" parent="fila4_5" instance=ExtResource("8_vweot")]
+position = Vector2(991, -1247)
+
+[node name="fila4_7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila4_7"]
+position = Vector2(1211, -1313)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_4_7" parent="fila4_7" instance=ExtResource("8_vweot")]
+position = Vector2(1215, -1249)
+
+[node name="fila4_9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila4_9"]
+position = Vector2(1440, -1320)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_4_9" parent="fila4_9" instance=ExtResource("8_vweot")]
+position = Vector2(1435, -1252)
+
+[node name="fila5_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila5_2"]
+position = Vector2(672, -1633)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_5_2" parent="fila5_2" instance=ExtResource("8_vweot")]
+position = Vector2(659, -1595)
+
+[node name="fila5_4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila5_4"]
+position = Vector2(880, -1626)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_5_4" parent="fila5_4" instance=ExtResource("8_vweot")]
+position = Vector2(888, -1600)
+
+[node name="fila5_5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila5_5"]
+position = Vector2(994, -1624)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_5_5" parent="fila5_5" instance=ExtResource("8_vweot")]
+position = Vector2(1002, -1598)
+
+[node name="fila5_7" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila5_7"]
+position = Vector2(1211, -1622)
+shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_5_7" parent="fila5_7" instance=ExtResource("8_vweot")]
+position = Vector2(1214, -1591)
+
+[node name="fila5_9" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fila5_9"]
+position = Vector2(1441, -1617)
+shape = SubResource("RectangleShape2D_thk36")
+
 [node name="RespuestaA_5" type="Area2D" parent="."]
 position = Vector2(1031, -2064)
 
@@ -31522,6 +31754,31 @@ texture = ExtResource("14_6iuey")
 
 [node name="mysterio_time" type="Timer" parent="."]
 
+[connection signal="body_entered" from="fila1_2" to="." method="_on_fila_1_2_body_entered"]
+[connection signal="body_entered" from="fila1_4" to="." method="_on_fila_1_4_body_entered"]
+[connection signal="body_entered" from="fila1_5" to="." method="_on_fila_1_5_body_entered"]
+[connection signal="body_entered" from="fila1_7" to="." method="_on_fila_1_7_body_entered"]
+[connection signal="body_entered" from="fila1_9" to="." method="_on_fila_1_9_body_entered"]
+[connection signal="body_entered" from="fila2_2" to="." method="_on_fila_2_2_body_entered"]
+[connection signal="body_entered" from="fila2_4" to="." method="_on_fila_2_4_body_entered"]
+[connection signal="body_entered" from="fila2_5" to="." method="_on_fila_2_5_body_entered"]
+[connection signal="body_entered" from="fila2_7" to="." method="_on_fila_2_7_body_entered"]
+[connection signal="body_entered" from="fila2_9" to="." method="_on_fila_2_9_body_entered"]
+[connection signal="body_entered" from="fila3_2" to="." method="_on_fila_3_2_body_entered"]
+[connection signal="body_entered" from="fila3_4" to="." method="_on_fila_3_4_body_entered"]
+[connection signal="body_entered" from="fila3_5" to="." method="_on_fila_3_5_body_entered"]
+[connection signal="body_entered" from="fila3_7" to="." method="_on_fila_3_7_body_entered"]
+[connection signal="body_entered" from="fila3_9" to="." method="_on_fila_3_9_body_entered"]
+[connection signal="body_entered" from="fila4_2" to="." method="_on_fila_4_2_body_entered"]
+[connection signal="body_entered" from="fila4_4" to="." method="_on_fila_4_4_body_entered"]
+[connection signal="body_entered" from="fila4_5" to="." method="_on_fila_4_5_body_entered"]
+[connection signal="body_entered" from="fila4_7" to="." method="_on_fila_4_7_body_entered"]
+[connection signal="body_entered" from="fila4_9" to="." method="_on_fila_4_9_body_entered"]
+[connection signal="body_entered" from="fila5_2" to="." method="_on_fila_5_2_body_entered"]
+[connection signal="body_entered" from="fila5_4" to="." method="_on_fila_5_4_body_entered"]
+[connection signal="body_entered" from="fila5_5" to="." method="_on_fila_5_5_body_entered"]
+[connection signal="body_entered" from="fila5_7" to="." method="_on_fila_5_7_body_entered"]
+[connection signal="body_entered" from="fila5_9" to="." method="_on_fila_5_9_body_entered"]
 [connection signal="body_entered" from="RespuestaA_5" to="." method="_on_respuesta_a_5_body_entered"]
 [connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

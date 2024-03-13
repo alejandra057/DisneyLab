@@ -7,6 +7,31 @@ func _ready():
 	mysterio1=$mysterio_time
 	$fire_continously.play()
 	$AudioStreamPlayer.play()
+	$fila1_2/fuegito_1_2.play("explosion")
+	$fila1_4/fuegito_1_4.play("explosion")
+	$fila1_5/fuegito_1_5.play("explosion")
+	$fila1_7/fuegito_1_7.play("explosion")
+	$fila1_9/fuegito_1_9.play("explosion")
+	$fila2_2/fuegito_2_2.play("explosion")
+	$fila2_4/fuegito_2_4.play("explosion")
+	$fila2_5/fuegito_2_5.play("explosion")
+	$fila2_7/fuegito_2_7.play("explosion")
+	$fila2_9/fuegito_2_9.play("explosion")
+	$fila3_2/fuegito_3_2.play("explosion")
+	$fila3_4/fuegito_3_4.play("explosion")
+	$fila3_5/fuegito_3_5.play("explosion")
+	$fila3_7/fuegito_3_7.play("explosion")
+	$fila3_9/fuegito_3_9.play("explosion")
+	$fila4_2/fuegito_4_2.play("explosion")
+	$fila4_4/fuegito_4_4.play("explosion")
+	$fila4_5/fuegito_4_4.play("explosion")
+	$fila4_7/fuegito_4_7.play("explosion")
+	$fila4_9/fuegito_4_9.play("explosion")
+	$fila5_2/fuegito_5_2.play("explosion")
+	$fila5_4/fuegito_5_4.play("explosion")
+	$fila5_5/fuegito_5_5.play("explosion")
+	$fila5_7/fuegito_5_7.play("explosion")
+	$fila5_9/fuegito_5_9.play("explosion")
 	$RespuestaA_1/fuegito.play("explosion")
 	$RespuestaB_1/fuegito1.play("explosion")
 	$RespuestaC_1/fuegito_correct1.play("explosion")
@@ -500,4 +525,10 @@ func _on_fila_5_7_body_entered(body):
 		$CharacterBody2D.position = Saveus.initial_position
 
 func _on_fila_5_9_body_entered(body):
-	pass # Replace with function body.
+	$CharacterBody2D/Camera2D2.make_current()
+	if body.is_in_group("player2"):
+		Saveus.caida = true
+		time.stop() 
+		time.wait_time = 1.5
+		$explosion.play()
+		$CharacterBody2D.position = Saveus.initial_position
