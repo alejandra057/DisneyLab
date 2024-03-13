@@ -161,7 +161,7 @@ position = Vector2(564, 484)
 
 [node name="Node2D" parent="." instance=ExtResource("3_cutgt")]
 visible = false
-position = Vector2(259, 12)
+position = Vector2(271, 71)
 
 [node name="Node2D2" parent="." instance=ExtResource("4_cktxi")]
 visible = false

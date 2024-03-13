@@ -19,6 +19,7 @@ func _ready():
 	if(Saveus.finished_game==4):
 		$transition.show()
 		$transition.play("portal_")
+		$Roulette.hide()
 
 func _process(delta):
 	if Saveus.habilitar==true:
