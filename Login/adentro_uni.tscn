@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bh1hq6nirwlt4"]
+[gd_scene load_steps=25 format=3 uid="uid://bh1hq6nirwlt4"]
 
 [ext_resource type="Script" path="res://adentro_uni.gd" id="1_0xvh5"]
 [ext_resource type="Texture2D" uid="uid://dkottgm4rj6u3" path="res://universidad/suelos.png" id="2_cwrhq"]
@@ -35866,6 +35866,9 @@ size = Vector2(82.5, 61.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1iy0"]
 size = Vector2(99.5, 89.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31hf0"]
+size = Vector2(82, 72)
+
 [node name="AdentroUni" type="Node2D"]
 script = ExtResource("1_0xvh5")
 
@@ -35946,6 +35949,12 @@ script = ExtResource("11_1n7ol")
 position = Vector2(-417, 389)
 shape = SubResource("RectangleShape2D_w1iy0")
 
+[node name="kant" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kant"]
+position = Vector2(1805, 328)
+shape = SubResource("RectangleShape2D_31hf0")
+
 [connection signal="body_entered" from="LibroRPractica" to="player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LibroRPractica" to="player" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="LibroRPura" to="player" method="_on_libro_r_pura_body_entered"]
@@ -35958,3 +35967,4 @@ shape = SubResource("RectangleShape2D_w1iy0")
 [connection signal="body_exited" from="areamesa3" to="player" method="_on_areamesa_3_body_exited"]
 [connection signal="body_entered" from="areamesa4" to="player" method="_on_areamesa_4_body_entered"]
 [connection signal="body_exited" from="areamesa4" to="player" method="_on_areamesa_4_body_exited"]
+[connection signal="body_entered" from="kant" to="player" method="_on_kant_body_entered"]

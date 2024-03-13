@@ -32,8 +32,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("space bar"): 
-		print("reconoce")
+	#if Input.is_action_just_pressed("space bar"): 
+		#print("reconoce")
 		$btA1.show()
 		$btB.show()
 		$btC.show()

@@ -16,10 +16,10 @@ var contar=0
 var valor : int=0
 var terminado = false
 
-@onready var visual_text :RichTextLabel =$panel/RichTextLabel2
-#@onready var animation_mark: AnimationPlayer=$panel/AnimationPlayer
+@onready var visual_text :RichTextLabel =$panel/RichTextLabel
+@onready var animation_mark: AnimationPlayer=$panel/AnimationPlayer
 @onready var mark : Control=$panel/Control
-#@onready var animation_text: AnimationPlayer =$panel/AnimationPlayer
+@onready var animation_text: AnimationPlayer =$panel/AnimationPlayer
 var mostrar=false
 var electC=false
 var electA=false
@@ -35,8 +35,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("space bar"): 
-		print("reconoce")
+	#if Input.is_action_just_pressed("space bar"): 
+		#print("reconoce")
 		#if current_text==0 || current_text==1 || current_text==3 || current_text==5 || current_text==7 || current_text==9 || current_text==11 || current_text==13:
 			#$btA.hide()
 			#$RESPB.hide()

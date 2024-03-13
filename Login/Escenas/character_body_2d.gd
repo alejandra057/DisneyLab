@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const speed= 400
 var current_dir = "none"
+var kant = false
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
@@ -76,7 +77,10 @@ func _process(delta):
 		$Node2D.hide()
 		
 func _on_area_2d_body_entered(body):
-	$Node2D2.show()
+	if kant==false:
+		print("Debes hablar primero con Emmanuel Kant")
+	else:
+		$Node2D2.show()
 	
 	pass # Replace with function body.
 
@@ -140,7 +144,10 @@ func _on_area_2d_body_exited(body):
 
 func _on_libro_r_pura_body_entered(body):
 	#if $Node2D2.terminado == true:
-	$Node2D3.show()
+	if kant==false:
+		print("Debes hablar primero con Emmanuel Kant")
+	else:
+		$Node2D3.show()
 	pass # Replace with function body.
 
 
@@ -150,4 +157,11 @@ func _on_libro_r_pura_body_exited(body):
 	#$btB.hide()
 	#$btC.hide()
 	#$btD.hide()
+	pass # Replace with function body.
+
+
+
+func _on_kant_body_entered(body):
+	print("hablaste con Kant")
+	kant=true
 	pass # Replace with function body.
