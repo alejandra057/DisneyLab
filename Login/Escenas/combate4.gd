@@ -275,16 +275,21 @@ func ocultarpregunta():
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>1:
 			$ProgressBar.value=100
+			$Blackwidow/bw.play("victoria")
 			await get_tree().create_timer(5).timeout
 			get_tree().change_scene_to_file("res://Win_empiristas.tscn")
 		elif Saveus.iron_man==true && puntosganador>1:
 			$ProgressBar.value=100
+			$capitana/capitana1.play("victoria")
 			await get_tree().create_timer(5).timeout
 			get_tree().change_scene_to_file("res://Win_racionalistas.tscn")
 		ocultar()
 	tiempoRonda=1
 	rondas.start()
 	ocultar()
+	if  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
+		$Perdistelb.show()
+		$Backbtn.show()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 

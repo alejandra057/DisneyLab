@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cludisy41bknj"]
+[gd_scene load_steps=3 format=3 uid="uid://cludisy41bknj"]
 
 [ext_resource type="Script" path="res://win_empiristas.gd" id="1_lqp1r"]
+[ext_resource type="AudioStream" uid="uid://ct36xmfktivd0" path="res://Art/Sounds/Hallowed Be Thy Name 2015 Remaster.mp3" id="2_npggj"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lqp1r")
@@ -13,5 +14,6 @@ offset_bottom = 195.0
 text = "Siguiente"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_npggj")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

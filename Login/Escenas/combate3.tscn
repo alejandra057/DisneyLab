@@ -2880,6 +2880,12 @@ offset_top = 3.0
 offset_right = 931.0
 offset_bottom = 67.0
 
+[node name="Button5" type="Button" parent="."]
+offset_left = 458.0
+offset_top = 263.0
+offset_right = 817.0
+offset_bottom = 345.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -2888,3 +2894,4 @@ offset_bottom = 67.0
 [connection signal="timeout" from="timerrondas" to="." method="_on_timerrondas_timeout"]
 [connection signal="timeout" from="animacion" to="." method="_on_animacion_timeout"]
 [connection signal="timeout" from="animacion2" to="." method="_on_animacion_2_timeout"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

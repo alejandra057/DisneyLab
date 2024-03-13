@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct36xmfktivd0"
+path="res://.godot/imported/Hallowed Be Thy Name 2015 Remaster.mp3-c3eee526e9b7d71f53ae61e162a68447.mp3str"
+
+[deps]
+
+source_file="res://Art/Sounds/Hallowed Be Thy Name 2015 Remaster.mp3"
+dest_files=["res://.godot/imported/Hallowed Be Thy Name 2015 Remaster.mp3-c3eee526e9b7d71f53ae61e162a68447.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

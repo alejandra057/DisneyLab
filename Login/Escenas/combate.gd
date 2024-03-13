@@ -153,15 +153,7 @@ func animacion_perder():
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto1.text="Puntos: "+str(puntosperdedor)
-func animacion_victoria():
-	if Saveus.capitan==true:
-		$"captain america/CA1".play("victoria")
-		animation_victory.wait_time = 1.5  
-		animation_victory.start()
-	elif Saveus.iron_man==true:
-		$ironman/ironman1.play("victoria")
-		animation_victory.wait_time = 1.5  
-		animation_victory.start()
+		
 func _process(delta):
 	if contarrondas==1:
 		print("enprocess contarronda")
@@ -298,22 +290,22 @@ func ocultarpregunta():
 		print("aqui iria el ganador")
 		if Saveus.capitan==true && puntosganador>1:
 			$ganador.text ="Los empiristas han ganado el primer combate "
-			animacion_victoria()
+			$"captain america/CA1".play("victoria")
 			$Progreso_game.show()
 			$Progreso_game.value=25*100/100
 		elif Saveus.iron_man==true && puntosganador>1:
 			$ganador.text ="Los racionalista han ganado el primer combate"
-			animacion_victoria()
+			$ironman/ironman1.play("victoria")
 			$Progreso_game.show()
 			$Progreso_game.value=25*100/100
 		ocultar()
 	tiempoRonda=1
 	rondas.start()
 	ocultar()
-	if Saveus.capitan==true && puntosganador>1 || Saveus.iron_man==true && puntosganador>1:
-		await get_tree().create_timer(10).timeout
+	if Saveus.capitan==true && puntosganador==2 || Saveus.iron_man==true && puntosganador==2:
+		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://intro_combate2.tscn")
-	else:
+	elif  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
 		$Perdistelb.show()
 		$Backbtn.show()
 	tiempo_restante = 10
@@ -370,17 +362,6 @@ func _on_animacion_2_timeout():
 	empate()
 	
 
-
-func _on_animacion_ganar_timeout():
-	animation_victory.stop()
-	$"captain america/CA1".stop()
-	$"captain america/CA1".play("idle")
-	$ironman/ironman1.stop()
-	$ironman/AnimatedSprite2D.stop()
-	$ironman/AnimatedSprite2D.hide()
-	$ironman/ironman1.play("idle")
-	$"captain america/escudo/AnimationPlayer".stop()
-	escudo.hide()
 
 
 func _on_backbtn_pressed():

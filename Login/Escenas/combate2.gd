@@ -284,8 +284,12 @@ func ocultarpregunta():
 	tiempoRonda=1
 	rondas.start()
 	ocultar()
-	await get_tree().create_timer(10).timeout
-	get_tree().change_scene_to_file("res://intro_combate3.tscn")
+	if Saveus.capitan==true && puntosganador==2 || Saveus.iron_man==true && puntosganador==2:
+		await get_tree().create_timer(5).timeout
+		get_tree().change_scene_to_file("res://intro_combate3.tscn")
+	elif  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
+		$Perdistelb.show()
+		$Backbtn.show()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 
@@ -335,3 +339,7 @@ func _on_animacion_2_timeout():
 	$thor/thor.play("idle")
 	empate()
 	
+
+
+func _on_back_btn_pressed():
+	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")

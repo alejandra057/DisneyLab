@@ -8227,8 +8227,8 @@ layout_mode = 2
 [node name="HealthBarI" type="ProgressBar" parent="CanvasLayer2/ColorRect"]
 layout_mode = 2
 offset_left = -1.0
-offset_right = 304.0
-offset_bottom = 46.0
+offset_right = 305.0
+offset_bottom = 49.0
 theme = ExtResource("2_fpl6g")
 theme_type_variation = &"HealthBarI"
 step = 1.0
