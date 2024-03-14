@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://diijtaeeihs2o" path="res://BlackWidow.tscn" id="6_lebti"]
 [ext_resource type="PackedScene" uid="uid://cj1pcjbo5adno" path="res://capitana.tscn" id="7_f0duo"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="8_pxqtx"]
-[ext_resource type="PackedScene" uid="uid://c7wo65m871yvi" path="res://Battlepregunta4.tscn" id="9_1gojf"]
+[ext_resource type="PackedScene" path="res://Battlepregunta4.tscn" id="9_1gojf"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="9_5sl6w"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="10_6tkxt"]
 
@@ -16,6 +16,7 @@ texture = ExtResource("3_cdrgb")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -287,10 +288,10 @@ texture = ExtResource("2_pcbi4")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 371.0
-offset_right = 331.0
-offset_bottom = 423.0
+offset_left = 146.0
+offset_top = 481.0
+offset_right = 461.0
+offset_bottom = 533.0
 color = Color(0.282353, 0.545098, 0.231373, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
@@ -323,10 +324,10 @@ theme_type_variation = &"HealthBar"
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-offset_left = 804.0
-offset_top = 377.0
-offset_right = 1119.0
-offset_bottom = 429.0
+offset_left = 676.0
+offset_top = 471.0
+offset_right = 991.0
+offset_bottom = 523.0
 color = Color(0.282353, 0.545098, 0.231373, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/ColorRect"]
@@ -360,13 +361,13 @@ theme_type_variation = &"HealthBar"
 visible = false
 tile_set = SubResource("TileSet_g8jjw")
 format = 2
-layer_0/tile_data = PackedInt32Array(2621440, 458752, 1, 2621441, 458752, 1, 2621442, 458752, 1, 2621443, 458752, 1, 2621444, 458752, 1, 2621445, 458752, 1, 2621446, 458752, 1, 2621447, 458752, 1, 2621448, 458752, 1, 2621449, 458752, 1, 2621450, 458752, 1, 2621451, 458752, 1, 2621452, 458752, 1, 2555916, 458752, 1, 2555917, 458752, 1, 2555918, 458752, 1, 2555919, 458752, 1, 2555920, 458752, 1, 2621453, 458752, 1, 2621454, 458752, 1, 2621455, 458752, 1, 2621456, 458752, 1, 2621457, 458752, 1, 2621458, 458752, 1, 2621459, 458752, 1, 2621460, 458752, 1, 2621461, 458752, 1, 2621462, 458752, 1, 2621463, 458752, 1, 2621464, 458752, 1, 2621465, 458752, 1, 2621466, 458752, 1, 2621467, 458752, 1, 2621468, 458752, 1, 2621469, 458752, 1, 2621470, 458752, 1, 2621471, 458752, 1, 2621472, 458752, 1, 2621473, 458752, 1, 2621474, 458752, 1, 2621475, 458752, 1, 2621476, 458752, 1, 2555941, 458752, 1, 2555942, 458752, 1, 2555943, 458752, 1, 2555944, 458752, 1, 2555945, 458752, 1, 2555946, 458752, 1, 2555947, 458752, 1, 2555948, 458752, 1, 2555949, 458752, 1, 2555950, 458752, 1, 2555951, 458752, 1, 2555952, 458752, 1, 2555953, 458752, 1, 2555954, 458752, 1, 2555955, 458752, 1, 2555956, 458752, 1, 2555957, 458752, 1, 2555958, 458752, 1, 2555959, 458752, 1, 2555960, 458752, 1, 2555961, 458752, 1, 2555962, 458752, 1, 2555963, 458752, 1, 2555964, 458752, 1, 2555965, 458752, 1, 2555966, 458752, 1, 2555967, 458752, 1, 2555968, 458752, 1, 2555969, 458752, 1, 2555970, 458752, 1, 2555971, 458752, 1, 2555972, 458752, 1, 2555973, 458752, 1, 2555974, 458752, 1, 2555975, 458752, 1, 2621511, 458752, 1, 2621510, 458752, 1, 2621509, 458752, 1, 2621508, 458752, 1, 2621507, 458752, 1, 2687042, 458752, 1, 2687041, 458752, 1, 2687040, 458752, 1, 2687039, 458752, 1, 2687038, 458752, 1, 2687037, 458752, 1, 2687036, 458752, 1, 2687035, 458752, 1, 2687034, 458752, 1, 2687033, 458752, 1, 2687032, 458752, 1, 2687031, 458752, 1, 2687030, 458752, 1, 2687029, 458752, 1, 2687028, 458752, 1, 2687027, 458752, 1, 2687026, 458752, 1, 2687025, 458752, 1, 2687024, 458752, 1, 2687023, 458752, 1, 2687022, 458752, 1, 2687021, 458752, 1, 2687020, 458752, 1, 2687019, 458752, 1, 2687018, 458752, 1, 2687017, 458752, 1, 2687016, 458752, 1, 2687015, 458752, 1, 2687014, 458752, 1, 2687013, 458752, 1, 2687012, 458752, 1, 2621477, 458752, 1, 2621478, 458752, 1, 2621479, 458752, 1, 2621480, 458752, 1, 2621481, 458752, 1, 2621482, 458752, 1, 2621483, 458752, 1, 2621484, 458752, 1, 2621485, 458752, 1, 2621486, 458752, 1, 2621487, 458752, 1, 2621488, 458752, 1, 2621506, 458752, 1, 2621505, 458752, 1, 2621504, 458752, 1, 2621503, 458752, 1, 2621502, 458752, 1, 2621501, 458752, 1, 2621500, 458752, 1, 2621499, 458752, 1, 2621498, 458752, 1, 2621497, 458752, 1, 2621496, 458752, 1, 2621495, 458752, 1, 2621490, 458752, 1, 2621491, 458752, 1, 2621492, 458752, 1, 2621493, 458752, 1, 2621494, 458752, 1, 2621489, 458752, 1)
+layer_0/tile_data = PackedInt32Array(2555920, 0, 0, 2031633, 0, 0, 2097169, 0, 0, 2162705, 0, 0, 2228241, 0, 0, 2293777, 0, 0, 2359313, 0, 0, 2424848, 0, 0, 2490384, 0, 0, 2621456, 0, 0, 2686992, 0, 0, 2752528, 0, 0, 2818064, 0, 0, 2883600, 0, 0, 3473408, 0, 0, 3473409, 0, 0, 3473410, 0, 0, 3473411, 0, 0, 3473412, 0, 0, 3473413, 0, 0, 3473414, 0, 0, 3473415, 0, 0, 3473416, 0, 0, 3473417, 0, 0, 3473418, 0, 0, 3473419, 0, 0, 3473420, 0, 0, 3473421, 0, 0, 3473422, 0, 0, 3473423, 0, 0, 3473424, 0, 0, 3473425, 0, 0, 3473426, 0, 0, 3473427, 0, 0, 3473428, 0, 0, 3473429, 0, 0, 3473430, 0, 0, 3473431, 0, 0, 3473432, 0, 0, 3473433, 0, 0, 3473434, 0, 0, 3473435, 0, 0, 3538974, 0, 0, 3538973, 0, 0, 3538972, 0, 0, 3538971, 0, 0, 3538975, 0, 0, 3538976, 0, 0, 3538977, 0, 0, 3538978, 0, 0, 3538979, 0, 0, 3538981, 0, 0, 3538980, 0, 0, 3473447, 0, 0, 3473448, 0, 0, 3473446, 0, 0, 3473449, 0, 0, 3473450, 0, 0, 3473451, 0, 0, 3473452, 0, 0, 3473453, 0, 0, 3473458, 0, 0, 3473459, 0, 0, 3473460, 0, 0, 3473461, 0, 0, 3473462, 0, 0, 3473463, 0, 0, 3473464, 0, 0, 3473465, 0, 0, 3473466, 0, 0, 3473467, 0, 0, 3473468, 0, 0, 3473469, 0, 0, 3473470, 0, 0, 3473471, 0, 0, 3473472, 0, 0, 3473473, 0, 0, 3473474, 0, 0, 3473475, 0, 0, 3473476, 0, 0, 3473477, 0, 0, 3473478, 0, 0, 3539014, 0, 0, 3473457, 0, 0, 3473456, 0, 0, 3473455, 0, 0, 3473454, 0, 0, 3539013, 0, 0)
 
 [node name="Blackwidow" parent="." instance=ExtResource("6_lebti")]
-position = Vector2(72, 37)
+position = Vector2(-45, 250)
 
 [node name="capitana" parent="." instance=ExtResource("7_f0duo")]
-position = Vector2(-43, 41)
+position = Vector2(-12, 245)
 
 [node name="racionalistas" type="Label" parent="."]
 offset_left = 933.0
@@ -481,20 +482,20 @@ label_settings = SubResource("LabelSettings_7oxb1")
 [node name="animacion2" type="Timer" parent="."]
 
 [node name="punto1" type="Label" parent="."]
-offset_left = -1.0
-offset_top = 589.0
-offset_right = 177.0
-offset_bottom = 645.0
+offset_left = 59.0
+offset_top = 577.0
+offset_right = 237.0
+offset_bottom = 633.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
 label_settings = SubResource("LabelSettings_qb7h3")
 
 [node name="punto2" type="Label" parent="."]
-offset_left = 978.0
-offset_top = 592.0
-offset_right = 1156.0
-offset_bottom = 648.0
+offset_left = 964.0
+offset_top = 593.0
+offset_right = 1142.0
+offset_bottom = 649.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
