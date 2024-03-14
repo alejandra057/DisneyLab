@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cdayyh3fo6nf7"
+path="res://.godot/imported/llegadauni.dialogue-dea5751ae9789d3fff4ef51220c73520.tres"
+
+[deps]
+
+source_file="res://llegadauni.dialogue"
+dest_files=["res://.godot/imported/llegadauni.dialogue-dea5751ae9789d3fff4ef51220c73520.tres"]
+
+[params]
+
+defaults=true
