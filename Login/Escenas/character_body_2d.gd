@@ -162,6 +162,7 @@ func _on_libro_r_pura_body_exited(body):
 
 
 func _on_kant_body_entered(body):
-	print("hablaste con Kant")
-	kant=true
+	if body.is_in_group("kantt"):
+		print("hablaste con Kant")
+		kant=true
 	pass # Replace with function body.

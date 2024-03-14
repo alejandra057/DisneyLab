@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvj3haa5fhbus"]
+[gd_scene load_steps=12 format=3 uid="uid://cvj3haa5fhbus"]
 
 [ext_resource type="Script" path="res://Node2D2.gd" id="1_3rfqu"]
-[ext_resource type="Texture2D" uid="uid://4n7v0uv15t2e" path="res://Art/Escenarios_objetos/Diseño sin título (1).png" id="2_cdqga"]
 [ext_resource type="Texture2D" uid="uid://bkcxjmgf8nfxy" path="res://Art/Escenarios_objetos/libro_Kant.png" id="2_v8mpj"]
 [ext_resource type="FontFile" uid="uid://s2r3p8xeadxl" path="res://Art/PixelAE-Regular.ttf" id="3_npm8x"]
 [ext_resource type="Texture2D" uid="uid://bpr02i5skrrko" path="res://Art/flecha.png" id="4_0mxvu"]
@@ -105,15 +104,6 @@ rotation = 3.14159
 scale = Vector2(2.13844, -1.96178)
 texture = ExtResource("2_v8mpj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-offset_left = 60.0
-offset_top = 53.0
-offset_right = 488.0
-offset_bottom = 578.0
-texture = ExtResource("2_cdqga")
-expand_mode = 1
-
 [node name="panel" type="PanelContainer" parent="."]
 clip_contents = true
 anchors_preset = 8
@@ -150,10 +140,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 805.0
-offset_top = -290.0
-offset_right = 875.0
-offset_bottom = -213.0
+offset_left = 1127.0
+offset_top = 124.0
+offset_right = 1197.0
+offset_bottom = 201.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 1.5708
