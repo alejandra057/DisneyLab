@@ -30832,10 +30832,10 @@ font_size = 41
 font_color = Color(0.709804, 0.117647, 0.14902, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjw1r"]
-size = Vector2(87, 34.5)
+size = Vector2(24, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thk36"]
-size = Vector2(79.4375, 41)
+size = Vector2(33.5938, 28.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wxkyw"]
 size = Vector2(60, 61)
@@ -31206,7 +31206,7 @@ limit_bottom = 600
 position = Vector2(1031, -2064)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_2"]
-position = Vector2(-378.5, 2089.75)
+position = Vector2(-377, 2071)
 shape = SubResource("RectangleShape2D_xjw1r")
 
 [node name="fuegito_1_2" parent="fila1_2" instance=ExtResource("8_vweot")]
@@ -31215,11 +31215,11 @@ position = Vector2(-381, 2074)
 [node name="fila1_4" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fila1_4"]
-position = Vector2(875.125, 25)
+position = Vector2(881, 2)
 shape = SubResource("RectangleShape2D_thk36")
 
 [node name="fuegito_1_4" parent="fila1_4" instance=ExtResource("8_vweot")]
-position = Vector2(885, 9)
+position = Vector2(884, 14)
 
 [node name="fila1_5" type="Area2D" parent="."]
 
@@ -31427,6 +31427,9 @@ position = Vector2(1214, -1591)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fila5_9"]
 position = Vector2(1441, -1617)
 shape = SubResource("RectangleShape2D_thk36")
+
+[node name="fuegito_5_9" parent="fila5_9" instance=ExtResource("8_vweot")]
+position = Vector2(1214, -1591)
 
 [node name="RespuestaA_5" type="Area2D" parent="."]
 position = Vector2(1031, -2064)

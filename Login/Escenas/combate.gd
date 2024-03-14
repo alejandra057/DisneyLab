@@ -308,6 +308,7 @@ func ocultarpregunta():
 		get_tree().change_scene_to_file("res://intro_combate2.tscn")
 	elif  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
 		$Perdistelb.show()
+		Saveus.finished_game=0
 		$Backbtn.show()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)

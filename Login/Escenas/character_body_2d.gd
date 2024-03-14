@@ -77,10 +77,9 @@ func _process(delta):
 		$Node2D.hide()
 		
 func _on_area_2d_body_entered(body):
-	if kant==false:
-		print("Debes hablar primero con Emmanuel Kant")
-	else:
-		$Node2D2.show()
+	$Node2D5.show
+	$Node2D.show
+	print("entro a intro aula")
 	
 	pass # Replace with function body.
 
@@ -134,11 +133,7 @@ func _on_areamesa_4_body_exited(body):
 
 
 func _on_area_2d_body_exited(body):
-	$Node2D2.hide()
-	#$btA.hide()
-	#$btB.hide()
-	#$btC.hide()
-	#$btD.hide()
+	$Node2D5.hide()
 	pass # Replace with function body.
 
 
@@ -165,4 +160,17 @@ func _on_kant_body_entered(body):
 	if body.is_in_group("kantt"):
 		print("hablaste con Kant")
 		kant=true
+	pass # Replace with function body.
+
+
+func _on_libro_r_practica_body_entered(body):
+	if kant==false:
+		print("Debes hablar primero con Emmanuel Kant")
+	else:
+		$Node2D2.show()
+	pass # Replace with function body.
+
+
+func _on_libro_r_practica_body_exited(body):
+	$Node2D2.hide()
 	pass # Replace with function body.
