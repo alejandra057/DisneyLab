@@ -177,7 +177,7 @@ func _on_areab_body_entered(body):
 		#if $Node2D.valor==0:
 		contarvidas+=1
 		$lbinfo.show()
-		temporizador.wait_time = 4
+		temporizador.wait_time = 2
 		temporizador.start()
 		print("valorrr ",$Node2D.valor)
 		#if $Node2D.valor==3:

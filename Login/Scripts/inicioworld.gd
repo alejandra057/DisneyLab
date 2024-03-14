@@ -6,26 +6,6 @@ var ruta4 =""
 var tiempo
 func _ready():
 	tiempo=$Puertas/Timerpuerta1
-	if  Saveus.selecmorado==true:
-		$Puertas4.frame=11
-		$Puertas.frame=0
-		$Puertas2.frame=0
-		$Puertas3.frame=0
-	if(Saveus.selectazul==true):
-		$Puertas.frame=11
-		$Puertas2.frame=0
-		$Puertas3.frame=0
-		$Puertas4.frame=0
-	if(Saveus.selectnara==true):
-		$Puertas3.frame=11
-		$Puertas.frame=0
-		$Puertas2.frame=0
-		$Puertas4.frame=0
-	if(Saveus.selectrosa==true):
-		$Puertas2.frame=11
-		$Puertas.frame=0
-		$Puertas3.frame=0
-		$Puertas4.frame=0
 	if(Saveus.habilitar==true):
 		$Roulette.show()
 	if(Saveus.finished_game==4):
@@ -48,6 +28,7 @@ func _on_area_2d_2_body_entered(body):
 			$Label.show()
 			tiempo.wait_time=1.3
 			tiempo.start()
+			Saveus.selecmorado=false
 
 
 func _on_area_2d_3_body_entered(body):
@@ -58,6 +39,7 @@ func _on_area_2d_3_body_entered(body):
 			ruta2 ="res://introduccionPoli.tscn"
 			$Puertas4/Timerpuerta4.wait_time=1.3
 			$Puertas4/Timerpuerta4.start()
+			Saveus.selectazul=false
 
 func _on_area_2d_4_body_entered(body):
 	if(Saveus.selectnara==true):
@@ -68,6 +50,7 @@ func _on_area_2d_4_body_entered(body):
 			$Label2.show()
 			$Puertas3/Timerpuerta3.wait_time=1.3
 			$Puertas3/Timerpuerta3.start()
+			Saveus.selectnara=false
 
 
 func _on_area_2d_5_body_entered(body):
@@ -77,14 +60,14 @@ func _on_area_2d_5_body_entered(body):
 			ruta4 ="res://Escenas/Rapunzel_world.tscn"
 			$Puertas2/Timerpuerta2.wait_time=1.3
 			$Puertas2/Timerpuerta2.start()
-			
+			Saveus.selectrosa=false
 
 
 func _on_arealibro_body_entered(body):
 	if body.is_in_group("player"):
 		Saveus.habilitar=true
 		DialogueManager.show_dialogue_balloon(load("res://introRuleta.dialogue"),"notaruleta")
-			
+		
 
 
 
@@ -112,5 +95,9 @@ func _on_timerpuerta_3_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	get_tree().change_scene_to_file("res://bandos.tscn")
+	if(Saveus.finished_game==4):
+			get_tree().change_scene_to_file("res://bandos.tscn")
+			Saveus.seleccion_actual=null
+			Saveus.opciones_seleccionadas = []
+			Saveus.opciones = [{"nombre": "Politica", "probabilidad": 0.5}, {"nombre": "Ciencia", "probabilidad": 0.5}, {"nombre": "Arte", "probabilidad": 0.5}, {"nombre": "Historia", "probabilidad": 0.5}]
 	pass # Replace with function body.
