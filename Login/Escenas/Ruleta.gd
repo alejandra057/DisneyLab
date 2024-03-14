@@ -10,11 +10,6 @@ var lbciencia : Label
 var lbarte: Label
 var lbhistoria : Label
 var texto : Label
-var btok : Button
-var selecmorado = false
-var selectnara = false
-var selectazul = false
-var selectrosa = false
 var tiempoextra = 0
 var timer : Timer
 var rotacion : Node2D
