@@ -342,4 +342,4 @@ func _on_animacion_2_timeout():
 
 
 func _on_back_btn_pressed():
-	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
+	get_tree().change_scene_to_file("res://Escenas/combate.tscn")

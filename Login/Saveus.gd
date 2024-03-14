@@ -5,6 +5,7 @@ var opciones_seleccionadas = []
 var nombre :String
 var password: String
 var texto
+var puntos_combates=4
 var selecmorado=false
 var selectnara=false
 var selectazul=false
@@ -25,6 +26,10 @@ var pregunta3=false
 var pregunta4=false
 var pregunta5=false
 var pregunta6=false
+var imagen_vida1=false
+var imagen_vida2=false
+var imagen_vida3=false
+var imagen_vida4=false
 var opciones = [{"nombre": "Politica", "probabilidad": 0.2}, {"nombre": "Ciencia", "probabilidad": 0.8}, {"nombre": "Arte", "probabilidad": 0.3}, {"nombre": "Historia", "probabilidad": 0.7}]
 var seleccion_actual=null
 var right_answer1=false
@@ -103,7 +108,17 @@ func iniciosesion(user: String,contra: String):
 	file.close()
 	texto="Usuario Inexistente"
 	return false
-
+func regresar_combates():
+	if puntos_combates==4:
+		imagen_vida4==true
+	elif puntos_combates==3:
+		imagen_vida3==true
+	elif puntos_combates==2:
+		imagen_vida2==true
+	elif puntos_combates==1:
+		imagen_vida1==true
+		
+		
 func _process(delta):
 	pass
 

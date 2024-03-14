@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=31 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
@@ -6,6 +6,8 @@
 [ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="2_fpl6g"]
 [ext_resource type="PackedScene" uid="uid://dy5hfo318vbvq" path="res://ironman.tscn" id="5_y5gmg"]
 [ext_resource type="PackedScene" uid="uid://ba14542ro4gj2" path="res://captain_america.tscn" id="8_b2p4d"]
+[ext_resource type="Texture2D" uid="uid://wo8q7hpds43l" path="res://Art/Sprites/vida4-removebg-preview.png" id="11_50svs"]
+[ext_resource type="Texture2D" uid="uid://coagwrr1u5fpe" path="res://Art/Sprites/vida3-removebg-preview.png" id="12_k0033"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="20_cb3pt"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="20_mv1kf"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="21_prtai"]
@@ -8498,6 +8500,18 @@ offset_bottom = 303.0
 theme_override_fonts/font = ExtResource("20_mv1kf")
 theme_override_font_sizes/font_size = 23
 text = "Regresar"
+
+[node name="vida4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(212, 154)
+scale = Vector2(0.873981, 1.22261)
+texture = ExtResource("11_50svs")
+
+[node name="Vida3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(186.565, 160.125)
+scale = Vector2(0.891793, 1.14031)
+texture = ExtResource("12_k0033")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

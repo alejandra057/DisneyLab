@@ -281,8 +281,12 @@ func _on_timerrondas_timeout():
 			$Label.hide()
 		
 	pass 
-
-		
+func vidas_generales():
+	if Saveus.capitan==true || Saveus.imagen_vida4==true:
+		$vida4.show()
+	elif Saveus.capitan==true || Saveus.imagen_vida3==true:
+		$vida4.hide()
+		$Vida3.show()
 func ocultarpregunta():
 	cantrondas+=1
 	print("cantrondas",cantrondas)
@@ -303,13 +307,20 @@ func ocultarpregunta():
 	tiempoRonda=1
 	rondas.start()
 	ocultar()
+	
+
+	
 	if Saveus.capitan==true && puntosganador==2 || Saveus.iron_man==true && puntosganador==2:
 		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://intro_combate2.tscn")
 	elif  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
 		$Perdistelb.show()
+		vidas_generales()
 		Saveus.finished_game=0
 		$Backbtn.show()
+		Saveus.puntos_combates=1
+		#puntosperdedor=0
+		#puntosganador=0
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)
 
@@ -367,4 +378,4 @@ func _on_animacion_2_timeout():
 
 
 func _on_backbtn_pressed():
-	get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
+	get_tree().reload_current_scene()
