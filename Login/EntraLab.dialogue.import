@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c5u6blnlstiba"
+path="res://.godot/imported/EntraLab.dialogue-98b0cdd5c27c5c21be45166a9e1578bb.tres"
+
+[deps]
+
+source_file="res://EntraLab.dialogue"
+dest_files=["res://.godot/imported/EntraLab.dialogue-98b0cdd5c27c5c21be45166a9e1578bb.tres"]
+
+[params]
+
+defaults=true

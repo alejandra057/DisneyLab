@@ -70,9 +70,6 @@ func play_anim(movement):
 		
 
 func _process(delta):
-	#$"../Node2D2".show()
-	#if $Node2D2.valor==3:
-		#$Node2D2.hide()
 	if $Node2D.valor==4 || $Node2D.valor==8 || $Node2D.valor==12:
 		$Node2D.hide()
 		

@@ -4,11 +4,13 @@ var tiempo
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tiempo=$AnimatedSprite2D/Timerabrir
+	DialogueManager.show_dialogue_balloon(load("res://llegadauni.dialogue"),"introuni")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	pass
 
 
@@ -25,6 +27,6 @@ func _on_area_2d_body_entered(body):
 
 func _on_timerabrir_timeout():
 	tiempo.stop()
-	get_tree().change_scene_to_file("res://adentro_uni.tscn")					
+	get_tree().change_scene_to_file("res://adentro_uni.tscn")
 	#$AnimatedSprite2D.stop()
 	pass # Replace with function body.
