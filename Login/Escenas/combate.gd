@@ -34,7 +34,7 @@ var progreso
 func _ready():
 	_update_health_bar_Cap(1000,1000)
 	_update_health_bar_iron(1000,1000)
-	vidas_generales()
+	#vidas_generales()
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -283,12 +283,27 @@ func _on_timerrondas_timeout():
 			$Label.hide()
 		
 	pass 
+
 func vidas_generales():
-	if Saveus.capitan==true || Saveus.imagen_vida4==true:
+	#if Saveus.capitan==true || Saveus.imagen_vida4==true:
+		#$vida4.show()
+	#elif Saveus.capitan==true || Saveus.imagen_vida3==true:
+		#$vida4.hide()
+		#$Vida3.show()
+		
+	if Saveus.puntos_combates==4:
 		$vida4.show()
-	elif Saveus.capitan==true || Saveus.imagen_vida3==true:
+	elif Saveus.puntos_combates==3:
 		$vida4.hide()
-		$Vida3.show()
+		$vida3.show()
+	elif  Saveus.puntos_combates==2:
+		$vida3.hide()
+		$vida2.show()
+	elif Saveus.puntos_combates==1:
+		$vida2.hide()
+		$vida1.show()
+
+
 func ocultarpregunta():
 	cantrondas+=1
 	print("cantrondas",cantrondas)
@@ -316,11 +331,15 @@ func ocultarpregunta():
 		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://intro_combate2.tscn")
 	elif  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
-		$Perdistelb.show()
+		
+		Saveus.puntos_combates-=1
+		Saveus.regresar_combates()
+		print(Saveus.puntos_combates)
+		
 		vidas_generales()
-		Saveus.finished_game=0
+		#Saveus.finished_game=0
 		$Backbtn.show()
-		Saveus.puntos_combates=1
+		
 		#puntosperdedor=0
 		#puntosganador=0
 	tiempo_restante = 10
@@ -376,8 +395,10 @@ func _on_animacion_2_timeout():
 	escudo.hide()
 	empate()
 	
-
-
-
 func _on_backbtn_pressed():
-	get_tree().reload_current_scene()
+	if Saveus.puntos_combates==0:
+		$Perdistelb.show()
+		get_tree().change_scene_to_file("res://Escenas/inicioworld.tscn")
+	else:
+		$LblRegreso.show()
+		get_tree().reload_current_scene()

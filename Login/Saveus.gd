@@ -110,12 +110,17 @@ func iniciosesion(user: String,contra: String):
 	texto="Usuario Inexistente"
 	return false
 func regresar_combates():
+	print("entro a func regresar combates")
+	print("puntos combate desde saveus: ",puntos_combates)
 	if puntos_combates==4:
+		print(puntos_combates)
 		imagen_vida4==true
 	elif puntos_combates==3:
 		imagen_vida3==true
+		imagen_vida4==false
 	elif puntos_combates==2:
 		imagen_vida2==true
+		imagen_vida3==false
 	elif puntos_combates==1:
 		imagen_vida1==true
 		

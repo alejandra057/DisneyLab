@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d0buvvpv3rjs6"]
+[gd_scene load_steps=34 format=3 uid="uid://d0buvvpv3rjs6"]
 
 [ext_resource type="Texture2D" uid="uid://bqyg66u5mxlsl" path="res://Escenas/WhatsApp Image 2024-02-27 at 16.14.28_c4a8da90.jpg" id="1_itiqo"]
 [ext_resource type="Texture2D" uid="uid://xftxojjbnd82" path="res://Art/Escenarios_Mundos/sprite_work__doc_valiant_in_his_lab_by_sxgodzilla_d58p9mh-fullview-Photoroom.jpg" id="1_j1k50"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ba14542ro4gj2" path="res://captain_america.tscn" id="8_b2p4d"]
 [ext_resource type="Texture2D" uid="uid://wo8q7hpds43l" path="res://Art/Sprites/vida4-removebg-preview.png" id="11_50svs"]
 [ext_resource type="Texture2D" uid="uid://coagwrr1u5fpe" path="res://Art/Sprites/vida3-removebg-preview.png" id="12_k0033"]
+[ext_resource type="Texture2D" uid="uid://wrfy70wqyg87" path="res://Art/Sprites/vida2-removebg-preview.png" id="13_rjwmh"]
+[ext_resource type="Texture2D" uid="uid://dii04jwkgpi64" path="res://Art/Sprites/vida1-removebg-preview.png" id="14_mxgq3"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="20_cb3pt"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="20_mv1kf"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="21_prtai"]
@@ -8197,8 +8199,13 @@ font_size = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_ghy4i"]
 font = ExtResource("20_mv1kf")
-font_size = 35
+font_size = 60
 font_color = Color(0.054902, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gadga"]
+font = ExtResource("20_mv1kf")
+font_size = 21
+font_color = Color(0.0705882, 0, 0.992157, 0.996078)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e0tk3"]
 font = ExtResource("20_mv1kf")
@@ -8218,6 +8225,7 @@ offset_right = 1150.0
 offset_bottom = 944.0
 texture = ExtResource("1_itiqo")
 expand_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -8313,36 +8321,36 @@ position = Vector2(107, 254)
 position = Vector2(1, 249)
 
 [node name="racionalistas" type="Label" parent="."]
-offset_left = 952.0
-offset_top = 5.0
-offset_right = 1086.0
-offset_bottom = 39.0
+offset_left = 928.0
+offset_top = 40.0
+offset_right = 1062.0
+offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Racionalista"
 label_settings = SubResource("LabelSettings_7cwwt")
 
 [node name="empiristas" type="Label" parent="."]
-offset_left = 71.0
-offset_top = 4.0
-offset_right = 171.0
-offset_bottom = 38.0
+offset_left = 103.0
+offset_top = 43.0
+offset_right = 203.0
+offset_bottom = 77.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Empirista"
 label_settings = SubResource("LabelSettings_p8q3l")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_top = -1.0
-offset_right = 77.0
-offset_bottom = 75.0
+offset_top = 16.0
+offset_right = 103.0
+offset_bottom = 110.0
 texture = ExtResource("20_cb3pt")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 1078.0
-offset_top = 2.0
-offset_right = 1148.0
-offset_bottom = 75.0
+offset_left = 1072.0
+offset_top = 24.0
+offset_right = 1142.0
+offset_bottom = 97.0
 texture = ExtResource("21_prtai")
 expand_mode = 1
 
@@ -8412,10 +8420,11 @@ label_settings = SubResource("LabelSettings_rmnmo")
 [node name="timerrondas" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 307.0
-offset_top = 104.0
-offset_right = 931.0
-offset_bottom = 252.0
+visible = false
+offset_left = 280.0
+offset_top = 120.0
+offset_right = 904.0
+offset_bottom = 268.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
@@ -8428,19 +8437,19 @@ label_settings = SubResource("LabelSettings_kn5oy")
 [node name="animacion2" type="Timer" parent="."]
 
 [node name="punto1" type="Label" parent="."]
-offset_left = 10.0
-offset_top = 584.0
-offset_right = 188.0
-offset_bottom = 640.0
+offset_left = 40.0
+offset_top = 592.0
+offset_right = 218.0
+offset_bottom = 648.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Puntos: 0"
 label_settings = SubResource("LabelSettings_0s1xk")
 
 [node name="punto2" type="Label" parent="."]
-offset_left = 964.0
-offset_top = 590.0
-offset_right = 1142.0
-offset_bottom = 646.0
+offset_left = 936.0
+offset_top = 584.0
+offset_right = 1114.0
+offset_bottom = 640.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "Puntos: 0"
@@ -8448,27 +8457,38 @@ label_settings = SubResource("LabelSettings_vdbkj")
 
 [node name="Bandoelegido" type="Label" parent="."]
 visible = false
-offset_left = 81.0
-offset_top = 42.0
-offset_right = 135.0
-offset_bottom = 86.0
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 138.0
+offset_bottom = 210.0
 text = "You"
 label_settings = SubResource("LabelSettings_ghy4i")
 
 [node name="Bandoelegido_2" type="Label" parent="."]
 visible = false
-offset_left = 1015.0
-offset_top = 34.0
-offset_right = 1077.0
-offset_bottom = 81.0
+offset_left = 1032.0
+offset_top = 112.0
+offset_right = 1125.0
+offset_bottom = 187.0
 text = "You"
 label_settings = SubResource("LabelSettings_ghy4i")
 
+[node name="LblRegreso" type="Label" parent="."]
+visible = false
+offset_left = 408.0
+offset_top = 288.0
+offset_right = 745.0
+offset_bottom = 345.0
+text = "¡Perdiste el round! Deberas empezar de nuevo. 
+Ten cuidado no perder todas tus vidas."
+label_settings = SubResource("LabelSettings_gadga")
+horizontal_alignment = 1
+
 [node name="ganador" type="Label" parent="."]
-offset_left = 400.0
-offset_top = 155.0
-offset_right = 816.0
-offset_bottom = 323.0
+offset_left = 376.0
+offset_top = 160.0
+offset_right = 792.0
+offset_bottom = 328.0
 label_settings = SubResource("LabelSettings_e0tk3")
 
 [node name="Progreso_game" type="ProgressBar" parent="."]
@@ -8483,13 +8503,14 @@ position = Vector2(143, 635)
 
 [node name="Perdistelb" type="Label" parent="."]
 visible = false
-offset_left = 428.0
-offset_top = 276.0
-offset_right = 737.0
-offset_bottom = 331.0
-text = "¡Perdiste tus vidas! Deberas regresar
- al mundo principal a recuperar vidas."
+offset_left = 400.0
+offset_top = 288.0
+offset_right = 728.0
+offset_bottom = 345.0
+text = "¡Perdiste tus vidas! Deberas regresar 
+al mundo principal a recuperar vidas."
 label_settings = SubResource("LabelSettings_bcgd6")
+horizontal_alignment = 1
 
 [node name="Backbtn" type="Button" parent="."]
 visible = false
@@ -8503,15 +8524,27 @@ text = "Regresar"
 
 [node name="vida4" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(212, 154)
-scale = Vector2(0.873981, 1.22261)
+position = Vector2(260, 455)
+scale = Vector2(0.921009, 0.953846)
 texture = ExtResource("11_50svs")
+metadata/_edit_lock_ = true
 
-[node name="Vida3" type="Sprite2D" parent="."]
+[node name="vida3" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(186.565, 160.125)
-scale = Vector2(0.891793, 1.14031)
+position = Vector2(232, 459)
+scale = Vector2(0.961592, 0.927298)
 texture = ExtResource("12_k0033")
+
+[node name="vida2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(205, 461)
+texture = ExtResource("13_rjwmh")
+metadata/_edit_lock_ = true
+
+[node name="vida1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(177, 461)
+texture = ExtResource("14_mxgq3")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

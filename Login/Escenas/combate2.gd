@@ -145,7 +145,9 @@ func animacion_perder():
 		animation_time2.start()
 		puntosperdedor+=1
 		$punto1.text="Puntos: "+str(puntosperdedor)
+
 func _process(delta):
+	vidas_generales()
 	if contarrondas==1:
 		print("enprocess contarronda")
 		ocultarpregunta()
@@ -265,6 +267,24 @@ func _on_timerrondas_timeout():
 			$Label.hide()
 		
 	pass 
+func vidas_generales():
+	#if Saveus.capitan==true || Saveus.imagen_vida4==true:
+		#$vida4.show()
+	#elif Saveus.capitan==true || Saveus.imagen_vida3==true:
+		#$vida4.hide()
+		#$vida3.show()
+		
+	if Saveus.puntos_combates==4:
+		$vida4.show()
+	elif Saveus.puntos_combates==3:
+		$vida4.hide()
+		$vida3.show()
+	elif  Saveus.puntos_combates==2:
+		$vida3.hide()
+		$vida2.show()
+	elif Saveus.puntos_combates==1:
+		$vida2.hide()
+		$vida1.show()
 
 func ocultarpregunta():
 	cantrondas+=1
@@ -289,6 +309,13 @@ func ocultarpregunta():
 		get_tree().change_scene_to_file("res://intro_combate3.tscn")
 	elif  Saveus.capitan==true && puntosperdedor>1 || Saveus.iron_man==true && puntosperdedor>1:
 		$Perdistelb.show()
+		Saveus.puntos_combates-=1
+		Saveus.regresar_combates()
+		print(Saveus.puntos_combates)
+		
+		vidas_generales()
+		#Saveus.finished_game=0
+		
 		$back_btn.show()
 	tiempo_restante = 10
 	print("bien ",respondiobien," mal ",respondiomal)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://01vg1vwcips"]
+[gd_scene load_steps=29 format=3 uid="uid://01vg1vwcips"]
 
 [ext_resource type="Script" path="res://Escenas/combate2.gd" id="1_kyoie"]
 [ext_resource type="Texture2D" uid="uid://dc3hdl8gj7m6x" path="res://Art/Escenarios_Mundos/87ae2987eb0cca2c39c8e558eafd4f84.png" id="1_xavhg"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dwufd7xe4oocc" path="res://thor.tscn" id="3_wjtc0"]
 [ext_resource type="FontFile" uid="uid://dbnbiierqlmpj" path="res://Art/Font/Avengers.ttf" id="9_44065"]
 [ext_resource type="Texture2D" uid="uid://ck4ia0hspjwve" path="res://Art/Sprites/descarga-removebg-preview.png" id="10_ksp0d"]
+[ext_resource type="Texture2D" uid="uid://wo8q7hpds43l" path="res://Art/Sprites/vida4-removebg-preview.png" id="10_uasrm"]
+[ext_resource type="Texture2D" uid="uid://coagwrr1u5fpe" path="res://Art/Sprites/vida3-removebg-preview.png" id="11_4xotf"]
 [ext_resource type="Texture2D" uid="uid://ccr6352bcfwip" path="res://Art/Sprites/images-removebg-preview.png" id="11_rq62o"]
+[ext_resource type="Texture2D" uid="uid://wrfy70wqyg87" path="res://Art/Sprites/vida2-removebg-preview.png" id="12_fce1d"]
+[ext_resource type="Texture2D" uid="uid://dii04jwkgpi64" path="res://Art/Sprites/vida1-removebg-preview.png" id="13_idi58"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fteex"]
 texture = ExtResource("1_xavhg")
@@ -11829,6 +11833,26 @@ offset_bottom = 269.0
 text = "¡Perdiste tus vidas! Deberas regresar
  al mundo principal a recuperar vidas."
 label_settings = SubResource("LabelSettings_aty3i")
+
+[node name="vida4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(237, 439)
+texture = ExtResource("10_uasrm")
+
+[node name="vida3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(206, 446)
+texture = ExtResource("11_4xotf")
+
+[node name="vida2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(177, 446)
+texture = ExtResource("12_fce1d")
+
+[node name="vida1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(150, 444)
+texture = ExtResource("13_idi58")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
