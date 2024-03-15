@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://8vl564apqrpn" path="res://preguntaslab.tscn" id="3_cutgt"]
 [ext_resource type="PackedScene" uid="uid://cvj3haa5fhbus" path="res://node_2d_2.tscn" id="4_cktxi"]
 [ext_resource type="PackedScene" uid="uid://ciqatq8tglltj" path="res://node_2d_3.tscn" id="5_tjesf"]
-[ext_resource type="PackedScene" uid="uid://c4xy7n142pvft" path="res://introAula.tscn" id="6_saoxt"]
+[ext_resource type="PackedScene" path="res://introAula.tscn" id="6_saoxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbsf4"]
 atlas = ExtResource("2_o1m13")
