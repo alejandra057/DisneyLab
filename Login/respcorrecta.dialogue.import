@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://716go2rkov30"
+path="res://.godot/imported/respcorrecta.dialogue-95474a7512815e2fe6d18f28179ea581.tres"
+
+[deps]
+
+source_file="res://respcorrecta.dialogue"
+dest_files=["res://.godot/imported/respcorrecta.dialogue-95474a7512815e2fe6d18f28179ea581.tres"]
+
+[params]
+
+defaults=true

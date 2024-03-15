@@ -1,5 +1,6 @@
 extends Node2D
 
+var original_modulate
 var texts : Array = [
 	"Mesa de la Evidencia:
 	Bienvenido al laboratorio de la duda de Descartes. En esta mesa, se te presentarán distintos dilemas que deberás resolver utilizando el método cartesiano.",
@@ -44,6 +45,7 @@ var electB=false
 var electD=false
 # Called when the node enters the scene tree for the first time.	
 func _ready():
+	original_modulate = self.get_modulate()
 	visual_text.visible_ratio=0
 	visual_text.text=texts[current_text]
 	mark.visible=0
@@ -100,7 +102,9 @@ func _on_respa_pressed():
 
 	if current_text==15 || current_text==14:
 		print("repcorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respcorrecta.dialogue"),"correcta")
 	else:
+		DialogueManager.show_dialogue_balloon(load("res://respincorrecta.dialogue"),"incorrecta")
 		print("repincorrecta")
 	next_text()
 	pass # Replace with function body.
@@ -109,8 +113,10 @@ func _on_respa_pressed():
 func _on_respb_pressed():
 	if current_text==10 :
 		print("repcorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respcorrecta.dialogue"),"correcta")
 	else:
 		print("repincorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respincorrecta.dialogue"),"incorrecta")
 	next_text()
 	pass # Replace with function body.
 
@@ -118,8 +124,10 @@ func _on_respb_pressed():
 func _on_respc_pressed():
 	if current_text==6:
 		print("repcorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respcorrecta.dialogue"),"correcta")
 	else:
 		print("repincorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respincorrecta.dialogue"),"incorrecta")
 	next_text()
 	pass # Replace with function body.
 
@@ -127,7 +135,9 @@ func _on_respc_pressed():
 func _on_respd_pressed():
 	if current_text==2:
 		print("repcorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respcorrecta.dialogue"),"correcta")
 	else:
 		print("repincorrecta")
+		DialogueManager.show_dialogue_balloon(load("res://respincorrecta.dialogue"),"incorrecta")
 	next_text()
 	pass # Replace with function body.

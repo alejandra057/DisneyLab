@@ -117,5 +117,5 @@ func contarclick():
 
 func _on_arealab_body_entered(body):
 	print("entra en el laboratorio")
-	DialogueManager.show_dialogue_balloon(load("res://EntraLab.dialogue"),"LLegoalUni")
+	#DialogueManager.show_dialogue_balloon(load("res://EntraLab.dialogue"),"LLegoalUni")
 	pass 
