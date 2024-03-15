@@ -34,6 +34,7 @@ var progreso
 func _ready():
 	_update_health_bar_Cap(1000,1000)
 	_update_health_bar_iron(1000,1000)
+	vidas_generales()
 	$Label.text = "Ronda "+str(cantrondas)+"\n"
 	timer=$tiempocontestar
 	rondas=$timerrondas
@@ -156,6 +157,7 @@ func animacion_perder():
 		$punto1.text="Puntos: "+str(puntosperdedor)
 		
 func _process(delta):
+	vidas_generales()
 	if contarrondas==1:
 		print("enprocess contarronda")
 		ocultarpregunta()
